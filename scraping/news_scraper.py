@@ -1,434 +1,239 @@
-import requests
-from bs4 import BeautifulSoup
-import feedparser
-import datetime
-import time
-import random
-import re
+import tkinter as tk
+from tkinter import ttk, messagebox
 import pyodbc
-from tqdm import tqdm
-import os
-import logging
-from urllib.parse import urlparse
+import pandas as pd
+import matplotlib.pyplot as plt
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+import seaborn as sns
+from datetime import datetime
 
-# pip install requests beautifulsoup4 feedparser pyodbc tqdm
+class AdvancedNewsAnalysisDashboard:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("Komplexní Analýza Zpravodajských Článků")
+        self.root.geometry("1400x900")
 
-# Nastavení loggeru
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.FileHandler("scraper.log"),
-        logging.StreamHandler()
-    ]
-)
-logger = logging.getLogger("synapse-scraper")
+        # Database connection parameters
+        self.DB_SERVER = "193.85.203.188"
+        self.DB_NAME = "boska"
+        self.DB_USER = "boska"
+        self.DB_PASSWORD = "123456"
 
-# Konfigurace připojení k databázi
-DB_SERVER = "193.85.203.188"
-DB_NAME = "boska"
-DB_USER = "boska"
-DB_PASSWORD = "123456"
+        # Create main layout
+        self.create_layout()
 
-# Seznam zdrojů zpráv a jejich RSS
-news_sources = {
-    "idnes": "https://servis.idnes.cz/rss.aspx?c=zpravodaj",
-    "novinky": "https://www.novinky.cz/rss",
-    "seznamzpravy": "https://www.seznamzpravy.cz/rss",
-    "aktualne": "https://zpravy.aktualne.cz/rss/",
-    "ihned": "https://ihned.cz/rss/",
-    "denik-n": "https://denikn.cz/feed/",
-    "ct24": "https://ct24.ceskatelevize.cz/rss/hlavni-zpravy",
-    "irozhlas": "https://www.irozhlas.cz/rss/irozhlas/",
-    "denik": "https://www.denik.cz/rss/all.html",
-    "lidovky": "https://servis.lidovky.cz/rss.aspx?c=ln_domov",
-    "reflex": "https://www.reflex.cz/rss",
-    "echo24": "https://echo24.cz/rss",
-}
+        # Load initial data
+        self.load_data()
 
-# Funkce pro připojení k databázi
-def connect_to_db():
-    conn_str = f"DRIVER={{ODBC Driver 17 for SQL Server}};SERVER={DB_SERVER};DATABASE={DB_NAME};UID={DB_USER};PWD={DB_PASSWORD}"
-    try:
-        conn = pyodbc.connect(conn_str)
-        logger.info("Úspěšně připojeno k databázi.")
-        return conn
-    except Exception as e:
-        logger.error(f"Chyba při připojení k databázi: {e}")
-        return None
+    def connect_to_db(self):
+        """Establish a connection to the database."""
+        conn_str = f"DRIVER={{ODBC Driver 17 for SQL Server}};SERVER={self.DB_SERVER};DATABASE={self.DB_NAME};UID={self.DB_USER};PWD={self.DB_PASSWORD}"
+        try:
+            conn = pyodbc.connect(conn_str)
+            return conn
+        except Exception as e:
+            messagebox.showerror("Chyba databáze", f"Nepodařilo se připojit: {e}")
+            return None
 
-# Funkce pro získání textu článku
-def get_article_text(url, source):
-    try:
-        # Přidání náhodné pauzy, aby server nebyl přetížen
-        time.sleep(random.uniform(1, 3))
-        
-        headers = {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
-            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
-            "Accept-Language": "cs,en-US;q=0.7,en;q=0.3",
-        }
-        
-        response = requests.get(url, headers=headers, timeout=15)
-        if response.status_code != 200:
-            logger.warning(f"Nepodařilo se stáhnout článek: {url}, status code: {response.status_code}")
-            return "Nepodařilo se stáhnout článek", 0, 0
-        
-        soup = BeautifulSoup(response.content, "html.parser")
-        
-        # Odstranění nepotřebných elementů
-        for script in soup(["script", "style", "nav", "footer", "header", "aside", "iframe", "noscript"]):
-            script.decompose()
-        
-        # Přizpůsobeno různým zdrojům
-        article_text = ""
-        
-        # Detekce zdroje podle domény, pokud není explicitně uvedeno
-        if not source or source == "":
-            parsed_url = urlparse(url)
-            domain = parsed_url.netloc
-            if "idnes" in domain:
-                source = "idnes"
-            elif "novinky" in domain:
-                source = "novinky"
-            elif "seznamzpravy" in domain:
-                source = "seznamzpravy"
-            elif "aktualne" in domain:
-                source = "aktualne"
-            elif "ihned" in domain:
-                source = "ihned"
-            elif "denikn" in domain:
-                source = "denik-n"
-            elif "ct24" in domain:
-                source = "ct24"
-            elif "irozhlas" in domain:
-                source = "irozhlas"
-            elif "denik.cz" in domain:
-                source = "denik"
-            elif "lidovky" in domain:
-                source = "lidovky"
-            elif "reflex" in domain:
-                source = "reflex"
-            elif "echo24" in domain:
-                source = "echo24"
-        
-        # iDNES
-        if source == "idnes":
-            article_div = soup.find("div", class_="article-body")
-            if article_div:
-                paragraphs = article_div.find_all("p")
-                article_text = " ".join([p.get_text().strip() for p in paragraphs])
-        
-        # Novinky
-        elif source == "novinky":
-            article_div = soup.find("div", class_="articleBody")
-            if article_div:
-                paragraphs = article_div.find_all("p")
-                article_text = " ".join([p.get_text().strip() for p in paragraphs])
-        
-        # Seznam Zprávy
-        elif source == "seznamzpravy":
-            article_div = soup.find("div", class_="article-body")
-            if article_div:
-                paragraphs = article_div.find_all("p")
-                article_text = " ".join([p.get_text().strip() for p in paragraphs])
-        
-        # Aktuálně
-        elif source == "aktualne":
-            article_div = soup.find("div", class_="article-text")
-            if article_div:
-                paragraphs = article_div.find_all("p")
-                article_text = " ".join([p.get_text().strip() for p in paragraphs])
-        
-        # iHNed
-        elif source == "ihned":
-            article_div = soup.find("div", class_="article-body")
-            if article_div:
-                paragraphs = article_div.find_all("p")
-                article_text = " ".join([p.get_text().strip() for p in paragraphs])
-        
-        # Deník N
-        elif source == "denik-n":
-            article_div = soup.find("div", class_="post-content")
-            if article_div:
-                paragraphs = article_div.find_all("p")
-                article_text = " ".join([p.get_text().strip() for p in paragraphs])
-        
-        # ČT24
-        elif source == "ct24":
-            article_div = soup.find("div", class_="article-body")
-            if article_div:
-                paragraphs = article_div.find_all("p")
-                article_text = " ".join([p.get_text().strip() for p in paragraphs])
-        
-        # iRozhlas
-        elif source == "irozhlas":
-            article_div = soup.find("div", class_="b-detail")
-            if article_div:
-                paragraphs = article_div.find_all("p")
-                article_text = " ".join([p.get_text().strip() for p in paragraphs])
-        
-        # Deník
-        elif source == "denik":
-            article_div = soup.find("div", class_="article-body")
-            if article_div:
-                paragraphs = article_div.find_all("p")
-                article_text = " ".join([p.get_text().strip() for p in paragraphs])
-        
-        # Lidovky
-        elif source == "lidovky":
-            article_div = soup.find("div", class_="article-body")
-            if article_div:
-                paragraphs = article_div.find_all("p")
-                article_text = " ".join([p.get_text().strip() for p in paragraphs])
-        
-        # Reflex
-        elif source == "reflex":
-            article_div = soup.find("div", class_="article-content")
-            if article_div:
-                paragraphs = article_div.find_all("p")
-                article_text = " ".join([p.get_text().strip() for p in paragraphs])
-        
-        # Echo24
-        elif source == "echo24":
-            article_div = soup.find("div", class_="article-detail__content")
-            if article_div:
-                paragraphs = article_div.find_all("p")
-                article_text = " ".join([p.get_text().strip() for p in paragraphs])
-        
-        # Obecná metoda jako fallback
-        if not article_text:
-            # Pokus 1: Hledání podle typických tříd
-            for class_name in ["article-body", "article-content", "post-content", "news-content", "story-content", "main-content"]:
-                article_div = soup.find("div", class_=class_name)
-                if article_div:
-                    paragraphs = article_div.find_all("p")
-                    article_text = " ".join([p.get_text().strip() for p in paragraphs])
-                    break
+    def load_data(self):
+        """Load comprehensive data from database."""
+        conn = self.connect_to_db()
+        if not conn:
+            return
+
+        try:
+            # Comprehensive query to get detailed insights
+            self.df = pd.read_sql("""
+                SELECT 
+                    SourceName, 
+                    Category,
+                    PublicationDate,
+                    ArticleLength,
+                    WordCount,
+                    ArticleUrl
+                FROM Articles
+            """, conn)
             
-            # Pokus 2: Hledání podle typických HTML elementů
-            if not article_text:
-                main_content = soup.find("main") or soup.find("article") or soup.find("div", class_=["content", "article", "main"])
-                if main_content:
-                    paragraphs = main_content.find_all("p")
-                    article_text = " ".join([p.get_text().strip() for p in paragraphs])
-                else:
-                    # Poslední pokus - vše z body kromě skriptů a stylů
-                    article_text = soup.body.get_text(separator=" ", strip=True)
-        
-        # Čištění textu
-        article_text = re.sub(r'\s+', ' ', article_text).strip()
-        article_text = re.sub(r'[^\w\s.,?!;:()\[\]{}"\'–—-]', '', article_text)  # Odstranění speciálních znaků
-        
-        # Počet znaků a slov
-        char_count = len(article_text)
-        word_count = len(article_text.split())
-        
-        if char_count < 100:  # Pravděpodobně se nepodařilo správně extrahovat text
-            logger.warning(f"Málo textu extrahováno z {url}: pouze {char_count} znaků")
-        
-        return article_text, char_count, word_count
-        
-    except Exception as e:
-        logger.error(f"Chyba při extrakci textu z {url}: {e}")
-        return f"Chyba: {e}", 0, 0
-
-# Funkce pro uložení článku do databáze
-def save_article_to_db(conn, source_name, title, url, pub_date, category, char_count, word_count, article_text):
-    try:
-        cursor = conn.cursor()
-        
-        # Ošetření příliš dlouhých hodnot
-        if len(title) > 500:
-            title = title[:497] + "..."
-        if len(url) > 1000:
-            url = url[:997] + "..."
-        if len(source_name) > 255:
-            source_name = source_name[:252] + "..."
-        if category and len(category) > 255:
-            category = category[:252] + "..."
-        
-        sql = """
-        INSERT INTO Articles (SourceName, Title, ArticleUrl, PublicationDate, Category, 
-                              ArticleLength, WordCount, ArticleText)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-        """
-        cursor.execute(sql, (source_name, title, url, pub_date, category, char_count, word_count, article_text))
-        conn.commit()
-        return True
-    except Exception as e:
-        logger.error(f"Chyba při ukládání článku do databáze: {e}")
-        conn.rollback()
-        return False
-
-# Funkce pro kontrolu, zda článek již existuje v databázi
-def article_exists(conn, url):
-    try:
-        cursor = conn.cursor()
-        cursor.execute("SELECT COUNT(*) FROM Articles WHERE ArticleUrl = ?", (url,))
-        count = cursor.fetchone()[0]
-        return count > 0
-    except Exception as e:
-        logger.error(f"Chyba při kontrole existence článku: {e}")
-        return False
-
-# Funkce pro převod data z RSS na DATETIME
-def parse_date(date_str):
-    if not date_str:
-        return None
-    
-    try:
-        # RSS data mohou mít různé formáty
-        for date_format in [
-            "%a, %d %b %Y %H:%M:%S %z",      # Standardní RSS formát
-            "%a, %d %b %Y %H:%M:%S %Z",      # Varianta s textovým timezone
-            "%a, %d %b %Y %H:%M:%S GMT",     # Varianta bez timezone
-            "%Y-%m-%dT%H:%M:%S%z",           # ISO formát
-            "%Y-%m-%dT%H:%M:%S%Z",           # ISO s textovým timezone
-            "%Y-%m-%dT%H:%M:%SZ",            # ISO bez timezone
-            "%d.%m.%Y %H:%M:%S",             # Český formát
-            "%d.%m.%Y",                      # Kratší český formát
-        ]:
-            try:
-                return datetime.datetime.strptime(date_str, date_format)
-            except ValueError:
-                continue
-                
-        return datetime.datetime.now()  # Fallback pokud žádný formát nesedí
-    except:
-        return datetime.datetime.now()
-
-# Funkce pro získání počtu článků v databázi
-def get_article_count(conn):
-    try:
-        cursor = conn.cursor()
-        cursor.execute("SELECT COUNT(*) FROM Articles")
-        count = cursor.fetchone()[0]
-        return count
-    except Exception as e:
-        logger.error(f"Chyba při získávání počtu článků: {e}")
-        return 0
-
-# Hlavní funkce pro sběr článků
-def collect_news(target_count=1500, max_articles_per_source=300):
-    # Připojení k databázi
-    conn = connect_to_db()
-    if not conn:
-        logger.error("Nelze pokračovat bez připojení k databázi.")
-        return
-    
-    # Zjištění aktuálního počtu článků
-    current_count = get_article_count(conn)
-    logger.info(f"Aktuální počet článků v databázi: {current_count}")
-    
-    total_articles = 0
-    new_articles = 0
-    
-    try:
-        # Procházení RSS zdrojů
-        for source_name, rss_url in tqdm(news_sources.items(), desc="Zpracování zdrojů"):
-            # Kontrola, jestli už nemáme dostatek článků
-            if current_count + new_articles >= target_count:
-                logger.info(f"Dosaženo cílového počtu článků: {current_count + new_articles}")
-                break
-                
-            # Kontrola, jestli už nemáme dostatek článků z tohoto zdroje
-            articles_from_source = 0
-            
-            try:
-                logger.info(f"Zpracovávám RSS feed: {source_name}")
-                feed = feedparser.parse(rss_url)
-                
-                # Procházení článků v RSS feedu
-                for entry in tqdm(feed.entries, desc=f"Články z {source_name}"):
-                    total_articles += 1
-                    
-                    # Kontrola, jestli už nemáme dostatek článků
-                    if current_count + new_articles >= target_count:
-                        logger.info(f"Dosaženo cílového počtu článků: {current_count + new_articles}")
-                        break
-                        
-                    # Kontrola, jestli už nemáme dostatek článků z tohoto zdroje
-                    if articles_from_source >= max_articles_per_source:
-                        logger.info(f"Dosaženo maximálního počtu článků ze zdroje {source_name}: {articles_from_source}")
-                        break
-                    
-                    # Získání základních údajů z RSS
-                    title = entry.title
-                    url = entry.link
-                    
-                    # Kontrola, zda článek už neexistuje v databázi
-                    if article_exists(conn, url):
-                        logger.debug(f"Článek již existuje v databázi: {title}")
-                        continue
-                    
-                    # Zpracování datumu publikace
-                    pub_date = None
-                    if 'published' in entry:
-                        pub_date = parse_date(entry.published)
-                    elif 'pubDate' in entry:
-                        pub_date = parse_date(entry.pubDate)
-                    elif 'updated' in entry:
-                        pub_date = parse_date(entry.updated)
-                    
-                    # Pokus o získání kategorie
-                    category = ""
-                    if 'tags' in entry and entry.tags:
-                        try:
-                            category = entry.tags[0].term
-                        except:
-                            try:
-                                category = entry.tags[0]['term']
-                            except:
-                                category = ""
-                    elif 'category' in entry:
-                        category = entry.category
-                    
-                    # Získání plného textu článku
-                    logger.info(f"Stahuji článek: {title}")
-                    article_text, char_count, word_count = get_article_text(url, source_name)
-                    
-                    # Kontrola, zda se podařilo získat dostatek textu
-                    if char_count < 100:
-                        logger.warning(f"Příliš málo textu ze článku: {title}, přeskakuji")
-                        continue
-                    
-                    # Uložení článku do databáze
-                    success = save_article_to_db(
-                        conn, source_name, title, url, pub_date, category, 
-                        char_count, word_count, article_text
-                    )
-                    
-                    if success:
-                        new_articles += 1
-                        articles_from_source += 1
-                        logger.info(f"Článek uložen: {title} ({char_count} znaků, {word_count} slov)")
-                    
-                    # Informace o postupu
-                    logger.info(f"Celkem staženo nových článků: {new_articles}")
-                    
-            except Exception as e:
-                logger.error(f"Chyba při zpracování zdroje {source_name}: {e}")
-    
-    finally:
-        if conn:
             conn.close()
-            logger.info("Připojení k databázi uzavřeno.")
-    
-    logger.info(f"Dokončeno! Zpracováno celkem {total_articles} článků, přidáno {new_articles} nových.")
-    logger.info(f"Aktuální celkový počet článků v databázi: {current_count + new_articles}")
-    return new_articles
 
-# Hlavní spuštění programu
+            # Data preprocessing
+            self.df['PublicationDate'] = pd.to_datetime(self.df['PublicationDate'])
+            
+            # Populate dropdowns
+            self.source_combobox['values'] = sorted(self.df['SourceName'].unique())
+            self.category_combobox['values'] = sorted(self.df['Category'].unique())
+
+            # Initial visualization
+            self.create_main_dashboard()
+
+        except Exception as e:
+            messagebox.showerror("Chyba načítání dat", f"Nepodařilo se načíst data: {e}")
+
+    def create_layout(self):
+        """Create the main layout of the dashboard."""
+        # Control Frame
+        control_frame = tk.Frame(self.root, padx=10, pady=10)
+        control_frame.pack(side=tk.TOP, fill=tk.X)
+
+        # Source Selection
+        tk.Label(control_frame, text="Zdroj média:").pack(side=tk.LEFT, padx=5)
+        self.source_combobox = ttk.Combobox(control_frame, width=20)
+        self.source_combobox.pack(side=tk.LEFT, padx=5)
+        self.source_combobox.bind('<<ComboboxSelected>>', self.filter_data)
+
+        # Category Selection
+        tk.Label(control_frame, text="Kategorie:").pack(side=tk.LEFT, padx=5)
+        self.category_combobox = ttk.Combobox(control_frame, width=20)
+        self.category_combobox.pack(side=tk.LEFT, padx=5)
+        self.category_combobox.bind('<<ComboboxSelected>>', self.filter_data)
+
+        # Plotting Frame
+        self.plot_frame = tk.Frame(self.root)
+        self.plot_frame.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
+
+    def create_main_dashboard(self):
+        """Create a comprehensive dashboard with multiple visualizations."""
+        # Clear previous plots
+        for widget in self.plot_frame.winfo_children():
+            widget.destroy()
+
+        # Create a grid of subplots
+        fig, axs = plt.subplots(2, 2, figsize=(16, 12))
+        fig.suptitle('Komplexní analýza zpravodajských článků', fontsize=16)
+
+        # 1. Počet článků podle zdrojů
+        source_counts = self.df['SourceName'].value_counts()
+        axs[0, 0].bar(source_counts.index, source_counts.values, color='skyblue')
+        axs[0, 0].set_title('Počet článků podle zdrojů')
+        axs[0, 0].set_xticklabels(source_counts.index, rotation=45, ha='right')
+        axs[0, 0].set_ylabel('Počet článků')
+
+        # 2. Průměrná délka článků podle zdrojů
+        avg_lengths = self.df.groupby('SourceName')['ArticleLength'].mean()
+        axs[0, 1].bar(avg_lengths.index, avg_lengths.values, color='lightgreen')
+        axs[0, 1].set_title('Průměrná délka článků')
+        axs[0, 1].set_xticklabels(avg_lengths.index, rotation=45, ha='right')
+        axs[0, 1].set_ylabel('Průměrný počet znaků')
+
+        # 3. Distribuce kategorií
+        category_counts = self.df['Category'].value_counts().head(10)
+        axs[1, 0].pie(category_counts.values, labels=category_counts.index, autopct='%1.1f%%')
+        axs[1, 0].set_title('Top 10 kategorií')
+
+        # 4. Publikační aktivita v čase
+        self.df['PublicationMonth'] = self.df['PublicationDate'].dt.to_period('M')
+        monthly_counts = self.df.groupby('PublicationMonth').size()
+        monthly_counts.plot(kind='line', ax=axs[1, 1], marker='o')
+        axs[1, 1].set_title('Publikační aktivita v čase')
+        axs[1, 1].set_xlabel('Měsíc')
+        axs[1, 1].set_ylabel('Počet článků')
+
+        plt.tight_layout()
+
+        # Embed plot in Tkinter
+        canvas = FigureCanvasTkAgg(fig, master=self.plot_frame)
+        canvas_widget = canvas.get_tk_widget()
+        canvas_widget.pack(fill=tk.BOTH, expand=True)
+
+        # Add details table
+        self.create_details_table()
+
+    def create_details_table(self):
+        """Create a details table with key statistics."""
+        details_frame = tk.Frame(self.plot_frame)
+        details_frame.pack(fill=tk.X, padx=10, pady=10)
+
+        # Calculate summary statistics
+        total_articles = len(self.df)
+        unique_sources = self.df['SourceName'].nunique()
+        unique_categories = self.df['Category'].nunique()
+        avg_article_length = self.df['ArticleLength'].mean()
+        date_range = f"{self.df['PublicationDate'].min().date()} - {self.df['PublicationDate'].max().date()}"
+
+        # Create labels with statistics
+        stats_labels = [
+            f"Celkový počet článků: {total_articles}",
+            f"Počet jedinečných zdrojů: {unique_sources}",
+            f"Počet kategorií: {unique_categories}",
+            f"Průměrná délka článku: {avg_article_length:.2f} znaků",
+            f"Časové rozmezí: {date_range}"
+        ]
+
+        for i, stat in enumerate(stats_labels):
+            tk.Label(details_frame, text=stat, font=('Arial', 10)).grid(row=i//3, column=i%3, padx=10, pady=5, sticky='w')
+
+    def filter_data(self, event=None):
+        """Filter data based on selected source and category."""
+        selected_source = self.source_combobox.get()
+        selected_category = self.category_combobox.get()
+
+        # Apply filters
+        filtered_df = self.df.copy()
+        if selected_source:
+            filtered_df = filtered_df[filtered_df['SourceName'] == selected_source]
+        if selected_category:
+            filtered_df = filtered_df[filtered_df['Category'] == selected_category]
+
+        # Update visualization with filtered data
+        self.show_filtered_details(filtered_df)
+
+    def show_filtered_details(self, filtered_df):
+        """Show detailed information about filtered data."""
+        # Clear previous details
+        for widget in self.plot_frame.winfo_children():
+            if isinstance(widget, tk.Toplevel):
+                widget.destroy()
+
+        # Create a new top-level window
+        details_window = tk.Toplevel(self.root)
+        details_window.title("Detaily filtrovaných článků")
+        details_window.geometry("800x600")
+
+        # Create Treeview
+        columns = ("Zdroj", "Kategorie", "Datum", "Délka", "Slova", "URL")
+        tree = ttk.Treeview(details_window, columns=columns, show='headings')
+
+        # Setup column headings
+        for col in columns:
+            tree.heading(col, text=col)
+            tree.column(col, width=100)
+
+        # Insert data
+        for _, row in filtered_df.iterrows():
+            tree.insert("", "end", values=(
+                row['SourceName'], 
+                row['Category'], 
+                row['PublicationDate'].strftime('%Y-%m-%d %H:%M'), 
+                row['ArticleLength'], 
+                row['WordCount'], 
+                row['ArticleUrl'][:50] + "..." if len(row['ArticleUrl']) > 50 else row['ArticleUrl']
+            ))
+
+        # Add scrollbar
+        scrollbar = ttk.Scrollbar(details_window, orient=tk.VERTICAL, command=tree.yview)
+        tree.configure(yscroll=scrollbar.set)
+
+        # Pack widgets
+        tree.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+        scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+
+        # Summary statistics for filtered data
+        summary_frame = tk.Frame(details_window)
+        summary_frame.pack(fill=tk.X, padx=10, pady=10)
+
+        summary_stats = [
+            f"Počet článků: {len(filtered_df)}",
+            f"Průměrná délka: {filtered_df['ArticleLength'].mean():.2f} znaků",
+            f"Průměrný počet slov: {filtered_df['WordCount'].mean():.2f}"
+        ]
+
+        for i, stat in enumerate(summary_stats):
+            tk.Label(summary_frame, text=stat, font=('Arial', 10)).pack(side=tk.LEFT, padx=10)
+
+def main():
+    root = tk.Tk()
+    app = AdvancedNewsAnalysisDashboard(root)
+    root.mainloop()
+
 if __name__ == "__main__":
-    logger.info("Začínám sběr zpravodajských článků pro projekt Synapse...")
-    
-    # Cílový počet článků (zadejte požadovaný počet)
-    target_count = 1500
-    
-    # Maximální počet článků z jednoho zdroje (pro rovnoměrnější distribuci)
-    max_per_source = 300
-    
-    collected = collect_news(target_count=target_count, max_articles_per_source=max_per_source)
-    
-    logger.info(f"Sběr dokončen, přidáno {collected} nových článků.")
+    main()
