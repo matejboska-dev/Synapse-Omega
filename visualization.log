@@ -1,0 +1,16 @@
+2025-03-10 08:41:39,384 - news-visualization - INFO - Successfully connected to the database.
+2025-03-10 08:41:40,906 - news-visualization - INFO - Successfully fetched 274 articles from the database.
+2025-03-10 08:41:40,909 - news-visualization - INFO - Starting visualization of 274 articles...
+2025-03-10 08:41:43,279 - news-visualization - INFO - Created graph: Articles by Source
+2025-03-10 08:41:44,824 - news-visualization - INFO - Created graph: Articles by Publication Date
+2025-03-10 08:41:46,510 - news-visualization - INFO - Created graph: Article Length Distribution
+2025-03-10 08:41:47,728 - news-visualization - INFO - Created graph: Word Count Distribution
+2025-03-10 08:41:48,919 - news-visualization - INFO - Created graph: Articles by Category
+2025-03-10 08:41:50,596 - news-visualization - INFO - Created graph: Length and Word Count Correlation
+2025-03-10 08:41:52,218 - news-visualization - INFO - Created graph: Articles by Source and Time
+2025-03-10 08:41:52,375 - news-visualization - ERROR - Error during visualization: No such file or directory: 'C:\\Users\\matej\\AppData\\Roaming\\nltk_data\\corpora\\stopwords\\czech'
+2025-03-10 08:41:52,425 - news-visualization - INFO - Database connection closed.
+2025-03-10 09:12:56,363 - interactive-news-visualization - ERROR - Chyba pøi generování vizualizace word_cloud: No such file or directory: 'C:\\Users\\matej\\AppData\\Roaming\\nltk_data\\corpora\\stopwords\\czech'
+2025-03-10 09:12:57,304 - interactive-news-visualization - ERROR - Chyba pøi generování vizualizace top_words: No such file or directory: 'C:\\Users\\matej\\AppData\\Roaming\\nltk_data\\corpora\\stopwords\\czech'
+2025-03-10 09:12:57,765 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-03-10 09:12:57,787 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
