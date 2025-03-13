@@ -1176,3 +1176,998 @@
 2025-03-10 11:36:49,780 - synapse-scraper - INFO - Dokonèeno! Zpracováno celkem 251 èlánkù, pøidáno 76 novıch.
 2025-03-10 11:36:49,781 - synapse-scraper - INFO - Aktuální celkovı poèet èlánkù v databázi: 350
 2025-03-10 11:36:49,781 - synapse-scraper - INFO - Sbìr dokonèen, pøidáno 76 novıch èlánkù.
+2025-03-12 17:11:20,485 - synapse-scraper - INFO - Zaèínám sbìr zpravodajskıch èlánkù pro projekt Synapse...
+2025-03-12 17:11:22,006 - synapse-scraper - INFO - Úspìšnì pøipojeno k databázi.
+2025-03-12 17:11:22,354 - synapse-scraper - INFO - Aktuální poèet èlánkù v databázi: 350
+2025-03-12 17:11:22,428 - synapse-scraper - INFO - Zpracovávám RSS feed: idnes
+2025-03-12 17:11:22,793 - synapse-scraper - INFO - Stahuji èlánek: ODS a TOP 09 chtìjí umonit pøiplácení za lepší péèi èi zdravotní pomùcky
+2025-03-12 17:11:25,932 - synapse-scraper - INFO - Èlánek uloen: ODS a TOP 09 chtìjí umonit pøiplácení za lepší péèi èi zdravotní pomùcky (6529 znakù, 945 slov)
+2025-03-12 17:11:25,932 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 1
+2025-03-12 17:11:25,989 - synapse-scraper - INFO - Stahuji èlánek: Øidiè spìchal s rodící enou do nemocnice, ranní špièkou je protáhli stráníci
+2025-03-12 17:11:31,355 - synapse-scraper - INFO - Èlánek uloen: Øidiè spìchal s rodící enou do nemocnice, ranní špièkou je protáhli stráníci (6529 znakù, 945 slov)
+2025-03-12 17:11:31,355 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 2
+2025-03-12 17:11:31,456 - synapse-scraper - INFO - Stahuji èlánek: Vláda chce zjednodušit povolování staveb fotovoltaickıch a vìtrnıch elektráren
+2025-03-12 17:11:33,853 - synapse-scraper - INFO - Èlánek uloen: Vláda chce zjednodušit povolování staveb fotovoltaickıch a vìtrnıch elektráren (6529 znakù, 945 slov)
+2025-03-12 17:11:33,853 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-12 17:11:33,907 - synapse-scraper - INFO - Stahuji èlánek: TikTok zaplavil novı nebezpeènı trend. Deepfake doktoøi šíøí bludy o zdraví
+2025-03-12 17:11:36,901 - synapse-scraper - INFO - Èlánek uloen: TikTok zaplavil novı nebezpeènı trend. Deepfake doktoøi šíøí bludy o zdraví (6529 znakù, 945 slov)
+2025-03-12 17:11:36,901 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 4
+2025-03-12 17:11:36,957 - synapse-scraper - INFO - Stahuji èlánek: Kanada vyhlásila Americe odvetná cla, zasáhnou poèítaèe i sportovní vıbavu
+2025-03-12 17:11:40,009 - synapse-scraper - INFO - Èlánek uloen: Kanada vyhlásila Americe odvetná cla, zasáhnou poèítaèe i sportovní vıbavu (6529 znakù, 945 slov)
+2025-03-12 17:11:40,009 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 5
+2025-03-12 17:11:40,050 - synapse-scraper - INFO - Stahuji èlánek: Drama v Pákistánu skonèilo. Útoèníci z vlaku jsou mrtví, zabili desítky rukojmích
+2025-03-12 17:11:42,220 - synapse-scraper - INFO - Èlánek uloen: Drama v Pákistánu skonèilo. Útoèníci z vlaku jsou mrtví, zabili desítky rukojmích (6529 znakù, 945 slov)
+2025-03-12 17:11:42,220 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 6
+2025-03-12 17:11:42,255 - synapse-scraper - INFO - Stahuji èlánek: V Hrušovanech nad Jevišovkou konèí provoz cukrovaru, o práci pøijde 150 lidí
+2025-03-12 17:11:44,896 - synapse-scraper - INFO - Èlánek uloen: V Hrušovanech nad Jevišovkou konèí provoz cukrovaru, o práci pøijde 150 lidí (6529 znakù, 945 slov)
+2025-03-12 17:11:44,897 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 7
+2025-03-12 17:11:44,932 - synapse-scraper - INFO - Stahuji èlánek: Návrat do vrcholné politiky? Kleslová by ráda kandidovala za ANO do Snìmovny
+2025-03-12 17:11:47,724 - synapse-scraper - INFO - Èlánek uloen: Návrat do vrcholné politiky? Kleslová by ráda kandidovala za ANO do Snìmovny (6529 znakù, 945 slov)
+2025-03-12 17:11:47,725 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 8
+2025-03-12 17:11:47,766 - synapse-scraper - INFO - Stahuji èlánek: Pátrání po pohøešovaném soudci Kafkovi pokraèuje, vloila se do nìj NCOZ
+2025-03-12 17:11:51,036 - synapse-scraper - INFO - Èlánek uloen: Pátrání po pohøešovaném soudci Kafkovi pokraèuje, vloila se do nìj NCOZ (6529 znakù, 945 slov)
+2025-03-12 17:11:51,037 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 9
+2025-03-12 17:11:51,072 - synapse-scraper - INFO - Stahuji èlánek: Od policie bych èekal lepší spolupráci. V Motole kontrolujeme vše, tvrdí Válek
+2025-03-12 17:11:52,570 - synapse-scraper - INFO - Èlánek uloen: Od policie bych èekal lepší spolupráci. V Motole kontrolujeme vše, tvrdí Válek (6529 znakù, 945 slov)
+2025-03-12 17:11:52,571 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 10
+2025-03-12 17:11:52,601 - synapse-scraper - INFO - Stahuji èlánek: Trumpovy škrty pociuje i liberecká zoo, komplikují záchranu ohroenıch zvíøat
+2025-03-12 17:11:55,266 - synapse-scraper - INFO - Èlánek uloen: Trumpovy škrty pociuje i liberecká zoo, komplikují záchranu ohroenıch zvíøat (6529 znakù, 945 slov)
+2025-03-12 17:11:55,267 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 11
+2025-03-12 17:11:55,302 - synapse-scraper - INFO - Stahuji èlánek: Pøijmìte návrh pøímìøí, vyzval Moskvu slovenskı ministr obrany Kaliòák
+2025-03-12 17:11:57,093 - synapse-scraper - INFO - Èlánek uloen: Pøijmìte návrh pøímìøí, vyzval Moskvu slovenskı ministr obrany Kaliòák (6529 znakù, 945 slov)
+2025-03-12 17:11:57,094 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 12
+2025-03-12 17:11:57,132 - synapse-scraper - INFO - Stahuji èlánek: Za nákupem stíhaèek F-35 si stojíme, jde o promyšlenou investici, uvedl Fiala
+2025-03-12 17:11:59,628 - synapse-scraper - INFO - Èlánek uloen: Za nákupem stíhaèek F-35 si stojíme, jde o promyšlenou investici, uvedl Fiala (6529 znakù, 945 slov)
+2025-03-12 17:11:59,630 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 13
+2025-03-12 17:11:59,658 - synapse-scraper - INFO - Stahuji èlánek: Jak se mohla dostat zbraò do Snìmovny? Stovky lidí toti nemusí procházet rámy
+2025-03-12 17:12:01,340 - synapse-scraper - INFO - Èlánek uloen: Jak se mohla dostat zbraò do Snìmovny? Stovky lidí toti nemusí procházet rámy (6529 znakù, 945 slov)
+2025-03-12 17:12:01,341 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 14
+2025-03-12 17:12:01,377 - synapse-scraper - INFO - Stahuji èlánek: Spotify vyplatila rekordních 10 miliard dolarù na tantiémách. Vìtšinou velkım hráèùm
+2025-03-12 17:12:03,636 - synapse-scraper - INFO - Èlánek uloen: Spotify vyplatila rekordních 10 miliard dolarù na tantiémách. Vìtšinou velkım hráèùm (6529 znakù, 945 slov)
+2025-03-12 17:12:03,637 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 15
+2025-03-12 17:12:03,674 - synapse-scraper - INFO - Stahuji èlánek: Kvùli poáru haly v Ostravì evakuovala policie lidi z okolí. Škoda je 10 milionù
+2025-03-12 17:12:05,443 - synapse-scraper - INFO - Èlánek uloen: Kvùli poáru haly v Ostravì evakuovala policie lidi z okolí. Škoda je 10 milionù (6529 znakù, 945 slov)
+2025-03-12 17:12:05,444 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 16
+2025-03-12 17:12:05,479 - synapse-scraper - INFO - Stahuji èlánek: Po èelní sráce kamionù u Plznì skonèil jeden v pøíkopu, øidièi se zranili
+2025-03-12 17:12:07,478 - synapse-scraper - INFO - Èlánek uloen: Po èelní sráce kamionù u Plznì skonèil jeden v pøíkopu, øidièi se zranili (6529 znakù, 945 slov)
+2025-03-12 17:12:07,479 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 17
+2025-03-12 17:12:07,512 - synapse-scraper - INFO - Stahuji èlánek: Ukrajinci ustupují z Kurské oblasti, Rusové hlásí vstup do Sude
+2025-03-12 17:12:09,348 - synapse-scraper - INFO - Èlánek uloen: Ukrajinci ustupují z Kurské oblasti, Rusové hlásí vstup do Sude (6529 znakù, 945 slov)
+2025-03-12 17:12:09,349 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 18
+2025-03-12 17:12:09,390 - synapse-scraper - INFO - Stahuji èlánek: Pokud Rusko odmítne pøímìøí, USA na nìj uvalí tvrdé sankce, oèekává Zelenskyj
+2025-03-12 17:12:11,335 - synapse-scraper - INFO - Èlánek uloen: Pokud Rusko odmítne pøímìøí, USA na nìj uvalí tvrdé sankce, oèekává Zelenskyj (6529 znakù, 945 slov)
+2025-03-12 17:12:11,338 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 19
+2025-03-12 17:12:11,375 - synapse-scraper - INFO - Stahuji èlánek: V Mexiku objevili „vyhlazovací tábor“ narkomafie, byla v nìm i krematoria
+2025-03-12 17:12:14,081 - synapse-scraper - INFO - Èlánek uloen: V Mexiku objevili „vyhlazovací tábor“ narkomafie, byla v nìm i krematoria (6529 znakù, 945 slov)
+2025-03-12 17:12:14,082 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 20
+2025-03-12 17:12:14,108 - synapse-scraper - INFO - Stahuji èlánek: Chování zákazníkù se zmìnilo. Rozvozy zobecnìly, investice rostou, øíká komora
+2025-03-12 17:12:15,946 - synapse-scraper - INFO - Èlánek uloen: Chování zákazníkù se zmìnilo. Rozvozy zobecnìly, investice rostou, øíká komora (6529 znakù, 945 slov)
+2025-03-12 17:12:15,947 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 21
+2025-03-12 17:12:15,985 - synapse-scraper - INFO - Stahuji èlánek: ÈT šetøí, od dubna nebude na ÈT24 Fokus Václava Moravce èi Tıden v politice
+2025-03-12 17:12:19,161 - synapse-scraper - INFO - Èlánek uloen: ÈT šetøí, od dubna nebude na ÈT24 Fokus Václava Moravce èi Tıden v politice (6529 znakù, 945 slov)
+2025-03-12 17:12:19,163 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 22
+2025-03-12 17:12:19,205 - synapse-scraper - INFO - Stahuji èlánek: Èesko poslalo vojáky do Bosny. V dobì rostoucího napìtí posílí misi EUFOR
+2025-03-12 17:12:21,772 - synapse-scraper - INFO - Èlánek uloen: Èesko poslalo vojáky do Bosny. V dobì rostoucího napìtí posílí misi EUFOR (6529 znakù, 945 slov)
+2025-03-12 17:12:21,773 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 23
+2025-03-12 17:12:21,811 - synapse-scraper - INFO - Stahuji èlánek: Pracovnice zverimexu dala andulku do sava a mrazáku. U soudu dostala podmínku
+2025-03-12 17:12:24,398 - synapse-scraper - INFO - Èlánek uloen: Pracovnice zverimexu dala andulku do sava a mrazáku. U soudu dostala podmínku (6529 znakù, 945 slov)
+2025-03-12 17:12:24,399 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 24
+2025-03-12 17:12:24,436 - synapse-scraper - INFO - Stahuji èlánek: Zaèíná záchrana památek v Terezínì. Chceme do nich vnést ivot, øíká starosta
+2025-03-12 17:12:26,064 - synapse-scraper - INFO - Èlánek uloen: Zaèíná záchrana památek v Terezínì. Chceme do nich vnést ivot, øíká starosta (6529 znakù, 945 slov)
+2025-03-12 17:12:26,065 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 25
+2025-03-12 17:12:26,094 - synapse-scraper - INFO - Stahuji èlánek: Podvodné prodeje malotraktorù na jihu Moravy. Zájemci zaplatí, ale stroj nikde
+2025-03-12 17:12:29,163 - synapse-scraper - INFO - Èlánek uloen: Podvodné prodeje malotraktorù na jihu Moravy. Zájemci zaplatí, ale stroj nikde (6529 znakù, 945 slov)
+2025-03-12 17:12:29,164 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 26
+2025-03-12 17:12:29,206 - synapse-scraper - INFO - Stahuji èlánek: Øidiè naboural 9 aut. Nevìdìl, co dìlá, s drogami v tìle mùe dostat niší trest
+2025-03-12 17:12:32,029 - synapse-scraper - INFO - Èlánek uloen: Øidiè naboural 9 aut. Nevìdìl, co dìlá, s drogami v tìle mùe dostat niší trest (6529 znakù, 945 slov)
+2025-03-12 17:12:32,030 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 27
+2025-03-12 17:12:32,057 - synapse-scraper - INFO - Stahuji èlánek: Chtìl maskovat vradu. Spolubydlícímu zasadil nìkolik ran noem, pak domek zapálil
+2025-03-12 17:12:34,815 - synapse-scraper - INFO - Èlánek uloen: Chtìl maskovat vradu. Spolubydlícímu zasadil nìkolik ran noem, pak domek zapálil (6529 znakù, 945 slov)
+2025-03-12 17:12:34,816 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 28
+2025-03-12 17:12:34,854 - synapse-scraper - INFO - Stahuji èlánek: ANALİZA: Teï se Trump musí ukázat. Rusko si u vymıšlí podmínky pøímìøí
+2025-03-12 17:12:37,128 - synapse-scraper - INFO - Èlánek uloen: ANALİZA: Teï se Trump musí ukázat. Rusko si u vymıšlí podmínky pøímìøí (6529 znakù, 945 slov)
+2025-03-12 17:12:37,130 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 29
+2025-03-12 17:12:37,164 - synapse-scraper - INFO - Stahuji èlánek: Babiš nemá problém se tøemi procenty HDP na obranu. Chtìl by systém Patriot
+2025-03-12 17:12:39,601 - synapse-scraper - INFO - Èlánek uloen: Babiš nemá problém se tøemi procenty HDP na obranu. Chtìl by systém Patriot (6529 znakù, 945 slov)
+2025-03-12 17:12:39,602 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 30
+2025-03-12 17:12:39,603 - synapse-scraper - INFO - Zpracovávám RSS feed: novinky
+2025-03-12 17:12:39,810 - synapse-scraper - INFO - Stahuji èlánek: Tøináctiletou dívku v Anglii obvinili z vrady a háøství
+2025-03-12 17:12:42,872 - synapse-scraper - INFO - Èlánek uloen: Tøináctiletou dívku v Anglii obvinili z vrady a háøství (948 znakù, 139 slov)
+2025-03-12 17:12:42,874 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 31
+2025-03-12 17:12:42,909 - synapse-scraper - INFO - Stahuji èlánek: Kapitán lodi Solong, která narazila do tankeru s leteckım palivem, je Rus
+2025-03-12 17:12:45,581 - synapse-scraper - INFO - Èlánek uloen: Kapitán lodi Solong, která narazila do tankeru s leteckım palivem, je Rus (948 znakù, 139 slov)
+2025-03-12 17:12:45,582 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 32
+2025-03-12 17:12:45,620 - synapse-scraper - INFO - Stahuji èlánek: Zaènou vıkupy pro obchvat Losiné. Obec deptá frekventovanı tah z Plznì na jih
+2025-03-12 17:12:48,142 - synapse-scraper - INFO - Èlánek uloen: Zaènou vıkupy pro obchvat Losiné. Obec deptá frekventovanı tah z Plznì na jih (948 znakù, 139 slov)
+2025-03-12 17:12:48,144 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 33
+2025-03-12 17:12:48,181 - synapse-scraper - INFO - Stahuji èlánek: Z køiovatky v centru Jihlavy zmizel v noci semafor. Jeden z aktérù se policii po mìsíci a pùl pøihlásil
+2025-03-12 17:12:51,445 - synapse-scraper - INFO - Èlánek uloen: Z køiovatky v centru Jihlavy zmizel v noci semafor. Jeden z aktérù se policii po mìsíci a pùl pøihlásil (948 znakù, 139 slov)
+2025-03-12 17:12:51,446 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 34
+2025-03-12 17:12:51,493 - synapse-scraper - INFO - Stahuji èlánek: Pákistánští ozbrojenci, kteøí pøepadli vlak, jsou mrtví, záchranná akce skonèila
+2025-03-12 17:12:53,038 - synapse-scraper - INFO - Èlánek uloen: Pákistánští ozbrojenci, kteøí pøepadli vlak, jsou mrtví, záchranná akce skonèila (948 znakù, 139 slov)
+2025-03-12 17:12:53,040 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 35
+2025-03-12 17:12:53,073 - synapse-scraper - INFO - Stahuji èlánek: V turnovské klenotnici mimoøádnì vystavují repliku koruny uherskıch králù
+2025-03-12 17:12:55,416 - synapse-scraper - INFO - Èlánek uloen: V turnovské klenotnici mimoøádnì vystavují repliku koruny uherskıch králù (948 znakù, 139 slov)
+2025-03-12 17:12:55,420 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 36
+2025-03-12 17:12:55,465 - synapse-scraper - INFO - Stahuji èlánek: Polští policisté hledají tank, kterı záhadnì zmizel ze sbìrnıch surovin
+2025-03-12 17:12:58,517 - synapse-scraper - INFO - Èlánek uloen: Polští policisté hledají tank, kterı záhadnì zmizel ze sbìrnıch surovin (948 znakù, 139 slov)
+2025-03-12 17:12:58,518 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 37
+2025-03-12 17:12:58,559 - synapse-scraper - INFO - Stahuji èlánek: Do pøípadu zmizelého soudce Kafky se vloila NCOZ, øeší se monı trestnı èin
+2025-03-12 17:13:00,933 - synapse-scraper - INFO - Èlánek uloen: Do pøípadu zmizelého soudce Kafky se vloila NCOZ, øeší se monı trestnı èin (948 znakù, 139 slov)
+2025-03-12 17:13:00,934 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 38
+2025-03-12 17:13:00,973 - synapse-scraper - INFO - Stahuji èlánek: Na pøetíené kamiony a emise si došlápne silnièní inspekce
+2025-03-12 17:13:04,186 - synapse-scraper - INFO - Èlánek uloen: Na pøetíené kamiony a emise si došlápne silnièní inspekce (948 znakù, 139 slov)
+2025-03-12 17:13:04,187 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 39
+2025-03-12 17:13:04,220 - synapse-scraper - INFO - Stahuji èlánek: Za usmrcení andulky v savu dostala ostravská prodavaèka zverimexu podmínku
+2025-03-12 17:13:06,411 - synapse-scraper - INFO - Èlánek uloen: Za usmrcení andulky v savu dostala ostravská prodavaèka zverimexu podmínku (948 znakù, 139 slov)
+2025-03-12 17:13:06,413 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 40
+2025-03-12 17:13:06,453 - synapse-scraper - INFO - Stahuji èlánek: Polsko chce zdanit Google i Metu. Pocítíte dùsledky, hrozí USA
+2025-03-12 17:13:09,153 - synapse-scraper - INFO - Èlánek uloen: Polsko chce zdanit Google i Metu. Pocítíte dùsledky, hrozí USA (948 znakù, 139 slov)
+2025-03-12 17:13:09,156 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 41
+2025-03-12 17:13:09,188 - synapse-scraper - INFO - Stahuji èlánek: Vzácná shoda vlády s opozicí: V pøípadì tragédie v rodinì lze pøenést rodièovskou na jinou osobu
+2025-03-12 17:13:11,436 - synapse-scraper - INFO - Èlánek uloen: Vzácná shoda vlády s opozicí: V pøípadì tragédie v rodinì lze pøenést rodièovskou na jinou osobu (948 znakù, 139 slov)
+2025-03-12 17:13:11,438 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 42
+2025-03-12 17:13:11,485 - synapse-scraper - INFO - Stahuji èlánek: Odveta je tu. Kanada zavádí cla na americké zboí
+2025-03-12 17:13:14,078 - synapse-scraper - INFO - Èlánek uloen: Odveta je tu. Kanada zavádí cla na americké zboí (948 znakù, 139 slov)
+2025-03-12 17:13:14,079 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 43
+2025-03-12 17:13:14,112 - synapse-scraper - INFO - Stahuji èlánek: Kvùli ztracené zbrani se rozšíøí kontroly u vstupu do Snìmovny
+2025-03-12 17:13:17,091 - synapse-scraper - INFO - Èlánek uloen: Kvùli ztracené zbrani se rozšíøí kontroly u vstupu do Snìmovny (948 znakù, 139 slov)
+2025-03-12 17:13:17,093 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 44
+2025-03-12 17:13:17,125 - synapse-scraper - INFO - Stahuji èlánek: Ostravská zoo se pustila do vıstavby netradièního pavilonu pro zvíøata
+2025-03-12 17:13:18,561 - synapse-scraper - INFO - Èlánek uloen: Ostravská zoo se pustila do vıstavby netradièního pavilonu pro zvíøata (948 znakù, 139 slov)
+2025-03-12 17:13:18,562 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 45
+2025-03-12 17:13:18,608 - synapse-scraper - INFO - Stahuji èlánek: Zelenskyj: Naše schùzka s USA zhatila Rusùm plány
+2025-03-12 17:13:21,327 - synapse-scraper - INFO - Èlánek uloen: Zelenskyj: Naše schùzka s USA zhatila Rusùm plány (948 znakù, 139 slov)
+2025-03-12 17:13:21,328 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 46
+2025-03-12 17:13:21,361 - synapse-scraper - INFO - Stahuji èlánek: Èesko pošle do Bosny a Hercegoviny 150 vısadkáøù
+2025-03-12 17:13:23,215 - synapse-scraper - INFO - Èlánek uloen: Èesko pošle do Bosny a Hercegoviny 150 vısadkáøù (948 znakù, 139 slov)
+2025-03-12 17:13:23,217 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 47
+2025-03-12 17:13:23,259 - synapse-scraper - INFO - Stahuji èlánek: Pobodal syna ètyøzubımi vidlemi. Policie u konfliktní dvojice na Vsetínsku zasahovala 52krát
+2025-03-12 17:13:26,558 - synapse-scraper - INFO - Èlánek uloen: Pobodal syna ètyøzubımi vidlemi. Policie u konfliktní dvojice na Vsetínsku zasahovala 52krát (948 znakù, 139 slov)
+2025-03-12 17:13:26,560 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 48
+2025-03-12 17:13:26,645 - synapse-scraper - INFO - Stahuji èlánek: Smeèka toulavıch psù zaútoèila na ulici na indickou studentku
+2025-03-12 17:13:29,585 - synapse-scraper - INFO - Èlánek uloen: Smeèka toulavıch psù zaútoèila na ulici na indickou studentku (948 znakù, 139 slov)
+2025-03-12 17:13:29,587 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 49
+2025-03-12 17:13:29,621 - synapse-scraper - INFO - Stahuji èlánek: RECENZE: Oscarem ocenìné drama Navdy s vámi ukazuje sílu rodinnıch vazeb bìhem brazilské vojenské diktatury
+2025-03-12 17:13:31,438 - synapse-scraper - INFO - Èlánek uloen: RECENZE: Oscarem ocenìné drama Navdy s vámi ukazuje sílu rodinnıch vazeb bìhem brazilské vojenské diktatury (948 znakù, 139 slov)
+2025-03-12 17:13:31,438 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 50
+2025-03-12 17:13:31,468 - synapse-scraper - INFO - Stahuji èlánek: Vyvraïování alávitù odhaluje novı syrskı reim v celé jeho brutalitì
+2025-03-12 17:13:33,183 - synapse-scraper - INFO - Èlánek uloen: Vyvraïování alávitù odhaluje novı syrskı reim v celé jeho brutalitì (948 znakù, 139 slov)
+2025-03-12 17:13:33,185 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 51
+2025-03-12 17:13:33,230 - synapse-scraper - INFO - Stahuji èlánek: Fiala k vıroèí vstupu Èeska do NATO: Je úplnì jasné, e budeme èelit øadì hrozeb
+2025-03-12 17:13:35,385 - synapse-scraper - INFO - Èlánek uloen: Fiala k vıroèí vstupu Èeska do NATO: Je úplnì jasné, e budeme èelit øadì hrozeb (948 znakù, 139 slov)
+2025-03-12 17:13:35,387 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 52
+2025-03-12 17:13:35,438 - synapse-scraper - INFO - Stahuji èlánek: Toyota pøedstavila koncept mikroauta pro Evropu, nabíjí se i solární støechou
+2025-03-12 17:13:37,410 - synapse-scraper - INFO - Èlánek uloen: Toyota pøedstavila koncept mikroauta pro Evropu, nabíjí se i solární støechou (948 znakù, 139 slov)
+2025-03-12 17:13:37,412 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 53
+2025-03-12 17:13:37,450 - synapse-scraper - INFO - Stahuji èlánek: Kandidovat na rumunského prezidenta zkusí bıvalı premiér Ponta. Mùe sebrat hlasy krajní pravici
+2025-03-12 17:13:39,954 - synapse-scraper - INFO - Èlánek uloen: Kandidovat na rumunského prezidenta zkusí bıvalı premiér Ponta. Mùe sebrat hlasy krajní pravici (948 znakù, 139 slov)
+2025-03-12 17:13:39,955 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 54
+2025-03-12 17:13:39,986 - synapse-scraper - INFO - Stahuji èlánek: Celní válka eskaluje. V Evropì zdraí Jack Daniel’s, Harley Davidson i levisky
+2025-03-12 17:13:42,324 - synapse-scraper - INFO - Èlánek uloen: Celní válka eskaluje. V Evropì zdraí Jack Daniel’s, Harley Davidson i levisky (948 znakù, 139 slov)
+2025-03-12 17:13:42,327 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 55
+2025-03-12 17:13:42,362 - synapse-scraper - INFO - Stahuji èlánek: Vùdce sekty z Plas míøí k soudu. Na ulici zbil mue klackem a vyhrooval šéfce pøestupkové komise
+2025-03-12 17:13:45,556 - synapse-scraper - INFO - Èlánek uloen: Vùdce sekty z Plas míøí k soudu. Na ulici zbil mue klackem a vyhrooval šéfce pøestupkové komise (948 znakù, 139 slov)
+2025-03-12 17:13:45,557 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 56
+2025-03-12 17:13:45,601 - synapse-scraper - INFO - Stahuji èlánek: Prùmysl padal ètvrtı mìsíc v øadì
+2025-03-12 17:13:47,855 - synapse-scraper - INFO - Èlánek uloen: Prùmysl padal ètvrtı mìsíc v øadì (948 znakù, 139 slov)
+2025-03-12 17:13:47,857 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 57
+2025-03-12 17:13:47,925 - synapse-scraper - INFO - Stahuji èlánek: Vızkum kláštera Rosa coeli pomáhá odhalovat dávná tajemství tajuplné stavby
+2025-03-12 17:13:49,783 - synapse-scraper - INFO - Èlánek uloen: Vızkum kláštera Rosa coeli pomáhá odhalovat dávná tajemství tajuplné stavby (948 znakù, 139 slov)
+2025-03-12 17:13:49,784 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 58
+2025-03-12 17:13:49,818 - synapse-scraper - INFO - Stahuji èlánek: Pìt evakuovanıch a škoda za 10 milionù. Noèní poár haly v Ostravì vyšetøuje policie
+2025-03-12 17:13:51,883 - synapse-scraper - INFO - Èlánek uloen: Pìt evakuovanıch a škoda za 10 milionù. Noèní poár haly v Ostravì vyšetøuje policie (948 znakù, 139 slov)
+2025-03-12 17:13:51,884 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 59
+2025-03-12 17:13:51,921 - synapse-scraper - INFO - Stahuji èlánek: Ke sbírkám na pomoc Ukrajinì se pøistupuje dvojím metrem. Nevadí tanky, ale vadí drony
+2025-03-12 17:13:53,339 - synapse-scraper - INFO - Èlánek uloen: Ke sbírkám na pomoc Ukrajinì se pøistupuje dvojím metrem. Nevadí tanky, ale vadí drony (948 znakù, 139 slov)
+2025-03-12 17:13:53,340 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 60
+2025-03-12 17:13:53,343 - synapse-scraper - INFO - Zpracovávám RSS feed: seznamzpravy
+2025-03-12 17:13:53,683 - synapse-scraper - INFO - Stahuji èlánek: Nabídka pøímìøí vypadá pro Zelenského slibnì. Pro Putina nepøijatelnì
+2025-03-12 17:13:56,269 - synapse-scraper - INFO - Èlánek uloen: Nabídka pøímìøí vypadá pro Zelenského slibnì. Pro Putina nepøijatelnì (948 znakù, 139 slov)
+2025-03-12 17:13:56,271 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 61
+2025-03-12 17:13:56,300 - synapse-scraper - INFO - Stahuji èlánek: Rusko chce k pøímìøí víc informací, Rubio plánuje telefonát
+2025-03-12 17:13:58,851 - synapse-scraper - INFO - Èlánek uloen: Rusko chce k pøímìøí víc informací, Rubio plánuje telefonát (948 znakù, 139 slov)
+2025-03-12 17:13:58,852 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 62
+2025-03-12 17:13:58,884 - synapse-scraper - INFO - Stahuji èlánek: Bude o léèbì rozhodovat úøedník místo lékaøe?
+2025-03-12 17:14:01,863 - synapse-scraper - INFO - Èlánek uloen: Bude o léèbì rozhodovat úøedník místo lékaøe? (948 znakù, 139 slov)
+2025-03-12 17:14:01,864 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 63
+2025-03-12 17:14:01,904 - synapse-scraper - INFO - Stahuji èlánek: Kanada zavede odvetná cla na zboí z USA
+2025-03-12 17:14:03,516 - synapse-scraper - INFO - Èlánek uloen: Kanada zavede odvetná cla na zboí z USA (948 znakù, 139 slov)
+2025-03-12 17:14:03,517 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 64
+2025-03-12 17:14:03,545 - synapse-scraper - INFO - Stahuji èlánek: Deštnı prales se kácí kvùli klimatickému summitu. Lidé se bojí o obivu
+2025-03-12 17:14:05,714 - synapse-scraper - INFO - Èlánek uloen: Deštnı prales se kácí kvùli klimatickému summitu. Lidé se bojí o obivu (948 znakù, 139 slov)
+2025-03-12 17:14:05,716 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 65
+2025-03-12 17:14:05,751 - synapse-scraper - INFO - Stahuji èlánek: Kam o víkendu? Tipy na kulturní akce napøíè republikou
+2025-03-12 17:14:09,035 - synapse-scraper - INFO - Èlánek uloen: Kam o víkendu? Tipy na kulturní akce napøíè republikou (948 znakù, 139 slov)
+2025-03-12 17:14:09,036 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 66
+2025-03-12 17:14:09,070 - synapse-scraper - INFO - Stahuji èlánek: Všichni ozbrojenci, kteøí pøepadli vlak v Pákistánu, jsou po smrti
+2025-03-12 17:14:11,115 - synapse-scraper - INFO - Èlánek uloen: Všichni ozbrojenci, kteøí pøepadli vlak v Pákistánu, jsou po smrti (948 znakù, 139 slov)
+2025-03-12 17:14:11,117 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 67
+2025-03-12 17:14:11,145 - synapse-scraper - INFO - Stahuji èlánek: Èesko vyslalo do Bosny 150 vojákù, pomohou posílit bezpeènost zemì
+2025-03-12 17:14:14,137 - synapse-scraper - INFO - Èlánek uloen: Èesko vyslalo do Bosny 150 vojákù, pomohou posílit bezpeènost zemì (948 znakù, 139 slov)
+2025-03-12 17:14:14,139 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 68
+2025-03-12 17:14:14,179 - synapse-scraper - INFO - Stahuji èlánek: Lapèíkova Trinity Bank koupila od miliardáøe Vítka Pankrác House
+2025-03-12 17:14:16,327 - synapse-scraper - INFO - Èlánek uloen: Lapèíkova Trinity Bank koupila od miliardáøe Vítka Pankrác House (948 znakù, 139 slov)
+2025-03-12 17:14:16,328 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 69
+2025-03-12 17:14:16,362 - synapse-scraper - INFO - Stahuji èlánek: Staèilo! buší na dveøe parlamentu, ale svımi politiky se nechlubí
+2025-03-12 17:14:19,479 - synapse-scraper - INFO - Èlánek uloen: Staèilo! buší na dveøe parlamentu, ale svımi politiky se nechlubí (948 znakù, 139 slov)
+2025-03-12 17:14:19,479 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 70
+2025-03-12 17:14:19,513 - synapse-scraper - INFO - Stahuji èlánek: SÚKL pozastavil oèkování šarí vakcíny Prevenar 20, provìøuje úmrtí dítìte
+2025-03-12 17:14:21,896 - synapse-scraper - INFO - Èlánek uloen: SÚKL pozastavil oèkování šarí vakcíny Prevenar 20, provìøuje úmrtí dítìte (948 znakù, 139 slov)
+2025-03-12 17:14:21,898 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 71
+2025-03-12 17:14:21,932 - synapse-scraper - INFO - Stahuji èlánek: Video: Ze Sudi pøicházejí zprávy, e do mìsta vstoupily ruské jednotky
+2025-03-12 17:14:24,174 - synapse-scraper - INFO - Èlánek uloen: Video: Ze Sudi pøicházejí zprávy, e do mìsta vstoupily ruské jednotky (948 znakù, 139 slov)
+2025-03-12 17:14:24,174 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 72
+2025-03-12 17:14:24,203 - synapse-scraper - INFO - Stahuji èlánek: Hrál si na disidenta, ale pracoval pro Rusy. Poláci zadreli sabotéra
+2025-03-12 17:14:26,346 - synapse-scraper - INFO - Èlánek uloen: Hrál si na disidenta, ale pracoval pro Rusy. Poláci zadreli sabotéra (948 znakù, 139 slov)
+2025-03-12 17:14:26,348 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 73
+2025-03-12 17:14:26,386 - synapse-scraper - INFO - Stahuji èlánek: Má radost z holek s kytarou. St. Vincent poprvé zahraje v Praze
+2025-03-12 17:14:29,076 - synapse-scraper - INFO - Èlánek uloen: Má radost z holek s kytarou. St. Vincent poprvé zahraje v Praze (948 znakù, 139 slov)
+2025-03-12 17:14:29,078 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 74
+2025-03-12 17:14:29,109 - synapse-scraper - INFO - Stahuji èlánek: Inflace v USA klesla na 2,8 procenta, zdraily ale energie a potraviny
+2025-03-12 17:14:32,460 - synapse-scraper - INFO - Èlánek uloen: Inflace v USA klesla na 2,8 procenta, zdraily ale energie a potraviny (948 znakù, 139 slov)
+2025-03-12 17:14:32,461 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 75
+2025-03-12 17:14:32,493 - synapse-scraper - INFO - Stahuji èlánek: Jak se zmìní práce. Novela pøináší delší zkušební dobu i kratší vıpovìdní lhùtu
+2025-03-12 17:14:34,570 - synapse-scraper - INFO - Èlánek uloen: Jak se zmìní práce. Novela pøináší delší zkušební dobu i kratší vıpovìdní lhùtu (948 znakù, 139 slov)
+2025-03-12 17:14:34,572 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 76
+2025-03-12 17:14:34,601 - synapse-scraper - INFO - Stahuji èlánek: Na ÈT doèasnì skonèí Moravcùv Fokus, Tıden v politice i další poøady
+2025-03-12 17:14:36,311 - synapse-scraper - INFO - Èlánek uloen: Na ÈT doèasnì skonèí Moravcùv Fokus, Tıden v politice i další poøady (948 znakù, 139 slov)
+2025-03-12 17:14:36,313 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 77
+2025-03-12 17:14:36,353 - synapse-scraper - INFO - Stahuji èlánek: Zbraò nechal ve Snìmovnì politik ANO. Na záchodech je teï ertovné varování
+2025-03-12 17:14:38,145 - synapse-scraper - INFO - Èlánek uloen: Zbraò nechal ve Snìmovnì politik ANO. Na záchodech je teï ertovné varování (948 znakù, 139 slov)
+2025-03-12 17:14:38,147 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 78
+2025-03-12 17:14:38,178 - synapse-scraper - INFO - Stahuji èlánek: Trby odìvní skupiny, do které patøí Zara, loni atakovaly bilion korun
+2025-03-12 17:14:40,418 - synapse-scraper - INFO - Èlánek uloen: Trby odìvní skupiny, do které patøí Zara, loni atakovaly bilion korun (948 znakù, 139 slov)
+2025-03-12 17:14:40,419 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 79
+2025-03-12 17:14:40,449 - synapse-scraper - INFO - Stahuji èlánek: Mám vztek, chci odpovìdi, vzkazuje máma mue, kterı uhoøel v restauraci
+2025-03-12 17:14:42,583 - synapse-scraper - INFO - Èlánek uloen: Mám vztek, chci odpovìdi, vzkazuje máma mue, kterı uhoøel v restauraci (948 znakù, 139 slov)
+2025-03-12 17:14:42,583 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 80
+2025-03-12 17:14:42,623 - synapse-scraper - INFO - Stahuji èlánek: E-shopy pìt let po covidu. Zlaté èasy jsou pryè a i investoøi jsou opatrnìjší
+2025-03-12 17:14:45,275 - synapse-scraper - INFO - Èlánek uloen: E-shopy pìt let po covidu. Zlaté èasy jsou pryè a i investoøi jsou opatrnìjší (948 znakù, 139 slov)
+2025-03-12 17:14:45,276 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 81
+2025-03-12 17:14:45,307 - synapse-scraper - INFO - Stahuji èlánek: Èeská armáda bude potøebovat asi 7500 vojákù navíc, odhaduje Øehka
+2025-03-12 17:14:46,732 - synapse-scraper - INFO - Èlánek uloen: Èeská armáda bude potøebovat asi 7500 vojákù navíc, odhaduje Øehka (948 znakù, 139 slov)
+2025-03-12 17:14:46,734 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 82
+2025-03-12 17:14:46,766 - synapse-scraper - INFO - Stahuji èlánek: Fotky: Konec droek v ulicích. Malaga chce uèinit pøítr turistické atrakci
+2025-03-12 17:14:48,961 - synapse-scraper - INFO - Èlánek uloen: Fotky: Konec droek v ulicích. Malaga chce uèinit pøítr turistické atrakci (948 znakù, 139 slov)
+2025-03-12 17:14:48,962 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 83
+2025-03-12 17:14:48,998 - synapse-scraper - INFO - Stahuji èlánek: Turnaje ve stolním tenise jako sázková montání linka. Spustil ji covid
+2025-03-12 17:14:51,421 - synapse-scraper - INFO - Èlánek uloen: Turnaje ve stolním tenise jako sázková montání linka. Spustil ji covid (948 znakù, 139 slov)
+2025-03-12 17:14:51,423 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 84
+2025-03-12 17:14:51,452 - synapse-scraper - INFO - Stahuji èlánek: Pøes 30 000 klientù Sberbank CZ si nevyzvedlo vklady za 187 milionù
+2025-03-12 17:14:53,555 - synapse-scraper - INFO - Èlánek uloen: Pøes 30 000 klientù Sberbank CZ si nevyzvedlo vklady za 187 milionù (948 znakù, 139 slov)
+2025-03-12 17:14:53,557 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 85
+2025-03-12 17:14:53,589 - synapse-scraper - INFO - Stahuji èlánek: Novı syrskı vùdce Ahmad Šara navštíví pøíští tıden Evropu, píše Reuters
+2025-03-12 17:14:56,722 - synapse-scraper - INFO - Èlánek uloen: Novı syrskı vùdce Ahmad Šara navštíví pøíští tıden Evropu, píše Reuters (948 znakù, 139 slov)
+2025-03-12 17:14:56,724 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 86
+2025-03-12 17:14:56,760 - synapse-scraper - INFO - Stahuji èlánek: Vlevo dole: Prezident se probudil. A zaèal naznaèovat, co udìlá po volbách
+2025-03-12 17:14:59,270 - synapse-scraper - INFO - Èlánek uloen: Vlevo dole: Prezident se probudil. A zaèal naznaèovat, co udìlá po volbách (948 znakù, 139 slov)
+2025-03-12 17:14:59,272 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 87
+2025-03-12 17:14:59,301 - synapse-scraper - INFO - Stahuji èlánek: Zastoupit úøad práce i pojišovnu, pøivézt nákup. Pošta hledá, jak vydìlat
+2025-03-12 17:15:01,818 - synapse-scraper - INFO - Èlánek uloen: Zastoupit úøad práce i pojišovnu, pøivézt nákup. Pošta hledá, jak vydìlat (948 znakù, 139 slov)
+2025-03-12 17:15:01,819 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 88
+2025-03-12 17:15:01,847 - synapse-scraper - INFO - Stahuji èlánek: Putin je Trumpùv pøítel. Spekuluje se, zda není i jeho šéf
+2025-03-12 17:15:04,350 - synapse-scraper - INFO - Èlánek uloen: Putin je Trumpùv pøítel. Spekuluje se, zda není i jeho šéf (948 znakù, 139 slov)
+2025-03-12 17:15:04,352 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 89
+2025-03-12 17:15:04,383 - synapse-scraper - INFO - Stahuji èlánek: Snìmovní kancléø oèekává po incidentu se zbraní èastìjší kontroly
+2025-03-12 17:15:06,283 - synapse-scraper - INFO - Èlánek uloen: Snìmovní kancléø oèekává po incidentu se zbraní èastìjší kontroly (948 znakù, 139 slov)
+2025-03-12 17:15:06,285 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 90
+2025-03-12 17:15:06,289 - synapse-scraper - INFO - Zpracovávám RSS feed: aktualne
+2025-03-12 17:15:06,697 - synapse-scraper - INFO - Stahuji èlánek: Koronavirus unikl z èínské laboratoøe pøi experimentech, míní nìmecká tajná sluba
+2025-03-12 17:15:09,034 - synapse-scraper - INFO - Èlánek uloen: Koronavirus unikl z èínské laboratoøe pøi experimentech, míní nìmecká tajná sluba (2948 znakù, 438 slov)
+2025-03-12 17:15:09,034 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 91
+2025-03-12 17:15:09,061 - synapse-scraper - INFO - Stahuji èlánek: Co se to dìje na Ukrajinì? Akce Kursk se hroutí, problém mají i Rusové, øíká Kofroò
+2025-03-12 17:15:10,722 - synapse-scraper - INFO - Èlánek uloen: Co se to dìje na Ukrajinì? Akce Kursk se hroutí, problém mají i Rusové, øíká Kofroò (1452 znakù, 234 slov)
+2025-03-12 17:15:10,723 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 92
+2025-03-12 17:15:10,783 - synapse-scraper - INFO - Stahuji èlánek: A ohoøelı Cybertruck nechcete? V aukci se objevil vrak z vıbuchu v Las Vegas
+2025-03-12 17:15:13,038 - synapse-scraper - INFO - Èlánek uloen: A ohoøelı Cybertruck nechcete? V aukci se objevil vrak z vıbuchu v Las Vegas (1566 znakù, 241 slov)
+2025-03-12 17:15:13,038 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 93
+2025-03-12 17:15:13,093 - synapse-scraper - INFO - Stahuji èlánek: Drsné zprávy z Kurské oblasti. Rusové "sypou všechno, co mùou", Ukrajinci se stahují
+2025-03-12 17:15:16,085 - synapse-scraper - INFO - Èlánek uloen: Drsné zprávy z Kurské oblasti. Rusové "sypou všechno, co mùou", Ukrajinci se stahují (2062 znakù, 299 slov)
+2025-03-12 17:15:16,086 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 94
+2025-03-12 17:15:16,123 - synapse-scraper - INFO - Stahuji èlánek: Co udìlají Rusové teï? Jestli Putin odmítne návrh na pøímìøí, poníí Trumpa
+2025-03-12 17:15:18,282 - synapse-scraper - INFO - Èlánek uloen: Co udìlají Rusové teï? Jestli Putin odmítne návrh na pøímìøí, poníí Trumpa (3027 znakù, 459 slov)
+2025-03-12 17:15:18,284 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 95
+2025-03-12 17:15:18,318 - synapse-scraper - INFO - Stahuji èlánek: Koneènì! Teï uvidíme, jak tvrdı bude Trump k Rusku, øíká o dohodì k Ukrajinì Kopeènı
+2025-03-12 17:15:20,373 - synapse-scraper - INFO - Èlánek uloen: Koneènì! Teï uvidíme, jak tvrdı bude Trump k Rusku, øíká o dohodì k Ukrajinì Kopeènı (697 znakù, 117 slov)
+2025-03-12 17:15:20,374 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 96
+2025-03-12 17:15:20,403 - synapse-scraper - INFO - Stahuji èlánek: Èekanı masakr alavitù. Vládce Sırie je pro nìkteré pøevleèenı dihádista, øíká expert
+2025-03-12 17:15:23,411 - synapse-scraper - INFO - Èlánek uloen: Èekanı masakr alavitù. Vládce Sırie je pro nìkteré pøevleèenı dihádista, øíká expert (3556 znakù, 561 slov)
+2025-03-12 17:15:23,412 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 97
+2025-03-12 17:15:23,438 - synapse-scraper - INFO - Stahuji èlánek: Šestadvacet let v NATO. Jak se èeská armáda promìnila v moderní alianèní vojsko
+2025-03-12 17:15:25,995 - synapse-scraper - WARNING - Málo textu extrahováno z https://zpravy.aktualne.cz/domaci/obrazem-ceska-armada-nato/r~244718983f5f11e9b2a00cc47ab5f122/?utm_source=mediafed&utm_medium=rss&utm_campaign=mediafed: pouze 0 znakù
+2025-03-12 17:15:25,997 - synapse-scraper - WARNING - Pøíliš málo textu ze èlánku: Šestadvacet let v NATO. Jak se èeská armáda promìnila v moderní alianèní vojsko, pøeskakuji
+2025-03-12 17:15:26,034 - synapse-scraper - INFO - Stahuji èlánek: "Podpoøím Elona, koupím si Teslu." Trump chce útoky na auta trestat jako terorismus
+2025-03-12 17:15:27,998 - synapse-scraper - INFO - Èlánek uloen: "Podpoøím Elona, koupím si Teslu." Trump chce útoky na auta trestat jako terorismus (2563 znakù, 399 slov)
+2025-03-12 17:15:27,999 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 98
+2025-03-12 17:15:28,027 - synapse-scraper - INFO - Stahuji èlánek: V USA zaèala platit Trumpova cla na dovoz oceli a hliníku. EU reaguje odvetou
+2025-03-12 17:15:30,120 - synapse-scraper - INFO - Èlánek uloen: V USA zaèala platit Trumpova cla na dovoz oceli a hliníku. EU reaguje odvetou (3650 znakù, 534 slov)
+2025-03-12 17:15:30,120 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 99
+2025-03-12 17:15:30,149 - synapse-scraper - INFO - Stahuji èlánek: Ostøe sledované volby. V Grónsku vyhrála opozice, chce pomalejší cestu k nezávislosti
+2025-03-12 17:15:33,019 - synapse-scraper - INFO - Èlánek uloen: Ostøe sledované volby. V Grónsku vyhrála opozice, chce pomalejší cestu k nezávislosti (2424 znakù, 351 slov)
+2025-03-12 17:15:33,020 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 100
+2025-03-12 17:15:33,050 - synapse-scraper - INFO - Stahuji èlánek: "Ne, hoši, ádné pøímìøí." Jednoduché to s Ruskem nebude, naznaèují vıroky z Moskvy
+2025-03-12 17:15:36,332 - synapse-scraper - INFO - Èlánek uloen: "Ne, hoši, ádné pøímìøí." Jednoduché to s Ruskem nebude, naznaèují vıroky z Moskvy (1963 znakù, 286 slov)
+2025-03-12 17:15:36,332 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 101
+2025-03-12 17:15:36,360 - synapse-scraper - INFO - Stahuji èlánek: Zimní válka, Stalinova noèní mùra. Rudou armádu nièili finští støelci na lyích
+2025-03-12 17:15:38,053 - synapse-scraper - INFO - Èlánek uloen: Zimní válka, Stalinova noèní mùra. Rudou armádu nièili finští støelci na lyích (2408 znakù, 352 slov)
+2025-03-12 17:15:38,054 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 102
+2025-03-12 17:15:38,095 - synapse-scraper - INFO - Stahuji èlánek: S elroqem k moøi do Chorvatska, pøes zimní Alpy. Jedeme, nebo spíš poøád nabíjíme?
+2025-03-12 17:15:39,336 - synapse-scraper - INFO - Èlánek uloen: S elroqem k moøi do Chorvatska, pøes zimní Alpy. Jedeme, nebo spíš poøád nabíjíme? (6182 znakù, 975 slov)
+2025-03-12 17:15:39,337 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 103
+2025-03-12 17:15:39,365 - synapse-scraper - INFO - Stahuji èlánek: Vika váila 30 kilogramù, v ruské muèírnì ji øezali noem. Vımìny zajatcù se nedoila
+2025-03-12 17:15:42,121 - synapse-scraper - INFO - Èlánek uloen: Vika váila 30 kilogramù, v ruské muèírnì ji øezali noem. Vımìny zajatcù se nedoila (3497 znakù, 548 slov)
+2025-03-12 17:15:42,122 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 104
+2025-03-12 17:15:42,153 - synapse-scraper - INFO - Stahuji èlánek: Ekonom Hampl o tìké zkoušce Evropy: Slyším jen vıkøiky, ale je tøeba radikální obrat
+2025-03-12 17:15:44,922 - synapse-scraper - INFO - Èlánek uloen: Ekonom Hampl o tìké zkoušce Evropy: Slyším jen vıkøiky, ale je tøeba radikální obrat (1867 znakù, 282 slov)
+2025-03-12 17:15:44,923 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 105
+2025-03-12 17:15:44,951 - synapse-scraper - INFO - Stahuji èlánek: Trump rychle otoèil. Zrušil dvojnásobná cla na ocel a hliník z Kanady, uvedl poradce
+2025-03-12 17:15:46,827 - synapse-scraper - INFO - Èlánek uloen: Trump rychle otoèil. Zrušil dvojnásobná cla na ocel a hliník z Kanady, uvedl poradce (979 znakù, 150 slov)
+2025-03-12 17:15:46,828 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 106
+2025-03-12 17:15:46,859 - synapse-scraper - INFO - Stahuji èlánek: Nejdrá vyšel USA nákup Panenskıch ostrovù. Strategickı obchod se chystal pùl století
+2025-03-12 17:15:48,952 - synapse-scraper - INFO - Èlánek uloen: Nejdrá vyšel USA nákup Panenskıch ostrovù. Strategickı obchod se chystal pùl století (2068 znakù, 302 slov)
+2025-03-12 17:15:48,953 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 107
+2025-03-12 17:15:49,011 - synapse-scraper - INFO - Stahuji èlánek: Nejvìtší hrozbou NATO zùstává Kreml. Ruskı úder èekají v osmi zemích vèetnì Slovenska
+2025-03-12 17:15:50,450 - synapse-scraper - INFO - Èlánek uloen: Nejvìtší hrozbou NATO zùstává Kreml. Ruskı úder èekají v osmi zemích vèetnì Slovenska (6548 znakù, 1010 slov)
+2025-03-12 17:15:50,451 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 108
+2025-03-12 17:15:50,485 - synapse-scraper - INFO - Stahuji èlánek: Nejvìtší den, radoval se krojovanı Vondráèek. Kroj by si moná dal i jako ministr
+2025-03-12 17:15:52,743 - synapse-scraper - INFO - Èlánek uloen: Nejvìtší den, radoval se krojovanı Vondráèek. Kroj by si moná dal i jako ministr (4647 znakù, 738 slov)
+2025-03-12 17:15:52,743 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 109
+2025-03-12 17:15:52,772 - synapse-scraper - INFO - Stahuji èlánek: Komplikace pro sto tisíc lidí. Vytopená stanice metra Florenc byla dva dny uzavøená
+2025-03-12 17:15:55,574 - synapse-scraper - INFO - Èlánek uloen: Komplikace pro sto tisíc lidí. Vytopená stanice metra Florenc byla dva dny uzavøená (1446 znakù, 220 slov)
+2025-03-12 17:15:55,574 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 110
+2025-03-12 17:15:55,619 - synapse-scraper - INFO - Stahuji èlánek: Ukrajinu a USA èekají "brutální rozhovory". Jednání v Diddì oèima svìtového tisku
+2025-03-12 17:15:58,345 - synapse-scraper - INFO - Èlánek uloen: Ukrajinu a USA èekají "brutální rozhovory". Jednání v Diddì oèima svìtového tisku (4350 znakù, 664 slov)
+2025-03-12 17:15:58,346 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 111
+2025-03-12 17:15:58,376 - synapse-scraper - INFO - Stahuji èlánek: Souboj v oválné pracovnì. Zelenskyj zbyteènì "odpálil bombu"
+2025-03-12 17:15:59,919 - synapse-scraper - INFO - Èlánek uloen: Souboj v oválné pracovnì. Zelenskyj zbyteènì "odpálil bombu" (944 znakù, 152 slov)
+2025-03-12 17:15:59,919 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 112
+2025-03-12 17:15:59,965 - synapse-scraper - INFO - Stahuji èlánek: Kde bude policie mìøit rychlost? Lidé u teï hlásí riziková místa jako o ivot
+2025-03-12 17:16:01,742 - synapse-scraper - INFO - Èlánek uloen: Kde bude policie mìøit rychlost? Lidé u teï hlásí riziková místa jako o ivot (1722 znakù, 271 slov)
+2025-03-12 17:16:01,743 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 113
+2025-03-12 17:16:01,819 - synapse-scraper - INFO - Stahuji èlánek: Otøes na velitelství hasièù. Padl plukovník obalovanı z machinací za desítky milionù
+2025-03-12 17:16:04,396 - synapse-scraper - INFO - Èlánek uloen: Otøes na velitelství hasièù. Padl plukovník obalovanı z machinací za desítky milionù (3178 znakù, 466 slov)
+2025-03-12 17:16:04,397 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 114
+2025-03-12 17:16:04,425 - synapse-scraper - INFO - Stahuji èlánek: Dìje se pøesnı opak. Trump se svou "vizí" u Putina tvrdì narazil, potvrzují èísla
+2025-03-12 17:16:06,235 - synapse-scraper - INFO - Èlánek uloen: Dìje se pøesnı opak. Trump se svou "vizí" u Putina tvrdì narazil, potvrzují èísla (2045 znakù, 320 slov)
+2025-03-12 17:16:06,235 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 115
+2025-03-12 17:16:06,263 - synapse-scraper - INFO - Stahuji èlánek: Kutnohorská sekta: obalovaná líèila vztah se zavradìnım léèitelem, poté zkolabovala
+2025-03-12 17:16:09,576 - synapse-scraper - INFO - Èlánek uloen: Kutnohorská sekta: obalovaná líèila vztah se zavradìnım léèitelem, poté zkolabovala (2374 znakù, 400 slov)
+2025-03-12 17:16:09,577 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 116
+2025-03-12 17:16:09,605 - synapse-scraper - INFO - Stahuji èlánek: Gróòané dnes volí parlament. Více ne Trump je zajímá nezávislost na Dánsku
+2025-03-12 17:16:10,986 - synapse-scraper - INFO - Èlánek uloen: Gróòané dnes volí parlament. Více ne Trump je zajímá nezávislost na Dánsku (2777 znakù, 397 slov)
+2025-03-12 17:16:10,986 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 117
+2025-03-12 17:16:11,014 - synapse-scraper - INFO - Stahuji èlánek: Odchod z práce se urychlí, zkušební doba bude delší. Co nového èeká zamìstnance?
+2025-03-12 17:16:12,573 - synapse-scraper - INFO - Èlánek uloen: Odchod z práce se urychlí, zkušební doba bude delší. Co nového èeká zamìstnance? (530 znakù, 84 slov)
+2025-03-12 17:16:12,574 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 118
+2025-03-12 17:16:12,576 - synapse-scraper - INFO - Zpracovávám RSS feed: ihned
+2025-03-12 17:16:12,831 - synapse-scraper - INFO - Zpracovávám RSS feed: denik-n
+2025-03-12 17:16:12,995 - synapse-scraper - INFO - Stahuji èlánek: Mapa: Stále víc deváákù se hlásí na lycea. Jakı je zájem o to „vaše“?
+2025-03-12 17:16:14,351 - synapse-scraper - INFO - Èlánek uloen: Mapa: Stále víc deváákù se hlásí na lycea. Jakı je zájem o to „vaše“? (982 znakù, 157 slov)
+2025-03-12 17:16:14,352 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 119
+2025-03-12 17:16:14,380 - synapse-scraper - INFO - Stahuji èlánek: Nepøijatelné, øíká Babiš o politikovi ANO, kterı ztratil zbraò ve Snìmovnì. Hnutí ádá jeho rezignaci
+2025-03-12 17:16:17,606 - synapse-scraper - INFO - Èlánek uloen: Nepøijatelné, øíká Babiš o politikovi ANO, kterı ztratil zbraò ve Snìmovnì. Hnutí ádá jeho rezignaci (546 znakù, 80 slov)
+2025-03-12 17:16:17,607 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 120
+2025-03-12 17:16:17,647 - synapse-scraper - INFO - Stahuji èlánek: Lékovı úøad po úmrtí dítìte pozastavuje jednu šari vakcíny Prevenar
+2025-03-12 17:16:20,502 - synapse-scraper - INFO - Èlánek uloen: Lékovı úøad po úmrtí dítìte pozastavuje jednu šari vakcíny Prevenar (374 znakù, 49 slov)
+2025-03-12 17:16:20,503 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 121
+2025-03-12 17:16:20,541 - synapse-scraper - INFO - Stahuji èlánek: Vyplatí se státu podpoøit MotoGP v Brnì? Tento roèník je jedineènou pøíleitostí to ovìøit
+2025-03-12 17:16:22,063 - synapse-scraper - INFO - Èlánek uloen: Vyplatí se státu podpoøit MotoGP v Brnì? Tento roèník je jedineènou pøíleitostí to ovìøit (989 znakù, 145 slov)
+2025-03-12 17:16:22,064 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 122
+2025-03-12 17:16:22,092 - synapse-scraper - INFO - Stahuji èlánek: Øeditel ÈT oznámil škrty, konèí Moravcùv Fokus èi poøady z regionù. „Nestrategické a amatérské,“ kritizuje radní
+2025-03-12 17:16:25,062 - synapse-scraper - INFO - Èlánek uloen: Øeditel ÈT oznámil škrty, konèí Moravcùv Fokus èi poøady z regionù. „Nestrategické a amatérské,“ kritizuje radní (992 znakù, 143 slov)
+2025-03-12 17:16:25,063 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 123
+2025-03-12 17:16:25,093 - synapse-scraper - INFO - Stahuji èlánek: Volby v Grónsku ovládly vlastenectví a strach z Trumpa. Vláda se zmìní od základù
+2025-03-12 17:16:27,948 - synapse-scraper - INFO - Èlánek uloen: Volby v Grónsku ovládly vlastenectví a strach z Trumpa. Vláda se zmìní od základù (1043 znakù, 153 slov)
+2025-03-12 17:16:27,948 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 124
+2025-03-12 17:16:27,982 - synapse-scraper - INFO - Stahuji èlánek: Konèí pøátelství a obchod s USA? Nevíme, ale je potøeba mít i záloní plán
+2025-03-12 17:16:30,143 - synapse-scraper - INFO - Èlánek uloen: Konèí pøátelství a obchod s USA? Nevíme, ale je potøeba mít i záloní plán (1160 znakù, 177 slov)
+2025-03-12 17:16:30,144 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 125
+2025-03-12 17:16:30,175 - synapse-scraper - INFO - Stahuji èlánek: Trumpùv svìt (51. den): Nová dramata kolem cel. Prezident dál sní svùj kanadskı sen a tìší se na show s Putinem
+2025-03-12 17:16:32,094 - synapse-scraper - INFO - Èlánek uloen: Trumpùv svìt (51. den): Nová dramata kolem cel. Prezident dál sní svùj kanadskı sen a tìší se na show s Putinem (1584 znakù, 238 slov)
+2025-03-12 17:16:32,095 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 126
+2025-03-12 17:16:32,125 - synapse-scraper - INFO - Stahuji èlánek: Zbraò do Snìmovny pronesl politik ANO, pak o tom lhal. „Jeèela jsem na nìj,“ øíká Válková
+2025-03-12 17:16:33,818 - synapse-scraper - INFO - Èlánek uloen: Zbraò do Snìmovny pronesl politik ANO, pak o tom lhal. „Jeèela jsem na nìj,“ øíká Válková (622 znakù, 87 slov)
+2025-03-12 17:16:33,819 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 127
+2025-03-12 17:16:33,886 - synapse-scraper - INFO - Stahuji èlánek: Proè by si dìti nemohly ve fantazii zabít, koho chtìjí? My také takto zabíjíme Putina, øíká dìtskı psychiatr
+2025-03-12 17:16:35,237 - synapse-scraper - INFO - Èlánek uloen: Proè by si dìti nemohly ve fantazii zabít, koho chtìjí? My také takto zabíjíme Putina, øíká dìtskı psychiatr (1251 znakù, 212 slov)
+2025-03-12 17:16:35,238 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 128
+2025-03-12 17:16:35,239 - synapse-scraper - INFO - Zpracovávám RSS feed: ct24
+2025-03-12 17:16:35,536 - synapse-scraper - INFO - Stahuji èlánek: Vládní koalice jednala s SPD a Piráty o návrhu zákona o migraci
+2025-03-12 17:16:38,349 - synapse-scraper - INFO - Èlánek uloen: Vládní koalice jednala s SPD a Piráty o návrhu zákona o migraci (1475 znakù, 207 slov)
+2025-03-12 17:16:38,350 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 129
+2025-03-12 17:16:38,378 - synapse-scraper - INFO - Stahuji èlánek: Pøípad pohøešovaného soudce Kafky šetøí i NCOZ
+2025-03-12 17:16:41,477 - synapse-scraper - INFO - Èlánek uloen: Pøípad pohøešovaného soudce Kafky šetøí i NCOZ (1448 znakù, 207 slov)
+2025-03-12 17:16:41,478 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 130
+2025-03-12 17:16:41,527 - synapse-scraper - INFO - Stahuji èlánek: Do Bosny a Hercegoviny se pøesunulo 150 èeskıch vojákù
+2025-03-12 17:16:44,574 - synapse-scraper - INFO - Èlánek uloen: Do Bosny a Hercegoviny se pøesunulo 150 èeskıch vojákù (2173 znakù, 323 slov)
+2025-03-12 17:16:44,574 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 131
+2025-03-12 17:16:44,620 - synapse-scraper - INFO - Stahuji èlánek: Ukrajinci se zøejmì stáhli z ruské Sudi
+2025-03-12 17:16:47,707 - synapse-scraper - INFO - Èlánek uloen: Ukrajinci se zøejmì stáhli z ruské Sudi (1936 znakù, 282 slov)
+2025-03-12 17:16:47,708 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 132
+2025-03-12 17:16:47,745 - synapse-scraper - INFO - Stahuji èlánek: Na Znojemsku konèí provoz cukrovaru, o práci pøijde 150 lidí
+2025-03-12 17:16:49,537 - synapse-scraper - INFO - Èlánek uloen: Na Znojemsku konèí provoz cukrovaru, o práci pøijde 150 lidí (3048 znakù, 466 slov)
+2025-03-12 17:16:49,538 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 133
+2025-03-12 17:16:49,578 - synapse-scraper - INFO - Stahuji èlánek: Resorty práce a zdravotnictví propojily data o léèbì a dávkách
+2025-03-12 17:16:52,431 - synapse-scraper - INFO - Èlánek uloen: Resorty práce a zdravotnictví propojily data o léèbì a dávkách (1717 znakù, 240 slov)
+2025-03-12 17:16:52,432 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 134
+2025-03-12 17:16:52,475 - synapse-scraper - INFO - Stahuji èlánek: Nová silnièní inspekce se zamìøí na auta i pøetíené kamiony
+2025-03-12 17:16:53,921 - synapse-scraper - INFO - Èlánek uloen: Nová silnièní inspekce se zamìøí na auta i pøetíené kamiony (7095 znakù, 1017 slov)
+2025-03-12 17:16:53,922 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 135
+2025-03-12 17:16:53,953 - synapse-scraper - INFO - Stahuji èlánek: NASA vyslala do vesmíru teleskop, kterı má pomoci pochopit velkı tøesk
+2025-03-12 17:16:55,759 - synapse-scraper - INFO - Èlánek uloen: NASA vyslala do vesmíru teleskop, kterı má pomoci pochopit velkı tøesk (1832 znakù, 280 slov)
+2025-03-12 17:16:55,760 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 136
+2025-03-12 17:16:55,797 - synapse-scraper - INFO - Stahuji èlánek: Vláda je schopna efektivnì vyuít vıdaje na obranu ve vıši tøí procent HDP, øekl Fiala
+2025-03-12 17:16:57,349 - synapse-scraper - INFO - Èlánek uloen: Vláda je schopna efektivnì vyuít vıdaje na obranu ve vıši tøí procent HDP, øekl Fiala (5452 znakù, 845 slov)
+2025-03-12 17:16:57,349 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 137
+2025-03-12 17:16:57,378 - synapse-scraper - INFO - Stahuji èlánek: V Odìse Rusové zabíjeli na lodi s obilím, v Kryvém Rihu provedli dvojitı úder
+2025-03-12 17:16:59,097 - synapse-scraper - INFO - Èlánek uloen: V Odìse Rusové zabíjeli na lodi s obilím, v Kryvém Rihu provedli dvojitı úder (2782 znakù, 419 slov)
+2025-03-12 17:16:59,098 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 138
+2025-03-12 17:16:59,128 - synapse-scraper - INFO - Stahuji èlánek: Snìmovna projednává novelu zákona o veøejném zdravotním pojištìní
+2025-03-12 17:17:00,830 - synapse-scraper - INFO - Èlánek uloen: Snìmovna projednává novelu zákona o veøejném zdravotním pojištìní (5411 znakù, 780 slov)
+2025-03-12 17:17:00,831 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 139
+2025-03-12 17:17:00,864 - synapse-scraper - INFO - Stahuji èlánek: V Grónsku zvítìzila strana, která s nezávislostí nespìchá
+2025-03-12 17:17:03,637 - synapse-scraper - INFO - Èlánek uloen: V Grónsku zvítìzila strana, která s nezávislostí nespìchá (4870 znakù, 716 slov)
+2025-03-12 17:17:03,637 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 140
+2025-03-12 17:17:03,666 - synapse-scraper - INFO - Stahuji èlánek: Druhá šance pro laboratorní psy. Útulek na Plzeòsku je nabízí k adopci
+2025-03-12 17:17:05,649 - synapse-scraper - INFO - Èlánek uloen: Druhá šance pro laboratorní psy. Útulek na Plzeòsku je nabízí k adopci (1444 znakù, 236 slov)
+2025-03-12 17:17:05,650 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 141
+2025-03-12 17:17:05,684 - synapse-scraper - INFO - Stahuji èlánek: Pøevedení èásti exekucí pod celníky zpùsobí ztráty, míní komora. Podle resortu to bude levnìjší
+2025-03-12 17:17:07,111 - synapse-scraper - INFO - Èlánek uloen: Pøevedení èásti exekucí pod celníky zpùsobí ztráty, míní komora. Podle resortu to bude levnìjší (2702 znakù, 382 slov)
+2025-03-12 17:17:07,111 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 142
+2025-03-12 17:17:07,162 - synapse-scraper - INFO - Stahuji èlánek: EU a Kanada zavedou odvetná cla na americké zboí
+2025-03-12 17:17:10,324 - synapse-scraper - INFO - Èlánek uloen: EU a Kanada zavedou odvetná cla na americké zboí (5932 znakù, 891 slov)
+2025-03-12 17:17:10,325 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 143
+2025-03-12 17:17:10,371 - synapse-scraper - INFO - Stahuji èlánek: Co je v politice vtipné a kdy pøestává legrace? Odpovìï hledali hosté Fokusu Václava Moravce
+2025-03-12 17:17:13,479 - synapse-scraper - INFO - Èlánek uloen: Co je v politice vtipné a kdy pøestává legrace? Odpovìï hledali hosté Fokusu Václava Moravce (542 znakù, 85 slov)
+2025-03-12 17:17:13,480 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 144
+2025-03-12 17:17:13,527 - synapse-scraper - INFO - Stahuji èlánek: ANO jednat chce, ale ne na „PR akcích“, øekl Metnar ke schùzce o obranì
+2025-03-12 17:17:16,492 - synapse-scraper - INFO - Èlánek uloen: ANO jednat chce, ale ne na „PR akcích“, øekl Metnar ke schùzce o obranì (4369 znakù, 655 slov)
+2025-03-12 17:17:16,492 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 145
+2025-03-12 17:17:16,524 - synapse-scraper - INFO - Stahuji èlánek: Pøed pìti lety nastal první nouzovı stav kvùli covidu-19
+2025-03-12 17:17:18,068 - synapse-scraper - INFO - Èlánek uloen: Pøed pìti lety nastal první nouzovı stav kvùli covidu-19 (5554 znakù, 880 slov)
+2025-03-12 17:17:18,068 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 146
+2025-03-12 17:17:18,102 - synapse-scraper - INFO - Stahuji èlánek: Chceme znát detaily, ne se vyjádøíme, komentuje Kreml návrh na pøímìøí
+2025-03-12 17:17:21,150 - synapse-scraper - INFO - Èlánek uloen: Chceme znát detaily, ne se vyjádøíme, komentuje Kreml návrh na pøímìøí (9780 znakù, 1465 slov)
+2025-03-12 17:17:21,151 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 147
+2025-03-12 17:17:21,187 - synapse-scraper - INFO - Stahuji èlánek: Film Mnichov 1972 nastoluje otázky, jak v pøímém pøenosu informovat o teroru
+2025-03-12 17:17:22,783 - synapse-scraper - INFO - Èlánek uloen: Film Mnichov 1972 nastoluje otázky, jak v pøímém pøenosu informovat o teroru (6069 znakù, 904 slov)
+2025-03-12 17:17:22,783 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 148
+2025-03-12 17:17:22,812 - synapse-scraper - INFO - Stahuji èlánek: USA obnovily vojenskou pomoc Ukrajinì, uvedla kanceláø ukrajinského prezidenta
+2025-03-12 17:17:24,125 - synapse-scraper - INFO - Èlánek uloen: USA obnovily vojenskou pomoc Ukrajinì, uvedla kanceláø ukrajinského prezidenta (1722 znakù, 247 slov)
+2025-03-12 17:17:24,126 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 149
+2025-03-12 17:17:24,161 - synapse-scraper - INFO - Stahuji èlánek: Poslanci vymìnili formální obleèení za lidové
+2025-03-12 17:17:26,063 - synapse-scraper - INFO - Èlánek uloen: Poslanci vymìnili formální obleèení za lidové (383 znakù, 56 slov)
+2025-03-12 17:17:26,064 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 150
+2025-03-12 17:17:26,098 - synapse-scraper - INFO - Stahuji èlánek: Vyšetøení z pohodlí domova. Druhı kraj spustil on-line pohotovost
+2025-03-12 17:17:29,218 - synapse-scraper - INFO - Èlánek uloen: Vyšetøení z pohodlí domova. Druhı kraj spustil on-line pohotovost (682 znakù, 104 slov)
+2025-03-12 17:17:29,219 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 151
+2025-03-12 17:17:29,327 - synapse-scraper - INFO - Stahuji èlánek: Zdraily hotely èi èokoláda, ceny elektøiny nebo obleèení naopak klesly
+2025-03-12 17:17:32,001 - synapse-scraper - INFO - Èlánek uloen: Zdraily hotely èi èokoláda, ceny elektøiny nebo obleèení naopak klesly (436 znakù, 71 slov)
+2025-03-12 17:17:32,001 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 152
+2025-03-12 17:17:32,037 - synapse-scraper - INFO - Stahuji èlánek: Praská zoo by mohla z Mongolska získat ohroené velbloudy divoké
+2025-03-12 17:17:34,902 - synapse-scraper - INFO - Èlánek uloen: Praská zoo by mohla z Mongolska získat ohroené velbloudy divoké (340 znakù, 49 slov)
+2025-03-12 17:17:34,902 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 153
+2025-03-12 17:17:34,957 - synapse-scraper - INFO - Stahuji èlánek: Stanice metra C Florenc je po prùsaku vody opìt v provozu
+2025-03-12 17:17:36,839 - synapse-scraper - INFO - Èlánek uloen: Stanice metra C Florenc je po prùsaku vody opìt v provozu (1081 znakù, 168 slov)
+2025-03-12 17:17:36,840 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 154
+2025-03-12 17:17:36,880 - synapse-scraper - INFO - Stahuji èlánek: Rumunskı ústavní soud potvrdil zákaz kandidatury Georgesca v prezidentskıch volbách
+2025-03-12 17:17:38,938 - synapse-scraper - INFO - Èlánek uloen: Rumunskı ústavní soud potvrdil zákaz kandidatury Georgesca v prezidentskıch volbách (2741 znakù, 384 slov)
+2025-03-12 17:17:38,938 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 155
+2025-03-12 17:17:38,975 - synapse-scraper - INFO - Stahuji èlánek: Filip Topol jel nadoraz ve všem, ukazuje vıbor Zubama po skle
+2025-03-12 17:17:42,137 - synapse-scraper - INFO - Èlánek uloen: Filip Topol jel nadoraz ve všem, ukazuje vıbor Zubama po skle (6063 znakù, 994 slov)
+2025-03-12 17:17:42,137 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 156
+2025-03-12 17:17:42,183 - synapse-scraper - INFO - Stahuji èlánek: Draší mazance i beránci. Za tradièní velikonoèní peèivo letos Èeši utratí víc
+2025-03-12 17:17:43,380 - synapse-scraper - INFO - Èlánek uloen: Draší mazance i beránci. Za tradièní velikonoèní peèivo letos Èeši utratí víc (3985 znakù, 613 slov)
+2025-03-12 17:17:43,380 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 157
+2025-03-12 17:17:43,413 - synapse-scraper - INFO - Stahuji èlánek: Jaro letos zaèíná opìt velmi brzy, vyrašily u habry
+2025-03-12 17:17:46,087 - synapse-scraper - INFO - Èlánek uloen: Jaro letos zaèíná opìt velmi brzy, vyrašily u habry (3383 znakù, 518 slov)
+2025-03-12 17:17:46,087 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 158
+2025-03-12 17:17:46,089 - synapse-scraper - INFO - Zpracovávám RSS feed: irozhlas
+2025-03-12 17:17:46,264 - synapse-scraper - INFO - Stahuji èlánek: Lenny Kravitz vystoupí v Praze. Pøedstaví písnì z posledního alba i své nejznámìjší hity
+2025-03-12 17:17:48,744 - synapse-scraper - INFO - Èlánek uloen: Lenny Kravitz vystoupí v Praze. Pøedstaví písnì z posledního alba i své nejznámìjší hity (1284 znakù, 209 slov)
+2025-03-12 17:17:48,745 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 159
+2025-03-12 17:17:48,777 - synapse-scraper - INFO - Stahuji èlánek: Pavel tam mìl obrovské jméno, vzpomíná Poborskı na Nedvìda. V Laziu si v minulosti zahráli i ètyøi Èeši
+2025-03-12 17:17:50,862 - synapse-scraper - INFO - Èlánek uloen: Pavel tam mìl obrovské jméno, vzpomíná Poborskı na Nedvìda. V Laziu si v minulosti zahráli i ètyøi Èeši (2135 znakù, 354 slov)
+2025-03-12 17:17:50,863 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 160
+2025-03-12 17:17:50,897 - synapse-scraper - INFO - Stahuji èlánek: IVÌ: Fotbalisté Dukly nastoupí v dohrávce proti Karviné, Radiournál Sport odvysílá pøímı pøenos
+2025-03-12 17:17:53,864 - synapse-scraper - INFO - Èlánek uloen: IVÌ: Fotbalisté Dukly nastoupí v dohrávce proti Karviné, Radiournál Sport odvysílá pøímı pøenos (522 znakù, 82 slov)
+2025-03-12 17:17:53,864 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 161
+2025-03-12 17:17:53,897 - synapse-scraper - INFO - Stahuji èlánek: Rukavièky dolù, flákat se v práci nebudete
+2025-03-12 17:17:55,262 - synapse-scraper - INFO - Èlánek uloen: Rukavièky dolù, flákat se v práci nebudete (3552 znakù, 548 slov)
+2025-03-12 17:17:55,263 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 162
+2025-03-12 17:17:55,297 - synapse-scraper - INFO - Stahuji èlánek: ‚Farmaceuti dokáou víc, ne jim systém dovolí.‘ Šéf lékárníkù vidí sílu malıch lékáren
+2025-03-12 17:17:58,335 - synapse-scraper - INFO - Èlánek uloen: ‚Farmaceuti dokáou víc, ne jim systém dovolí.‘ Šéf lékárníkù vidí sílu malıch lékáren (12300 znakù, 1871 slov)
+2025-03-12 17:17:58,335 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 163
+2025-03-12 17:17:58,381 - synapse-scraper - INFO - Stahuji èlánek: ONLINE: Ukrajinci se stáhli ze Sudi, ukazují mapy. ‚Kyjev se snaí šetøit ivoty vojákù,‘ øekl Zelenskyj
+2025-03-12 17:18:01,422 - synapse-scraper - INFO - Èlánek uloen: ONLINE: Ukrajinci se stáhli ze Sudi, ukazují mapy. ‚Kyjev se snaí šetøit ivoty vojákù,‘ øekl Zelenskyj (2175 znakù, 317 slov)
+2025-03-12 17:18:01,423 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 164
+2025-03-12 17:18:01,462 - synapse-scraper - INFO - Stahuji èlánek: VIDEO: Udeøila soupeøku štafetovım kolíkem, ta má otøes mozku. Atletka tvrdí, e šlo o nehodu
+2025-03-12 17:18:04,045 - synapse-scraper - INFO - Èlánek uloen: VIDEO: Udeøila soupeøku štafetovım kolíkem, ta má otøes mozku. Atletka tvrdí, e šlo o nehodu (1386 znakù, 215 slov)
+2025-03-12 17:18:04,046 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 165
+2025-03-12 17:18:04,073 - synapse-scraper - INFO - Stahuji èlánek: Pøípad pohøešovaného soudce Kafky øeší detektivové. Policie ho hledá od soboty
+2025-03-12 17:18:06,060 - synapse-scraper - INFO - Èlánek uloen: Pøípad pohøešovaného soudce Kafky øeší detektivové. Policie ho hledá od soboty (2414 znakù, 339 slov)
+2025-03-12 17:18:06,060 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 166
+2025-03-12 17:18:06,098 - synapse-scraper - INFO - Stahuji èlánek: Èesko posílá 150 vojákù do Bosny a Hercegoviny kvùli zhoršené bezpeènostní situaci. Zùstanou tam mìsíc
+2025-03-12 17:18:08,216 - synapse-scraper - INFO - Èlánek uloen: Èesko posílá 150 vojákù do Bosny a Hercegoviny kvùli zhoršené bezpeènostní situaci. Zùstanou tam mìsíc (2862 znakù, 434 slov)
+2025-03-12 17:18:08,216 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 167
+2025-03-12 17:18:08,250 - synapse-scraper - INFO - Stahuji èlánek: ‚Odvolání z vysílací rady musíte øádnì zdùvodnit.‘ Soud zamítl stínost Snìmovny ve sporu s Köpplem
+2025-03-12 17:18:11,327 - synapse-scraper - INFO - Èlánek uloen: ‚Odvolání z vysílací rady musíte øádnì zdùvodnit.‘ Soud zamítl stínost Snìmovny ve sporu s Köpplem (2161 znakù, 319 slov)
+2025-03-12 17:18:11,328 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 168
+2025-03-12 17:18:11,365 - synapse-scraper - INFO - Stahuji èlánek: USA obnovily dodávky zbraní pro Ukrajinu, uvedl ministr Sikorski. Vızbroj putuje pøes Polsko
+2025-03-12 17:18:13,681 - synapse-scraper - INFO - Èlánek uloen: USA obnovily dodávky zbraní pro Ukrajinu, uvedl ministr Sikorski. Vızbroj putuje pøes Polsko (1058 znakù, 160 slov)
+2025-03-12 17:18:13,682 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 169
+2025-03-12 17:18:13,715 - synapse-scraper - INFO - Stahuji èlánek: Èesko èeká ochlazení. Na horách zaène snìit, v Krkonoších mùe napadnout a 15 centimetrù
+2025-03-12 17:18:15,572 - synapse-scraper - INFO - Èlánek uloen: Èesko èeká ochlazení. Na horách zaène snìit, v Krkonoších mùe napadnout a 15 centimetrù (1765 znakù, 286 slov)
+2025-03-12 17:18:15,573 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 170
+2025-03-12 17:18:15,637 - synapse-scraper - INFO - Stahuji èlánek: Ve zkrachovalé Sberbank zùstaly pojištìné vklady za 187 milionù. Peníze si nevyzvedlo na 30 tisíc klientù
+2025-03-12 17:18:17,824 - synapse-scraper - INFO - Èlánek uloen: Ve zkrachovalé Sberbank zùstaly pojištìné vklady za 187 milionù. Peníze si nevyzvedlo na 30 tisíc klientù (1330 znakù, 205 slov)
+2025-03-12 17:18:17,825 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 171
+2025-03-12 17:18:17,864 - synapse-scraper - INFO - Stahuji èlánek: Loï, která narazila u Británie do tankeru, neprošla zkouškami spolehlivosti ovládání. Kapitán je ve vazbì
+2025-03-12 17:18:19,792 - synapse-scraper - INFO - Èlánek uloen: Loï, která narazila u Británie do tankeru, neprošla zkouškami spolehlivosti ovládání. Kapitán je ve vazbì (1503 znakù, 215 slov)
+2025-03-12 17:18:19,793 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 172
+2025-03-12 17:18:19,824 - synapse-scraper - INFO - Stahuji èlánek: Politolog o zmìnì u Staèilo!: Pøedseda ‚Vidlák‘ je sázkou na odpor. Mùe to bıt sòatek z rozumu
+2025-03-12 17:18:21,172 - synapse-scraper - INFO - Èlánek uloen: Politolog o zmìnì u Staèilo!: Pøedseda ‚Vidlák‘ je sázkou na odpor. Mùe to bıt sòatek z rozumu (7295 znakù, 1139 slov)
+2025-03-12 17:18:21,173 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 173
+2025-03-12 17:18:21,206 - synapse-scraper - INFO - Stahuji èlánek: Zbraò do Snìmovny pøinesl podle Válkové komunální politik ANO. Praskı šéf hnutí chce jeho rezignaci
+2025-03-12 17:18:22,851 - synapse-scraper - INFO - Èlánek uloen: Zbraò do Snìmovny pøinesl podle Válkové komunální politik ANO. Praskı šéf hnutí chce jeho rezignaci (2335 znakù, 350 slov)
+2025-03-12 17:18:22,852 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 174
+2025-03-12 17:18:22,890 - synapse-scraper - INFO - Stahuji èlánek: Silnice v Èesku má hlídat dopravní inspekce. ‚Budeme mít podobné pravomoci jako policie,‘ øíká námìstek
+2025-03-12 17:18:24,783 - synapse-scraper - INFO - Èlánek uloen: Silnice v Èesku má hlídat dopravní inspekce. ‚Budeme mít podobné pravomoci jako policie,‘ øíká námìstek (3317 znakù, 477 slov)
+2025-03-12 17:18:24,784 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 175
+2025-03-12 17:18:24,823 - synapse-scraper - INFO - Stahuji èlánek: Mladí v Èesku musí stále èastìji volit spolubydlení. ‚Ušetøí tím a osm tisíc mìsíènì,‘ øíká realitní expert
+2025-03-12 17:18:27,554 - synapse-scraper - INFO - Èlánek uloen: Mladí v Èesku musí stále èastìji volit spolubydlení. ‚Ušetøí tím a osm tisíc mìsíènì,‘ øíká realitní expert (3211 znakù, 509 slov)
+2025-03-12 17:18:27,555 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 176
+2025-03-12 17:18:27,590 - synapse-scraper - INFO - Stahuji èlánek: Nedokáu si to vysvìtlit, mrzelo trenéra Liberce Pešána vyrovnání série. Rozhodovat bude pátı duel
+2025-03-12 17:18:30,930 - synapse-scraper - INFO - Èlánek uloen: Nedokáu si to vysvìtlit, mrzelo trenéra Liberce Pešána vyrovnání série. Rozhodovat bude pátı duel (1797 znakù, 295 slov)
+2025-03-12 17:18:30,930 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 177
+2025-03-12 17:18:30,960 - synapse-scraper - INFO - Stahuji èlánek: ‚A pøijdou první stíhaèky, Trump u prezident nebude.‘ Èesko nemìní postoj ke koupi letounù F-35
+2025-03-12 17:18:33,920 - synapse-scraper - INFO - Èlánek uloen: ‚A pøijdou první stíhaèky, Trump u prezident nebude.‘ Èesko nemìní postoj ke koupi letounù F-35 (2950 znakù, 441 slov)
+2025-03-12 17:18:33,921 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 178
+2025-03-12 17:18:33,922 - synapse-scraper - INFO - Zpracovávám RSS feed: denik
+2025-03-12 17:18:34,275 - synapse-scraper - INFO - Zpracovávám RSS feed: lidovky
+2025-03-12 17:18:34,445 - synapse-scraper - INFO - Stahuji èlánek: ODS a TOP 09 chtìjí umonit pøiplácení za lepší péèi èi zdravotní pomùcky
+2025-03-12 17:18:36,027 - synapse-scraper - INFO - Èlánek uloen: ODS a TOP 09 chtìjí umonit pøiplácení za lepší péèi èi zdravotní pomùcky (6537 znakù, 945 slov)
+2025-03-12 17:18:36,028 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 179
+2025-03-12 17:18:36,063 - synapse-scraper - INFO - Stahuji èlánek: Vláda chce zjednodušit povolování staveb fotovoltaickıch a vìtrnıch elektráren
+2025-03-12 17:18:37,890 - synapse-scraper - INFO - Èlánek uloen: Vláda chce zjednodušit povolování staveb fotovoltaickıch a vìtrnıch elektráren (6537 znakù, 945 slov)
+2025-03-12 17:18:37,891 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 180
+2025-03-12 17:18:37,928 - synapse-scraper - INFO - Stahuji èlánek: Za nákupem stíhaèek F-35 si stojíme, jde o promyšlenou investici, uvedl Fiala
+2025-03-12 17:18:39,458 - synapse-scraper - INFO - Èlánek uloen: Za nákupem stíhaèek F-35 si stojíme, jde o promyšlenou investici, uvedl Fiala (6537 znakù, 945 slov)
+2025-03-12 17:18:39,459 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 181
+2025-03-12 17:18:39,503 - synapse-scraper - INFO - Stahuji èlánek: Návrat do vrcholné politiky? Kleslová by ráda kandidovala za ANO do Snìmovny
+2025-03-12 17:18:41,292 - synapse-scraper - INFO - Èlánek uloen: Návrat do vrcholné politiky? Kleslová by ráda kandidovala za ANO do Snìmovny (6537 znakù, 945 slov)
+2025-03-12 17:18:41,293 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 182
+2025-03-12 17:18:41,326 - synapse-scraper - INFO - Stahuji èlánek: Jak se mohla dostat zbraò do Snìmovny? Stovky lidí toti nemusí procházet rámy
+2025-03-12 17:18:43,904 - synapse-scraper - INFO - Èlánek uloen: Jak se mohla dostat zbraò do Snìmovny? Stovky lidí toti nemusí procházet rámy (6537 znakù, 945 slov)
+2025-03-12 17:18:43,904 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 183
+2025-03-12 17:18:43,945 - synapse-scraper - INFO - Stahuji èlánek: ÈT šetøí, od dubna nebude na ÈT24 Fokus Václava Moravce èi Tıden v politice
+2025-03-12 17:18:45,338 - synapse-scraper - INFO - Èlánek uloen: ÈT šetøí, od dubna nebude na ÈT24 Fokus Václava Moravce èi Tıden v politice (6537 znakù, 945 slov)
+2025-03-12 17:18:45,338 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 184
+2025-03-12 17:18:45,383 - synapse-scraper - INFO - Stahuji èlánek: Babiš nemá problém se tøemi procenty HDP na obranu. Chtìl by systém Patriot
+2025-03-12 17:18:47,065 - synapse-scraper - INFO - Èlánek uloen: Babiš nemá problém se tøemi procenty HDP na obranu. Chtìl by systém Patriot (6537 znakù, 945 slov)
+2025-03-12 17:18:47,066 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 185
+2025-03-12 17:18:47,118 - synapse-scraper - INFO - Stahuji èlánek: Staèilo! povede „Vidlák“. Snìm v tichosti zvolil vedení, Koneèná v nìm není
+2025-03-12 17:18:49,432 - synapse-scraper - INFO - Èlánek uloen: Staèilo! povede „Vidlák“. Snìm v tichosti zvolil vedení, Koneèná v nìm není (6537 znakù, 945 slov)
+2025-03-12 17:18:49,433 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 186
+2025-03-12 17:18:49,474 - synapse-scraper - INFO - Stahuji èlánek: Poplach ve Snìmovnì. Konzultant Válkové ztratil na toaletách zbraò
+2025-03-12 17:18:51,424 - synapse-scraper - INFO - Èlánek uloen: Poplach ve Snìmovnì. Konzultant Válkové ztratil na toaletách zbraò (6537 znakù, 945 slov)
+2025-03-12 17:18:51,424 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 187
+2025-03-12 17:18:51,462 - synapse-scraper - INFO - Stahuji èlánek: Provoz na dálnici D3 u èásteènì funguje, v obou smìrech je prùjezdnı jeden pruh
+2025-03-12 17:18:52,935 - synapse-scraper - INFO - Èlánek uloen: Provoz na dálnici D3 u èásteènì funguje, v obou smìrech je prùjezdnı jeden pruh (6537 znakù, 945 slov)
+2025-03-12 17:18:52,936 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 188
+2025-03-12 17:18:52,973 - synapse-scraper - INFO - Stahuji èlánek: Poslanci projednávali lex plyn, aby Èesku nechybìly záloní zdroje energie
+2025-03-12 17:18:55,198 - synapse-scraper - INFO - Èlánek uloen: Poslanci projednávali lex plyn, aby Èesku nechybìly záloní zdroje energie (6537 znakù, 945 slov)
+2025-03-12 17:18:55,199 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 189
+2025-03-12 17:18:55,281 - synapse-scraper - INFO - Stahuji èlánek: D2 pøed Brnem zablokovala nehoda ètyø kamionù, zranìného vyprošovali pøes hodinu
+2025-03-12 17:18:57,389 - synapse-scraper - INFO - Èlánek uloen: D2 pøed Brnem zablokovala nehoda ètyø kamionù, zranìného vyprošovali pøes hodinu (6537 znakù, 945 slov)
+2025-03-12 17:18:57,391 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 190
+2025-03-12 17:18:57,422 - synapse-scraper - INFO - Stahuji èlánek: „Nejhorší premiér na svìtì.“ Kampaní hnutí ANO se bude zabıvat dohledovı úøad
+2025-03-12 17:19:00,589 - synapse-scraper - INFO - Èlánek uloen: „Nejhorší premiér na svìtì.“ Kampaní hnutí ANO se bude zabıvat dohledovı úøad (6537 znakù, 945 slov)
+2025-03-12 17:19:00,589 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 191
+2025-03-12 17:19:00,626 - synapse-scraper - INFO - Stahuji èlánek: Prùsak vody na Florenci je eliminován, metro na lince C obnovilo ve stanici provoz
+2025-03-12 17:19:02,355 - synapse-scraper - INFO - Èlánek uloen: Prùsak vody na Florenci je eliminován, metro na lince C obnovilo ve stanici provoz (6537 znakù, 945 slov)
+2025-03-12 17:19:02,357 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 192
+2025-03-12 17:19:02,392 - synapse-scraper - INFO - Stahuji èlánek: Babiš i Okamura odmítli jednat s Fialou o obranì. Šéf ANO zamíøil na Hrad
+2025-03-12 17:19:05,378 - synapse-scraper - INFO - Èlánek uloen: Babiš i Okamura odmítli jednat s Fialou o obranì. Šéf ANO zamíøil na Hrad (6537 znakù, 945 slov)
+2025-03-12 17:19:05,380 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 193
+2025-03-12 17:19:05,418 - synapse-scraper - INFO - Stahuji èlánek: Pár odìrek neodpovídá bití, zdùvodnil soud osvobození dalších dozorcù z Rınovic
+2025-03-12 17:19:07,414 - synapse-scraper - INFO - Èlánek uloen: Pár odìrek neodpovídá bití, zdùvodnil soud osvobození dalších dozorcù z Rınovic (6537 znakù, 945 slov)
+2025-03-12 17:19:07,415 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 194
+2025-03-12 17:19:07,451 - synapse-scraper - INFO - Stahuji èlánek: Poslanci dorazili do práce v lidovıch krojích. Vzali i valašku èi tureèák
+2025-03-12 17:19:09,036 - synapse-scraper - INFO - Èlánek uloen: Poslanci dorazili do práce v lidovıch krojích. Vzali i valašku èi tureèák (6537 znakù, 945 slov)
+2025-03-12 17:19:09,039 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 195
+2025-03-12 17:19:09,080 - synapse-scraper - INFO - Stahuji èlánek: Ètyøikrát více. Praha chce poplatky pro turisty zvıšit z 50 na 200 korun
+2025-03-12 17:19:11,321 - synapse-scraper - INFO - Èlánek uloen: Ètyøikrát více. Praha chce poplatky pro turisty zvıšit z 50 na 200 korun (6537 znakù, 945 slov)
+2025-03-12 17:19:11,322 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 196
+2025-03-12 17:19:11,364 - synapse-scraper - INFO - Stahuji èlánek: Zatkli podezøelého z vrady a znásilnìní cizinky, její tìlo se našlo v Metuji
+2025-03-12 17:19:14,264 - synapse-scraper - INFO - Èlánek uloen: Zatkli podezøelého z vrady a znásilnìní cizinky, její tìlo se našlo v Metuji (6537 znakù, 945 slov)
+2025-03-12 17:19:14,265 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 197
+2025-03-12 17:19:14,302 - synapse-scraper - INFO - Stahuji èlánek: Na D1 se srazil autobus s náklaïákem a osobákem. Smìr na Ostravu stál
+2025-03-12 17:19:17,477 - synapse-scraper - INFO - Èlánek uloen: Na D1 se srazil autobus s náklaïákem a osobákem. Smìr na Ostravu stál (6537 znakù, 945 slov)
+2025-03-12 17:19:17,478 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 198
+2025-03-12 17:19:17,517 - synapse-scraper - INFO - Stahuji èlánek: Mladı øidiè srazil na Vyškovsku ètrnáctiletého cyklistu, chlapec na místì zemøel
+2025-03-12 17:19:19,975 - synapse-scraper - INFO - Èlánek uloen: Mladı øidiè srazil na Vyškovsku ètrnáctiletého cyklistu, chlapec na místì zemøel (6537 znakù, 945 slov)
+2025-03-12 17:19:19,977 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 199
+2025-03-12 17:19:20,037 - synapse-scraper - INFO - Stahuji èlánek: Tıral mì a znásilòoval. Zubaøka obvinìná z vrady léèitele zkolabovala u soudu
+2025-03-12 17:19:21,727 - synapse-scraper - INFO - Èlánek uloen: Tıral mì a znásilòoval. Zubaøka obvinìná z vrady léèitele zkolabovala u soudu (6537 znakù, 945 slov)
+2025-03-12 17:19:21,728 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 200
+2025-03-12 17:19:21,765 - synapse-scraper - INFO - Stahuji èlánek: Svìt slavného dobyvatele. Vıstavu Èingischán v Praze zahájili prezidenti
+2025-03-12 17:19:24,495 - synapse-scraper - INFO - Èlánek uloen: Svìt slavného dobyvatele. Vıstavu Èingischán v Praze zahájili prezidenti (6537 znakù, 945 slov)
+2025-03-12 17:19:24,497 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 201
+2025-03-12 17:19:24,534 - synapse-scraper - INFO - Stahuji èlánek: Odbytı proces, øekl soud a osvobodil otce vinìného z pokusu o vradu kojence
+2025-03-12 17:19:26,116 - synapse-scraper - INFO - Èlánek uloen: Odbytı proces, øekl soud a osvobodil otce vinìného z pokusu o vradu kojence (6537 znakù, 945 slov)
+2025-03-12 17:19:26,117 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 202
+2025-03-12 17:19:26,187 - synapse-scraper - INFO - Stahuji èlánek: ena si po proøezávce náletù opékala buøt, od ohınku chytlo pùl hektaru lesa
+2025-03-12 17:19:28,968 - synapse-scraper - INFO - Èlánek uloen: ena si po proøezávce náletù opékala buøt, od ohınku chytlo pùl hektaru lesa (6537 znakù, 945 slov)
+2025-03-12 17:19:28,969 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 203
+2025-03-12 17:19:29,017 - synapse-scraper - INFO - Stahuji èlánek: Ministerstvo zemìdìlství dokonèilo online katastr, slibuje úsporu èasu i penìz
+2025-03-12 17:19:32,355 - synapse-scraper - INFO - Èlánek uloen: Ministerstvo zemìdìlství dokonèilo online katastr, slibuje úsporu èasu i penìz (6537 znakù, 945 slov)
+2025-03-12 17:19:32,356 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 204
+2025-03-12 17:19:32,405 - synapse-scraper - INFO - Stahuji èlánek: Pátrání po mui, kterı skoèil z mostu do Orlíku, komplikuje led. Pomáhají potápìèi
+2025-03-12 17:19:35,385 - synapse-scraper - INFO - Èlánek uloen: Pátrání po mui, kterı skoèil z mostu do Orlíku, komplikuje led. Pomáhají potápìèi (6537 znakù, 945 slov)
+2025-03-12 17:19:35,386 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 205
+2025-03-12 17:19:35,431 - synapse-scraper - INFO - Stahuji èlánek: První baterie izraelské protivzdušné obrany Spyder pro Èesko se u testuje
+2025-03-12 17:19:38,086 - synapse-scraper - INFO - Èlánek uloen: První baterie izraelské protivzdušné obrany Spyder pro Èesko se u testuje (6537 znakù, 945 slov)
+2025-03-12 17:19:38,086 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 206
+2025-03-12 17:19:38,137 - synapse-scraper - INFO - Stahuji èlánek: Nález letecké pumy na staveništi v Brnì: pyrotechnici ji deaktivovali
+2025-03-12 17:19:41,187 - synapse-scraper - INFO - Èlánek uloen: Nález letecké pumy na staveništi v Brnì: pyrotechnici ji deaktivovali (6537 znakù, 945 slov)
+2025-03-12 17:19:41,188 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 207
+2025-03-12 17:19:41,219 - synapse-scraper - INFO - Stahuji èlánek: Fiala jednal s mongolskım prezidentem o obchodu i obrannì-prùmyslové spolupráci
+2025-03-12 17:19:44,386 - synapse-scraper - INFO - Èlánek uloen: Fiala jednal s mongolskım prezidentem o obchodu i obrannì-prùmyslové spolupráci (6537 znakù, 945 slov)
+2025-03-12 17:19:44,387 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 208
+2025-03-12 17:19:44,390 - synapse-scraper - INFO - Zpracovávám RSS feed: reflex
+2025-03-12 17:19:44,676 - synapse-scraper - INFO - Stahuji èlánek: Cold But Bold: Je to rebel! Nová IPA na pivní scénì má vıraznou chu a pìknou voltá
+2025-03-12 17:19:46,951 - synapse-scraper - INFO - Èlánek uloen: Cold But Bold: Je to rebel! Nová IPA na pivní scénì má vıraznou chu a pìknou voltá (1625 znakù, 253 slov)
+2025-03-12 17:19:46,951 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 209
+2025-03-12 17:19:46,987 - synapse-scraper - INFO - Stahuji èlánek: Petr Sokol: Donald Trump otoèil ve volbách Grónsko vzhùru nohama
+2025-03-12 17:19:49,505 - synapse-scraper - INFO - Èlánek uloen: Petr Sokol: Donald Trump otoèil ve volbách Grónsko vzhùru nohama (6019 znakù, 891 slov)
+2025-03-12 17:19:49,506 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 210
+2025-03-12 17:19:49,546 - synapse-scraper - INFO - Stahuji èlánek: Já, Olga Hepnarová, odsuzuji Vás k trestu smrti pøejetím. Masakr, o kterém se v Èeskoslovensku nemluvilo
+2025-03-12 17:19:52,188 - synapse-scraper - INFO - Èlánek uloen: Já, Olga Hepnarová, odsuzuji Vás k trestu smrti pøejetím. Masakr, o kterém se v Èeskoslovensku nemluvilo (16082 znakù, 2575 slov)
+2025-03-12 17:19:52,189 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 211
+2025-03-12 17:19:52,237 - synapse-scraper - INFO - Stahuji èlánek: Kdo z vás to má? Proè údaj o prùmìrné mzdì drádí stále více lidí
+2025-03-12 17:19:55,141 - synapse-scraper - INFO - Èlánek uloen: Kdo z vás to má? Proè údaj o prùmìrné mzdì drádí stále více lidí (4301 znakù, 704 slov)
+2025-03-12 17:19:55,144 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 212
+2025-03-12 17:19:55,189 - synapse-scraper - INFO - Stahuji èlánek: Zmìna sem, zmìna tam. Václav Klaus se štítí pøiznat omyl, Miloš Zeman se mılí s gustem
+2025-03-12 17:19:58,420 - synapse-scraper - INFO - Èlánek uloen: Zmìna sem, zmìna tam. Václav Klaus se štítí pøiznat omyl, Miloš Zeman se mılí s gustem (2584 znakù, 418 slov)
+2025-03-12 17:19:58,421 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 213
+2025-03-12 17:19:58,470 - synapse-scraper - INFO - Stahuji èlánek: Vladimír Mertlík: Nedejme prostor zbabìlcùm, hlupákùm, vyèuránkùm i  sviním, jinak nás oni zbaví svobody
+2025-03-12 17:20:01,244 - synapse-scraper - INFO - Èlánek uloen: Vladimír Mertlík: Nedejme prostor zbabìlcùm, hlupákùm, vyèuránkùm i  sviním, jinak nás oni zbaví svobody (5233 znakù, 811 slov)
+2025-03-12 17:20:01,245 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 214
+2025-03-12 17:20:01,280 - synapse-scraper - INFO - Stahuji èlánek: Pøed 5 lety vláda kvùli pandemii uzavøela Èesko. Takhle vypadaly liduprázdné praské ulice
+2025-03-12 17:20:04,674 - synapse-scraper - INFO - Èlánek uloen: Pøed 5 lety vláda kvùli pandemii uzavøela Èesko. Takhle vypadaly liduprázdné praské ulice (1849 znakù, 273 slov)
+2025-03-12 17:20:04,674 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 215
+2025-03-12 17:20:04,715 - synapse-scraper - INFO - Stahuji èlánek: Jak by vypadali èeští Avengers? Umìlá inteligence navrhla Superkrakonoše, dìsivého Kostkáèe i sexy Bílou paní
+2025-03-12 17:20:07,499 - synapse-scraper - INFO - Èlánek uloen: Jak by vypadali èeští Avengers? Umìlá inteligence navrhla Superkrakonoše, dìsivého Kostkáèe i sexy Bílou paní (5226 znakù, 757 slov)
+2025-03-12 17:20:07,501 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 216
+2025-03-12 17:20:07,543 - synapse-scraper - INFO - Stahuji èlánek: Jana Bendová: Babiš ztrácí zábrany, je to nebezpeèné pro nìj i pro nás. Lékaøi si zakázali sexuální nátlak
+2025-03-12 17:20:10,734 - synapse-scraper - INFO - Èlánek uloen: Jana Bendová: Babiš ztrácí zábrany, je to nebezpeèné pro nìj i pro nás. Lékaøi si zakázali sexuální nátlak (2993 znakù, 460 slov)
+2025-03-12 17:20:10,735 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 217
+2025-03-12 17:20:10,772 - synapse-scraper - INFO - Stahuji èlánek: Jak si koupit akcie - prùvodce pro zaèáteèníka
+2025-03-12 17:20:14,239 - synapse-scraper - INFO - Èlánek uloen: Jak si koupit akcie - prùvodce pro zaèáteèníka (3114 znakù, 428 slov)
+2025-03-12 17:20:14,240 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 218
+2025-03-12 17:20:14,272 - synapse-scraper - INFO - Stahuji èlánek: Nemáte zahradu? Nevadí! Pìstujte ve velkém i na balkonì
+2025-03-12 17:20:16,382 - synapse-scraper - ERROR - Chyba pøi extrakci textu z : Invalid URL '': No scheme supplied. Perhaps you meant https://?
+2025-03-12 17:20:16,384 - synapse-scraper - WARNING - Pøíliš málo textu ze èlánku: Nemáte zahradu? Nevadí! Pìstujte ve velkém i na balkonì, pøeskakuji
+2025-03-12 17:20:16,425 - synapse-scraper - INFO - Stahuji èlánek: Babiš svùj názor na Trumpa poví, a pøijdou vısledky prùzkumù. Do té doby se ho na Trumpa nemá nikdo ptát
+2025-03-12 17:20:18,835 - synapse-scraper - INFO - Èlánek uloen: Babiš svùj názor na Trumpa poví, a pøijdou vısledky prùzkumù. Do té doby se ho na Trumpa nemá nikdo ptát (1327 znakù, 210 slov)
+2025-03-12 17:20:18,836 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 219
+2025-03-12 17:20:18,882 - synapse-scraper - INFO - Stahuji èlánek: Porno a básnì: Témìø 200 let staré sexuálnì explicitní obrázky spojují erotiku a humor
+2025-03-12 17:20:20,483 - synapse-scraper - INFO - Èlánek uloen: Porno a básnì: Témìø 200 let staré sexuálnì explicitní obrázky spojují erotiku a humor (1113 znakù, 162 slov)
+2025-03-12 17:20:20,484 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 220
+2025-03-12 17:20:20,520 - synapse-scraper - INFO - Stahuji èlánek: Politická šachová partie v Diddì: Mír bude Ukrajinu bolet, Trump nevyhraje, jen Putin ohlásí vítìzství
+2025-03-12 17:20:22,885 - synapse-scraper - INFO - Èlánek uloen: Politická šachová partie v Diddì: Mír bude Ukrajinu bolet, Trump nevyhraje, jen Putin ohlásí vítìzství (4122 znakù, 643 slov)
+2025-03-12 17:20:22,886 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 221
+2025-03-12 17:20:22,937 - synapse-scraper - INFO - Stahuji èlánek: Solná nevìsta: Co se stane s èernımi šaty po dvou mìsících v Mrtvém moøi?
+2025-03-12 17:20:25,887 - synapse-scraper - INFO - Èlánek uloen: Solná nevìsta: Co se stane s èernımi šaty po dvou mìsících v Mrtvém moøi? (1456 znakù, 224 slov)
+2025-03-12 17:20:25,888 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 222
+2025-03-12 17:20:25,921 - synapse-scraper - INFO - Stahuji èlánek: Zazáøí Evropa v éøe americkıch idiotù? Asi ne, ale mìla by to aspoò zkusit
+2025-03-12 17:20:28,279 - synapse-scraper - INFO - Èlánek uloen: Zazáøí Evropa v éøe americkıch idiotù? Asi ne, ale mìla by to aspoò zkusit (3597 znakù, 525 slov)
+2025-03-12 17:20:28,280 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 223
+2025-03-12 17:20:28,321 - synapse-scraper - INFO - Stahuji èlánek: Linda Bartošová: Trump a Musk jsou nedomazlení malí kluci. Chybí akèní filmy, kde se hrdinùm chce na velkou
+2025-03-12 17:20:30,996 - synapse-scraper - INFO - Èlánek uloen: Linda Bartošová: Trump a Musk jsou nedomazlení malí kluci. Chybí akèní filmy, kde se hrdinùm chce na velkou (2487 znakù, 406 slov)
+2025-03-12 17:20:30,997 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 224
+2025-03-12 17:20:31,033 - synapse-scraper - INFO - Stahuji èlánek: Punkromantická komedie Kouzlo derby podle scénáøe Petra Koleèka zamíøí do kin v létì. Podívejte se na první zábìry
+2025-03-12 17:20:34,007 - synapse-scraper - INFO - Èlánek uloen: Punkromantická komedie Kouzlo derby podle scénáøe Petra Koleèka zamíøí do kin v létì. Podívejte se na první zábìry (3528 znakù, 536 slov)
+2025-03-12 17:20:34,007 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 225
+2025-03-12 17:20:34,044 - synapse-scraper - INFO - Stahuji èlánek: Staèilo! ovládly konspiraèní teorie. Agrobaron Jandejsek straší vyhlazením lidstva a hladomorem
+2025-03-12 17:20:37,337 - synapse-scraper - INFO - Èlánek uloen: Staèilo! ovládly konspiraèní teorie. Agrobaron Jandejsek straší vyhlazením lidstva a hladomorem (6274 znakù, 913 slov)
+2025-03-12 17:20:37,337 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 226
+2025-03-12 17:20:37,376 - synapse-scraper - INFO - Stahuji èlánek: Bordeláø zachránil miliony ivotù. Alexander Fleming se pøi úklidu rozhodl nevyhodit plesnivé vzorky
+2025-03-12 17:20:39,651 - synapse-scraper - INFO - Èlánek uloen: Bordeláø zachránil miliony ivotù. Alexander Fleming se pøi úklidu rozhodl nevyhodit plesnivé vzorky (2369 znakù, 376 slov)
+2025-03-12 17:20:39,651 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 227
+2025-03-12 17:20:39,682 - synapse-scraper - INFO - Stahuji èlánek: Australská senzace Empire of the Sun míøí na svou vùbec první show v Èesku
+2025-03-12 17:20:42,148 - synapse-scraper - INFO - Èlánek uloen: Australská senzace Empire of the Sun míøí na svou vùbec první show v Èesku (2640 znakù, 411 slov)
+2025-03-12 17:20:42,148 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 228
+2025-03-12 17:20:42,208 - synapse-scraper - INFO - Stahuji èlánek: Pøíbram 1892: Nejvìtší dùlní neštìstí v Evropì se nikdy nepodaøilo vysvìtlit
+2025-03-12 17:20:44,489 - synapse-scraper - INFO - Èlánek uloen: Pøíbram 1892: Nejvìtší dùlní neštìstí v Evropì se nikdy nepodaøilo vysvìtlit (12212 znakù, 1954 slov)
+2025-03-12 17:20:44,490 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 229
+2025-03-12 17:20:44,520 - synapse-scraper - INFO - Stahuji èlánek: Manelky diktátorù: Neúspìšná hereèka støídala milence, pak se stala paní Mao a krutì se mstila
+2025-03-12 17:20:48,166 - synapse-scraper - INFO - Èlánek uloen: Manelky diktátorù: Neúspìšná hereèka støídala milence, pak se stala paní Mao a krutì se mstila (2840 znakù, 461 slov)
+2025-03-12 17:20:48,166 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 230
+2025-03-12 17:20:48,200 - synapse-scraper - INFO - Stahuji èlánek: Zahrada plná slimákù? Moná dìláte jednu zásadní chybu
+2025-03-12 17:20:51,178 - synapse-scraper - ERROR - Chyba pøi extrakci textu z : Invalid URL '': No scheme supplied. Perhaps you meant https://?
+2025-03-12 17:20:51,179 - synapse-scraper - WARNING - Pøíliš málo textu ze èlánku: Zahrada plná slimákù? Moná dìláte jednu zásadní chybu, pøeskakuji
+2025-03-12 17:20:51,222 - synapse-scraper - INFO - Stahuji èlánek: Srdce na dlani i na prsou: Prolistujte si vítìzné snímky únorového kola Aktù X. Kterı se vám líbí nejvíc?
+2025-03-12 17:20:53,773 - synapse-scraper - INFO - Èlánek uloen: Srdce na dlani i na prsou: Prolistujte si vítìzné snímky únorového kola Aktù X. Kterı se vám líbí nejvíc? (987 znakù, 143 slov)
+2025-03-12 17:20:53,774 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 231
+2025-03-12 17:20:53,804 - synapse-scraper - INFO - Stahuji èlánek: Trump s Putinem plánují spoleènou dovolenou u moøe. Zatím hledají destinace, kde Putina nezatknou
+2025-03-12 17:20:57,587 - synapse-scraper - INFO - Èlánek uloen: Trump s Putinem plánují spoleènou dovolenou u moøe. Zatím hledají destinace, kde Putina nezatknou (1156 znakù, 174 slov)
+2025-03-12 17:20:57,588 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 232
+2025-03-12 17:20:57,627 - synapse-scraper - INFO - Stahuji èlánek: Sošky, úsmìvy i prsa. Podívejte se do zákulisí Èeského lva, jak vypadalo ihned po pøebírání cen
+2025-03-12 17:21:01,873 - synapse-scraper - INFO - Èlánek uloen: Sošky, úsmìvy i prsa. Podívejte se do zákulisí Èeského lva, jak vypadalo ihned po pøebírání cen (2985 znakù, 439 slov)
+2025-03-12 17:21:01,873 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 233
+2025-03-12 17:21:01,908 - synapse-scraper - INFO - Stahuji èlánek: Padni komu padni: Názorová gymnastika Václava Klause, praská bída SPOLU a autokracie u Motoristù
+2025-03-12 17:21:04,696 - synapse-scraper - INFO - Èlánek uloen: Padni komu padni: Názorová gymnastika Václava Klause, praská bída SPOLU a autokracie u Motoristù (1120 znakù, 176 slov)
+2025-03-12 17:21:04,697 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 234
+2025-03-12 17:21:04,733 - synapse-scraper - INFO - Stahuji èlánek: Trapné snímky vùdce, které nemìl nikdo vidìt. Tyhle fotky zakázal sám Hitler
+2025-03-12 17:21:07,690 - synapse-scraper - INFO - Èlánek uloen: Trapné snímky vùdce, které nemìl nikdo vidìt. Tyhle fotky zakázal sám Hitler (1316 znakù, 196 slov)
+2025-03-12 17:21:07,691 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 235
+2025-03-12 17:21:07,732 - synapse-scraper - INFO - Stahuji èlánek: Právo na nevyhazov si brát nedáme! Zákoník práce zùstal sešnìrovanı a s odérem minulosti
+2025-03-12 17:21:11,714 - synapse-scraper - INFO - Èlánek uloen: Právo na nevyhazov si brát nedáme! Zákoník práce zùstal sešnìrovanı a s odérem minulosti (2717 znakù, 417 slov)
+2025-03-12 17:21:11,715 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 236
+2025-03-12 17:21:11,754 - synapse-scraper - INFO - Stahuji èlánek: Sebevrada, nebo vrada? Jan Masaryk zemøel pøed 77 lety, jeho smrt je stále záhadou
+2025-03-12 17:21:13,360 - synapse-scraper - INFO - Èlánek uloen: Sebevrada, nebo vrada? Jan Masaryk zemøel pøed 77 lety, jeho smrt je stále záhadou (2853 znakù, 424 slov)
+2025-03-12 17:21:13,361 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 237
+2025-03-12 17:21:13,396 - synapse-scraper - INFO - Stahuji èlánek: Ohnivá bouøe nad Tokiem zabila více obyvatel ne obì jaderné pumy. Císaøe ale ke kapitulaci nepøimìla
+2025-03-12 17:21:18,155 - synapse-scraper - INFO - Èlánek uloen: Ohnivá bouøe nad Tokiem zabila více obyvatel ne obì jaderné pumy. Císaøe ale ke kapitulaci nepøimìla (8356 znakù, 1263 slov)
+2025-03-12 17:21:18,157 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 238
+2025-03-12 17:21:18,190 - synapse-scraper - INFO - Stahuji èlánek: Ze Zelenského vítìzného plánu je cár papíru. Ukrajinci pøicházejí i o vyjednávací kartu v Kurské oblasti
+2025-03-12 17:21:21,366 - synapse-scraper - INFO - Èlánek uloen: Ze Zelenského vítìzného plánu je cár papíru. Ukrajinci pøicházejí i o vyjednávací kartu v Kurské oblasti (3913 znakù, 607 slov)
+2025-03-12 17:21:21,368 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 239
+2025-03-12 17:21:21,522 - synapse-scraper - INFO - Stahuji èlánek: Malı prostor, velká úroda! Promìòte svùj balkón v zahradu plnou ivota
+2025-03-12 17:21:22,948 - synapse-scraper - ERROR - Chyba pøi extrakci textu z : Invalid URL '': No scheme supplied. Perhaps you meant https://?
+2025-03-12 17:21:22,950 - synapse-scraper - WARNING - Pøíliš málo textu ze èlánku: Malı prostor, velká úroda! Promìòte svùj balkón v zahradu plnou ivota, pøeskakuji
+2025-03-12 17:21:23,103 - synapse-scraper - INFO - Zpracovávám RSS feed: echo24
+2025-03-12 17:21:23,508 - synapse-scraper - INFO - Pøipojení k databázi uzavøeno.
+2025-03-12 17:21:23,509 - synapse-scraper - INFO - Dokonèeno! Zpracováno celkem 252 èlánkù, pøidáno 239 novıch.
+2025-03-12 17:21:23,510 - synapse-scraper - INFO - Aktuální celkovı poèet èlánkù v databázi: 589
+2025-03-12 17:21:23,511 - synapse-scraper - INFO - Sbìr dokonèen, pøidáno 239 novıch èlánkù.
+2025-03-12 21:03:44,380 - synapse-scraper - INFO - Zaèínám sbìr zpravodajskıch èlánkù pro projekt Synapse...
+2025-03-12 21:03:45,943 - synapse-scraper - INFO - Úspìšnì pøipojeno k databázi.
+2025-03-12 21:03:46,055 - synapse-scraper - INFO - Aktuální poèet èlánkù v databázi: 589
+2025-03-12 21:03:46,118 - synapse-scraper - INFO - Zpracovávám RSS feed: idnes
+2025-03-12 21:03:46,452 - synapse-scraper - INFO - Stahuji èlánek: Putin se ukázal u Kursku poprvé od vpádu Ukrajiny. Zajatci jsou teroristé, tvrdí
+2025-03-12 21:03:49,010 - synapse-scraper - INFO - Èlánek uloen: Putin se ukázal u Kursku poprvé od vpádu Ukrajiny. Zajatci jsou teroristé, tvrdí (6529 znakù, 945 slov)
+2025-03-12 21:03:49,011 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 1
+2025-03-12 21:03:49,048 - synapse-scraper - INFO - Stahuji èlánek: V USA platí vyšší cla na dovoz oceli a hliníku. EU chystá odvetu, Trump také
+2025-03-12 21:03:51,580 - synapse-scraper - INFO - Èlánek uloen: V USA platí vyšší cla na dovoz oceli a hliníku. EU chystá odvetu, Trump také (6529 znakù, 945 slov)
+2025-03-12 21:03:51,580 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 2
+2025-03-12 21:03:51,613 - synapse-scraper - INFO - Stahuji èlánek: Mìli bychom se shodnout v bytostném zájmu naší zemì, píše Fiala Babišovi
+2025-03-12 21:03:53,199 - synapse-scraper - INFO - Èlánek uloen: Mìli bychom se shodnout v bytostném zájmu naší zemì, píše Fiala Babišovi (6529 znakù, 945 slov)
+2025-03-12 21:03:53,200 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-12 21:03:53,231 - synapse-scraper - INFO - Stahuji èlánek: Pásová rypadla rozstøíhala v Hustopeèích zbytek vrakù vyhoøelıch cisteren
+2025-03-12 21:03:55,600 - synapse-scraper - INFO - Èlánek uloen: Pásová rypadla rozstøíhala v Hustopeèích zbytek vrakù vyhoøelıch cisteren (6529 znakù, 945 slov)
+2025-03-12 21:03:55,601 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 4
+2025-03-12 21:03:55,641 - synapse-scraper - INFO - Stahuji èlánek: Musk je vedle nìj oøezávátko. Za Trumpovy nitky tahá kontroverzní miliardáø Thiel
+2025-03-12 21:03:58,453 - synapse-scraper - INFO - Èlánek uloen: Musk je vedle nìj oøezávátko. Za Trumpovy nitky tahá kontroverzní miliardáø Thiel (6529 znakù, 945 slov)
+2025-03-12 21:03:58,454 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 5
+2025-03-12 21:03:58,487 - synapse-scraper - INFO - Stahuji èlánek: Lipavskı si dìlá menší nadìje ne Trump. Od emisarù USA v Moskvì moc neoèekává
+2025-03-12 21:04:00,452 - synapse-scraper - INFO - Èlánek uloen: Lipavskı si dìlá menší nadìje ne Trump. Od emisarù USA v Moskvì moc neoèekává (6529 znakù, 945 slov)
+2025-03-12 21:04:00,452 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 6
+2025-03-12 21:04:00,547 - synapse-scraper - INFO - Stahuji èlánek: Chtìl, aby mu ukazovaly prsa. Americkému pohranièníkovi hrozí a dva roky vìzení
+2025-03-12 21:04:03,535 - synapse-scraper - INFO - Èlánek uloen: Chtìl, aby mu ukazovaly prsa. Americkému pohranièníkovi hrozí a dva roky vìzení (6529 znakù, 945 slov)
+2025-03-12 21:04:03,536 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 7
+2025-03-12 21:04:03,607 - synapse-scraper - INFO - Stahuji èlánek: Lidé nechtìjí do armády. Bojí se, e válka je u moc blízko, usoudila Èernochová
+2025-03-12 21:04:05,404 - synapse-scraper - INFO - Èlánek uloen: Lidé nechtìjí do armády. Bojí se, e válka je u moc blízko, usoudila Èernochová (6529 znakù, 945 slov)
+2025-03-12 21:04:05,405 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 8
+2025-03-12 21:04:05,480 - synapse-scraper - INFO - Stahuji èlánek: Vysoké odstupné, poškozování dobrého jména. Rada ÈT udìlila vıtku Souèkovi
+2025-03-12 21:04:07,995 - synapse-scraper - INFO - Èlánek uloen: Vysoké odstupné, poškozování dobrého jména. Rada ÈT udìlila vıtku Souèkovi (6529 znakù, 945 slov)
+2025-03-12 21:04:07,996 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 9
+2025-03-12 21:04:08,034 - synapse-scraper - INFO - Stahuji èlánek: Postoj SPD je mi sympatiètìjší. Farskı kvùli obrannım vıdajùm obvinil ANO z vımluv
+2025-03-12 21:04:09,299 - synapse-scraper - INFO - Èlánek uloen: Postoj SPD je mi sympatiètìjší. Farskı kvùli obrannım vıdajùm obvinil ANO z vımluv (6529 znakù, 945 slov)
+2025-03-12 21:04:09,299 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 10
+2025-03-12 21:04:09,333 - synapse-scraper - INFO - Stahuji èlánek: Polonahı mu s kuklou nesl krabici plnou kradeného másla, narazil na stráníky
+2025-03-12 21:04:10,864 - synapse-scraper - INFO - Èlánek uloen: Polonahı mu s kuklou nesl krabici plnou kradeného másla, narazil na stráníky (6529 znakù, 945 slov)
+2025-03-12 21:04:10,865 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 11
+2025-03-12 21:04:11,422 - synapse-scraper - INFO - Zpracovávám RSS feed: novinky
+2025-03-12 21:04:11,596 - synapse-scraper - INFO - Stahuji èlánek: Na schùzce k bezpeènosti Èeska se Fiala s Babišem nesetkají. Napsali si otevøené dopisy
+2025-03-12 21:04:13,743 - synapse-scraper - INFO - Èlánek uloen: Na schùzce k bezpeènosti Èeska se Fiala s Babišem nesetkají. Napsali si otevøené dopisy (948 znakù, 139 slov)
+2025-03-12 21:04:13,744 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 12
+2025-03-12 21:04:13,780 - synapse-scraper - INFO - Stahuji èlánek: Muslimští duchovní v Indonésii mají bìhem ramadánu varovat pøed nadspotøebou
+2025-03-12 21:04:15,158 - synapse-scraper - INFO - Èlánek uloen: Muslimští duchovní v Indonésii mají bìhem ramadánu varovat pøed nadspotøebou (948 znakù, 139 slov)
+2025-03-12 21:04:15,159 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 13
+2025-03-12 21:04:15,196 - synapse-scraper - INFO - Stahuji èlánek: V Praze nouzovì pøistálo letadlo, posádka hlásila kouø na palubì
+2025-03-12 21:04:17,745 - synapse-scraper - INFO - Èlánek uloen: V Praze nouzovì pøistálo letadlo, posádka hlásila kouø na palubì (948 znakù, 139 slov)
+2025-03-12 21:04:17,746 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 14
+2025-03-12 21:04:17,781 - synapse-scraper - INFO - Stahuji èlánek: Razie na imigraèním úøadu v Mnichovì: Za úplatky se rozdával azyl
+2025-03-12 21:04:19,440 - synapse-scraper - INFO - Èlánek uloen: Razie na imigraèním úøadu v Mnichovì: Za úplatky se rozdával azyl (948 znakù, 139 slov)
+2025-03-12 21:04:19,441 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 15
+2025-03-12 21:04:19,473 - synapse-scraper - INFO - Stahuji èlánek: Trumpova vyslance pro Ukrajinu vyhodili z kola ven
+2025-03-12 21:04:21,242 - synapse-scraper - INFO - Èlánek uloen: Trumpova vyslance pro Ukrajinu vyhodili z kola ven (948 znakù, 139 slov)
+2025-03-12 21:04:21,243 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 16
+2025-03-12 21:04:21,283 - synapse-scraper - INFO - Stahuji èlánek: Nové Heøminovy èeká po letech opìt referendum o stavbì protipovodòové pøehrady
+2025-03-12 21:04:23,431 - synapse-scraper - INFO - Èlánek uloen: Nové Heøminovy èeká po letech opìt referendum o stavbì protipovodòové pøehrady (948 znakù, 139 slov)
+2025-03-12 21:04:23,432 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 17
+2025-03-12 21:04:23,499 - synapse-scraper - INFO - Stahuji èlánek: Lipavskı: Od cesty Amerièanù do Moskvy moc neèekám
+2025-03-12 21:04:26,002 - synapse-scraper - INFO - Èlánek uloen: Lipavskı: Od cesty Amerièanù do Moskvy moc neèekám (948 znakù, 139 slov)
+2025-03-12 21:04:26,003 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 18
+2025-03-12 21:04:26,037 - synapse-scraper - INFO - Stahuji èlánek: Trumpova cla mohou tvrdì dopadnout i na Amerièany
+2025-03-12 21:04:27,507 - synapse-scraper - INFO - Èlánek uloen: Trumpova cla mohou tvrdì dopadnout i na Amerièany (948 znakù, 139 slov)
+2025-03-12 21:04:27,509 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 19
+2025-03-12 21:04:27,549 - synapse-scraper - INFO - Stahuji èlánek: Rada ÈT udìlila øediteli televize Souèkovi vıtku
+2025-03-12 21:04:29,325 - synapse-scraper - INFO - Èlánek uloen: Rada ÈT udìlila øediteli televize Souèkovi vıtku (948 znakù, 139 slov)
+2025-03-12 21:04:29,326 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 20
+2025-03-12 21:04:29,363 - synapse-scraper - INFO - Stahuji èlánek: Úøad má další podezøení na úmrtí dítìte kvùli vzácné reakci po oèkování
+2025-03-12 21:04:31,197 - synapse-scraper - INFO - Èlánek uloen: Úøad má další podezøení na úmrtí dítìte kvùli vzácné reakci po oèkování (948 znakù, 139 slov)
+2025-03-12 21:04:31,198 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 21
+2025-03-12 21:04:31,231 - synapse-scraper - INFO - Stahuji èlánek: Neklid na Balkánì. Prezident bosenské Republiky srbské èelí zatykaèi, ádá o pomoc Rusko
+2025-03-12 21:04:34,181 - synapse-scraper - INFO - Èlánek uloen: Neklid na Balkánì. Prezident bosenské Republiky srbské èelí zatykaèi, ádá o pomoc Rusko (948 znakù, 139 slov)
+2025-03-12 21:04:34,182 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 22
+2025-03-12 21:04:34,215 - synapse-scraper - INFO - Stahuji èlánek: Führer Ursula militarizuje Evropu, stìuje si Lavrov
+2025-03-12 21:04:35,961 - synapse-scraper - INFO - Èlánek uloen: Führer Ursula militarizuje Evropu, stìuje si Lavrov (948 znakù, 139 slov)
+2025-03-12 21:04:35,961 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 23
+2025-03-12 21:04:36,029 - synapse-scraper - INFO - Stahuji èlánek: Ve Znojmì na nádraí vykolejil osobní vlak, hasièi evakuovali 85 lidí
+2025-03-12 21:04:38,556 - synapse-scraper - INFO - Èlánek uloen: Ve Znojmì na nádraí vykolejil osobní vlak, hasièi evakuovali 85 lidí (948 znakù, 139 slov)
+2025-03-12 21:04:38,556 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 24
+2025-03-12 21:04:38,605 - synapse-scraper - INFO - Stahuji èlánek: V Èesku vzniknou místa, kde pùjde rychleji stavìt soláry a vìtrníky, odsouhlasila vláda
+2025-03-12 21:04:41,356 - synapse-scraper - INFO - Èlánek uloen: V Èesku vzniknou místa, kde pùjde rychleji stavìt soláry a vìtrníky, odsouhlasila vláda (948 znakù, 139 slov)
+2025-03-12 21:04:41,356 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 25
+2025-03-12 21:04:41,390 - synapse-scraper - INFO - Stahuji èlánek: Hrubı plat uèitelù byl vloni v prùmìru 50 469 korun
+2025-03-12 21:04:42,950 - synapse-scraper - INFO - Èlánek uloen: Hrubı plat uèitelù byl vloni v prùmìru 50 469 korun (948 znakù, 139 slov)
+2025-03-12 21:04:42,951 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 26
+2025-03-12 21:04:42,991 - synapse-scraper - INFO - Stahuji èlánek: „Buïte zásadovı a zrušte to.“ Ukrajinskı velvyslanec je proti vystoupení Anny Nìtrebkové v Budapešti
+2025-03-12 21:04:45,248 - synapse-scraper - INFO - Èlánek uloen: „Buïte zásadovı a zrušte to.“ Ukrajinskı velvyslanec je proti vystoupení Anny Nìtrebkové v Budapešti (948 znakù, 139 slov)
+2025-03-12 21:04:45,249 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 27
+2025-03-12 21:04:45,282 - synapse-scraper - INFO - Stahuji èlánek: Trump: Mám pozitivní zprávy od Ruska ohlednì pøímìøí
+2025-03-12 21:04:47,508 - synapse-scraper - INFO - Èlánek uloen: Trump: Mám pozitivní zprávy od Ruska ohlednì pøímìøí (948 znakù, 139 slov)
+2025-03-12 21:04:47,509 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 28
+2025-03-12 21:04:47,538 - synapse-scraper - INFO - Stahuji èlánek: Mladík v BMW letìl 150km/h a zabil svou pøítelkyni. Dostal 3,5 roku a musí platit tøi miliony
+2025-03-12 21:04:50,388 - synapse-scraper - INFO - Èlánek uloen: Mladík v BMW letìl 150km/h a zabil svou pøítelkyni. Dostal 3,5 roku a musí platit tøi miliony (948 znakù, 139 slov)
+2025-03-12 21:04:50,389 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 29
+2025-03-12 21:04:50,765 - synapse-scraper - INFO - Zpracovávám RSS feed: seznamzpravy
+2025-03-12 21:04:51,027 - synapse-scraper - INFO - Stahuji èlánek: Jansta má váné problémy, øíká primáø pankrácké vìznice David Rath
+2025-03-12 21:04:53,864 - synapse-scraper - INFO - Èlánek uloen: Jansta má váné problémy, øíká primáø pankrácké vìznice David Rath (948 znakù, 139 slov)
+2025-03-12 21:04:53,865 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 30
+2025-03-12 21:04:53,898 - synapse-scraper - INFO - Stahuji èlánek: Putin poprvé od ukrajinského vpádu navštívil Kurskou oblast
+2025-03-12 21:04:57,211 - synapse-scraper - INFO - Èlánek uloen: Putin poprvé od ukrajinského vpádu navštívil Kurskou oblast (948 znakù, 139 slov)
+2025-03-12 21:04:57,211 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 31
+2025-03-12 21:04:57,246 - synapse-scraper - INFO - Stahuji èlánek: Poradce Válkové, co mìl ve Snìmovnì zbraò, má ètyøi exekuce a nejasné zamìstnání
+2025-03-12 21:05:00,442 - synapse-scraper - INFO - Èlánek uloen: Poradce Válkové, co mìl ve Snìmovnì zbraò, má ètyøi exekuce a nejasné zamìstnání (948 znakù, 139 slov)
+2025-03-12 21:05:00,443 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 32
+2025-03-12 21:05:00,476 - synapse-scraper - INFO - Stahuji èlánek: Snìmovna zøejmì schválí omezení odkladù zahájení povinné školní docházky
+2025-03-12 21:05:03,650 - synapse-scraper - INFO - Èlánek uloen: Snìmovna zøejmì schválí omezení odkladù zahájení povinné školní docházky (948 znakù, 139 slov)
+2025-03-12 21:05:03,651 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 33
+2025-03-12 21:05:03,684 - synapse-scraper - INFO - Stahuji èlánek: Apple chystá promìnu softwaru. Upraví ovládání i vzhled
+2025-03-12 21:05:06,780 - synapse-scraper - INFO - Èlánek uloen: Apple chystá promìnu softwaru. Upraví ovládání i vzhled (948 znakù, 139 slov)
+2025-03-12 21:05:06,780 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 34
+2025-03-12 21:05:06,819 - synapse-scraper - INFO - Stahuji èlánek: Proè nosit prázdné petky do obchodù a co vše se zmìní, kdy návrh projde
+2025-03-12 21:05:09,754 - synapse-scraper - INFO - Èlánek uloen: Proè nosit prázdné petky do obchodù a co vše se zmìní, kdy návrh projde (948 znakù, 139 slov)
+2025-03-12 21:05:09,755 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 35
+2025-03-12 21:05:09,815 - synapse-scraper - INFO - Stahuji èlánek: Vláda schválila vznik oblastí, kde snáze vzniknou solární a vìtrné zdroje
+2025-03-12 21:05:11,801 - synapse-scraper - INFO - Èlánek uloen: Vláda schválila vznik oblastí, kde snáze vzniknou solární a vìtrné zdroje (948 znakù, 139 slov)
+2025-03-12 21:05:11,802 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 36
+2025-03-12 21:05:11,831 - synapse-scraper - INFO - Stahuji èlánek: Epidemie spalnièek v Texasu sílí, první pøípady hlásí i další státy
+2025-03-12 21:05:15,010 - synapse-scraper - INFO - Èlánek uloen: Epidemie spalnièek v Texasu sílí, první pøípady hlásí i další státy (948 znakù, 139 slov)
+2025-03-12 21:05:15,010 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 37
+2025-03-12 21:05:15,037 - synapse-scraper - INFO - Stahuji èlánek: Rada ÈT udìlila vıtku øediteli Janu Souèkovi
+2025-03-12 21:05:17,764 - synapse-scraper - INFO - Èlánek uloen: Rada ÈT udìlila vıtku øediteli Janu Souèkovi (948 znakù, 139 slov)
+2025-03-12 21:05:17,765 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 38
+2025-03-12 21:05:17,825 - synapse-scraper - INFO - Stahuji èlánek: Trump zavede opatøení proti odvetnım clùm Evropské unie
+2025-03-12 21:05:19,414 - synapse-scraper - INFO - Èlánek uloen: Trump zavede opatøení proti odvetnım clùm Evropské unie (948 znakù, 139 slov)
+2025-03-12 21:05:19,415 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 39
+2025-03-12 21:05:19,451 - synapse-scraper - INFO - Stahuji èlánek: Ne kadá regulace je špatná. Digitální prostor pravidla potøebuje
+2025-03-12 21:05:21,703 - synapse-scraper - INFO - Èlánek uloen: Ne kadá regulace je špatná. Digitální prostor pravidla potøebuje (948 znakù, 139 slov)
+2025-03-12 21:05:21,704 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 40
+2025-03-12 21:05:21,780 - synapse-scraper - INFO - Stahuji èlánek: Švédské Stranger Things si zamiloval Netflix i Musk. Ale nerozumí jim
+2025-03-12 21:05:24,382 - synapse-scraper - INFO - Èlánek uloen: Švédské Stranger Things si zamiloval Netflix i Musk. Ale nerozumí jim (948 znakù, 139 slov)
+2025-03-12 21:05:24,383 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 41
+2025-03-12 21:05:24,420 - synapse-scraper - INFO - Stahuji èlánek: O pandury se dál bude starat Strnadova Tatra Defence Vehicle
+2025-03-12 21:05:26,940 - synapse-scraper - INFO - Èlánek uloen: O pandury se dál bude starat Strnadova Tatra Defence Vehicle (948 znakù, 139 slov)
+2025-03-12 21:05:26,941 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 42
+2025-03-12 21:05:26,968 - synapse-scraper - INFO - Stahuji èlánek: Rumunsko èeká divoké období. Otázka je, co dìlaly tajné sluby, øíká expertka
+2025-03-12 21:05:28,642 - synapse-scraper - INFO - Èlánek uloen: Rumunsko èeká divoké období. Otázka je, co dìlaly tajné sluby, øíká expertka (948 znakù, 139 slov)
+2025-03-12 21:05:28,643 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 43
+2025-03-12 21:05:28,672 - synapse-scraper - INFO - Stahuji èlánek: Co se zmìní u lékaøù a zubaøù. Poslanci poslali dál dùleitou novelu
+2025-03-12 21:05:30,147 - synapse-scraper - INFO - Èlánek uloen: Co se zmìní u lékaøù a zubaøù. Poslanci poslali dál dùleitou novelu (948 znakù, 139 slov)
+2025-03-12 21:05:30,147 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 44
+2025-03-12 21:05:30,513 - synapse-scraper - INFO - Zpracovávám RSS feed: aktualne
+2025-03-12 21:05:30,864 - synapse-scraper - INFO - Stahuji èlánek: Soudce, kterı najednou zmizel. Kafka øešil kauzu Metanol, teï po nìm pátrá i NCOZ
+2025-03-12 21:05:32,386 - synapse-scraper - INFO - Èlánek uloen: Soudce, kterı najednou zmizel. Kafka øešil kauzu Metanol, teï po nìm pátrá i NCOZ (3766 znakù, 589 slov)
+2025-03-12 21:05:32,387 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 45
+2025-03-12 21:05:32,458 - synapse-scraper - INFO - Stahuji èlánek: Neberte nám medvìdy, ádá památkáøe Èeskı Krumlov. V pøíkopech trpí, míní aktivisté
+2025-03-12 21:05:33,943 - synapse-scraper - INFO - Èlánek uloen: Neberte nám medvìdy, ádá památkáøe Èeskı Krumlov. V pøíkopech trpí, míní aktivisté (5131 znakù, 787 slov)
+2025-03-12 21:05:33,944 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 46
+2025-03-12 21:05:33,988 - synapse-scraper - INFO - Stahuji èlánek: Èeskı voják selhal na misi, za støelbu mu hrozí vìzení. Èernochová osloví parlame
+2025-03-12 21:05:36,055 - synapse-scraper - INFO - Èlánek uloen: Èeskı voják selhal na misi, za støelbu mu hrozí vìzení. Èernochová osloví parlame (4827 znakù, 717 slov)
+2025-03-12 21:05:36,055 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 47
+2025-03-12 21:05:36,095 - synapse-scraper - INFO - Stahuji èlánek: Šéf Èeské televize dostal vıtku. Za odstupné, zaèeròování smluv i zpùsob komunikace
+2025-03-12 21:05:39,244 - synapse-scraper - INFO - Èlánek uloen: Šéf Èeské televize dostal vıtku. Za odstupné, zaèeròování smluv i zpùsob komunikace (2151 znakù, 318 slov)
+2025-03-12 21:05:39,245 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 48
+2025-03-12 21:05:39,510 - synapse-scraper - INFO - Stahuji èlánek: Šestadvacet let v NATO. Jak se èeská armáda promìnila v moderní alianèní vojsko
+2025-03-12 21:05:42,853 - synapse-scraper - WARNING - Málo textu extrahováno z https://zpravy.aktualne.cz/domaci/obrazem-ceska-armada-nato/r~244718983f5f11e9b2a00cc47ab5f122/?utm_source=mediafed&utm_medium=rss&utm_campaign=mediafed: pouze 0 znakù
+2025-03-12 21:05:42,855 - synapse-scraper - WARNING - Pøíliš málo textu ze èlánku: Šestadvacet let v NATO. Jak se èeská armáda promìnila v moderní alianèní vojsko, pøeskakuji
+2025-03-12 21:05:43,778 - synapse-scraper - INFO - Zpracovávám RSS feed: ihned
+2025-03-12 21:05:44,145 - synapse-scraper - INFO - Zpracovávám RSS feed: denik-n
+2025-03-12 21:05:44,391 - synapse-scraper - INFO - Stahuji èlánek: Pointa N: Jen dva ultrakatolické prstíèky a hned zase pùjdeme
+2025-03-12 21:05:45,990 - synapse-scraper - INFO - Èlánek uloen: Pointa N: Jen dva ultrakatolické prstíèky a hned zase pùjdeme (1050 znakù, 153 slov)
+2025-03-12 21:05:45,991 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 49
+2025-03-12 21:05:46,020 - synapse-scraper - INFO - Stahuji èlánek: Vıvoj bojù (1112. den): Suda padla, ukrajinskı pokus vymìnit své území za to ruské konèí porákou
+2025-03-12 21:05:48,594 - synapse-scraper - INFO - Èlánek uloen: Vıvoj bojù (1112. den): Suda padla, ukrajinskı pokus vymìnit své území za to ruské konèí porákou (1721 znakù, 262 slov)
+2025-03-12 21:05:48,595 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 50
+2025-03-12 21:05:48,628 - synapse-scraper - INFO - Stahuji èlánek: Obrazem: Brutalistní obchodní dùm v Brnì jde k zemi
+2025-03-12 21:05:50,148 - synapse-scraper - INFO - Èlánek uloen: Obrazem: Brutalistní obchodní dùm v Brnì jde k zemi (790 znakù, 109 slov)
+2025-03-12 21:05:50,148 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 51
+2025-03-12 21:05:50,175 - synapse-scraper - INFO - Stahuji èlánek: „Já se snadno nevzdám.“ Poslankynì se znovu pokouší dostat protipotratové hnutí na tìhotenské testy
+2025-03-12 21:05:52,333 - synapse-scraper - INFO - Èlánek uloen: „Já se snadno nevzdám.“ Poslankynì se znovu pokouší dostat protipotratové hnutí na tìhotenské testy (797 znakù, 111 slov)
+2025-03-12 21:05:52,334 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 52
+2025-03-12 21:05:52,539 - synapse-scraper - INFO - Zpracovávám RSS feed: ct24
+2025-03-12 21:05:52,804 - synapse-scraper - INFO - Stahuji èlánek: Døíve obávaní syrští alavité ijí ve strachu. Šará slíbil po násilnostech vyšetøovací komisi
+2025-03-12 21:05:54,573 - synapse-scraper - INFO - Èlánek uloen: Døíve obávaní syrští alavité ijí ve strachu. Šará slíbil po násilnostech vyšetøovací komisi (6985 znakù, 1045 slov)
+2025-03-12 21:05:54,573 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 53
+2025-03-12 21:05:55,437 - synapse-scraper - INFO - Zpracovávám RSS feed: irozhlas
+2025-03-12 21:05:55,599 - synapse-scraper - INFO - Stahuji èlánek: Trenérùm Brùnovi s Kubešem premiéra nevyšla, házenkáøi padli v kvalifikaci s Chorvaty
+2025-03-12 21:05:58,660 - synapse-scraper - INFO - Èlánek uloen: Trenérùm Brùnovi s Kubešem premiéra nevyšla, házenkáøi padli v kvalifikaci s Chorvaty (875 znakù, 136 slov)
+2025-03-12 21:05:58,661 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 54
+2025-03-12 21:05:58,691 - synapse-scraper - INFO - Stahuji èlánek: Vyøazeného Georgesca chce nahradit bıvalı premiér, hlásí se i další kandidáti krajní pravice
+2025-03-12 21:06:00,122 - synapse-scraper - INFO - Èlánek uloen: Vyøazeného Georgesca chce nahradit bıvalı premiér, hlásí se i další kandidáti krajní pravice (3830 znakù, 536 slov)
+2025-03-12 21:06:00,123 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 55
+2025-03-12 21:06:00,153 - synapse-scraper - INFO - Stahuji èlánek: NASA vyslala do vesmíru teleskop SPHEREx. Má pomoci popsat poèátek vesmíru
+2025-03-12 21:06:01,982 - synapse-scraper - INFO - Èlánek uloen: NASA vyslala do vesmíru teleskop SPHEREx. Má pomoci popsat poèátek vesmíru (1406 znakù, 212 slov)
+2025-03-12 21:06:01,983 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 56
+2025-03-12 21:06:02,034 - synapse-scraper - INFO - Stahuji èlánek: Lékovı ústav pozastavil oèkování jednou šarí vakcíny Prevenar 20. Provìøuje souvislost s úmrtím dítìte
+2025-03-12 21:06:04,081 - synapse-scraper - INFO - Èlánek uloen: Lékovı ústav pozastavil oèkování jednou šarí vakcíny Prevenar 20. Provìøuje souvislost s úmrtím dítìte (2238 znakù, 326 slov)
+2025-03-12 21:06:04,082 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 57
+2025-03-12 21:06:04,129 - synapse-scraper - INFO - Stahuji èlánek: Superdávka bude se souèasnım nastavením ivotního minima odrazovat lidi od práce, øíká sociolog
+2025-03-12 21:06:07,048 - synapse-scraper - INFO - Èlánek uloen: Superdávka bude se souèasnım nastavením ivotního minima odrazovat lidi od práce, øíká sociolog (3714 znakù, 596 slov)
+2025-03-12 21:06:07,049 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 58
+2025-03-12 21:06:07,078 - synapse-scraper - INFO - Stahuji èlánek: Malíø sbíral od lidí dùkazy o covidu v Èínì. Nad cenzurou vyhrál, èelil ale vıhrùkám
+2025-03-12 21:06:10,025 - synapse-scraper - INFO - Èlánek uloen: Malíø sbíral od lidí dùkazy o covidu v Èínì. Nad cenzurou vyhrál, èelil ale vıhrùkám (5116 znakù, 832 slov)
+2025-03-12 21:06:10,025 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 59
+2025-03-12 21:06:10,055 - synapse-scraper - INFO - Stahuji èlánek: Dopravní podnik má opìt kompletní dozorèí radu. Její fungování narušilo vyšetøování korupce
+2025-03-12 21:06:13,018 - synapse-scraper - INFO - Èlánek uloen: Dopravní podnik má opìt kompletní dozorèí radu. Její fungování narušilo vyšetøování korupce (1274 znakù, 192 slov)
+2025-03-12 21:06:13,019 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 60
+2025-03-12 21:06:13,053 - synapse-scraper - INFO - Stahuji èlánek: Z pøepadeného vlaku v Pákistánu vysvobodila armáda 346 rukojmích. O ivot pøišlo 21 civilistù
+2025-03-12 21:06:15,873 - synapse-scraper - INFO - Èlánek uloen: Z pøepadeného vlaku v Pákistánu vysvobodila armáda 346 rukojmích. O ivot pøišlo 21 civilistù (1767 znakù, 252 slov)
+2025-03-12 21:06:15,874 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 61
+2025-03-12 21:06:15,940 - synapse-scraper - INFO - Stahuji èlánek: Norští skokani byli po skandálu s kombinézami suspendováni, oznámila mezinárodní federace FIS
+2025-03-12 21:06:18,477 - synapse-scraper - INFO - Èlánek uloen: Norští skokani byli po skandálu s kombinézami suspendováni, oznámila mezinárodní federace FIS (1692 znakù, 248 slov)
+2025-03-12 21:06:18,477 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 62
+2025-03-12 21:06:18,510 - synapse-scraper - INFO - Stahuji èlánek: Èeši postavili zdravotní støedisko na Ukrajinì. Dezinformátor píše o zkorumpovaném projektu
+2025-03-12 21:06:19,922 - synapse-scraper - INFO - Èlánek uloen: Èeši postavili zdravotní støedisko na Ukrajinì. Dezinformátor píše o zkorumpovaném projektu (2766 znakù, 396 slov)
+2025-03-12 21:06:19,923 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 63
+2025-03-12 21:06:20,206 - synapse-scraper - INFO - Zpracovávám RSS feed: denik
+2025-03-12 21:06:20,518 - synapse-scraper - INFO - Zpracovávám RSS feed: lidovky
+2025-03-12 21:06:20,732 - synapse-scraper - INFO - Stahuji èlánek: Pásová rypadla rozstøíhala v Hustopeèích zbytek vrakù vyhoøelıch cisteren
+2025-03-12 21:06:22,686 - synapse-scraper - INFO - Èlánek uloen: Pásová rypadla rozstøíhala v Hustopeèích zbytek vrakù vyhoøelıch cisteren (6537 znakù, 945 slov)
+2025-03-12 21:06:22,687 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 64
+2025-03-12 21:06:22,728 - synapse-scraper - INFO - Stahuji èlánek: Mìli bychom se shodnout v bytostném zájmu naší zemì, píše Fiala Babišovi
+2025-03-12 21:06:24,526 - synapse-scraper - INFO - Èlánek uloen: Mìli bychom se shodnout v bytostném zájmu naší zemì, píše Fiala Babišovi (6537 znakù, 945 slov)
+2025-03-12 21:06:24,527 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 65
+2025-03-12 21:06:24,595 - synapse-scraper - INFO - Stahuji èlánek: Lidé nechtìjí do armády. Bojí se, e válka je u moc blízko, usoudila Èernochová
+2025-03-12 21:06:27,004 - synapse-scraper - INFO - Èlánek uloen: Lidé nechtìjí do armády. Bojí se, e válka je u moc blízko, usoudila Èernochová (6537 znakù, 945 slov)
+2025-03-12 21:06:27,005 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 66
+2025-03-12 21:06:27,034 - synapse-scraper - INFO - Stahuji èlánek: Postoj SPD je mi sympatiètìjší. Farskı kvùli obrannım vıdajùm obvinil ANO z vımluv
+2025-03-12 21:06:30,031 - synapse-scraper - INFO - Èlánek uloen: Postoj SPD je mi sympatiètìjší. Farskı kvùli obrannım vıdajùm obvinil ANO z vımluv (6537 znakù, 945 slov)
+2025-03-12 21:06:30,032 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 67
+2025-03-12 21:06:30,066 - synapse-scraper - INFO - Stahuji èlánek: Vysoké odstupné, poškozování dobrého jména. Rada ÈT udìlila vıtku Souèkovi
+2025-03-12 21:06:31,450 - synapse-scraper - INFO - Èlánek uloen: Vysoké odstupné, poškozování dobrého jména. Rada ÈT udìlila vıtku Souèkovi (6537 znakù, 945 slov)
+2025-03-12 21:06:31,451 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 68
+2025-03-12 21:06:32,126 - synapse-scraper - INFO - Zpracovávám RSS feed: reflex
+2025-03-12 21:06:32,356 - synapse-scraper - INFO - Stahuji èlánek: Poláci nás ochrání. My zvıšíme vıdaje na dùchody, to agresory odradí, slibuje Babiš
+2025-03-12 21:06:35,046 - synapse-scraper - INFO - Èlánek uloen: Poláci nás ochrání. My zvıšíme vıdaje na dùchody, to agresory odradí, slibuje Babiš (1052 znakù, 165 slov)
+2025-03-12 21:06:35,047 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 69
+2025-03-12 21:06:35,077 - synapse-scraper - INFO - Stahuji èlánek: Otakar Batlièka: Neuvìøitelnı ivotní pøíbìh legendy cimrmanovského raení skonèil smrtící injekcí
+2025-03-12 21:06:37,002 - synapse-scraper - INFO - Èlánek uloen: Otakar Batlièka: Neuvìøitelnı ivotní pøíbìh legendy cimrmanovského raení skonèil smrtící injekcí (14271 znakù, 2157 slov)
+2025-03-12 21:06:37,003 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 70
+2025-03-12 21:06:37,038 - synapse-scraper - INFO - Stahuji èlánek: Jana Patoèková: Èeskım lvùm by pomohlo víc en, pøíštì by mìla moderovat komièka
+2025-03-12 21:06:39,294 - synapse-scraper - INFO - Èlánek uloen: Jana Patoèková: Èeskım lvùm by pomohlo víc en, pøíštì by mìla moderovat komièka (2552 znakù, 375 slov)
+2025-03-12 21:06:39,295 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 71
+2025-03-12 21:06:39,679 - synapse-scraper - INFO - Stahuji èlánek: Škùdci a plevel? S tìmito triky vám u úrodu neseberou!
+2025-03-12 21:06:41,305 - synapse-scraper - ERROR - Chyba pøi extrakci textu z : Invalid URL '': No scheme supplied. Perhaps you meant https://?
+2025-03-12 21:06:41,306 - synapse-scraper - WARNING - Pøíliš málo textu ze èlánku: Škùdci a plevel? S tìmito triky vám u úrodu neseberou!, pøeskakuji
+2025-03-12 21:06:41,370 - synapse-scraper - INFO - Stahuji èlánek: Nemáte zahradu? Nevadí! Pìstujte ve velkém i na balkonì
+2025-03-12 21:06:42,822 - synapse-scraper - ERROR - Chyba pøi extrakci textu z : Invalid URL '': No scheme supplied. Perhaps you meant https://?
+2025-03-12 21:06:42,823 - synapse-scraper - WARNING - Pøíliš málo textu ze èlánku: Nemáte zahradu? Nevadí! Pìstujte ve velkém i na balkonì, pøeskakuji
+2025-03-12 21:06:43,243 - synapse-scraper - INFO - Stahuji èlánek: Zahrada plná slimákù? Moná dìláte jednu zásadní chybu
+2025-03-12 21:06:45,462 - synapse-scraper - ERROR - Chyba pøi extrakci textu z : Invalid URL '': No scheme supplied. Perhaps you meant https://?
+2025-03-12 21:06:45,462 - synapse-scraper - WARNING - Pøíliš málo textu ze èlánku: Zahrada plná slimákù? Moná dìláte jednu zásadní chybu, pøeskakuji
+2025-03-12 21:06:45,862 - synapse-scraper - INFO - Stahuji èlánek: Malı prostor, velká úroda! Promìòte svùj balkón v zahradu plnou ivota
+2025-03-12 21:06:47,675 - synapse-scraper - ERROR - Chyba pøi extrakci textu z : Invalid URL '': No scheme supplied. Perhaps you meant https://?
+2025-03-12 21:06:47,676 - synapse-scraper - WARNING - Pøíliš málo textu ze èlánku: Malı prostor, velká úroda! Promìòte svùj balkón v zahradu plnou ivota, pøeskakuji
+2025-03-12 21:06:47,759 - synapse-scraper - INFO - Zpracovávám RSS feed: echo24
+2025-03-12 21:06:48,350 - synapse-scraper - INFO - Pøipojení k databázi uzavøeno.
+2025-03-12 21:06:48,351 - synapse-scraper - INFO - Dokonèeno! Zpracováno celkem 252 èlánkù, pøidáno 71 novıch.
+2025-03-12 21:06:48,351 - synapse-scraper - INFO - Aktuální celkovı poèet èlánkù v databázi: 660
+2025-03-12 21:06:48,351 - synapse-scraper - INFO - Sbìr dokonèen, pøidáno 71 novıch èlánkù.
