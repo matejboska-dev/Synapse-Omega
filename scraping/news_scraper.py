@@ -223,9 +223,7 @@ def get_article_text(url, source):
         word_count = len(article_text.split())
         
         if char_count < 100:  # Pravděpodobně se nepodařilo správně extrahovat text
-            logger.warning(f"Málo textu extrahováno z {
-                
-                url}: pouze {char_count} znaků")
+            logger.warning(f"Málo textu extrahováno z {url}: pouze {char_count} znaků")
         
         return article_text, char_count, word_count
         
