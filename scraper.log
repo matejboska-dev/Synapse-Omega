@@ -7981,3 +7981,209 @@
 2025-03-17 12:06:50,235 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
 2025-03-17 12:06:51,545 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
 2025-03-17 12:06:51,553 - synapse-scraper - INFO - Stahuji èlánek: ivot za cizí peníze. Bìhem pandemie lidé zjistili, e vıplatu lze získat i bez práce
+2025-03-17 12:06:53,669 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:06:53,677 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:06:54,410 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:06:54,410 - synapse-scraper - INFO - Stahuji èlánek: Sto tisíc lidí proti korupci. Srbskı Bìlehrad zail velké protesty
+2025-03-17 12:06:57,197 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:06:57,197 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:06:58,549 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:06:58,549 - synapse-scraper - INFO - Stahuji èlánek: "U té neúcty bylo dost." Stovky Gróòanù demonstrovaly proti Trumpovi
+2025-03-17 12:06:59,988 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:06:59,988 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:07:01,321 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:07:01,321 - synapse-scraper - INFO - Stahuji èlánek: V Hustopeèích nad Beèvou èerpají zneèištìnou vodu. Snaí se zabránit šíøení benzenu
+2025-03-17 12:07:03,599 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:07:03,607 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:07:04,449 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:07:04,449 - synapse-scraper - INFO - Stahuji èlánek: Rumunská krajní pravice nakonec u volby prezidenta bude. Nasadí alespoò jednoho èlena
+2025-03-17 12:07:06,174 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:07:06,174 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:07:07,321 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:07:07,321 - synapse-scraper - INFO - Stahuji èlánek: Èeští poslanci chtìjí v létì jednat v USA s kongresmany i úøedníky o Ukrajinì a Rusku
+2025-03-17 12:07:08,762 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:07:08,762 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:07:10,041 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:07:10,041 - synapse-scraper - INFO - Stahuji èlánek: Trump posílil Zelenského, naznaèuje prùzkum. Ukazuje i ochotu Ukrajincù dále bojovat
+2025-03-17 12:07:13,335 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:07:13,335 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:07:13,852 - synapse-scraper - INFO - Zpracovávám RSS feed: ihned
+2025-03-17 12:07:14,114 - synapse-scraper - WARNING - ádné èlánky nenalezeny v RSS feedu: ihned
+2025-03-17 12:07:14,114 - synapse-scraper - INFO - Zpracovávám RSS feed: denik-n
+2025-03-17 12:07:14,262 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:07:14,262 - synapse-scraper - INFO - Stahuji èlánek: Vaše krvavé ruce zùstaly nepotrestány. V Bìlehradì vyšly proti vládì do ulic statisíce lidí
+2025-03-17 12:07:15,830 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:07:15,830 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:07:16,432 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:07:16,432 - synapse-scraper - INFO - Stahuji èlánek: „Pokud chce nìkdo krást, jsou jednodušší zpùsoby ne v kultuøe.“ Umìlci opìt pøipomnìli, e nadšením nájem nezaplatíš
+2025-03-17 12:07:17,799 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:07:17,808 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:07:18,854 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:07:18,854 - synapse-scraper - INFO - Stahuji èlánek: „Mladım chybí zápal pro medicínu. Já jsem prostì boomer.“ S oèním lékaøem o vıznamu mrkání i Monetovì šedém zákalu
+2025-03-17 12:07:20,559 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:07:20,559 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:07:21,486 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:07:21,486 - synapse-scraper - INFO - Stahuji èlánek: Útoè, útoè, útoè. A všechno popøi: ètyøi tipy na filmy a seriály, které vám o Trumpovi øeknou i to, co nechcete vìdìt
+2025-03-17 12:07:24,134 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:07:24,134 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:07:25,269 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:07:25,269 - synapse-scraper - INFO - Stahuji èlánek: Noví hrdinové v kinech: Daniel Craig touí a tápe, francouzští sıraøi bojují o vıhru, tchajwanští bratøi se utkají v šermu
+2025-03-17 12:07:28,329 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:07:28,329 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:07:29,535 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:07:29,535 - synapse-scraper - INFO - Stahuji èlánek: V otázce obezity kadı øeší pohyb. Pohyb, pohyb! Jene nám z toho vypadává to zásadní, øíká expertka
+2025-03-17 12:07:31,458 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:07:31,458 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:07:32,613 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:07:32,613 - synapse-scraper - INFO - Stahuji èlánek: Mezinárodní festival AFO. Šedesát let filmu, vìdy a hledání novıch perspektiv
+2025-03-17 12:07:34,103 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:07:34,103 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:07:34,895 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:07:34,895 - synapse-scraper - INFO - Stahuji èlánek: „Pøipadám si jak Vaculík, akorát nemám ádnı chlapy.“ Ztracené mladé eny ovládly èeskou literaturu
+2025-03-17 12:07:37,877 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:07:37,877 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:07:39,281 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:07:39,281 - synapse-scraper - INFO - Stahuji èlánek: „U je to tady! Divnı, divnı!“ Pøeètìte si ukázku z nové knihy Fuj, to je hnusnı! o neroztomilıch zvíøecích superhrdinech
+2025-03-17 12:07:41,503 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:07:41,503 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:07:42,116 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:07:42,116 - synapse-scraper - INFO - Stahuji èlánek: Studio N: Putinovi i Zelenskému teèe do bot. Trump tvrdì obchoduje s mírem
+2025-03-17 12:07:44,988 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:07:44,988 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:07:46,064 - synapse-scraper - INFO - Zpracovávám RSS feed: ct24
+2025-03-17 12:07:46,358 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:07:46,359 - synapse-scraper - INFO - Stahuji èlánek: Vltavská filharmonie i s okolními investicemi má stát 16,5 miliardy
+2025-03-17 12:07:47,915 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:07:47,915 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:07:49,031 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:07:49,031 - synapse-scraper - INFO - Stahuji èlánek: Malí zemìdìlci dostanou peníze na likvidaci støech s azbestem
+2025-03-17 12:07:50,296 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:07:50,296 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:07:50,823 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:07:50,823 - synapse-scraper - INFO - Stahuji èlánek: Litva obvinila ruskou rozvìdku z loòského poáru prodejny ve Vilniusu
+2025-03-17 12:07:53,785 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:07:53,793 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:07:54,783 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:07:54,783 - synapse-scraper - INFO - Stahuji èlánek: Klimatologùm chybí data a volají po spolupráci. Obøí dírou je ruská Arktida
+2025-03-17 12:07:56,469 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:07:56,469 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:07:57,879 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:07:57,879 - synapse-scraper - INFO - Stahuji èlánek: Za pašování pervitinu pøes Èesko do Rakouska stíhá policie pìt lidí
+2025-03-17 12:08:00,846 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:08:00,846 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:08:01,534 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:08:01,534 - synapse-scraper - INFO - Stahuji èlánek: Evropa musí zùstat geopolitickım hráèem, øekl Lipavskı v Bruselu
+2025-03-17 12:08:04,082 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:08:04,082 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:08:05,374 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:08:05,374 - synapse-scraper - INFO - Stahuji èlánek: Ruskı útok na Ukrajinì zpùsobil vıpadky proudu
+2025-03-17 12:08:07,744 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:08:07,744 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:08:09,208 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:08:09,208 - synapse-scraper - INFO - Stahuji èlánek: Zvíøata mají roènì dopad na krajinu jako stovky tisíc povodní, odhadují vìdci
+2025-03-17 12:08:10,641 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:08:10,641 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:08:11,942 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:08:11,950 - synapse-scraper - INFO - Stahuji èlánek: K prosazení priorit mají koalici pomoci mimoøádné schùze snìmovny
+2025-03-17 12:08:15,086 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:08:15,086 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:08:16,501 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:08:16,501 - synapse-scraper - INFO - Stahuji èlánek: Celní válka mùe poškodit aerolinie
+2025-03-17 12:08:19,087 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:08:19,087 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:08:19,688 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:08:19,688 - synapse-scraper - INFO - Stahuji èlánek: Trump øekl, e v úterı bude mluvit s Putinem
+2025-03-17 12:08:21,180 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:08:21,188 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:08:21,954 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:08:21,954 - synapse-scraper - INFO - Stahuji èlánek: Policie zadrela patnáct lidí kvùli poáru v Severní Makedonii
+2025-03-17 12:08:24,800 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:08:24,800 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:08:25,633 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:08:25,633 - synapse-scraper - INFO - Stahuji èlánek: Zdravotní pojišovny vyèlení na prevenci o ètvrt miliardy víc ne loni
+2025-03-17 12:08:28,722 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:08:28,722 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:08:29,540 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:08:29,540 - synapse-scraper - INFO - Stahuji èlánek: Cenu divadelní kritiky získala inscenace Wernisch
+2025-03-17 12:08:31,804 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:08:31,804 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:08:32,601 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:08:32,601 - synapse-scraper - INFO - Stahuji èlánek: Ovzduší je díky ekologickım opatøením èistší, zákon pøináší další úpravy
+2025-03-17 12:08:35,400 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:08:35,400 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:08:36,314 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:08:36,314 - synapse-scraper - INFO - Stahuji èlánek: Stát od ledna zøejmì spustí povinnı registr pro ubytovací zaøízení
+2025-03-17 12:08:38,199 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:08:38,199 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:08:39,695 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:08:39,703 - synapse-scraper - INFO - Stahuji èlánek: Lékaøi nevìøili, e pøeije. Dívka se vyléèila a na blogu sdílí svùj pøíbìh
+2025-03-17 12:08:40,878 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:08:40,878 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:08:41,553 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:08:41,553 - synapse-scraper - INFO - Stahuji èlánek: Školskou novelu dotáhne snìmovna koncem mìsíce, doufá Bek. Plaga kritizuje financování nepedagogù
+2025-03-17 12:08:42,814 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:08:42,814 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:08:44,234 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:08:44,234 - synapse-scraper - INFO - Stahuji èlánek: Soud v USA zablokoval deportace opírající se o zákon z osmnáctého století
+2025-03-17 12:08:46,645 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:08:46,645 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:08:47,433 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:08:47,433 - synapse-scraper - INFO - Stahuji èlánek: Mapa armády potvrzuje ústup Ukrajincù ze Sudi, píší média
+2025-03-17 12:08:49,356 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:08:49,356 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:08:50,754 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:08:50,754 - synapse-scraper - INFO - Stahuji èlánek: Ukrajinci nemùou èekat s holıma rukama, øíká Nerudová. Podle Foldyny se EU chová zbrkle
+2025-03-17 12:08:52,485 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:08:52,493 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:08:53,078 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:08:53,078 - synapse-scraper - INFO - Stahuji èlánek: Pokraèování Rádia Svobodná Evropa chce Lipavskı probrat s ministry zahranièí EU
+2025-03-17 12:08:54,380 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:08:54,380 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:08:55,331 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:08:55,331 - synapse-scraper - INFO - Stahuji èlánek: Desítky evakuovanıch kvùli jeøábu v Brnì se v noci mohly vrátit domù
+2025-03-17 12:08:57,834 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:08:57,834 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:08:59,142 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:08:59,142 - synapse-scraper - INFO - Stahuji èlánek: Amerièané udeøili proti hútíùm v Jemenu
+2025-03-17 12:09:02,185 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:09:02,185 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:09:03,017 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:09:03,017 - synapse-scraper - INFO - Stahuji èlánek: „Ztráta tolika mladıch ivotù je nenapravitelná.“ Poár klubu v Severní Makedonii má desítky obìtí
+2025-03-17 12:09:06,075 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:09:06,075 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:09:07,317 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:09:07,317 - synapse-scraper - INFO - Stahuji èlánek: Dron, na kterém se podílely èeské firmy, získal certifikaci NATO
+2025-03-17 12:09:08,526 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:09:08,526 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:09:09,944 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:09:09,944 - synapse-scraper - INFO - Stahuji èlánek: Tornáda a bouøe v USA si vyádaly desítky mrtvıch
+2025-03-17 12:09:11,047 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:09:11,047 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:09:12,417 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:09:12,417 - synapse-scraper - INFO - Stahuji èlánek: Budoucnost pøímìøí s Hamásem je nejistá stejnì jako osud rukojmí
+2025-03-17 12:09:15,417 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:09:15,425 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:09:16,781 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:09:16,781 - synapse-scraper - INFO - Stahuji èlánek: Jiní Korea hledá cestu z demografické krize
+2025-03-17 12:09:17,992 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:09:17,992 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:09:18,960 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:09:18,960 - synapse-scraper - INFO - Stahuji èlánek: Øešení dopravní nehody usnadní aplikace
+2025-03-17 12:09:21,895 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:09:21,895 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:09:22,777 - synapse-scraper - INFO - Zpracovávám RSS feed: irozhlas
+2025-03-17 12:09:22,929 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:09:22,929 - synapse-scraper - INFO - Stahuji èlánek: Jsem Roman Kafka, dluím miliony, ale nejsem podvodník. Brutálnì mì vydírají, tvrdí soudce
+2025-03-17 12:09:24,933 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:09:24,933 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:09:25,477 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:09:25,477 - synapse-scraper - INFO - Stahuji èlánek: háøskı útok na obchod IKEA ve Vilniusu provedli dva Ukrajinci z ruské vojenské rozvìdky, tvrdí prokurátor
+2025-03-17 12:09:28,315 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:09:28,315 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:09:29,729 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:09:29,729 - synapse-scraper - INFO - Stahuji èlánek: Vrate nám Sochu svobody, vyzval francouzskı poslanec Amerièany. Podle nìj nešíøí správné hodnoty
+2025-03-17 12:09:31,782 - synapse-scraper - ERROR - Chyba pøi ukládání èlánku do databáze: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:09:31,790 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 3
+2025-03-17 12:09:33,271 - synapse-scraper - ERROR - Chyba pøi kontrole existence èlánku: ('08S01', '[08S01] [Microsoft][ODBC Driver 17 for SQL Server]Communication link failure (0) (SQLExecDirectW)')
+2025-03-17 12:09:33,271 - synapse-scraper - INFO - Stahuji èlánek: Mír ve skuteènosti nechtìjí, kritizuje ruské podmínky pøímìøí šéfka unijní diplomacie Kallasová
+2025-03-17 12:09:35,292 - synapse-scraper - INFO - Pøipojení k databázi uzavøeno.
