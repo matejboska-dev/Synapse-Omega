@@ -1,0 +1,28 @@
+# Základní knihovny
+pandas==2.2.0
+numpy==1.26.3
+matplotlib==3.8.2
+seaborn==0.13.2
+
+# Databáze
+pyodbc==5.0.1
+
+# Zpracování textu
+nltk==3.8.1
+scikit-learn==1.4.0
+tqdm==4.66.1
+wordcloud==1.9.3
+unicodedata2==15.1.0
+
+# Web aplikace
+flask==3.0.2
+gunicorn==21.2.0
+flask-wtf==1.2.1
+
+# Scrapování
+beautifulsoup4==4.12.2
+requests==2.31.0
+lxml==5.1.0
+
+# Práce s obrázky
+pillow==10.2.0

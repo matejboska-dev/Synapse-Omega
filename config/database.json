@@ -1,0 +1,7 @@
+{
+    "server": "localhost",
+    "database": "NewsDB",
+    "username": "user",
+    "password": "password",
+    "driver": "{ODBC Driver 17 for SQL Server}"
+}
