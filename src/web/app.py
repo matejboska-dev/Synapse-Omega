@@ -6,6 +6,7 @@ import threading
 import subprocess
 from datetime import datetime
 import logging
+import glob
 from flask import Flask, render_template, request, redirect, url_for, jsonify
 
 # add parent directory to system path for imports
@@ -62,20 +63,45 @@ def run_scraper():
         logger.error(f"error running scraper: {str(e)}")
 
 def load_data():
-    """load articles data and models"""
+    """load only scraped articles data (not training data) and models"""
     global articles_df, category_model, sentiment_model, loaded_date
     
     # paths
     project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-    data_path = os.path.join(project_root, 'data', 'processed', 'articles_processed.csv')
+    display_dir = os.path.join(project_root, 'data', 'display')
+    display_file = os.path.join(display_dir, 'all_articles.json')
+    
     category_model_path = os.path.join(project_root, 'models', 'category_classifier')
     sentiment_model_path = os.path.join(project_root, 'models', 'sentiment_analyzer')
     
+    # create display directory if it doesn't exist
+    os.makedirs(display_dir, exist_ok=True)
+    
     # load articles data
     try:
-        articles_df = pd.read_csv(data_path)
+        # check if all_articles.json exists, otherwise find latest display file
+        if os.path.exists(display_file):
+            with open(display_file, 'r', encoding='utf-8') as f:
+                articles = json.load(f)
+            articles_df = pd.DataFrame(articles)
+        else:
+            # find latest display file
+            display_files = glob.glob(os.path.join(display_dir, 'display_articles_*.json'))
+            
+            if display_files:
+                latest_file = max(display_files, key=os.path.getmtime)
+                with open(latest_file, 'r', encoding='utf-8') as f:
+                    articles = json.load(f)
+                articles_df = pd.DataFrame(articles)
+            else:
+                # if no display files found, create empty DataFrame with required columns
+                articles_df = pd.DataFrame(columns=[
+                    'Id', 'Title', 'Content', 'Source', 'Category', 'predicted_category', 
+                    'sentiment', 'PublishDate', 'ArticleUrl', 'ArticleLength', 'WordCount'
+                ])
+        
         loaded_date = datetime.now()
-        logger.info(f"loaded {len(articles_df)} articles from {data_path}")
+        logger.info(f"loaded {len(articles_df)} articles for display")
     except Exception as e:
         logger.error(f"failed to load articles data: {str(e)}")
         articles_df = pd.DataFrame()
@@ -106,15 +132,15 @@ def index():
     # get article stats
     stats = {
         'total_articles': len(articles_df) if articles_df is not None else 0,
-        'sources': articles_df['Source'].nunique() if articles_df is not None else 0,
-        'categories': articles_df['Category'].nunique() if articles_df is not None else 0,
+        'sources': articles_df['Source'].nunique() if articles_df is not None and len(articles_df) > 0 else 0,
+        'categories': articles_df['Category'].nunique() if articles_df is not None and len(articles_df) > 0 else 0,
         'date_range': {
-            'from': articles_df['PublishDate'].min() if articles_df is not None else None,
-            'to': articles_df['PublishDate'].max() if articles_df is not None else None
+            'from': articles_df['PublishDate'].min() if articles_df is not None and len(articles_df) > 0 else None,
+            'to': articles_df['PublishDate'].max() if articles_df is not None and len(articles_df) > 0 else None
         },
-        'newest_articles': articles_df.sort_values('PublishDate', ascending=False).head(5).to_dict('records') if articles_df is not None else [],
-        'top_sources': articles_df['Source'].value_counts().head(5).to_dict() if articles_df is not None else {},
-        'top_categories': articles_df['Category'].value_counts().head(5).to_dict() if articles_df is not None else {},
+        'newest_articles': articles_df.sort_values('PublishDate', ascending=False).head(5).to_dict('records') if articles_df is not None and len(articles_df) > 0 else [],
+        'top_sources': articles_df['Source'].value_counts().head(5).to_dict() if articles_df is not None and len(articles_df) > 0 else {},
+        'top_categories': articles_df['Category'].value_counts().head(5).to_dict() if articles_df is not None and len(articles_df) > 0 else {},
         'loaded_date': loaded_date
     }
     
@@ -134,40 +160,55 @@ def articles():
     search = request.args.get('search', None)
     
     # apply filters
-    filtered_df = articles_df.copy()
-    
-    if category and category != 'all':
-        filtered_df = filtered_df[filtered_df['Category'] == category]
-    
-    if source and source != 'all':
-        filtered_df = filtered_df[filtered_df['Source'] == source]
-    
-    if search:
-        filtered_df = filtered_df[
-            filtered_df['Title'].str.contains(search, case=False, na=False) | 
-            filtered_df['Content'].str.contains(search, case=False, na=False)
-        ]
-    
-    # pagination
-    page = int(request.args.get('page', 1))
-    per_page = 20
-    total_pages = (len(filtered_df) + per_page - 1) // per_page
-    
-    start_idx = (page - 1) * per_page
-    end_idx = start_idx + per_page
-    
-    paged_df = filtered_df.sort_values('PublishDate', ascending=False).iloc[start_idx:end_idx]
-    
-    # prepare data for template
-    articles_list = paged_df.to_dict('records')
-    categories = articles_df['Category'].dropna().unique().tolist()
-    sources = articles_df['Source'].dropna().unique().tolist()
+    if len(articles_df) > 0:
+        filtered_df = articles_df.copy()
+        
+        if category and category != 'all':
+            filtered_df = filtered_df[filtered_df['Category'] == category]
+        
+        if source and source != 'all':
+            filtered_df = filtered_df[filtered_df['Source'] == source]
+        
+        if sentiment and sentiment != 'all':
+            filtered_df = filtered_df[filtered_df['sentiment'] == sentiment]
+        
+        if search:
+            filtered_df = filtered_df[
+                filtered_df['Title'].str.contains(search, case=False, na=False) | 
+                filtered_df['Content'].str.contains(search, case=False, na=False)
+            ]
+        
+        # pagination
+        page = int(request.args.get('page', 1))
+        per_page = 20
+        total_pages = (len(filtered_df) + per_page - 1) // per_page
+        
+        start_idx = (page - 1) * per_page
+        end_idx = start_idx + per_page
+        
+        paged_df = filtered_df.sort_values('PublishDate', ascending=False).iloc[start_idx:end_idx]
+        
+        # prepare data for template
+        articles_list = paged_df.to_dict('records')
+        categories = articles_df['Category'].dropna().unique().tolist()
+        sources = articles_df['Source'].dropna().unique().tolist()
+        sentiments = articles_df['sentiment'].dropna().unique().tolist() if 'sentiment' in articles_df.columns else []
+    else:
+        # empty data
+        articles_list = []
+        categories = []
+        sources = []
+        sentiments = []
+        page = 1
+        total_pages = 0
+        filtered_df = pd.DataFrame()
     
     return render_template(
         'articles.html', 
         articles=articles_list,
         categories=sorted(categories),
         sources=sorted(sources),
+        sentiments=sorted(sentiments) if sentiments else [],
         current_category=category,
         current_source=source,
         current_sentiment=sentiment,
@@ -192,26 +233,6 @@ def article_detail(article_id):
     
     article_data = article.iloc[0].to_dict()
     
-    # get category prediction if model is available
-    if category_model is not None:
-        text = article_data['Title'] + ' ' + article_data['Content']
-        predicted_category = category_model.predict([text])[0]
-        article_data['predicted_category'] = predicted_category
-    
-    # get sentiment prediction if model is available
-    if sentiment_model is not None:
-        text = article_data['Title'] + ' ' + article_data['Content']
-        sentiment_id = sentiment_model.predict([text])[0]
-        article_data['sentiment'] = sentiment_model.labels[sentiment_id]
-        
-        # get sentiment features
-        features = sentiment_model.extract_sentiment_features([text])
-        article_data['sentiment_features'] = {
-            'positive_word_count': features['positive_word_count'].iloc[0],
-            'negative_word_count': features['negative_word_count'].iloc[0],
-            'sentiment_ratio': features['sentiment_ratio'].iloc[0]
-        }
-    
     return render_template('article_detail.html', article=article_data)
 
 @app.route('/categories')
@@ -222,8 +243,11 @@ def categories():
         load_data()
     
     # get category counts
-    category_counts = articles_df['Category'].value_counts().reset_index()
-    category_counts.columns = ['category', 'count']
+    if len(articles_df) > 0:
+        category_counts = articles_df['Category'].value_counts().reset_index()
+        category_counts.columns = ['category', 'count']
+    else:
+        category_counts = pd.DataFrame(columns=['category', 'count'])
     
     # prepare data for template
     categories_list = category_counts.to_dict('records')
@@ -238,8 +262,11 @@ def sources():
         load_data()
     
     # get source counts
-    source_counts = articles_df['Source'].value_counts().reset_index()
-    source_counts.columns = ['source', 'count']
+    if len(articles_df) > 0:
+        source_counts = articles_df['Source'].value_counts().reset_index()
+        source_counts.columns = ['source', 'count']
+    else:
+        source_counts = pd.DataFrame(columns=['source', 'count'])
     
     # prepare data for template
     sources_list = source_counts.to_dict('records')
@@ -322,9 +349,6 @@ def reload_data():
     thread = threading.Thread(target=run_scraper)
     thread.daemon = True
     thread.start()
-    
-    # immediately reload data
-    load_data()
     
     return redirect(url_for('index'))
 
