@@ -15,6 +15,9 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 # imports from our modules
 from models.category_classifier import CategoryClassifier
 from models.sentiment_analyzer import SentimentAnalyzer
+from models.enhanced_category_classifier import EnhancedCategoryClassifier
+from models.enhanced_sentiment_analyzer import EnhancedSentimentAnalyzer
+from routes.chatbot import chatbot_bp
 
 # logger configuration
 logging.basicConfig(
@@ -29,11 +32,15 @@ logger = logging.getLogger(__name__)
 # create flask app
 app = Flask(__name__)
 
+# register blueprints
+app.register_blueprint(chatbot_bp)
+
 # global variables
 articles_df = None
 category_model = None
 sentiment_model = None
 loaded_date = None
+enhanced_models = False
 
 def run_scraper():
     """run scraper script in a separate process"""
@@ -64,15 +71,19 @@ def run_scraper():
 
 def load_data():
     """load only scraped articles data (not training data) and models"""
-    global articles_df, category_model, sentiment_model, loaded_date
+    global articles_df, category_model, sentiment_model, loaded_date, enhanced_models
     
     # paths
     project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     display_dir = os.path.join(project_root, 'data', 'display')
     display_file = os.path.join(display_dir, 'all_articles.json')
     
-    category_model_path = os.path.join(project_root, 'models', 'category_classifier')
-    sentiment_model_path = os.path.join(project_root, 'models', 'sentiment_analyzer')
+    # Check for enhanced models first
+    enhanced_category_model_path = os.path.join(project_root, 'models', 'enhanced_category_classifier')
+    enhanced_sentiment_model_path = os.path.join(project_root, 'models', 'enhanced_sentiment_analyzer')
+    
+    standard_category_model_path = os.path.join(project_root, 'models', 'category_classifier')
+    standard_sentiment_model_path = os.path.join(project_root, 'models', 'sentiment_analyzer')
     
     # create display directory if it doesn't exist
     os.makedirs(display_dir, exist_ok=True)
@@ -102,25 +113,52 @@ def load_data():
         
         loaded_date = datetime.now()
         logger.info(f"loaded {len(articles_df)} articles for display")
+        
+        # Add data to application config for chatbot to access
+        app.config['articles_df'] = articles_df
     except Exception as e:
         logger.error(f"failed to load articles data: {str(e)}")
         articles_df = pd.DataFrame()
     
-    # load category model if available
+    # First try to load enhanced models
     try:
-        category_model = CategoryClassifier.load_model(category_model_path)
-        logger.info("category classifier loaded successfully")
+        # Try to load enhanced category model first
+        if os.path.exists(enhanced_category_model_path):
+            category_model = EnhancedCategoryClassifier.load_model(enhanced_category_model_path)
+            logger.info("Enhanced category classifier loaded successfully")
+            enhanced_models = True
+        else:
+            # Fallback to standard model
+            category_model = CategoryClassifier.load_model(standard_category_model_path)
+            logger.info("Standard category classifier loaded successfully")
+            
+        # Try to load enhanced sentiment model first
+        if os.path.exists(enhanced_sentiment_model_path):
+            sentiment_model = EnhancedSentimentAnalyzer.load_model(enhanced_sentiment_model_path)
+            logger.info("Enhanced sentiment analyzer loaded successfully")
+            enhanced_models = True
+        else:
+            # Fallback to standard model
+            sentiment_model = SentimentAnalyzer.load_model(standard_sentiment_model_path)
+            logger.info("Standard sentiment analyzer loaded successfully")
     except Exception as e:
-        logger.warning(f"could not load category model: {str(e)}")
-        category_model = None
-    
-    # load sentiment model if available
-    try:
-        sentiment_model = SentimentAnalyzer.load_model(sentiment_model_path)
-        logger.info("sentiment analyzer loaded successfully")
-    except Exception as e:
-        logger.warning(f"could not load sentiment model: {str(e)}")
-        sentiment_model = None
+        logger.warning(f"could not load enhanced models, trying standard models: {str(e)}")
+        enhanced_models = False
+        
+        # Try to load standard models as fallback
+        try:
+            category_model = CategoryClassifier.load_model(standard_category_model_path)
+            logger.info("Standard category classifier loaded successfully")
+        except Exception as e:
+            logger.warning(f"could not load category model: {str(e)}")
+            category_model = None
+        
+        try:
+            sentiment_model = SentimentAnalyzer.load_model(standard_sentiment_model_path)
+            logger.info("Standard sentiment analyzer loaded successfully")
+        except Exception as e:
+            logger.warning(f"could not load sentiment model: {str(e)}")
+            sentiment_model = None
 
 @app.route('/')
 def index():
@@ -141,7 +179,8 @@ def index():
         'newest_articles': articles_df.sort_values('PublishDate', ascending=False).head(5).to_dict('records') if articles_df is not None and len(articles_df) > 0 else [],
         'top_sources': articles_df['Source'].value_counts().head(5).to_dict() if articles_df is not None and len(articles_df) > 0 else {},
         'top_categories': articles_df['Category'].value_counts().head(5).to_dict() if articles_df is not None and len(articles_df) > 0 else {},
-        'loaded_date': loaded_date
+        'loaded_date': loaded_date,
+        'enhanced_models': enhanced_models  # Add flag indicating if enhanced models are being used
     }
     
     return render_template('index.html', stats=stats)
@@ -295,16 +334,38 @@ def analyze_text():
     
     # get sentiment prediction if model is available
     if sentiment_model is not None:
-        sentiment_id = sentiment_model.predict([text])[0]
-        result['sentiment'] = sentiment_model.labels[sentiment_id]
-        
-        # get sentiment features
-        features = sentiment_model.extract_sentiment_features([text])
-        result['sentiment_features'] = {
-            'positive_word_count': int(features['positive_word_count'].iloc[0]),
-            'negative_word_count': int(features['negative_word_count'].iloc[0]),
-            'sentiment_ratio': float(features['sentiment_ratio'].iloc[0])
-        }
+        # Handle different model types
+        if enhanced_models:
+            # Enhanced models have different processing requirements
+            from data.text_preprocessor import TextPreprocessor
+            text_preprocessor = TextPreprocessor(language='czech')
+            processed_text = text_preprocessor.preprocess_text(text)
+            
+            sentiment_id = sentiment_model.predict([processed_text])[0]
+            result['sentiment'] = sentiment_model.labels[sentiment_id]
+            
+            # Add explanation for enhanced models
+            explanation = sentiment_model.explain_prediction(processed_text)
+            result['sentiment_features'] = {
+                'positive_word_count': int(explanation['positive_word_count']),
+                'negative_word_count': int(explanation['negative_word_count']),
+                'sentiment_ratio': float(explanation['sentiment_ratio']),
+                'positive_words': explanation['positive_words'],
+                'negative_words': explanation['negative_words'],
+                'reason': explanation['reason']
+            }
+        else:
+            # Standard model processing
+            sentiment_id = sentiment_model.predict([text])[0]
+            result['sentiment'] = sentiment_model.labels[sentiment_id]
+            
+            # Get sentiment features
+            features = sentiment_model.extract_sentiment_features([text])
+            result['sentiment_features'] = {
+                'positive_word_count': int(features['positive_word_count'].iloc[0]),
+                'negative_word_count': int(features['negative_word_count'].iloc[0]),
+                'sentiment_ratio': float(features['sentiment_ratio'].iloc[0])
+            }
     
     return jsonify(result)
 
@@ -322,25 +383,55 @@ def analyze():
         
         # get category prediction if model is available
         if category_model is not None:
-            predicted_category = category_model.predict([text])[0]
+            # Handle different model types
+            if enhanced_models:
+                from data.text_preprocessor import TextPreprocessor
+                text_preprocessor = TextPreprocessor(language='czech')
+                processed_text = text_preprocessor.preprocess_text(text)
+                predicted_category = category_model.predict([processed_text])[0]
+            else:
+                predicted_category = category_model.predict([text])[0]
+                
             result['category'] = predicted_category
         
         # get sentiment prediction if model is available
         if sentiment_model is not None:
-            sentiment_id = sentiment_model.predict([text])[0]
-            result['sentiment'] = sentiment_model.labels[sentiment_id]
-            
-            # get sentiment features
-            features = sentiment_model.extract_sentiment_features([text])
-            result['sentiment_features'] = {
-                'positive_word_count': int(features['positive_word_count'].iloc[0]),
-                'negative_word_count': int(features['negative_word_count'].iloc[0]),
-                'sentiment_ratio': float(features['sentiment_ratio'].iloc[0])
-            }
+            # Handle different model types
+            if enhanced_models:
+                # Enhanced models have different processing requirements
+                from data.text_preprocessor import TextPreprocessor
+                text_preprocessor = TextPreprocessor(language='czech')
+                processed_text = text_preprocessor.preprocess_text(text)
+                
+                sentiment_id = sentiment_model.predict([processed_text])[0]
+                result['sentiment'] = sentiment_model.labels[sentiment_id]
+                
+                # Add explanation for enhanced models
+                explanation = sentiment_model.explain_prediction(processed_text)
+                result['sentiment_features'] = {
+                    'positive_word_count': int(explanation['positive_word_count']),
+                    'negative_word_count': int(explanation['negative_word_count']),
+                    'sentiment_ratio': float(explanation['sentiment_ratio']),
+                    'positive_words': explanation['positive_words'],
+                    'negative_words': explanation['negative_words'],
+                    'reason': explanation['reason']
+                }
+            else:
+                # Standard model processing
+                sentiment_id = sentiment_model.predict([text])[0]
+                result['sentiment'] = sentiment_model.labels[sentiment_id]
+                
+                # Get sentiment features
+                features = sentiment_model.extract_sentiment_features([text])
+                result['sentiment_features'] = {
+                    'positive_word_count': int(features['positive_word_count'].iloc[0]),
+                    'negative_word_count': int(features['negative_word_count'].iloc[0]),
+                    'sentiment_ratio': float(features['sentiment_ratio'].iloc[0])
+                }
         
-        return render_template('analyze.html', result=result)
+        return render_template('analyze.html', result=result, enhanced_models=enhanced_models)
     
-    return render_template('analyze.html')
+    return render_template('analyze.html', enhanced_models=enhanced_models)
 
 @app.route('/reload_data')
 def reload_data():
@@ -361,6 +452,31 @@ def trigger_scraper():
     thread.start()
     
     return jsonify({"status": "success", "message": "Scraper spuštěn na pozadí"})
+
+@app.route('/train_enhanced_models')
+def train_enhanced_models():
+    """endpoint to train enhanced models"""
+    try:
+        # get path to training script
+        train_script = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'scripts', 'train_enhanced_models.py')
+        
+        if not os.path.exists(train_script):
+            return jsonify({"status": "error", "message": "Script pro trénování vylepšených modelů nebyl nalezen."}), 404
+        
+        # execute training script using the same python executable in a separate process
+        python_exe = sys.executable
+        process = subprocess.Popen([python_exe, train_script],
+                                  stdout=subprocess.PIPE,
+                                  stderr=subprocess.PIPE)
+        
+        logger.info("Enhanced model training started in background")
+        
+        # Return immediately, don't wait for completion
+        return jsonify({"status": "success", "message": "Trénování vylepšených modelů spuštěno na pozadí."})
+        
+    except Exception as e:
+        logger.error(f"Error starting enhanced model training: {str(e)}")
+        return jsonify({"status": "error", "message": f"Chyba při spouštění trénování: {str(e)}"}), 500
 
 @app.errorhandler(404)
 def page_not_found(e):

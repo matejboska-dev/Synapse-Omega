@@ -1,211 +1,253 @@
-import pandas as pd
 import re
 import unicodedata
-import logging
-from tqdm import tqdm
+import pandas as pd
 import nltk
+from nltk.tokenize import word_tokenize, RegexpTokenizer
+from nltk.stem.snowball import SnowballStemmer
+from nltk.corpus import stopwords
+import logging
 import string
 
-# logger configuration
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-logger = logging.getLogger(__name__)
+# Ensure NLTK data is downloaded
+try:
+    nltk.data.find('tokenizers/punkt')
+    nltk.data.find('corpora/stopwords')
+except LookupError:
+    nltk.download('punkt')
+    nltk.download('stopwords')
 
 class TextPreprocessor:
     """
-    class for preprocessing article texts
+    Enhanced class for preprocessing text data for NLP tasks.
     """
     
-    def __init__(self, language='czech'):
+    def __init__(self, language='czech', remove_stopwords=True, stemming=False, 
+                 lemmatization=False, remove_accents=True, min_word_length=2):
         """
-        initialize preprocessor
+        Initialize the text preprocessor.
         
-        args:
-            language (str): text language ('czech' or 'english')
+        Args:
+            language (str): Language for stopwords ('czech' or 'english')
+            remove_stopwords (bool): Whether to remove stopwords
+            stemming (bool): Whether to apply stemming
+            lemmatization (bool): Whether to apply lemmatization (if available)
+            remove_accents (bool): Whether to remove accents from text
+            min_word_length (int): Minimum length of words to keep
         """
         self.language = language
+        self.remove_stopwords = remove_stopwords
+        self.stemming = stemming
+        self.lemmatization = lemmatization
+        self.remove_accents = remove_accents
+        self.min_word_length = min_word_length
         
-        # download required nltk data if not already downloaded
-        try:
-            nltk.data.find('tokenizers/punkt')
-        except LookupError:
-            logger.info("downloading nltk punkt tokenizer")
-            nltk.download('punkt')
+        # Initialize word tokenizer with fallback to simple splitting
+        self.tokenizer = RegexpTokenizer(r'\w+')
+        
+        # Initialize stemmer
+        if self.stemming:
+            try:
+                if language == 'czech':
+                    # Czech is not supported, use English stemmer
+                    logging.warning(f"Stemmer not available for language: {language}. Using 'english' instead.")
+                    self.stemmer = SnowballStemmer('english')
+                    self.stemming_language = 'english'
+                else:
+                    # Try with specified language
+                    self.stemmer = SnowballStemmer(language)
+                    self.stemming_language = language
+            except ValueError as e:
+                logging.warning(f"Stemmer initialization failed: {e}. Disabling stemming.")
+                self.stemming = False
+        
+        # Initialize stopwords
+        if self.remove_stopwords:
+            try:
+                self.stop_words = set(stopwords.words(language))
+                # Add custom stopwords for Czech news
+                if language == 'czech':
+                    self.stop_words.update([
+                        'podle', 'proto', 'nové', 'jeho', 'které', 'také', 'jsme', 'mezi', 
+                        'může', 'řekl', 'uvedl', 'další', 'této', 'byly', 'bude', 'byla', 
+                        'jako', 'více', 'však', 'když', 'pokud', 'aby', 'již', 'let', 'tak',
+                        'při', 'jen', 'ale', 'dnes', 'ještě', 'není', 'kde', 'což', 'která',
+                        'své', 'svůj', 'svou', 'mimo', 'toho', 'tedy', 'tím', 'tam', 'pak',
+                        'tento', 'tato', 'tyto', 'toto', 'může', 'například', 'uvádí', 'uvádějí',
+                        'nyní', 'protože', 'sdělil', 'informoval', 'měl', 'měla', 'uvedla', 'ale',
+                        'lidí', 'letech', 'korun', 'roce', 'roku', 'řekla', 'řekli', 'vůbec',
+                        'pouze', 'právě', 'kvůli', 'včera', 'vždy', 'neboť', 'kromě', 'přitom',
+                        'zprávy', 'zpráva', 'článek', 'článku', 'řekl', 'řekla', 'dodal', 'dodala',
+                        'doplnil', 'doplnila', 'prohlásil', 'prohlásila', 'poznamenal', 'uvedla',
+                        'reagoval', 'reagovala', 'napsal', 'napsala', 'podotkl', 'podotkla',
+                        'upozornil', 'upozornila', 'tvrdí', 'tvrdil', 'tvrdila', 'oznámil',
+                        'oznámila', 'informoval', 'informovala', 'potvrdil', 'potvrdila', 'připomenul',
+                        'připomněla', 'zdůraznil', 'zdůraznila'
+                    ])
+            except OSError:
+                logging.warning(f"Stopwords not available for language: {language}. Using empty set.")
+                self.stop_words = set()
+        else:
+            self.stop_words = set()
+    
+    def remove_accents_from_text(self, text):
+        """
+        Remove accents from text (convert 'ě' to 'e', 'č' to 'c', etc.)
+        
+        Args:
+            text (str): Input text
             
-        try:
-            nltk.data.find(f'corpora/stopwords')
-        except LookupError:
-            logger.info("downloading nltk stopwords")
-            nltk.download('stopwords')
-        
-        # load stopwords for the specified language
-        self.stop_words = set()
-        try:
-            if language == 'czech':
-                # for czech language we need to use stopwords from external source
-                # because nltk doesn't have czech stopwords directly
-                self.load_czech_stopwords()
-            else:
-                self.stop_words = set(nltk.corpus.stopwords.words(language))
-        except Exception as e:
-            logger.warning(f"error loading stopwords: {str(e)}")
-    
-    def load_czech_stopwords(self):
+        Returns:
+            str: Text without accents
         """
-        load czech stopwords from custom source
-        """
-        # basic czech stopwords
-        czech_stopwords = [
-            "a", "aby", "ale", "ani", "ano", "asi", "až", "bez", "bude", "budem",
-            "budeš", "by", "byl", "byla", "byli", "bylo", "být", "co", "což", "či",
-            "další", "do", "ho", "i", "já", "jak", "jako", "je", "jeho", "jej",
-            "její", "jejich", "jen", "ještě", "ji", "jich", "jimi", "jinou", "jiný",
-            "již", "jsem", "jsi", "jsme", "jsou", "jste", "k", "kam", "kde", "kdo",
-            "když", "ke", "která", "které", "kteří", "který", "ku", "má", "mají",
-            "máme", "máš", "mé", "mezi", "mi", "mít", "mně", "mnou", "můj", "my",
-            "na", "nad", "nám", "námi", "naše", "naši", "ne", "nebo", "neboť",
-            "něj", "nějaký", "nelze", "není", "než", "ni", "nic", "nich", "ním",
-            "no", "nás", "ný", "o", "od", "on", "ona", "oni", "ono", "onu", "pak",
-            "po", "pod", "podle", "pokud", "pouze", "právě", "pro", "proč", "proto",
-            "protože", "před", "při", "s", "se", "si", "sice", "své", "svůj", "svých",
-            "svým", "svými", "ta", "tak", "také", "takže", "tato", "te", "tě", "tedy",
-            "těm", "ten", "tento", "této", "tím", "tímto", "to", "tobě", "tohle",
-            "toto", "ty", "týž", "u", "už", "v", "vám", "vámi", "váš", "vaše", "ve",
-            "více", "však", "všechen", "vy", "z", "za", "zde", "ze", "že"
-        ]
-        self.stop_words = set(czech_stopwords)
-        logger.info(f"loaded {len(self.stop_words)} czech stopwords")
-    
-    def clean_text(self, text):
-        """
-        basic text cleaning
-        
-        args:
-            text (str): input text
-        
-        returns:
-            str: cleaned text
-        """
-        if not isinstance(text, str):
-            return ""
-            
-        # lowercase
-        text = text.lower()
-        
-        # remove html tags
-        text = re.sub(r'<.*?>', '', text)
-        
-        # remove urls
-        text = re.sub(r'http\S+|www\S+|https\S+', '', text)
-        
-        # remove numbers
-        text = re.sub(r'\d+', '', text)
-        
-        # remove special characters and punctuation
-        text = re.sub(r'[^\w\s]', '', text)
-        
-        # remove extra whitespace
-        text = re.sub(r'\s+', ' ', text).strip()
-        
-        return text
-    
-    def normalize_accents(self, text):
-        """
-        normalize accents
-        
-        args:
-            text (str): input text
-        
-        returns:
-            str: text with normalized accents
-        """
-        return unicodedata.normalize('NFKC', text)
+        return ''.join(c for c in unicodedata.normalize('NFKD', text)
+                      if not unicodedata.combining(c))
     
     def simple_tokenize(self, text):
-        """
-        simple tokenization by splitting on whitespace
-        
-        args:
-            text (str): input text
-        
-        returns:
-            list: list of tokens (words)
-        """
-        # simple split by whitespace for languages with whitespace word boundaries
-        return text.split()
+        """Simple tokenization as fallback"""
+        return self.tokenizer.tokenize(text)
     
-    def remove_stopwords(self, tokens):
+    def preprocess_text(self, text):
         """
-        remove stopwords from tokens
+        Preprocess text by applying multiple operations:
+        - Convert to lowercase
+        - Remove accents (optional)
+        - Remove URLs, emails, numbers, special characters
+        - Remove punctuation
+        - Tokenize
+        - Remove stopwords (optional)
+        - Apply stemming (optional)
+        - Remove short words
         
-        args:
-            tokens (list): list of tokens
-        
-        returns:
-            list: list of tokens without stopwords
+        Args:
+            text (str): Input text
+            
+        Returns:
+            str: Preprocessed text
         """
-        return [token for token in tokens if token not in self.stop_words]
+        if not isinstance(text, str) or not text.strip():
+            return ""
+            
+        # Convert to lowercase
+        text = text.lower()
+        
+        # Remove accents
+        if self.remove_accents:
+            text = self.remove_accents_from_text(text)
+        
+        # Remove URLs
+        text = re.sub(r'https?://\S+|www\.\S+', '', text)
+        
+        # Remove emails
+        text = re.sub(r'\S+@\S+', '', text)
+        
+        # Remove numbers with context (e.g., "25 let", "100 Kč")
+        text = re.sub(r'\b\d+\s+\w+\b', '', text)
+        
+        # Remove standalone numbers
+        text = re.sub(r'\b\d+\b', '', text)
+        
+        # Remove special characters
+        text = re.sub(r'[^\w\s]', ' ', text)
+        
+        # Tokenize - use simple tokenization to avoid NLTK errors
+        try:
+            tokens = self.simple_tokenize(text)
+        except Exception as e:
+            logging.warning(f"Tokenization error: {e}. Using simple split.")
+            tokens = text.split()
+        
+        # Remove stopwords
+        if self.remove_stopwords:
+            tokens = [token for token in tokens if token not in self.stop_words]
+        
+        # Apply stemming - only if enabled and successfully initialized
+        if self.stemming:
+            try:
+                tokens = [self.stemmer.stem(token) for token in tokens]
+            except Exception as e:
+                logging.warning(f"Stemming error: {e}. Skipping stemming.")
+        
+        # Remove short words
+        tokens = [token for token in tokens if len(token) >= self.min_word_length]
+        
+        # Join tokens back into text
+        preprocessed_text = ' '.join(tokens)
+        
+        # Remove extra whitespace
+        preprocessed_text = re.sub(r'\s+', ' ', preprocessed_text).strip()
+        
+        return preprocessed_text
     
-    def preprocess(self, text):
+    def preprocess_dataframe(self, df, text_column):
         """
-        complete text preprocessing
+        Preprocess text in a DataFrame column.
         
-        args:
-            text (str): input text
-        
-        returns:
-            list: list of preprocessed tokens
-        """
-        # clean text
-        cleaned_text = self.clean_text(text)
-        
-        # normalize accents
-        normalized_text = self.normalize_accents(cleaned_text)
-        
-        # tokenize
-        tokens = self.simple_tokenize(normalized_text)
-        
-        # remove stopwords
-        filtered_tokens = self.remove_stopwords(tokens)
-        
-        return filtered_tokens
-    
-    def preprocess_dataframe(self, df, text_column, create_new_column=True):
-        """
-        preprocess text in dataframe
-        
-        args:
-            df (pandas.DataFrame): input dataframe
-            text_column (str): name of text column
-            create_new_column (bool): whether to create new column or overwrite existing
-        
-        returns:
-            pandas.DataFrame: dataframe with preprocessed texts
+        Args:
+            df (pandas.DataFrame): Input DataFrame
+            text_column (str): Name of the column containing text to preprocess
+            
+        Returns:
+            pandas.DataFrame: DataFrame with preprocessed text
         """
         if text_column not in df.columns:
-            logger.error(f"column '{text_column}' not in dataframe")
+            logging.warning(f"Column '{text_column}' not found in DataFrame.")
             return df
         
-        # copy dataframe if creating new column
-        if create_new_column:
-            df_copy = df.copy()
-        else:
-            df_copy = df
+        # Create copy of DataFrame to avoid modifying the original
+        df_copy = df.copy()
         
-        # target column name
-        target_column = f"{text_column}_preprocessed" if create_new_column else text_column
+        # Create new column for preprocessed text
+        preprocessed_column = f"{text_column}_preprocessed"
         
-        # preprocess texts with progress bar
-        logger.info(f"preprocessing texts in column '{text_column}'")
-        
-        # helper function to apply to each row
-        def process_row(text):
-            tokens = self.preprocess(text)
-            return ' '.join(tokens)  # return as joined string for easier further use
-        
-        # apply to each row with progress bar
-        tqdm.pandas(desc="Preprocessing")
-        df_copy[target_column] = df_copy[text_column].progress_apply(process_row)
-        
-        logger.info(f"text preprocessing completed")
+        # Apply preprocessing to each row
+        df_copy[preprocessed_column] = df_copy[text_column].apply(
+            lambda x: self.preprocess_text(x) if pd.notnull(x) else ""
+        )
         
         return df_copy
+    
+    def get_document_features(self, text):
+        """
+        Extract additional features from text document
+        
+        Args:
+            text (str): Input text
+            
+        Returns:
+            dict: Dictionary of extracted features
+        """
+        if not isinstance(text, str) or not text.strip():
+            return {
+                'word_count': 0,
+                'char_count': 0,
+                'avg_word_length': 0,
+                'unique_word_count': 0,
+                'lexical_diversity': 0
+            }
+        
+        # Basic counts - use simple tokenization
+        try:
+            words = self.simple_tokenize(text.lower())
+        except:
+            words = text.lower().split()
+            
+        word_count = len(words)
+        char_count = len(text)
+        
+        # Average word length
+        avg_word_length = sum(len(word) for word in words) / max(word_count, 1)
+        
+        # Unique words
+        unique_words = set(words)
+        unique_word_count = len(unique_words)
+        
+        # Lexical diversity (ratio of unique words to total words)
+        lexical_diversity = unique_word_count / max(word_count, 1)
+        
+        return {
+            'word_count': word_count,
+            'char_count': char_count,
+            'avg_word_length': avg_word_length,
+            'unique_word_count': unique_word_count,
+            'lexical_diversity': lexical_diversity
+        }
