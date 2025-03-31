@@ -7,7 +7,7 @@ import subprocess
 from datetime import datetime
 import logging
 import glob
-import pyodbc  # Added this import
+import pyodbc
 from flask import Flask, render_template, request, redirect, url_for, jsonify
 
 # add parent directory to system path for imports
@@ -42,6 +42,37 @@ category_model = None
 sentiment_model = None
 loaded_date = None
 enhanced_models = False
+
+def run_daily_scraper():
+    """Run scraper script to collect the latest news articles"""
+    try:
+        # get path to scraper script
+        scraper_script = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'scripts', 'scraper.py')
+        
+        # execute scraper using the same python executable
+        python_exe = sys.executable
+        
+        # Run with limited article count (just latest headlines - 5 per source)
+        process = subprocess.Popen(
+            [python_exe, scraper_script, '--latest', '--max-per-source=5'], 
+            stdout=subprocess.PIPE, 
+            stderr=subprocess.PIPE
+        )
+        
+        logger.info("Latest news scraper started")
+        
+        # Wait for completion
+        stdout, stderr = process.communicate()
+        
+        if process.returncode == 0:
+            logger.info("Latest news scraper completed successfully")
+        else:
+            logger.error(f"Latest news scraper failed with error: {stderr.decode('utf-8')}")
+            
+        # reload data after scraper completes
+        load_data()
+    except Exception as e:
+        logger.error(f"Error running latest news scraper: {str(e)}")
 
 def run_scraper():
     """run scraper script in a separate process"""
@@ -514,8 +545,8 @@ def analyze():
 @app.route('/reload_data')
 def reload_data():
     """endpoint to reload data and models"""
-    # start scraper in background thread
-    thread = threading.Thread(target=run_scraper)
+    # start latest news scraper in background thread
+    thread = threading.Thread(target=run_daily_scraper)
     thread.daemon = True
     thread.start()
     
@@ -570,10 +601,10 @@ if __name__ == '__main__':
     # load data and models on startup
     load_data()
     
-    # run scraper in background thread at startup
-    thread = threading.Thread(target=run_scraper)
-    thread.daemon = True
-    thread.start()
+    # run daily scraper in background thread at startup
+    daily_thread = threading.Thread(target=run_daily_scraper)
+    daily_thread.daemon = True
+    daily_thread.start()
     
     # run app in debug mode
     app.run(debug=True, host='0.0.0.0', port=5000)

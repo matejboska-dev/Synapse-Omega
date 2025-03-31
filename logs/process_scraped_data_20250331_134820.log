@@ -1,0 +1,20 @@
+2025-03-31 13:48:20,847 - INFO - starting scraped data processing
+2025-03-31 13:48:20,850 - INFO - found latest scraped data file: c:\Users\matej\Desktop\Sleeping-Barber-Problem-Solution-master\Synapse-Omega\data\scraped\articles_2025-03-31.json
+2025-03-31 13:48:20,850 - INFO - loaded 50 articles from c:\Users\matej\Desktop\Sleeping-Barber-Problem-Solution-master\Synapse-Omega\data\scraped\articles_2025-03-31.json
+2025-03-31 13:48:24,085 - WARNING - Stopwords not available for language: czech. Using empty set.
+2025-03-31 13:48:24,085 - INFO - preprocessing article texts...
+2025-03-31 13:48:24,132 - INFO - preprocessing completed
+2025-03-31 13:48:24,337 - INFO - loading category classifier...
+2025-03-31 13:48:24,577 - INFO - Model loaded from c:\Users\matej\Desktop\Sleeping-Barber-Problem-Solution-master\Synapse-Omega\models\category_classifier with 16 categories
+2025-03-31 13:48:24,577 - INFO - applying category classification...
+2025-03-31 13:48:24,617 - INFO - category classification completed
+2025-03-31 13:48:24,617 - INFO - loading sentiment analyzer...
+2025-03-31 13:48:24,702 - INFO - model loaded from c:\Users\matej\Desktop\Sleeping-Barber-Problem-Solution-master\Synapse-Omega\models\sentiment_analyzer
+2025-03-31 13:48:24,702 - INFO - applying sentiment analysis...
+2025-03-31 13:48:24,735 - INFO - sentiment analysis completed
+2025-03-31 13:48:24,735 - INFO - model application completed
+2025-03-31 13:48:24,778 - INFO - saved processed data to c:\Users\matej\Desktop\Sleeping-Barber-Problem-Solution-master\Synapse-Omega\data\processed_scraped\processed_articles_2025-03-31.csv
+2025-03-31 13:48:24,788 - INFO - saved processed data to c:\Users\matej\Desktop\Sleeping-Barber-Problem-Solution-master\Synapse-Omega\data\processed_scraped\processed_articles_2025-03-31.json
+2025-03-31 13:48:24,809 - INFO - saved display data to c:\Users\matej\Desktop\Sleeping-Barber-Problem-Solution-master\Synapse-Omega\data\display\display_articles_2025-03-31.json
+2025-03-31 13:48:24,846 - INFO - saved combined display data to c:\Users\matej\Desktop\Sleeping-Barber-Problem-Solution-master\Synapse-Omega\data\display\all_articles.json
+2025-03-31 13:48:24,847 - INFO - scraped data processing completed
