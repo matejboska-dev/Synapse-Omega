@@ -14,6 +14,7 @@ import argparse
 import subprocess
 import os
 import sys
+import json
 
 # Nastavení loggeru
 logging.basicConfig(
@@ -64,8 +65,24 @@ def connect_to_db():
     Returns:
         pyodbc.Connection: Objekt připojení k databázi nebo None v případě chyby
     """
-    conn_str = f"DRIVER={{ODBC Driver 17 for SQL Server}};SERVER={DB_SERVER};DATABASE={DB_NAME};UID={DB_USER};PWD={DB_PASSWORD}"
     try:
+        # Try to load config from file first
+        config_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), 'config', 'database.json')
+        if os.path.exists(config_path):
+            with open(config_path, 'r') as f:
+                config = json.load(f)
+                server = config.get('server', DB_SERVER)
+                database = config.get('database', DB_NAME)
+                username = config.get('username', DB_USER)
+                password = config.get('password', DB_PASSWORD)
+            logger.info("Používám konfiguraci databáze z config/database.json")
+        else:
+            server = DB_SERVER
+            database = DB_NAME
+            username = DB_USER
+            password = DB_PASSWORD
+            
+        conn_str = f"DRIVER={{ODBC Driver 17 for SQL Server}};SERVER={server};DATABASE={database};UID={username};PWD={password}"
         conn = pyodbc.connect(conn_str)
         logger.info("Úspěšně připojeno k databázi.")
         return conn
@@ -160,7 +177,9 @@ def get_article_text(url, source, max_retries=3):
             # Obecná metoda jako fallback
             if not article_text:
                 # Pokus 1: Hledání podle typických tříd
-                for class_name in ["article-body", "article-content", "post-content", "news-content", "story-content", "main-content", "entry-content", "article", "clanek"]:
+                for class_name in ["article-body", "article-content", "post-content", "news-content", 
+                                  "story-content", "main-content", "entry-content", "article", "clanek", 
+                                  "text", "content", "body-content"]:
                     if article_div := soup.find(["div", "article", "section"], class_=lambda x: x and class_name in x.lower()):
                         paragraphs = article_div.find_all("p")
                         article_text = " ".join([p.get_text().strip() for p in paragraphs])
@@ -237,6 +256,47 @@ def save_article_to_db(conn, source_name, title, url, pub_date, category, char_c
         # Aktuální datum a čas pro pole ScrapedDate
         scraped_date = datetime.datetime.now()
         
+        # Check if the table exists and has the right schema
+        try:
+            cursor.execute("SELECT TOP 1 * FROM Articles")
+            cursor.fetchall()
+        except Exception as e:
+            logger.warning(f"Table Articles check failed: {e}, attempting to create it")
+            try:
+                # Create the table if it doesn't exist
+                cursor.execute("""
+                IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Articles')
+                CREATE TABLE Articles (
+                    Id INT IDENTITY(1,1) PRIMARY KEY,
+                    SourceName NVARCHAR(255),
+                    Title NVARCHAR(500),
+                    ArticleUrl NVARCHAR(1000),
+                    PublicationDate DATETIME,
+                    Category NVARCHAR(255),
+                    ArticleLength INT,
+                    WordCount INT,
+                    ArticleText NVARCHAR(MAX),
+                    ScrapedDate DATETIME
+                )
+                """)
+                conn.commit()
+                logger.info("Articles table created successfully")
+            except Exception as create_error:
+                logger.error(f"Failed to create table: {create_error}")
+                # Try to save to local file as fallback
+                save_to_local_json([{
+                    "source": source_name,
+                    "title": title,
+                    "url": url,
+                    "date": str(pub_date) if pub_date else None,
+                    "category": category,
+                    "length": char_count,
+                    "words": word_count,
+                    "text": article_text,
+                    "scraped": str(scraped_date)
+                }])
+                return False
+        
         sql = """
         INSERT INTO Articles (SourceName, Title, ArticleUrl, PublicationDate, Category, 
                               ArticleLength, WordCount, ArticleText, ScrapedDate)
@@ -252,6 +312,32 @@ def save_article_to_db(conn, source_name, title, url, pub_date, category, char_c
             conn.rollback()
         except:
             pass
+            
+        # Save to local file if database fails
+        try:
+            # Ensure data directory exists
+            data_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), 'data', 'scraped')
+            os.makedirs(data_dir, exist_ok=True)
+            
+            local_file = os.path.join(data_dir, f"article_{int(time.time())}.json")
+            
+            import json
+            with open(local_file, 'w', encoding='utf-8') as f:
+                json.dump({
+                    "source": source_name,
+                    "title": title,
+                    "url": url,
+                    "date": str(pub_date) if pub_date else None,
+                    "category": category,
+                    "length": char_count,
+                    "words": word_count,
+                    "text": article_text,
+                    "scraped": str(scraped_date)
+                }, f, ensure_ascii=False)
+            logger.info(f"Uloženo do lokálního souboru: {local_file}")
+        except Exception as backup_e:
+            logger.error(f"Také se nepodařilo uložit článek lokálně: {backup_e}")
+            
         return False
 
 # Funkce pro kontrolu existence článku v databázi (optimalizovaná o kontrolu titulku)
@@ -324,13 +410,52 @@ def get_article_count(conn):
         int: Počet článků v databázi
     """
     try:
+        if not conn:
+            return 0
+            
         cursor = conn.cursor()
-        cursor.execute("SELECT COUNT(*) FROM Articles")
-        count = cursor.fetchone()[0]
-        return count
+        try:
+            cursor.execute("SELECT COUNT(*) FROM Articles")
+            count = cursor.fetchone()[0]
+            return count
+        except Exception as e:
+            logger.error(f"Chyba při dotazu na počet článků: {e}")
+            return 0
     except Exception as e:
         logger.error(f"Chyba při získávání počtu článků: {e}")
         return 0
+
+# Save data to local JSON file
+def save_to_local_json(articles, filename=None):
+    """
+    Save articles to local JSON file
+    
+    Args:
+        articles (list): List of article dictionaries
+        filename (str, optional): Filename to save to. If None, generates one based on timestamp
+    
+    Returns:
+        bool: True on success, False on failure
+    """
+    if not filename:
+        timestamp = datetime.datetime.now().strftime('%Y%m%d_%H%M%S')
+        filename = f"articles_{timestamp}.json"
+    
+    # Ensure data directory exists
+    data_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), 'data', 'scraped')
+    os.makedirs(data_dir, exist_ok=True)
+    
+    file_path = os.path.join(data_dir, filename)
+    
+    try:
+        import json
+        with open(file_path, 'w', encoding='utf-8') as f:
+            json.dump(articles, f, ensure_ascii=False, indent=2)
+        logger.info(f"Uloženo {len(articles)} článků do {file_path}")
+        return True
+    except Exception as e:
+        logger.error(f"Chyba při ukládání článků do souboru: {e}")
+        return False
 
 # Funkce pro zpracování článků z jednoho zdroje
 def process_source(source_name, rss_url, conn, current_count, target_count, max_articles_per_source, new_articles_added, daily_mode=False, newest_first=False):
@@ -404,7 +529,7 @@ def process_source(source_name, rss_url, conn, current_count, target_count, max_
                 continue
             
             # Kontrola, zda článek už neexistuje v databázi
-            if article_exists(conn, url, title):
+            if conn and article_exists(conn, url, title):
                 logger.debug(f"Článek již existuje v databázi: {title}")
                 continue
             
@@ -442,16 +567,30 @@ def process_source(source_name, rss_url, conn, current_count, target_count, max_
             logger.info(f"Stahuji článek: {title}")
             article_text, char_count, word_count = get_article_text(url, source_name)
             
-            # Kontrola, zda se podařilo získat dostatek textu
-            if char_count < 100:
-                logger.warning(f"Příliš málo textu ze článku: {title}, přeskakuji")
-                continue
+            # Accept articles with very little text (30 chars) if that's all we can get
+            # MODIFIED: Accept all articles even with minimal text
+            if char_count < 30:
+                logger.warning(f"Článek má velmi krátký text: {title} ({char_count} znaků), ale přesto jej přijímám")
             
-            # Uložení článku do databáze
-            success = save_article_to_db(
-                conn, source_name, title, url, pub_date, category, 
-                char_count, word_count, article_text
-            )
+            # Uložení článku do databáze nebo lokálně
+            if conn:
+                success = save_article_to_db(
+                    conn, source_name, title, url, pub_date, category, 
+                    char_count, word_count, article_text
+                )
+            else:
+                # If no database connection, save locally
+                success = save_to_local_json([{
+                    "source": source_name,
+                    "title": title,
+                    "url": url,
+                    "date": str(pub_date) if pub_date else None,
+                    "category": category,
+                    "length": char_count,
+                    "words": word_count,
+                    "text": article_text,
+                    "scraped": str(datetime.datetime.now())
+                }])
             
             if success:
                 with new_articles_added.get_lock():
@@ -460,7 +599,7 @@ def process_source(source_name, rss_url, conn, current_count, target_count, max_
                 logger.info(f"Článek uložen: {title} ({char_count} znaků, {word_count} slov)")
             
             # Informace o postupu
-            if source_articles % 10 == 0:
+            if source_articles % 5 == 0:
                 logger.info(f"Celkem staženo nových článků: {new_articles_added.value}")
             
             # Krátká pauza mezi články pro snížení zátěže
@@ -471,6 +610,57 @@ def process_source(source_name, rss_url, conn, current_count, target_count, max_
     except Exception as e:
         logger.error(f"Chyba při zpracování zdroje {source_name}: {e}")
         return source_articles
+
+# Přidání nové funkce pro sběr pouze nejnovějších zpráv
+def collect_latest_news(max_per_source=5):
+    """
+    Sbírá pouze nejnovější zprávy z každého zdroje - optimalizováno pro rychlost a rychlý přehled
+    
+    Args:
+        max_per_source: Maximální počet článků z jednoho zdroje
+    
+    Returns:
+        int: Počet nově přidaných článků
+    """
+    # Připojení k databázi
+    conn = connect_to_db()
+    if not conn:
+        logger.error("Nelze pokračovat bez připojení k databázi.")
+        # Pokus vytvořit alespoň lokální soubor s daty
+        local_data_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), 'data', 'scraped')
+        os.makedirs(local_data_dir, exist_ok=True)
+        return 0
+    
+    # Inicializace sdílené proměnné pro počítání nových článků
+    import multiprocessing
+    new_articles_added = multiprocessing.Value('i', 0)
+    
+    try:
+        # Zkrácený seznam zdrojů pro rychlý sběr
+        priority_sources = {
+            "idnes": news_sources["idnes"],
+            "novinky": news_sources["novinky"],
+            "seznamzpravy": news_sources["seznamzpravy"],
+            "ihned": news_sources["ihned"],
+            "ct24": news_sources["ct24"],
+            "aktualne": news_sources["aktualne"],
+            "irozhlas": news_sources["irozhlas"]
+        }
+        
+        logger.info(f"Sbírám nejnovější zprávy z {len(priority_sources)} zdrojů")
+        
+        # Zpracování zdrojů
+        for source_name, rss_url in priority_sources.items():
+            process_source(source_name, rss_url, conn, 0, max_per_source * len(priority_sources), 
+                          max_per_source, new_articles_added, daily_mode=True, newest_first=True)
+    
+    finally:
+        if conn:
+            conn.close()
+            logger.info("Databáze uzavřena.")
+    
+    logger.info(f"Sběr dokončen! Přidáno {new_articles_added.value} nových článků.")
+    return new_articles_added.value
 
 # Hlavní funkce pro sběr článků
 def collect_news(target_count=3000, max_articles_per_source=300, daily_mode=False, newest_first=False):
@@ -537,49 +727,34 @@ if __name__ == "__main__":
     
     logger.info("Začínám sběr zpravodajských článků pro projekt Synapse...")
     
-    # Set target count based on arguments
-    target_count = args.max_articles
-    
     # For latest mode, we just want a few articles from each source
     if args.latest:
         logger.info("Spuštěn režim nejnovějších zpráv")
         max_per_source = args.max_per_source if args.max_per_source else 5
-        # We'll prioritize newest articles
-        newest_first = True
+        # Use optimized latest news collection
+        collected = collect_latest_news(max_per_source=max_per_source)
+        logger.info(f"Sběr dokončen, přidáno {collected} nových článků")
     elif args.daily:
         # Daily mode - articles from today
         logger.info("Spuštěn denní režim - pouze dnešní hlavní zprávy")
-        today = datetime.datetime.now().strftime('%Y-%m-%d')
+        target_count = args.max_articles
         max_per_source = args.max_per_source if args.max_per_source else 10
-        newest_first = True
+        collected = collect_news(target_count=target_count, max_articles_per_source=max_per_source, 
+                               daily_mode=True, newest_first=True)
+        logger.info(f"Sběr dokončen, přidáno {collected} nových článků")
     else:
         # Regular mode - comprehensive scraping
+        target_count = args.max_articles
         max_per_source = args.max_per_source if args.max_per_source else 300
-        newest_first = False
-    
-    # Opakované spouštění dokud nedosáhneme cílového počtu
-    while True:
+        
+        # Check current article count first
         current_count = get_article_count(connect_to_db())
         if current_count >= target_count:
-            logger.info(f"Cílový počet článků dosažen: {current_count}/{target_count}")
-            break
-            
-        logger.info(f"Pokračuji ve sběru, aktuálně máme {current_count}/{target_count} článků")
-        collected = collect_news(target_count=target_count, max_articles_per_source=max_per_source, 
-                                daily_mode=args.daily, newest_first=newest_first)
-        
-        if collected == 0:
-            logger.warning("Žádné nové články nebyly přidány, možná jsme již vyčerpali dostupné zdroje.")
-            # Pokud nepřibyly žádné články, zkontrolujeme, jestli již máme dost článků nebo jsme v denním režimu
-            if current_count > 0 or args.daily or args.latest:
-                logger.info("Ukončuji sběr, máme dostatek článků pro potřeby aplikace.")
-                break
-            
-            # Pokud nepřibyly žádné články, počkáme 30 minut před dalším pokusem
-            logger.info("Čekám 30 minut před dalším pokusem...")
-            time.sleep(1800)  # 30 minut
-    
-    logger.info(f"Sběr dokončen, celkový počet článků: {get_article_count(connect_to_db())}")
+            logger.info(f"Cílový počet článků již dosažen: {current_count}/{target_count}")
+        else:
+            logger.info(f"Pokračuji ve sběru, aktuálně máme {current_count}/{target_count} článků")
+            collected = collect_news(target_count=target_count, max_articles_per_source=max_per_source)
+            logger.info(f"Sběr dokončen, celkový počet článků: {get_article_count(connect_to_db())}")
     
     # Process scraped articles
     try:
@@ -596,13 +771,18 @@ if __name__ == "__main__":
             
             logger.info("Zpracování nasbíraných článků...")
             
-            # wait for completion
-            stdout, stderr = process.communicate()
-            
-            if process.returncode == 0:
-                logger.info("Zpracování článků úspěšně dokončeno")
-            else:
-                logger.error(f"Zpracování článků selhalo s chybou: {stderr.decode('utf-8')}")
+            # wait for completion with timeout
+            try:
+                stdout, stderr = process.communicate(timeout=60)  # 60 seconds timeout
+                
+                if process.returncode == 0:
+                    logger.info("Zpracování článků úspěšně dokončeno")
+                else:
+                    logger.error(f"Zpracování článků selhalo s chybou: {stderr.decode('utf-8')}")
+            except subprocess.TimeoutExpired:
+                process.kill()
+                logger.warning("Zpracování článků přerušeno po 60 sekundách")
+                
         else:
             logger.warning(f"Skript pro zpracování nebyl nalezen na cestě: {process_script}")
     except Exception as e:

@@ -1,0 +1,20 @@
+2025-03-31 18:36:58,483 - INFO - starting scraped data processing
+2025-03-31 18:36:58,483 - INFO - found latest scraped data file: d:\GitHub\Synapse-Omega\data\scraped\articles_2025-03-31.json
+2025-03-31 18:36:58,485 - INFO - loaded 50 articles from d:\GitHub\Synapse-Omega\data\scraped\articles_2025-03-31.json
+2025-03-31 18:36:59,833 - WARNING - Stopwords not available for language: czech. Using empty set.
+2025-03-31 18:36:59,833 - INFO - preprocessing article texts...
+2025-03-31 18:36:59,886 - INFO - preprocessing completed
+2025-03-31 18:36:59,999 - INFO - loading category classifier...
+2025-03-31 18:37:00,204 - INFO - Model loaded from d:\GitHub\Synapse-Omega\models\category_classifier with 16 categories
+2025-03-31 18:37:00,205 - INFO - applying category classification...
+2025-03-31 18:37:00,222 - INFO - category classification completed
+2025-03-31 18:37:00,222 - INFO - loading sentiment analyzer...
+2025-03-31 18:37:00,282 - INFO - model loaded from d:\GitHub\Synapse-Omega\models\sentiment_analyzer
+2025-03-31 18:37:00,282 - INFO - applying sentiment analysis...
+2025-03-31 18:37:00,314 - INFO - sentiment analysis completed
+2025-03-31 18:37:00,314 - INFO - model application completed
+2025-03-31 18:37:00,368 - INFO - saved processed data to d:\GitHub\Synapse-Omega\data\processed_scraped\processed_articles_2025-03-31.csv
+2025-03-31 18:37:00,372 - INFO - saved processed data to d:\GitHub\Synapse-Omega\data\processed_scraped\processed_articles_2025-03-31.json
+2025-03-31 18:37:00,377 - INFO - saved display data to d:\GitHub\Synapse-Omega\data\display\display_articles_2025-03-31.json
+2025-03-31 18:37:00,399 - INFO - saved combined display data to d:\GitHub\Synapse-Omega\data\display\all_articles.json
+2025-03-31 18:37:00,400 - INFO - scraped data processing completed

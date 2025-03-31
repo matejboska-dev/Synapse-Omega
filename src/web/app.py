@@ -46,28 +46,43 @@ enhanced_models = False
 def run_daily_scraper():
     """Run scraper script to collect the latest news articles"""
     try:
+        # Check if required dependencies are installed
+        try:
+            import feedparser
+            import requests
+            from bs4 import BeautifulSoup
+        except ImportError as e:
+            logger.error(f"Chybí potřebná závislost pro scraper: {str(e)}")
+            logger.error("Nainstalujte potřebné balíčky: pip install feedparser requests beautifulsoup4 pyodbc tqdm")
+            return
+            
         # get path to scraper script
         scraper_script = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'scripts', 'scraper.py')
         
         # execute scraper using the same python executable
         python_exe = sys.executable
         
-        # Run with limited article count (just latest headlines - 5 per source)
+        # Run with limited article count (just latest headlines - 3 per source)
+        # Add timeout to prevent hanging
         process = subprocess.Popen(
-            [python_exe, scraper_script, '--latest', '--max-per-source=5'], 
+            [python_exe, scraper_script, '--latest', '--max-per-source=3'], 
             stdout=subprocess.PIPE, 
             stderr=subprocess.PIPE
         )
         
-        logger.info("Latest news scraper started")
+        logger.info("Latest news scraper started - sbírám nejnovější zprávy")
         
-        # Wait for completion
-        stdout, stderr = process.communicate()
-        
-        if process.returncode == 0:
-            logger.info("Latest news scraper completed successfully")
-        else:
-            logger.error(f"Latest news scraper failed with error: {stderr.decode('utf-8')}")
+        # Wait for completion with timeout
+        try:
+            stdout, stderr = process.communicate(timeout=60)  # 60 seconds timeout
+            
+            if process.returncode == 0:
+                logger.info("Latest news scraper completed successfully")
+            else:
+                logger.error(f"Latest news scraper failed with error: {stderr.decode('utf-8')}")
+        except subprocess.TimeoutExpired:
+            process.kill()
+            logger.warning("Latest news scraper timed out after 60 seconds, process killed")
             
         # reload data after scraper completes
         load_data()
@@ -122,56 +137,71 @@ def load_data():
     
     # load articles data
     try:
-        # Try to load directly from the database first
-        try:
-            # Connection parameters
-            server = "193.85.203.188"
-            database = "boska"
-            username = "boska"
-            password = "123456"
-            
-            # Try to load configuration
-            config_path = os.path.join(project_root, 'config', 'database.json')
-            if os.path.exists(config_path):
-                with open(config_path, 'r') as f:
-                    config = json.load(f)
-                    server = config.get('server', server)
-                    database = config.get('database', database)
-                    username = config.get('username', username)
-                    password = config.get('password', password)
-                logger.info("Configuration loaded from config/database.json")
-            
-            # Attempt database connection
-            conn_str = f"DRIVER={{ODBC Driver 17 for SQL Server}};SERVER={server};DATABASE={database};UID={username};PWD={password}"
-            conn = pyodbc.connect(conn_str)
-            
-            # Load articles directly from database
-            query = """
-            SELECT Id, SourceName as Source, Title, ArticleUrl, PublicationDate as PublishDate, 
-                  Category, ArticleLength, WordCount, ArticleText as Content, 
-                  ScrapedDate
-            FROM Articles
-            """
-            articles_df = pd.read_sql(query, conn)
-            conn.close()
-            
-            # Save the loaded data to display files for next time
-            os.makedirs(display_dir, exist_ok=True)
-            articles_df.to_json(display_file, orient='records', force_ascii=False, indent=2)
-            
-            loaded_date = datetime.now()
-            logger.info(f"Loaded {len(articles_df)} articles directly from database")
-            
-        except Exception as db_error:
-            logger.warning(f"Could not load from database: {str(db_error)}, trying from files")
-            
-            # Check if all_articles.json exists, otherwise find latest display file
-            if os.path.exists(display_file):
+        # Try to load from local files first
+        local_data_loaded = False
+        
+        # Check if all_articles.json exists first
+        if os.path.exists(display_file):
+            try:
                 with open(display_file, 'r', encoding='utf-8') as f:
                     articles = json.load(f)
                 articles_df = pd.DataFrame(articles)
                 logger.info(f"Loaded {len(articles_df)} articles from {display_file}")
-            else:
+                local_data_loaded = True
+            except Exception as e:
+                logger.warning(f"Failed to load from all_articles.json: {str(e)}")
+        
+        # If local file loading failed, try database
+        if not local_data_loaded:
+            try:
+                # Connection parameters
+                server = "193.85.203.188"
+                database = "boska"
+                username = "boska"
+                password = "123456"
+                
+                # Try to load configuration
+                config_path = os.path.join(project_root, 'config', 'database.json')
+                if os.path.exists(config_path):
+                    with open(config_path, 'r') as f:
+                        config = json.load(f)
+                        server = config.get('server', server)
+                        database = config.get('database', database)
+                        username = config.get('username', username)
+                        password = config.get('password', password)
+                    logger.info("Configuration loaded from config/database.json")
+                
+                # Check if pyodbc is available
+                try:
+                    import pyodbc
+                except ImportError:
+                    logger.warning("pyodbc module not available, cannot connect to database")
+                    raise ImportError("pyodbc not installed")
+                
+                # Attempt database connection
+                conn_str = f"DRIVER={{ODBC Driver 17 for SQL Server}};SERVER={server};DATABASE={database};UID={username};PWD={password}"
+                conn = pyodbc.connect(conn_str)
+                
+                # Load articles directly from database
+                query = """
+                SELECT Id, SourceName as Source, Title, ArticleUrl, PublicationDate as PublishDate, 
+                      Category, ArticleLength, WordCount, ArticleText as Content, 
+                      ScrapedDate
+                FROM Articles
+                """
+                articles_df = pd.read_sql(query, conn)
+                conn.close()
+                
+                # Save the loaded data to display files for next time
+                os.makedirs(display_dir, exist_ok=True)
+                articles_df.to_json(display_file, orient='records', force_ascii=False, indent=2)
+                
+                logger.info(f"Loaded {len(articles_df)} articles directly from database")
+                
+            except Exception as db_error:
+                logger.warning(f"Could not load from database: {str(db_error)}, trying other local files")
+                
+                # database connection failed, try other local files
                 # find latest display file
                 display_files = glob.glob(os.path.join(display_dir, 'display_articles_*.json'))
                 
@@ -195,6 +225,7 @@ def load_data():
                     else:
                         # Try looking in data/scraped directory
                         scraped_dir = os.path.join(project_root, 'data', 'scraped')
+                        os.makedirs(scraped_dir, exist_ok=True)
                         scraped_files = glob.glob(os.path.join(scraped_dir, 'articles_*.json'))
                         
                         if scraped_files:
@@ -232,7 +263,11 @@ def load_data():
         
     except Exception as e:
         logger.error(f"Failed to load articles data: {str(e)}")
-        articles_df = pd.DataFrame()
+        articles_df = pd.DataFrame(columns=[
+            'Id', 'Title', 'Content', 'Source', 'Category', 'predicted_category', 
+            'sentiment', 'PublishDate', 'ArticleUrl', 'ArticleLength', 'WordCount'
+        ])
+        app.config['articles_df'] = articles_df
     
     # Load models
     try:
@@ -602,9 +637,14 @@ if __name__ == '__main__':
     load_data()
     
     # run daily scraper in background thread at startup
-    daily_thread = threading.Thread(target=run_daily_scraper)
-    daily_thread.daemon = True
-    daily_thread.start()
+    # Wrap in try-except to prevent app from failing if scraper fails
+    try:
+        daily_thread = threading.Thread(target=run_daily_scraper)
+        daily_thread.daemon = True
+        daily_thread.start()
+        logger.info("Daily scraper thread started")
+    except Exception as e:
+        logger.error(f"Failed to start scraper thread: {str(e)}")
     
     # run app in debug mode
     app.run(debug=True, host='0.0.0.0', port=5000)
