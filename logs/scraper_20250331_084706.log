@@ -1,0 +1,8 @@
+2025-03-31 08:47:06,646 - INFO - loaded database configuration from config file
+2025-03-31 08:47:24,196 - ERROR - error connecting to database: ('08001', '[08001] [Microsoft][ODBC Driver 17 for SQL Server]Named Pipes Provider: Could not open a connection to SQL Server [53].  (53) (SQLDriverConnect); [08001] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0); [08001] [Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. (53)')
+2025-03-31 08:47:24,196 - INFO - scraping articles from idnes
+2025-03-31 08:47:34,220 - ERROR - error fetching rss feed: https://servis.idnes.cz/rss.aspx?c=zpravodaj, error: HTTPSConnectionPool(host='servis.idnes.cz', port=443): Max retries exceeded with url: /rss.aspx?c=zpravodaj (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x00000278CDF4C8D0>, 'Connection to servis.idnes.cz timed out. (connect timeout=10)'))
+2025-03-31 08:47:34,220 - INFO - found 0 new articles from idnes
+2025-03-31 08:47:38,966 - INFO - scraping articles from novinky
+2025-03-31 08:47:40,014 - INFO - fetched 30 articles from https://www.novinky.cz/rss
+2025-03-31 08:47:40,014 - INFO - found 30 new articles from novinky

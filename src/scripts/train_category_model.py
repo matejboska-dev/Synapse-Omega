@@ -7,6 +7,8 @@ import json
 from datetime import datetime
 import matplotlib.pyplot as plt
 import seaborn as sns
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.model_selection import GridSearchCV
 
 # add parent directory to system path for imports
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -56,7 +58,12 @@ def plot_confusion_matrix(cm, class_names, figsize=(10, 8), cmap='Blues'):
     plt.ylabel('True')
     plt.title('Confusion Matrix')
     plt.tight_layout()
-    plt.savefig('reports/figures/category_confusion_matrix.png')
+    
+    # Ensure figures directory exists
+    figures_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), 'reports', 'figures')
+    os.makedirs(figures_dir, exist_ok=True)
+    
+    plt.savefig(os.path.join(figures_dir, 'category_confusion_matrix.png'))
     plt.close()
 
 def plot_class_distribution(y, class_names, figsize=(12, 6)):
@@ -76,8 +83,35 @@ def plot_class_distribution(y, class_names, figsize=(12, 6)):
     plt.ylabel('Count')
     plt.title('Category Distribution')
     plt.tight_layout()
-    plt.savefig('reports/figures/category_distribution.png')
+    
+    # Ensure figures directory exists
+    figures_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), 'reports', 'figures')
+    os.makedirs(figures_dir, exist_ok=True)
+    
+    plt.savefig(os.path.join(figures_dir, 'category_distribution.png'))
     plt.close()
+
+def preprocess_text(text):
+    """
+    Basic text preprocessing to improve classification
+    
+    args:
+        text (str): input text
+        
+    returns:
+        str: preprocessed text
+    """
+    # Convert to lowercase
+    text = text.lower()
+    
+    # Replace common Czech accents
+    text = text.replace('ě', 'e').replace('š', 's').replace('č', 'c')
+    text = text.replace('ř', 'r').replace('ž', 'z').replace('ý', 'y')
+    text = text.replace('á', 'a').replace('í', 'i').replace('é', 'e')
+    text = text.replace('ú', 'u').replace('ů', 'u').replace('ň', 'n')
+    text = text.replace('ť', 't').replace('ď', 'd')
+    
+    return text
 
 def main():
     """
@@ -86,7 +120,7 @@ def main():
     # create output directories if they don't exist
     project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     
-    for directory in ['models/category_classifier', 'reports/models']:
+    for directory in ['models/category_classifier', 'reports/models', 'reports/figures']:
         dir_path = os.path.join(project_root, directory)
         os.makedirs(dir_path, exist_ok=True)
         logger.info(f"ensuring directory exists: {dir_path}")
@@ -123,6 +157,13 @@ def main():
     # handle empty categories
     df['Category'] = df['Category'].fillna('Uncategorized')
     
+    # Improve preprocessing with custom text cleaning
+    df['Title_processed'] = df['Title'].fillna('').apply(preprocess_text)
+    df['Content_processed'] = df['Content'].fillna('').apply(preprocess_text)
+    
+    # combine title and content for better classification (weighted title more heavily)
+    df['Text'] = df['Title_processed'] + ' ' + df['Title_processed'] + ' ' + df['Content_processed']
+    
     # train model with different classifier types
     classifiers = {
         'naive_bayes': {
@@ -133,16 +174,13 @@ def main():
             'min_samples': 10,
             'max_categories': 15
         },
-        'random_forest': {
+        'svm': {  # Added SVM classifier which often works better for text
             'min_samples': 10,
             'max_categories': 15
         }
     }
     
     results = {}
-    
-    # combine title and content for better classification
-    df['Text'] = df['Title'] + ' ' + df['Content']
     
     for clf_type, params in classifiers.items():
         logger.info(f"Training {clf_type} classifier...")
@@ -196,6 +234,18 @@ def main():
             shutil.copy2(src, dst)
     
     logger.info(f"Training completed. Results saved to reports/models/")
+    
+    # Test the model on a few examples
+    logger.info("Testing the model on sample articles...")
+    best_model = CategoryClassifier.load_model(main_model_dir)
+    
+    # Sample a few articles
+    test_samples = df.sample(min(5, len(df)))
+    for idx, row in test_samples.iterrows():
+        predicted = best_model.predict([row['Text']])[0]
+        logger.info(f"Article: {row['Title'][:50]}...")
+        logger.info(f"True category: {row['Category']}, Predicted: {predicted}")
+        logger.info('-' * 30)
 
 if __name__ == "__main__":
     try:

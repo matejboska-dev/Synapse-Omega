@@ -8231,3 +8231,24 @@
 2025-03-23 22:19:09,835 - synapse-scraper - INFO - Stahuji èlánek: Ve slovenských horách útoèila medvìdice. Muž se pøed ní bránil sekerou
 2025-03-23 22:19:11,423 - synapse-scraper - WARNING - Málo textu extrahováno z https://www.idnes.cz/zpravy/zahranicni/medved-napadeni-muz-sekera-utok-slovensko-mala-fatra.A250323_174334_zahranicni_ikro#utm_source=rss&utm_medium=feed&utm_campaign=zpravodaj&utm_content=main: pouze 0 znakù
 2025-03-23 22:19:12,675 - synapse-scraper - INFO - Pøipojení k databázi uzavøeno.
+2025-03-31 08:59:47,828 - synapse-scraper - INFO - Zaèínám sbìr zpravodajských èlánkù pro projekt Synapse...
+2025-03-31 09:00:29,718 - synapse-scraper - ERROR - Chyba pøi pøipojení k databázi: ('08001', '[08001] [Microsoft][ODBC Driver 17 for SQL Server]Named Pipes Provider: Could not open a connection to SQL Server [53].  (53) (SQLDriverConnect); [08001] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0); [08001] [Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. (53)')
+2025-03-31 09:00:29,718 - synapse-scraper - ERROR - Chyba pøi získávání poètu èlánkù: 'NoneType' object has no attribute 'cursor'
+2025-03-31 09:00:29,718 - synapse-scraper - INFO - Pokraèuji ve sbìru, aktuálnì máme 0/3000 èlánkù
+2025-03-31 09:04:23,136 - synapse-scraper - INFO - Zaèínám sbìr zpravodajských èlánkù pro projekt Synapse...
+2025-03-31 09:04:24,270 - synapse-scraper - INFO - Úspìšnì pøipojeno k databázi.
+2025-03-31 09:04:24,423 - synapse-scraper - INFO - Pokraèuji ve sbìru, aktuálnì máme 1759/3000 èlánkù
+2025-03-31 09:04:24,423 - synapse-scraper - INFO - Úspìšnì pøipojeno k databázi.
+2025-03-31 09:04:24,445 - synapse-scraper - INFO - Aktuální poèet èlánkù v databázi: 1759
+2025-03-31 09:04:24,530 - synapse-scraper - INFO - Zpracovávám RSS feed: idnes
+2025-03-31 09:04:26,477 - synapse-scraper - INFO - Stahuji èlánek: V Litvì našli vozidlo pohøešovaných amerických vojákù, jejich stav je neznámý
+2025-03-31 09:04:29,172 - synapse-scraper - WARNING - Málo textu extrahováno z https://www.idnes.cz/zpravy/zahranicni/litva-amerika-vojaci-pohresovani-armada.A250331_080707_zahranicni_herp#utm_source=rss&utm_medium=feed&utm_campaign=zpravodaj&utm_content=main: pouze 0 znakù
+2025-03-31 09:04:32,701 - synapse-scraper - WARNING - Málo textu extrahováno z https://www.idnes.cz/zpravy/zahranicni/litva-amerika-vojaci-pohresovani-armada.A250331_080707_zahranicni_herp#utm_source=rss&utm_medium=feed&utm_campaign=zpravodaj&utm_content=main: pouze 0 znakù
+2025-03-31 09:04:34,841 - synapse-scraper - WARNING - Málo textu extrahováno z https://www.idnes.cz/zpravy/zahranicni/litva-amerika-vojaci-pohresovani-armada.A250331_080707_zahranicni_herp#utm_source=rss&utm_medium=feed&utm_campaign=zpravodaj&utm_content=main: pouze 0 znakù
+2025-03-31 09:04:34,841 - synapse-scraper - WARNING - Pøíliš málo textu ze èlánku: V Litvì našli vozidlo pohøešovaných amerických vojákù, jejich stav je neznámý, pøeskakuji
+2025-03-31 09:04:34,896 - synapse-scraper - INFO - Stahuji èlánek: V Èesku pøibývá nákaza žloutenkou. Hygienici varují pøed šíøením v MHD
+2025-03-31 09:04:37,149 - synapse-scraper - WARNING - Málo textu extrahováno z https://www.idnes.cz/zpravy/domaci/zdravi-zloutenka-hepatitida-a-cesko.A250331_073030_domaci_herp#utm_source=rss&utm_medium=feed&utm_campaign=zpravodaj&utm_content=main: pouze 0 znakù
+2025-03-31 09:04:39,840 - synapse-scraper - WARNING - Málo textu extrahováno z https://www.idnes.cz/zpravy/domaci/zdravi-zloutenka-hepatitida-a-cesko.A250331_073030_domaci_herp#utm_source=rss&utm_medium=feed&utm_campaign=zpravodaj&utm_content=main: pouze 0 znakù
+2025-03-31 09:04:42,739 - synapse-scraper - WARNING - Málo textu extrahováno z https://www.idnes.cz/zpravy/domaci/zdravi-zloutenka-hepatitida-a-cesko.A250331_073030_domaci_herp#utm_source=rss&utm_medium=feed&utm_campaign=zpravodaj&utm_content=main: pouze 0 znakù
+2025-03-31 09:04:42,755 - synapse-scraper - WARNING - Pøíliš málo textu ze èlánku: V Èesku pøibývá nákaza žloutenkou. Hygienici varují pøed šíøením v MHD, pøeskakuji
+2025-03-31 09:04:44,083 - synapse-scraper - INFO - Pøipojení k databázi uzavøeno.

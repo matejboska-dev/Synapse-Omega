@@ -83,7 +83,6 @@ class EnhancedCategoryClassifier:
         self.pipeline = None
         self.categories = None
         self.feature_extractor = TextFeatureExtractor()
-        
     def _select_classifier(self):
         """
         Select the appropriate classifier based on classifier_type
@@ -94,21 +93,21 @@ class EnhancedCategoryClassifier:
         if self.classifier_type == 'naive_bayes':
             return MultinomialNB()
         elif self.classifier_type == 'logistic_regression':
-            return LogisticRegression(max_iter=1000, C=1.0, solver='liblinear', n_jobs=-1)
+            return LogisticRegression(max_iter=1000, C=1.0, solver='liblinear')
         elif self.classifier_type == 'random_forest':
             return RandomForestClassifier(n_estimators=200, max_depth=50, min_samples_split=5, 
-                                         min_samples_leaf=2, n_jobs=-1)
+                                        min_samples_leaf=2, n_jobs=-1)
         elif self.classifier_type == 'svm':
             return LinearSVC(C=1.0, max_iter=10000)
         elif self.classifier_type == 'gradient_boosting':
             return GradientBoostingClassifier(n_estimators=200, learning_rate=0.1, 
-                                              max_depth=7, min_samples_split=5)
+                                            max_depth=7, min_samples_split=5)
         elif self.classifier_type == 'ensemble':
             # Creating a voting classifier is more complex and would need to be handled separately
-            return LogisticRegression(max_iter=1000, C=1.0, solver='liblinear', n_jobs=-1)
+            return LogisticRegression(max_iter=1000, C=1.0, solver='liblinear')
         else:
             logger.warning(f"Unknown classifier type: {self.classifier_type}, defaulting to logistic_regression")
-            return LogisticRegression(max_iter=1000, C=1.0, solver='liblinear', n_jobs=-1)
+            return LogisticRegression(max_iter=1000, C=1.0, solver='liblinear')
 
     def preprocess_categories(self, categories):
         """

@@ -1,0 +1,141 @@
+2025-03-31 09:07:52,320 - synapse-scraper - INFO - Starting news article collection for Synapse project...
+2025-03-31 09:07:53,936 - synapse-scraper - INFO - Successfully connected to database.
+2025-03-31 09:07:54,059 - synapse-scraper - INFO - Continuing collection, currently have 1759/3000 articles (attempt 1/20)
+2025-03-31 09:07:54,086 - synapse-scraper - INFO - Successfully connected to database.
+2025-03-31 09:07:54,099 - synapse-scraper - INFO - Current article count in database: 1759
+2025-03-31 09:07:54,175 - synapse-scraper - INFO - Processing RSS feed: idnes
+2025-03-31 09:07:54,869 - synapse-scraper - INFO - Downloading article: V Litvì našli vozidlo pohøešovanıch americkıch vojákù, jejich stav je neznámı
+2025-03-31 09:07:56,448 - synapse-scraper - INFO - Article saved: V Litvì našli vozidlo pohøešovanıch americkıch vojákù, jejich stav je neznámı (156 chars, 22 words)
+2025-03-31 09:07:57,068 - synapse-scraper - INFO - Downloading article: V Èesku pøibıvá nákaza loutenkou. Hygienici varují pøed šíøením v MHD
+2025-03-31 09:07:59,477 - synapse-scraper - INFO - Article saved: V Èesku pøibıvá nákaza loutenkou. Hygienici varují pøed šíøením v MHD (142 chars, 22 words)
+2025-03-31 09:08:00,214 - synapse-scraper - INFO - Downloading article: Host v restauraci našel v jídle krysu, druhı švába. Øetìzec narychlo uzavírá provozy
+2025-03-31 09:08:02,599 - synapse-scraper - INFO - Article saved: Host v restauraci našel v jídle krysu, druhı švába. Øetìzec narychlo uzavírá provozy (170 chars, 26 words)
+2025-03-31 09:08:03,951 - synapse-scraper - INFO - Downloading article: Poèet obìtí zemìtøesení v Barmì se vyšplhal na 2000, další se stále pohøešují
+2025-03-31 09:08:06,501 - synapse-scraper - INFO - Article saved: Poèet obìtí zemìtøesení v Barmì se vyšplhal na 2000, další se stále pohøešují (156 chars, 26 words)
+2025-03-31 09:08:07,764 - synapse-scraper - INFO - Downloading article: Trump chce nerosty nejen z Ukrajiny, ale i z Ruska. Zemì zahájily vyjednávání o tìbì
+2025-03-31 09:08:09,910 - synapse-scraper - INFO - Article saved: Trump chce nerosty nejen z Ukrajiny, ale i z Ruska. Zemì zahájily vyjednávání o tìbì (172 chars, 30 words)
+2025-03-31 09:08:09,911 - synapse-scraper - INFO - Total new articles downloaded: 5
+2025-03-31 09:08:10,507 - synapse-scraper - INFO - Downloading article: Ledová bouøe v Kanadì pøipravila statisíce lidí o elektøinu
+2025-03-31 09:08:12,429 - synapse-scraper - INFO - Article saved: Ledová bouøe v Kanadì pøipravila statisíce lidí o elektøinu (120 chars, 18 words)
+2025-03-31 09:08:14,997 - synapse-scraper - INFO - Downloading article: Jarní teploty vystøídá ochlazení a déš se snìhem, v prùbìhu tıdne se oteplí
+2025-03-31 09:08:17,157 - synapse-scraper - INFO - Article saved: Jarní teploty vystøídá ochlazení a déš se snìhem, v prùbìhu tıdne se oteplí (154 chars, 26 words)
+2025-03-31 09:08:17,756 - synapse-scraper - INFO - Downloading article: Jestli nepodepíše, bude mít velké problémy, vyhrouje Trump Ukrajinì
+2025-03-31 09:08:20,310 - synapse-scraper - INFO - Article saved: Jestli nepodepíše, bude mít velké problémy, vyhrouje Trump Ukrajinì (138 chars, 18 words)
+2025-03-31 09:08:21,269 - synapse-scraper - INFO - Downloading article: Èím menší balení, tím vyšší cena. Skryté zdraování potravin pokraèuje
+2025-03-31 09:08:23,277 - synapse-scraper - INFO - Article saved: Èím menší balení, tím vyšší cena. Skryté zdraování potravin pokraèuje (1214 chars, 180 words)
+2025-03-31 09:08:24,004 - synapse-scraper - INFO - Downloading article: Jak prát špinavé peníze a nenechat se chytit. Je to snadnìjší ne kdy døív
+2025-03-31 09:08:25,672 - synapse-scraper - INFO - Article saved: Jak prát špinavé peníze a nenechat se chytit. Je to snadnìjší ne kdy døív (995 chars, 154 words)
+2025-03-31 09:08:25,672 - synapse-scraper - INFO - Total new articles downloaded: 10
+2025-03-31 09:08:26,919 - synapse-scraper - INFO - Downloading article: Levnìjší pojištìní díky lepším reakcím. Na pøíchod autonomních aut se chystá i Èesko
+2025-03-31 09:08:28,449 - synapse-scraper - INFO - Article saved: Levnìjší pojištìní díky lepším reakcím. Na pøíchod autonomních aut se chystá i Èesko (996 chars, 144 words)
+2025-03-31 09:08:29,142 - synapse-scraper - INFO - Downloading article: Efekt ukotvení umí tahat peníze z kapes. Propadáme mu nejen pøi nákupech
+2025-03-31 09:08:30,928 - synapse-scraper - INFO - Article saved: Efekt ukotvení umí tahat peníze z kapes. Propadáme mu nejen pøi nákupech (146 chars, 24 words)
+2025-03-31 09:08:32,107 - synapse-scraper - INFO - Downloading article: Poèítání obvodu a obsahu. V bìném ivotì potøebné, u pøijímaèek jakbysmet
+2025-03-31 09:08:34,648 - synapse-scraper - INFO - Article saved: Poèítání obvodu a obsahu. V bìném ivotì potøebné, u pøijímaèek jakbysmet (2655 chars, 421 words)
+2025-03-31 09:08:35,456 - synapse-scraper - INFO - Downloading article: Rozvoj solárù nad èeskımi sady a vinicemi brzdí èekání na dotace a pokyny
+2025-03-31 09:08:38,404 - synapse-scraper - INFO - Article saved: Rozvoj solárù nad èeskımi sady a vinicemi brzdí èekání na dotace a pokyny (148 chars, 26 words)
+2025-03-31 09:08:39,317 - synapse-scraper - INFO - Downloading article: Padesát kilometrù od Èeska potvrdili slintavku, nakazilo se a 3500 zvíøat
+2025-03-31 09:08:40,727 - synapse-scraper - INFO - Article saved: Padesát kilometrù od Èeska potvrdili slintavku, nakazilo se a 3500 zvíøat (150 chars, 22 words)
+2025-03-31 09:08:40,728 - synapse-scraper - INFO - Total new articles downloaded: 15
+2025-03-31 09:08:41,517 - synapse-scraper - INFO - Downloading article: Zemøel zakladatel Sdruení vıtvarníkù Karlova mostu Roman Kotrè
+2025-03-31 09:08:43,188 - synapse-scraper - INFO - Article saved: Zemøel zakladatel Sdruení vıtvarníkù Karlova mostu Roman Kotrè (128 chars, 16 words)
+2025-03-31 09:08:43,834 - synapse-scraper - INFO - Downloading article: Ani zemìtøesení boje nezastavilo. Vojenská junta v Barmì dál útoèí
+2025-03-31 09:08:45,768 - synapse-scraper - INFO - Article saved: Ani zemìtøesení boje nezastavilo. Vojenská junta v Barmì dál útoèí (134 chars, 20 words)
+2025-03-31 09:08:47,223 - synapse-scraper - INFO - Downloading article: Øídit stát jako startup. Lidé kolem Trumpa naslouchají „temnému osvícenství“
+2025-03-31 09:08:50,327 - synapse-scraper - INFO - Article saved: Øídit stát jako startup. Lidé kolem Trumpa naslouchají „temnému osvícenství“ (152 chars, 20 words)
+2025-03-31 09:08:51,094 - synapse-scraper - INFO - Downloading article: Bez oponentù a s historkami. Podcastù politikù pøed volbami pøibıvá
+2025-03-31 09:08:53,506 - synapse-scraper - INFO - Article saved: Bez oponentù a s historkami. Podcastù politikù pøed volbami pøibıvá (1155 chars, 169 words)
+2025-03-31 09:08:54,757 - synapse-scraper - INFO - Downloading article: VIDEA TİDNE: Nadávající gynekoloka nebo nehoda ponorky v Hurghadì
+2025-03-31 09:08:57,542 - synapse-scraper - INFO - Article saved: VIDEA TİDNE: Nadávající gynekoloka nebo nehoda ponorky v Hurghadì (134 chars, 18 words)
+2025-03-31 09:08:57,543 - synapse-scraper - INFO - Total new articles downloaded: 20
+2025-03-31 09:08:58,568 - synapse-scraper - INFO - Downloading article: Pahıly, larvy a datlové. Skrytá zákoutí Køivoklátska ukrıvají i nevšední druhy
+2025-03-31 09:09:01,055 - synapse-scraper - INFO - Article saved: Pahıly, larvy a datlové. Skrytá zákoutí Køivoklátska ukrıvají i nevšední druhy (158 chars, 22 words)
+2025-03-31 09:09:01,832 - synapse-scraper - INFO - Downloading article: Poár domu na Berounsku zpùsobil škodu 12 milionù, dva hasièi se zranili
+2025-03-31 09:09:05,637 - synapse-scraper - INFO - Article saved: Poár domu na Berounsku zpùsobil škodu 12 milionù, dva hasièi se zranili (146 chars, 24 words)
+2025-03-31 09:09:07,075 - synapse-scraper - INFO - Downloading article: Jiøího Pospíšila v radì nahradí stávající radní Prahy 8 Tomáš Slabihoudek
+2025-03-31 09:09:09,278 - synapse-scraper - INFO - Article saved: Jiøího Pospíšila v radì nahradí stávající radní Prahy 8 Tomáš Slabihoudek (148 chars, 22 words)
+2025-03-31 09:09:10,595 - synapse-scraper - INFO - Downloading article: Trumpova automobilová cla v Evropì odnese Porsche, nevyhne se propouštìní
+2025-03-31 09:09:12,337 - synapse-scraper - INFO - Article saved: Trumpova automobilová cla v Evropì odnese Porsche, nevyhne se propouštìní (148 chars, 20 words)
+2025-03-31 09:09:13,457 - synapse-scraper - INFO - Downloading article: RECENZE: Ztracena v mrakodrapu. Manon Lescaut v Národním jen nudí
+2025-03-31 09:09:16,027 - synapse-scraper - INFO - Article saved: RECENZE: Ztracena v mrakodrapu. Manon Lescaut v Národním jen nudí (132 chars, 20 words)
+2025-03-31 09:09:16,028 - synapse-scraper - INFO - Total new articles downloaded: 25
+2025-03-31 09:09:16,795 - synapse-scraper - INFO - Downloading article: Sudety potøebují tahouny. Fantomová hranice stále existuje, øíkají geografové
+2025-03-31 09:09:18,472 - synapse-scraper - INFO - Article saved: Sudety potøebují tahouny. Fantomová hranice stále existuje, øíkají geografové (156 chars, 18 words)
+2025-03-31 09:09:19,045 - synapse-scraper - INFO - Downloading article: Jde špatnım smìrem. Trump se zlobí na Putina kvùli Zelenskému, hrozí cly na ropu
+2025-03-31 09:09:21,675 - synapse-scraper - INFO - Article saved: Jde špatnım smìrem. Trump se zlobí na Putina kvùli Zelenskému, hrozí cly na ropu (162 chars, 28 words)
+2025-03-31 09:09:23,088 - synapse-scraper - INFO - Downloading article: Airbus chystá letadlo na vodíkovı pohon, na trh by mohlo pøijít po roce 2035
+2025-03-31 09:09:24,932 - synapse-scraper - INFO - Article saved: Airbus chystá letadlo na vodíkovı pohon, na trh by mohlo pøijít po roce 2035 (154 chars, 28 words)
+2025-03-31 09:09:25,538 - synapse-scraper - INFO - Downloading article: Policisté odvolali pátrání  po seniorovi z Pøíbramska, našli ho mrtvého na Písecku
+2025-03-31 09:09:27,435 - synapse-scraper - INFO - Article saved: Policisté odvolali pátrání  po seniorovi z Pøíbramska, našli ho mrtvého na Písecku (165 chars, 24 words)
+2025-03-31 09:09:28,001 - synapse-scraper - INFO - Downloading article: Souostroví Tonga zasáhlo zemìtøesení o síle 7,1, hrozí cunami
+2025-03-31 09:09:30,603 - synapse-scraper - INFO - Article saved: Souostroví Tonga zasáhlo zemìtøesení o síle 7,1, hrozí cunami (124 chars, 18 words)
+2025-03-31 09:09:30,603 - synapse-scraper - INFO - Total new articles downloaded: 30
+2025-03-31 09:09:31,337 - synapse-scraper - INFO - Processing RSS feed: novinky
+2025-03-31 09:09:31,589 - synapse-scraper - INFO - Downloading article: Oèima Saši Mitrofanova: Chcete v Èesku stejné zvíøe jako Trumpa? Volte Babiše
+2025-03-31 09:09:34,281 - synapse-scraper - INFO - Article saved: Oèima Saši Mitrofanova: Chcete v Èesku stejné zvíøe jako Trumpa? Volte Babiše (2704 chars, 443 words)
+2025-03-31 09:09:35,550 - synapse-scraper - INFO - Downloading article: Kapela I Love You Honey Bunny bere v klipu na vılet klubovım svìtem
+2025-03-31 09:09:40,016 - synapse-scraper - INFO - Article saved: Kapela I Love You Honey Bunny bere v klipu na vılet klubovım svìtem (1794 chars, 279 words)
+2025-03-31 09:09:40,690 - synapse-scraper - INFO - Downloading article: Tmavı dùm získal po úpravì nevzhledného dvorku více plochy i svìtla
+2025-03-31 09:09:43,892 - synapse-scraper - INFO - Article saved: Tmavı dùm získal po úpravì nevzhledného dvorku více plochy i svìtla (3067 chars, 455 words)
+2025-03-31 09:09:45,016 - synapse-scraper - INFO - Downloading article: Za volantem modernizované Škody Enyaq: Více novinek, ne se zdálo
+2025-03-31 09:09:49,346 - synapse-scraper - INFO - Article saved: Za volantem modernizované Škody Enyaq: Více novinek, ne se zdálo (8447 chars, 1302 words)
+2025-03-31 09:09:49,937 - synapse-scraper - INFO - Downloading article: Èeskem se šíøí loutenka typu A
+2025-03-31 09:09:53,069 - synapse-scraper - INFO - Article saved: Èeskem se šíøí loutenka typu A (1720 chars, 255 words)
+2025-03-31 09:09:53,069 - synapse-scraper - INFO - Total new articles downloaded: 35
+2025-03-31 09:09:53,897 - synapse-scraper - INFO - Downloading article: Americkı obrnìnec v Litvì vytáhli z bainy. O osudu vojákù se nic neví
+2025-03-31 09:09:58,188 - synapse-scraper - INFO - Article saved: Americkı obrnìnec v Litvì vytáhli z bainy. O osudu vojákù se nic neví (2378 chars, 352 words)
+2025-03-31 09:09:59,262 - synapse-scraper - INFO - Downloading article: Landovskı: Vyslání vojákù je jen další slib Ukrajincùm, kterı nedokáeme splnit
+2025-03-31 09:10:02,943 - synapse-scraper - INFO - Article saved: Landovskı: Vyslání vojákù je jen další slib Ukrajincùm, kterı nedokáeme splnit (12695 chars, 2053 words)
+2025-03-31 09:10:03,703 - synapse-scraper - INFO - Downloading article: KEMEL: Pùvod TikToku
+2025-03-31 09:10:08,067 - synapse-scraper - INFO - Article saved: KEMEL: Pùvod TikToku (179 chars, 26 words)
+2025-03-31 09:10:09,570 - synapse-scraper - INFO - Downloading article: Rusko znovu podniklo mohutnı dronovı útok na Charkov. Trval nìkolik hodin
+2025-03-31 09:10:15,011 - synapse-scraper - INFO - Article saved: Rusko znovu podniklo mohutnı dronovı útok na Charkov. Trval nìkolik hodin (1857 chars, 269 words)
+2025-03-31 09:10:15,975 - synapse-scraper - INFO - Downloading article: Prémiová vıbava s atraktivnìjší cenovkou. Áèka od Samsungu jsou venku
+2025-03-31 09:10:20,219 - synapse-scraper - INFO - Article saved: Prémiová vıbava s atraktivnìjší cenovkou. Áèka od Samsungu jsou venku (4498 chars, 699 words)
+2025-03-31 09:10:20,219 - synapse-scraper - INFO - Total new articles downloaded: 40
+2025-03-31 09:10:20,942 - synapse-scraper - INFO - Downloading article: NKÚ kritizuje digitalizaci státu i vyuívání evropskıch dotací
+2025-03-31 09:10:25,291 - synapse-scraper - INFO - Article saved: NKÚ kritizuje digitalizaci státu i vyuívání evropskıch dotací (2743 chars, 385 words)
+2025-03-31 09:10:26,870 - synapse-scraper - INFO - Downloading article: Rusko a Spojené státy zahájily diskuse o tìbì nerostù
+2025-03-31 09:10:31,302 - synapse-scraper - INFO - Article saved: Rusko a Spojené státy zahájily diskuse o tìbì nerostù (1501 chars, 217 words)
+2025-03-31 09:10:32,003 - synapse-scraper - INFO - Downloading article: Neunesl vıpovìï a prostøelil kamarádovi tváø. Dostal dvanáct let
+2025-03-31 09:10:36,817 - synapse-scraper - INFO - Article saved: Neunesl vıpovìï a prostøelil kamarádovi tváø. Dostal dvanáct let (4051 chars, 635 words)
+2025-03-31 09:10:37,373 - synapse-scraper - INFO - Downloading article: Léta si spoøili na opulentní maturitní veèírek. Kdy mìli pùl milionu, spoluák ho „odklonil“
+2025-03-31 09:10:41,931 - synapse-scraper - INFO - Article saved: Léta si spoøili na opulentní maturitní veèírek. Kdy mìli pùl milionu, spoluák ho „odklonil“ (2741 chars, 416 words)
+2025-03-31 09:10:42,567 - synapse-scraper - INFO - Downloading article: Oteplí se a na 20 stupòù, o víkendu pøijde mráz
+2025-03-31 09:10:47,204 - synapse-scraper - INFO - Article saved: Oteplí se a na 20 stupòù, o víkendu pøijde mráz (3450 chars, 574 words)
+2025-03-31 09:10:47,204 - synapse-scraper - INFO - Total new articles downloaded: 45
+2025-03-31 09:10:48,344 - synapse-scraper - INFO - Downloading article: Sex, drogy a rock’n’roll v audioknize plné hvìzd ze šoubyznysu
+2025-03-31 09:10:52,529 - synapse-scraper - INFO - Article saved: Sex, drogy a rock’n’roll v audioknize plné hvìzd ze šoubyznysu (2596 chars, 384 words)
+2025-03-31 09:10:53,614 - synapse-scraper - INFO - Downloading article: Øidiè BMW narazil v Karviné do základu teplovodu, zranil se spolujezdec
+2025-03-31 09:10:57,329 - synapse-scraper - INFO - Article saved: Øidiè BMW narazil v Karviné do základu teplovodu, zranil se spolujezdec (1230 chars, 175 words)
+2025-03-31 09:10:58,463 - synapse-scraper - INFO - Downloading article: Dùm ve vintage stylu si postavili ve VIP zónì. Jednoduchou úpravou dispozice ušetøili pùl milionu
+2025-03-31 09:11:01,984 - synapse-scraper - INFO - Article saved: Dùm ve vintage stylu si postavili ve VIP zónì. Jednoduchou úpravou dispozice ušetøili pùl milionu (16836 chars, 2777 words)
+2025-03-31 09:11:02,686 - synapse-scraper - INFO - Downloading article: Zelenskyj chystá na léto volby, píše The Economist
+2025-03-31 09:11:07,760 - synapse-scraper - INFO - Article saved: Zelenskyj chystá na léto volby, píše The Economist (2495 chars, 376 words)
+2025-03-31 09:11:08,682 - synapse-scraper - INFO - Downloading article: Trump šokoval evropské firmy, které poskytují sluby vládì USA. Poslal jim dopisy s varováním
+2025-03-31 09:11:11,916 - synapse-scraper - INFO - Article saved: Trump šokoval evropské firmy, které poskytují sluby vládì USA. Poslal jim dopisy s varováním (2467 chars, 346 words)
+2025-03-31 09:11:11,916 - synapse-scraper - INFO - Total new articles downloaded: 50
+2025-03-31 09:11:13,161 - synapse-scraper - INFO - Downloading article: Sníení poètu odkladù pomùe dìtem vzdìlávat se s vrstevníky
+2025-03-31 09:11:17,041 - synapse-scraper - INFO - Article saved: Sníení poètu odkladù pomùe dìtem vzdìlávat se s vrstevníky (4142 chars, 640 words)
+2025-03-31 09:11:18,231 - synapse-scraper - INFO - Downloading article: Pìt restaurací, které nesmíte minout v gastronomickém pupku svìta
+2025-03-31 09:11:22,207 - synapse-scraper - INFO - Article saved: Pìt restaurací, které nesmíte minout v gastronomickém pupku svìta (8366 chars, 1249 words)
+2025-03-31 09:11:22,924 - synapse-scraper - INFO - Downloading article: Rybáøi: Stav nebezpeèí kvùli havárii vlaku s benzenem byl vyhlášen pozdì
+2025-03-31 09:11:26,547 - synapse-scraper - INFO - Article saved: Rybáøi: Stav nebezpeèí kvùli havárii vlaku s benzenem byl vyhlášen pozdì (4647 chars, 725 words)
+2025-03-31 09:11:27,273 - synapse-scraper - INFO - Downloading article: Kuø, nebo zemøe! V USA vytvoøili elektronickou cigaretu s tamagoèi
+2025-03-31 09:11:34,527 - synapse-scraper - INFO - Article saved: Kuø, nebo zemøe! V USA vytvoøili elektronickou cigaretu s tamagoèi (3372 chars, 496 words)
+2025-03-31 09:11:36,040 - synapse-scraper - INFO - Downloading article: Glosa: Pomalé sbohem papírovım divadelním programùm
+2025-03-31 09:11:39,489 - synapse-scraper - INFO - Article saved: Glosa: Pomalé sbohem papírovım divadelním programùm (2817 chars, 434 words)
+2025-03-31 09:11:39,489 - synapse-scraper - INFO - Total new articles downloaded: 55
+2025-03-31 09:11:40,962 - synapse-scraper - INFO - Downloading article: Americká reciproèní cla se budou tıkat všech zemí, oznámil Trump
+2025-03-31 09:11:45,118 - synapse-scraper - INFO - Article saved: Americká reciproèní cla se budou tıkat všech zemí, oznámil Trump (1671 chars, 247 words)
+2025-03-31 09:11:46,285 - synapse-scraper - INFO - Downloading article: Bude mít velké, velké problémy. Trump vyhrouje Zelenskému kvùli nerostné dohodì
+2025-03-31 09:11:49,908 - synapse-scraper - INFO - Article saved: Bude mít velké, velké problémy. Trump vyhrouje Zelenskému kvùli nerostné dohodì (2110 chars, 306 words)
+2025-03-31 09:11:51,371 - synapse-scraper - INFO - Downloading article: Jestli zdraí auta, je mi úplnì jedno, prohlásil Trump
+2025-03-31 09:11:54,702 - synapse-scraper - INFO - Article saved: Jestli zdraí auta, je mi úplnì jedno, prohlásil Trump (2307 chars, 355 words)
+2025-03-31 09:11:55,616 - synapse-scraper - INFO - Downloading article: Souostroví Tonga zasáhlo silné zemìtøesení
+2025-03-31 09:12:00,155 - synapse-scraper - INFO - Article saved: Souostroví Tonga zasáhlo silné zemìtøesení (1218 chars, 181 words)
+2025-03-31 09:12:00,831 - synapse-scraper - INFO - Downloading article: KRÁTCE: Statisíce lidí se úèastnily víkendovıch protestù v Istanbulu
+2025-03-31 09:12:04,428 - synapse-scraper - INFO - Article saved: KRÁTCE: Statisíce lidí se úèastnily víkendovıch protestù v Istanbulu (843 chars, 119 words)
+2025-03-31 09:12:04,428 - synapse-scraper - INFO - Total new articles downloaded: 60
+2025-03-31 09:12:05,872 - synapse-scraper - INFO - Processing RSS feed: seznamzpravy
+2025-03-31 09:12:06,497 - synapse-scraper - INFO - Downloading article: Kadı sedmı èlovìk se po covidu ji nevymanil z „paralelního svìta“

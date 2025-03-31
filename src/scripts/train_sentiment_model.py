@@ -56,7 +56,12 @@ def plot_confusion_matrix(cm, class_names, figsize=(10, 8), cmap='Blues'):
     plt.ylabel('True')
     plt.title('Confusion Matrix')
     plt.tight_layout()
-    plt.savefig('reports/figures/sentiment_confusion_matrix.png')
+    
+    # Ensure figures directory exists
+    figures_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), 'reports', 'figures')
+    os.makedirs(figures_dir, exist_ok=True)
+    
+    plt.savefig(os.path.join(figures_dir, 'sentiment_confusion_matrix.png'))
     plt.close()
 
 def plot_class_distribution(class_dist, class_names, figsize=(8, 6)):
@@ -74,7 +79,12 @@ def plot_class_distribution(class_dist, class_names, figsize=(8, 6)):
     plt.ylabel('Count')
     plt.title('Sentiment Distribution')
     plt.tight_layout()
-    plt.savefig('reports/figures/sentiment_distribution.png')
+    
+    # Ensure figures directory exists
+    figures_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), 'reports', 'figures')
+    os.makedirs(figures_dir, exist_ok=True)
+    
+    plt.savefig(os.path.join(figures_dir, 'sentiment_distribution.png'))
     plt.close()
 
 def main():
@@ -84,7 +94,7 @@ def main():
     # create output directories if they don't exist
     project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     
-    for directory in ['models/sentiment_analyzer', 'reports/models']:
+    for directory in ['models/sentiment_analyzer', 'reports/models', 'reports/figures']:
         dir_path = os.path.join(project_root, directory)
         os.makedirs(dir_path, exist_ok=True)
         logger.info(f"ensuring directory exists: {dir_path}")
@@ -111,11 +121,65 @@ def main():
     # basic info about data
     logger.info(f"Loaded {len(df)} articles")
     
+    # Sample data if it's too large to prevent memory issues
+    if len(df) > 2000:
+        logger.info(f"Dataset is large ({len(df)} samples), using a random sample")
+        df = df.sample(2000, random_state=42)
+        logger.info(f"Using {len(df)} samples for training")
+    
     # combine title and content for better analysis
     df['Text'] = df['Title'] + ' ' + df['Content']
     
+    # manually create sentiment features for demonstration purposes
+    logger.info("Creating seed sentiment labels based on keyword analysis...")
+    
+    # Keywords for sentiment analysis
+    positive_keywords = [
+        'dobrý', 'skvělý', 'výborný', 'pozitivní', 'úspěch', 'radost', 'krásný', 'příjemný',
+        'štěstí', 'spokojený', 'výhra', 'zisk', 'růst', 'lepší', 'nejlepší', 'zlepšení',
+        'vynikající', 'fantastický', 'báječný', 'prospěšný', 'podpora', 'nadějný'
+    ]
+    
+    negative_keywords = [
+        'špatný', 'negativní', 'problém', 'potíž', 'selhání', 'prohra', 'ztráta', 'pokles',
+        'krize', 'konflikt', 'smrt', 'válka', 'nehoda', 'tragédie', 'nebezpečí', 'zhoršení',
+        'škoda', 'horší', 'nejhorší', 'slabý', 'riziko', 'hrozba', 'kritický', 'strach'
+    ]
+    
+    # Create a function to assign sentiment based on keywords
+    def assign_seed_sentiment(text):
+        text = text.lower()
+        pos_count = sum(1 for word in positive_keywords if word in text)
+        neg_count = sum(1 for word in negative_keywords if word in text)
+        
+        # Return sentiment class (0: negative, 1: neutral, 2: positive)
+        if pos_count > neg_count + 1:
+            return 2  # positive
+        elif neg_count > pos_count + 1:
+            return 0  # negative
+        else:
+            return 1  # neutral
+    
+    # Initialize seed_sentiment column with NaN
+    df['seed_sentiment'] = np.nan
+    
+    # Apply sentiment assignment to a small subset for seeding
+    seed_size = min(300, len(df))
+    seed_indices = np.random.choice(df.index, seed_size, replace=False)
+    
+    # Apply the sentiment function to each row in seed_indices
+    for idx in seed_indices:
+        df.at[idx, 'seed_sentiment'] = assign_seed_sentiment(df.at[idx, 'Text'])
+    
+    # Check distribution of seed sentiments
+    seed_distribution = df.loc[seed_indices, 'seed_sentiment'].value_counts()
+    logger.info(f"Seed sentiment distribution: {seed_distribution.to_dict()}")
+    
+    # Get only rows with valid sentiment labels
+    valid_indices = df['seed_sentiment'].dropna().index
+    
     # train model with different classifier types
-    classifiers = ['logistic_regression', 'svm', 'random_forest']
+    classifiers = ['logistic_regression', 'naive_bayes']
     results = {}
     
     for clf_type in classifiers:
@@ -124,8 +188,20 @@ def main():
         # create sentiment analyzer
         analyzer = SentimentAnalyzer(classifier_type=clf_type)
         
-        # train analyzer (auto-generate labels since we don't have manual annotations)
-        results[clf_type] = analyzer.fit(df['Text'])
+        # train analyzer (use the seed data for semi-supervised learning)
+        train_data = df.loc[valid_indices, 'Text'].values
+        train_labels = df.loc[valid_indices, 'seed_sentiment'].values.astype(int)
+        
+        logger.info(f"training {clf_type} classifier with {len(train_data)} samples...")
+        
+        # Custom handling for classification report and storage
+        clf_results = analyzer.fit(train_data, train_labels)
+        
+        # Manually calculate class distribution
+        class_distribution = np.bincount(train_labels.astype(int)).tolist()
+        clf_results['class_distribution'] = class_distribution
+        
+        results[clf_type] = clf_results
         
         # save model
         model_dir = os.path.join(project_root, 'models', 'sentiment_analyzer', clf_type)
@@ -185,6 +261,14 @@ def main():
         sentiment = analyzer.predict([article['Text']])[0]
         logger.info(f"Title: {article['Title'][:50]}...")
         logger.info(f"Predicted sentiment: {analyzer.labels[sentiment]}")
+        
+        # Extract sentiment features
+        features = analyzer.extract_sentiment_features([article['Text']])
+        positive_words = features['positive_word_count'].iloc[0]
+        negative_words = features['negative_word_count'].iloc[0]
+        ratio = features['sentiment_ratio'].iloc[0]
+        
+        logger.info(f"Positive words: {positive_words}, Negative words: {negative_words}, Ratio: {ratio:.2f}")
         logger.info("-" * 50)
 
 if __name__ == "__main__":

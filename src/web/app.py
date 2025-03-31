@@ -7,6 +7,7 @@ import subprocess
 from datetime import datetime
 import logging
 import glob
+import pyodbc  # Added this import
 from flask import Flask, render_template, request, redirect, url_for, jsonify
 
 # add parent directory to system path for imports
@@ -90,37 +91,119 @@ def load_data():
     
     # load articles data
     try:
-        # check if all_articles.json exists, otherwise find latest display file
-        if os.path.exists(display_file):
-            with open(display_file, 'r', encoding='utf-8') as f:
-                articles = json.load(f)
-            articles_df = pd.DataFrame(articles)
-        else:
-            # find latest display file
-            display_files = glob.glob(os.path.join(display_dir, 'display_articles_*.json'))
+        # Try to load directly from the database first
+        try:
+            # Connection parameters
+            server = "193.85.203.188"
+            database = "boska"
+            username = "boska"
+            password = "123456"
             
-            if display_files:
-                latest_file = max(display_files, key=os.path.getmtime)
-                with open(latest_file, 'r', encoding='utf-8') as f:
+            # Try to load configuration
+            config_path = os.path.join(project_root, 'config', 'database.json')
+            if os.path.exists(config_path):
+                with open(config_path, 'r') as f:
+                    config = json.load(f)
+                    server = config.get('server', server)
+                    database = config.get('database', database)
+                    username = config.get('username', username)
+                    password = config.get('password', password)
+                logger.info("Configuration loaded from config/database.json")
+            
+            # Attempt database connection
+            conn_str = f"DRIVER={{ODBC Driver 17 for SQL Server}};SERVER={server};DATABASE={database};UID={username};PWD={password}"
+            conn = pyodbc.connect(conn_str)
+            
+            # Load articles directly from database
+            query = """
+            SELECT Id, SourceName as Source, Title, ArticleUrl, PublicationDate as PublishDate, 
+                  Category, ArticleLength, WordCount, ArticleText as Content, 
+                  ScrapedDate
+            FROM Articles
+            """
+            articles_df = pd.read_sql(query, conn)
+            conn.close()
+            
+            # Save the loaded data to display files for next time
+            os.makedirs(display_dir, exist_ok=True)
+            articles_df.to_json(display_file, orient='records', force_ascii=False, indent=2)
+            
+            loaded_date = datetime.now()
+            logger.info(f"Loaded {len(articles_df)} articles directly from database")
+            
+        except Exception as db_error:
+            logger.warning(f"Could not load from database: {str(db_error)}, trying from files")
+            
+            # Check if all_articles.json exists, otherwise find latest display file
+            if os.path.exists(display_file):
+                with open(display_file, 'r', encoding='utf-8') as f:
                     articles = json.load(f)
                 articles_df = pd.DataFrame(articles)
+                logger.info(f"Loaded {len(articles_df)} articles from {display_file}")
             else:
-                # if no display files found, create empty DataFrame with required columns
-                articles_df = pd.DataFrame(columns=[
-                    'Id', 'Title', 'Content', 'Source', 'Category', 'predicted_category', 
-                    'sentiment', 'PublishDate', 'ArticleUrl', 'ArticleLength', 'WordCount'
-                ])
+                # find latest display file
+                display_files = glob.glob(os.path.join(display_dir, 'display_articles_*.json'))
+                
+                if display_files:
+                    latest_file = max(display_files, key=os.path.getmtime)
+                    with open(latest_file, 'r', encoding='utf-8') as f:
+                        articles = json.load(f)
+                    articles_df = pd.DataFrame(articles)
+                    logger.info(f"Loaded {len(articles_df)} articles from {latest_file}")
+                else:
+                    # Try looking in data/processed_scraped directory
+                    processed_dir = os.path.join(project_root, 'data', 'processed_scraped')
+                    processed_files = glob.glob(os.path.join(processed_dir, 'processed_articles_*.json'))
+                    
+                    if processed_files:
+                        latest_processed = max(processed_files, key=os.path.getmtime)
+                        with open(latest_processed, 'r', encoding='utf-8') as f:
+                            articles = json.load(f)
+                        articles_df = pd.DataFrame(articles)
+                        logger.info(f"Loaded {len(articles_df)} articles from {latest_processed}")
+                    else:
+                        # Try looking in data/scraped directory
+                        scraped_dir = os.path.join(project_root, 'data', 'scraped')
+                        scraped_files = glob.glob(os.path.join(scraped_dir, 'articles_*.json'))
+                        
+                        if scraped_files:
+                            latest_scraped = max(scraped_files, key=os.path.getmtime)
+                            with open(latest_scraped, 'r', encoding='utf-8') as f:
+                                articles = json.load(f)
+                            articles_df = pd.DataFrame(articles)
+                            logger.info(f"Loaded {len(articles_df)} articles from {latest_scraped}")
+                        else:
+                            # if no display files found, create empty DataFrame with required columns
+                            articles_df = pd.DataFrame(columns=[
+                                'Id', 'Title', 'Content', 'Source', 'Category', 'predicted_category', 
+                                'sentiment', 'PublishDate', 'ArticleUrl', 'ArticleLength', 'WordCount'
+                            ])
+                            logger.warning("No article data files found, created empty DataFrame")
+        
+        # Ensure Id column exists and is unique
+        if 'Id' not in articles_df.columns:
+            articles_df['Id'] = range(1, len(articles_df) + 1)
+        
+        # Make sure all required columns exist
+        for col in ['Title', 'Content', 'Source', 'Category', 'PublishDate', 'ArticleLength', 'WordCount']:
+            if col not in articles_df.columns:
+                if col == 'Source' and 'SourceName' in articles_df.columns:
+                    articles_df['Source'] = articles_df['SourceName']
+                elif col == 'Content' and 'ArticleText' in articles_df.columns:
+                    articles_df['Content'] = articles_df['ArticleText']
+                elif col == 'PublishDate' and 'PublicationDate' in articles_df.columns:
+                    articles_df['PublishDate'] = articles_df['PublicationDate']
+                else:
+                    articles_df[col] = None
         
         loaded_date = datetime.now()
-        logger.info(f"loaded {len(articles_df)} articles for display")
-        
-        # Add data to application config for chatbot to access
         app.config['articles_df'] = articles_df
+        
     except Exception as e:
-        logger.error(f"failed to load articles data: {str(e)}")
+        logger.error(f"Failed to load articles data: {str(e)}")
         articles_df = pd.DataFrame()
     
-    # First try to load enhanced models
+    # Load models
     try:
         # Try to load enhanced category model first
         if os.path.exists(enhanced_category_model_path):
@@ -129,8 +212,12 @@ def load_data():
             enhanced_models = True
         else:
             # Fallback to standard model
-            category_model = CategoryClassifier.load_model(standard_category_model_path)
-            logger.info("Standard category classifier loaded successfully")
+            try:
+                category_model = CategoryClassifier.load_model(standard_category_model_path)
+                logger.info("Standard category classifier loaded successfully")
+            except Exception as e:
+                logger.warning(f"Could not load standard category model: {str(e)}")
+                category_model = None
             
         # Try to load enhanced sentiment model first
         if os.path.exists(enhanced_sentiment_model_path):
@@ -139,26 +226,17 @@ def load_data():
             enhanced_models = True
         else:
             # Fallback to standard model
-            sentiment_model = SentimentAnalyzer.load_model(standard_sentiment_model_path)
-            logger.info("Standard sentiment analyzer loaded successfully")
+            try:
+                sentiment_model = SentimentAnalyzer.load_model(standard_sentiment_model_path)
+                logger.info("Standard sentiment analyzer loaded successfully")
+            except Exception as e:
+                logger.warning(f"Could not load standard sentiment model: {str(e)}")
+                sentiment_model = None
     except Exception as e:
-        logger.warning(f"could not load enhanced models, trying standard models: {str(e)}")
+        logger.warning(f"Could not load models: {str(e)}")
         enhanced_models = False
-        
-        # Try to load standard models as fallback
-        try:
-            category_model = CategoryClassifier.load_model(standard_category_model_path)
-            logger.info("Standard category classifier loaded successfully")
-        except Exception as e:
-            logger.warning(f"could not load category model: {str(e)}")
-            category_model = None
-        
-        try:
-            sentiment_model = SentimentAnalyzer.load_model(standard_sentiment_model_path)
-            logger.info("Standard sentiment analyzer loaded successfully")
-        except Exception as e:
-            logger.warning(f"could not load sentiment model: {str(e)}")
-            sentiment_model = None
+        category_model = None
+        sentiment_model = None
 
 @app.route('/')
 def index():
@@ -180,7 +258,7 @@ def index():
         'top_sources': articles_df['Source'].value_counts().head(5).to_dict() if articles_df is not None and len(articles_df) > 0 else {},
         'top_categories': articles_df['Category'].value_counts().head(5).to_dict() if articles_df is not None and len(articles_df) > 0 else {},
         'loaded_date': loaded_date,
-        'enhanced_models': enhanced_models  # Add flag indicating if enhanced models are being used
+        'enhanced_models': enhanced_models
     }
     
     return render_template('index.html', stats=stats)
