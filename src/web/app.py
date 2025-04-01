@@ -9,6 +9,7 @@ import logging
 import glob
 import pyodbc
 from flask import Flask, render_template, request, redirect, url_for, jsonify
+from routes.chatbot import article_chatbot_api
 
 # add parent directory to system path for imports
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -35,6 +36,7 @@ app = Flask(__name__)
 
 # register blueprints
 app.register_blueprint(chatbot_bp)
+app.add_url_rule('/api/article_chatbot', view_func=article_chatbot_api, methods=['POST'])
 
 # global variables
 articles_df = None
@@ -666,13 +668,13 @@ if __name__ == '__main__':
     except Exception as e:
         logger.error(f"Error initializing database: {str(e)}")
     
-    # Run scraper to get latest news (10 per source) before starting the app
+    # Run scraper to get latest news (5 per source) before starting the app
     try:
-        logger.info("Running initial scraper to collect latest news (10 per source)...")
+        logger.info("Running initial scraper to collect latest news (5 per source)...")
         # Using subprocess.run with check=True to ensure it completes or raises exception
         result = subprocess.run(
             [sys.executable, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 
-            'scripts', 'scraper.py'), '--latest', '--max-per-source=10', '--database'],
+            'scripts', 'scraper.py'), '--latest', '--max-per-source=5'],
             check=True,
             capture_output=True,
             text=True
