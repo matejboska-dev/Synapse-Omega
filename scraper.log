@@ -8470,3 +8470,10 @@
 2025-03-31 22:01:41,977 - synapse-scraper - INFO - Používám konfiguraci databáze z config/database.json
 2025-03-31 22:01:45,483 - synapse-scraper - INFO - Používám konfiguraci databáze z config/database.json
 2025-03-31 22:02:03,315 - synapse-scraper - INFO - Používám konfiguraci databáze z config/database.json
+2025-04-01 08:14:05,608 - synapse-scraper - INFO - Zaèínám sbìr zpravodajských èlánkù pro projekt Synapse...
+2025-04-01 08:14:05,609 - synapse-scraper - INFO - Spuštìn režim nejnovìjších zpráv
+2025-04-01 08:14:05,612 - synapse-scraper - INFO - Používám konfiguraci databáze z config/database.json
+2025-04-01 08:14:12,299 - synapse-scraper - ERROR - Chyba pøi pøipojení k databázi: ('28000', "[28000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Login failed for user 'boska'.  Reason: The password of the account has expired. (18487) (SQLDriverConnect); [28000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Login failed for user 'boska'.  Reason: The password of the account has expired. (18487)")
+2025-04-01 08:14:12,299 - synapse-scraper - ERROR - Nelze pokraèovat bez pøipojení k databázi.
+2025-04-01 08:14:12,316 - synapse-scraper - INFO - Sbìr dokonèen, pøidáno 0 nových èlánkù
+2025-04-01 08:14:13,115 - synapse-scraper - INFO - Zpracování nasbíraných èlánkù...
