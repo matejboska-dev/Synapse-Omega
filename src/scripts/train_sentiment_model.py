@@ -415,27 +415,26 @@ class NeuralSentimentAnalyzer:
         plt.savefig(os.path.join(figures_dir, 'neural_sentiment_training_history.png'))
         plt.close()
     
-    def save_model(self, model_dir):
-        """
-        Uložení modelu na disk
-        
-        Args:
-            model_dir (str): Cesta k adresáři pro uložení modelu
-        """
+        def save_model(self, model_dir):
+            """
+            Uložení modelu na disk
+            
+            Args:
+                model_dir (str): Cesta k adresáři pro uložení modelu
+            """
         if self.model is None:
             raise ValueError("Model není natrénován. Nejprve zavolejte metodu fit().")
         
         # Vytvořit adresář, pokud neexistuje
         os.makedirs(model_dir, exist_ok=True)
         
-        # Uložit model neuronové sítě
-        tf_model_dir = os.path.join(model_dir, 'nn_model')
-        if os.path.exists(tf_model_dir):
-            import shutil
-            shutil.rmtree(tf_model_dir)  # Odstranit existující adresář pro uložení modelu
+        # Uložit model neuronové sítě s .keras příponou (místo adresáře nn_model)
+        tf_model_path = os.path.join(model_dir, 'nn_model.keras')
+        if os.path.exists(tf_model_path):
+            os.remove(tf_model_path)  # Odstranit existující soubor modelu
             
-        self.model.save(tf_model_dir)
-        logger.info(f"Model uložen do {tf_model_dir}")
+        self.model.save(tf_model_path)
+        logger.info(f"Model uložen do {tf_model_path}")
         
         # Uložit tokenizer
         with open(os.path.join(model_dir, 'tokenizer.pkl'), 'wb') as f:
@@ -682,7 +681,7 @@ def main():
     logger.info("Balancing dataset...")
     balanced_df = create_balanced_dataset(df, 'seed_sentiment', 
                                          min_samples=min(500, seed_distribution.min()),
-                                         max_samples=1000)
+                                         max_samples=1500)
     
     # Check balanced distribution
     balanced_distribution = balanced_df['seed_sentiment'].value_counts()
