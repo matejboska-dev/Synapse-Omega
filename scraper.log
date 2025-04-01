@@ -8717,3 +8717,94 @@
 2025-04-01 09:31:09,838 - synapse-scraper - INFO - Sbìr dokonèen, pøidáno 0 nových èlánkù
 2025-04-01 09:31:09,878 - synapse-scraper - INFO - Zpracování nasbíraných èlánkù...
 2025-04-01 09:31:11,165 - synapse-scraper - INFO - Zpracování èlánkù úspìšnì dokonèeno
+2025-04-01 12:49:45,368 - synapse-scraper - INFO - Zaèínám sbìr zpravodajských èlánkù pro projekt Synapse...
+2025-04-01 12:49:45,374 - synapse-scraper - INFO - Používané zdroje: novinky, seznamzpravy, zpravy
+2025-04-01 12:49:45,375 - synapse-scraper - INFO - Používám konfiguraci databáze z config/database.json
+2025-04-01 12:49:45,918 - synapse-scraper - INFO - Úspìšnì pøipojeno k databázi.
+2025-04-01 12:49:45,919 - synapse-scraper - INFO - Úspìšné pøipojení k databázi, èlánky budou ukládány do DB
+2025-04-01 12:49:46,004 - synapse-scraper - INFO - Spuštìn režim nejnovìjších zpráv
+2025-04-01 12:49:46,006 - synapse-scraper - INFO - Používám konfiguraci databáze z config/database.json
+2025-04-01 12:49:46,077 - synapse-scraper - INFO - Úspìšnì pøipojeno k databázi.
+2025-04-01 12:49:46,170 - synapse-scraper - INFO - Sbírám nejnovìjší zprávy z vybraných zdrojù (Novinky.cz, SeznamZpravy.cz, Zpravy.cz), max 10 èlánkù z každého zdroje
+2025-04-01 12:49:46,170 - synapse-scraper - INFO - Zpracovávám zdroj: novinky
+2025-04-01 12:49:46,170 - synapse-scraper - INFO - Zpracovávám RSS feed: novinky
+2025-04-01 12:49:47,807 - synapse-scraper - INFO - Stahuji èlánek: Oèima Saši Mitrofanova: Važme si prorokù
+2025-04-01 12:49:55,656 - synapse-scraper - ERROR - Chyba pøi zpracování zdroje novinky: too many values to unpack (expected 3)
+2025-04-01 12:49:55,656 - synapse-scraper - INFO - Zpracovávám zdroj: seznamzpravy
+2025-04-01 12:49:55,656 - synapse-scraper - INFO - Zpracovávám RSS feed: seznamzpravy
+2025-04-01 12:49:56,317 - synapse-scraper - INFO - Stahuji èlánek: „Korupce a nenávist ohrožují bezpeènost zemì.“ Bradáèová nastoupila do funkce
+2025-04-01 12:50:04,448 - synapse-scraper - ERROR - Chyba pøi zpracování zdroje seznamzpravy: too many values to unpack (expected 3)
+2025-04-01 12:50:04,449 - synapse-scraper - INFO - Zpracovávám zdroj: zpravy
+2025-04-01 12:50:04,449 - synapse-scraper - INFO - Zpracovávám RSS feed: zpravy
+2025-04-01 12:50:04,809 - synapse-scraper - WARNING - Žádné èlánky nenalezeny v RSS feedu: zpravy
+2025-04-01 12:50:04,896 - synapse-scraper - INFO - Databáze uzavøena.
+2025-04-01 12:50:04,896 - synapse-scraper - INFO - Sbìr dokonèen! Pøidáno 0 nových èlánkù.
+2025-04-01 12:50:04,896 - synapse-scraper - INFO - Sbìr dokonèen, pøidáno 0 nových èlánkù
+2025-04-01 12:50:04,930 - synapse-scraper - INFO - Zpracování nasbíraných èlánkù...
+2025-04-01 12:50:06,973 - synapse-scraper - INFO - Zpracování èlánkù úspìšnì dokonèeno
+2025-04-01 12:50:22,088 - synapse-scraper - INFO - Zaèínám sbìr zpravodajských èlánkù pro projekt Synapse...
+2025-04-01 12:50:22,387 - synapse-scraper - INFO - Používané zdroje: novinky, seznamzpravy, zpravy
+2025-04-01 12:50:22,389 - synapse-scraper - INFO - Používám konfiguraci databáze z config/database.json
+2025-04-01 12:50:23,319 - synapse-scraper - INFO - Úspìšnì pøipojeno k databázi.
+2025-04-01 12:50:23,320 - synapse-scraper - INFO - Úspìšné pøipojení k databázi, èlánky budou ukládány do DB
+2025-04-01 12:50:23,386 - synapse-scraper - INFO - Spuštìn režim nejnovìjších zpráv
+2025-04-01 12:50:23,387 - synapse-scraper - INFO - Používám konfiguraci databáze z config/database.json
+2025-04-01 12:50:23,434 - synapse-scraper - INFO - Úspìšnì pøipojeno k databázi.
+2025-04-01 12:50:23,522 - synapse-scraper - INFO - Sbírám nejnovìjší zprávy z vybraných zdrojù (Novinky.cz, SeznamZpravy.cz, Zpravy.cz), max 10 èlánkù z každého zdroje
+2025-04-01 12:50:23,523 - synapse-scraper - INFO - Zpracovávám zdroj: novinky
+2025-04-01 12:50:23,524 - synapse-scraper - INFO - Zpracovávám RSS feed: novinky
+2025-04-01 12:50:24,333 - synapse-scraper - INFO - Stahuji èlánek: Oèima Saši Mitrofanova: Važme si prorokù
+2025-04-01 12:50:32,873 - synapse-scraper - ERROR - Chyba pøi zpracování zdroje novinky: too many values to unpack (expected 3)
+2025-04-01 12:50:32,877 - synapse-scraper - INFO - Zpracovávám zdroj: seznamzpravy
+2025-04-01 12:50:32,877 - synapse-scraper - INFO - Zpracovávám RSS feed: seznamzpravy
+2025-04-01 12:50:33,554 - synapse-scraper - INFO - Stahuji èlánek: „Korupce a nenávist ohrožují bezpeènost zemì.“ Bradáèová nastoupila do funkce
+2025-04-01 12:50:42,167 - synapse-scraper - ERROR - Chyba pøi zpracování zdroje seznamzpravy: too many values to unpack (expected 3)
+2025-04-01 12:50:42,170 - synapse-scraper - INFO - Zpracovávám zdroj: zpravy
+2025-04-01 12:50:42,170 - synapse-scraper - INFO - Zpracovávám RSS feed: zpravy
+2025-04-01 12:50:43,106 - synapse-scraper - WARNING - Žádné èlánky nenalezeny v RSS feedu: zpravy
+2025-04-01 12:50:43,193 - synapse-scraper - INFO - Databáze uzavøena.
+2025-04-01 12:50:43,194 - synapse-scraper - INFO - Sbìr dokonèen! Pøidáno 0 nových èlánkù.
+2025-04-01 12:50:43,194 - synapse-scraper - INFO - Sbìr dokonèen, pøidáno 0 nových èlánkù
+2025-04-01 12:50:43,242 - synapse-scraper - INFO - Zpracování nasbíraných èlánkù...
+2025-04-01 12:50:46,112 - synapse-scraper - INFO - Zpracování èlánkù úspìšnì dokonèeno
+2025-04-01 12:51:13,204 - synapse-scraper - INFO - Zaèínám sbìr zpravodajských èlánkù pro projekt Synapse...
+2025-04-01 12:51:13,204 - synapse-scraper - INFO - Používané zdroje: novinky, seznamzpravy, zpravy
+2025-04-01 12:51:13,208 - synapse-scraper - INFO - Používám konfiguraci databáze z config/database.json
+2025-04-01 12:51:13,914 - synapse-scraper - INFO - Úspìšnì pøipojeno k databázi.
+2025-04-01 12:51:13,915 - synapse-scraper - INFO - Úspìšné pøipojení k databázi, èlánky budou ukládány do DB
+2025-04-01 12:51:13,976 - synapse-scraper - INFO - Spuštìn režim nejnovìjších zpráv
+2025-04-01 12:51:13,979 - synapse-scraper - INFO - Používám konfiguraci databáze z config/database.json
+2025-04-01 12:51:14,023 - synapse-scraper - INFO - Úspìšnì pøipojeno k databázi.
+2025-04-01 12:51:14,109 - synapse-scraper - INFO - Sbírám nejnovìjší zprávy z vybraných zdrojù (Novinky.cz, SeznamZpravy.cz, Zpravy.cz), max 5 èlánkù z každého zdroje
+2025-04-01 12:51:14,109 - synapse-scraper - INFO - Zpracovávám zdroj: novinky
+2025-04-01 12:51:14,111 - synapse-scraper - INFO - Zpracovávám RSS feed: novinky
+2025-04-01 12:51:15,558 - synapse-scraper - INFO - Stahuji èlánek: Oèima Saši Mitrofanova: Važme si prorokù
+2025-04-01 12:51:21,587 - synapse-scraper - ERROR - Chyba pøi zpracování zdroje novinky: too many values to unpack (expected 3)
+2025-04-01 12:51:21,599 - synapse-scraper - INFO - Zpracovávám zdroj: seznamzpravy
+2025-04-01 12:51:21,599 - synapse-scraper - INFO - Zpracovávám RSS feed: seznamzpravy
+2025-04-01 12:51:22,215 - synapse-scraper - INFO - Stahuji èlánek: „Korupce a nenávist ohrožují bezpeènost zemì.“ Bradáèová nastoupila do funkce
+2025-04-01 12:51:30,890 - synapse-scraper - ERROR - Chyba pøi zpracování zdroje seznamzpravy: too many values to unpack (expected 3)
+2025-04-01 12:51:30,890 - synapse-scraper - INFO - Zpracovávám zdroj: zpravy
+2025-04-01 12:51:30,890 - synapse-scraper - INFO - Zpracovávám RSS feed: zpravy
+2025-04-01 12:51:31,129 - synapse-scraper - WARNING - Žádné èlánky nenalezeny v RSS feedu: zpravy
+2025-04-01 12:51:31,227 - synapse-scraper - INFO - Databáze uzavøena.
+2025-04-01 12:51:31,227 - synapse-scraper - INFO - Sbìr dokonèen! Pøidáno 0 nových èlánkù.
+2025-04-01 12:51:31,227 - synapse-scraper - INFO - Sbìr dokonèen, pøidáno 0 nových èlánkù
+2025-04-01 12:51:31,248 - synapse-scraper - INFO - Zpracování nasbíraných èlánkù...
+2025-04-01 12:51:32,633 - synapse-scraper - INFO - Zpracování èlánkù úspìšnì dokonèeno
+2025-04-01 12:51:49,051 - synapse-scraper - INFO - Zaèínám sbìr zpravodajských èlánkù pro projekt Synapse...
+2025-04-01 12:51:49,052 - synapse-scraper - INFO - Používané zdroje: novinky, seznamzpravy, zpravy
+2025-04-01 12:51:49,054 - synapse-scraper - INFO - Používám konfiguraci databáze z config/database.json
+2025-04-01 12:51:50,767 - synapse-scraper - INFO - Úspìšnì pøipojeno k databázi.
+2025-04-01 12:51:50,768 - synapse-scraper - INFO - Úspìšné pøipojení k databázi, èlánky budou ukládány do DB
+2025-04-01 12:51:50,838 - synapse-scraper - INFO - Spuštìn režim nejnovìjších zpráv
+2025-04-01 12:51:50,843 - synapse-scraper - INFO - Používám konfiguraci databáze z config/database.json
+2025-04-01 12:51:50,899 - synapse-scraper - INFO - Úspìšnì pøipojeno k databázi.
+2025-04-01 12:51:51,047 - synapse-scraper - INFO - Sbírám nejnovìjší zprávy z vybraných zdrojù (Novinky.cz, SeznamZpravy.cz, Zpravy.cz), max 5 èlánkù z každého zdroje
+2025-04-01 12:51:51,047 - synapse-scraper - INFO - Zpracovávám zdroj: novinky
+2025-04-01 12:51:51,050 - synapse-scraper - INFO - Zpracovávám RSS feed: novinky
+2025-04-01 12:51:51,944 - synapse-scraper - INFO - Stahuji èlánek: Oèima Saši Mitrofanova: Važme si prorokù
+2025-04-01 12:51:59,086 - synapse-scraper - ERROR - Chyba pøi zpracování zdroje novinky: too many values to unpack (expected 3)
+2025-04-01 12:51:59,088 - synapse-scraper - INFO - Zpracovávám zdroj: seznamzpravy
+2025-04-01 12:51:59,088 - synapse-scraper - INFO - Zpracovávám RSS feed: seznamzpravy
+2025-04-01 12:51:59,679 - synapse-scraper - INFO - Stahuji èlánek: „Korupce a nenávist ohrožují bezpeènost zemì.“ Bradáèová nastoupila do funkce

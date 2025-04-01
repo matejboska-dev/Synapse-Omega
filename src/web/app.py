@@ -682,11 +682,10 @@ if __name__ == '__main__':
     
     # Run scraper to get latest news (10 per source) before starting the app
     try:
-        logger.info("Spouštím scraper pro Novinky.cz, SeznamZpravy.cz a Zpravy.cz (10 článků z každého zdroje)...")
-        # Using subprocess.run with check=True to ensure it completes or raises exception
+        logger.info("Spouštím scraper pro Novinky.cz, SeznamZpravy.cz a Zpravy.cz (5 článků z každého zdroje)...")
         result = subprocess.run(
             [sys.executable, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 
-            'scripts', 'scraper.py'), '--latest', '--max-per-source=10', '--database'],
+            'scripts', 'scraper.py'), '--latest', '--max-per-source=5', '--database'],
             check=True,
             capture_output=True,
             text=True
