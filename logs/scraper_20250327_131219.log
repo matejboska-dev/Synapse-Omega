@@ -1,5 +1,0 @@
-2025-03-27 13:12:19,808 - INFO - loaded database configuration from config file
-2025-03-27 13:12:20,970 - INFO - successfully connected to database
-2025-03-27 13:12:21,495 - INFO - scraping articles from idnes
-2025-03-27 13:12:21,613 - INFO - fetched 30 articles from https://servis.idnes.cz/rss.aspx?c=zpravodaj
-2025-03-27 13:12:21,614 - INFO - found 30 new articles from idnes

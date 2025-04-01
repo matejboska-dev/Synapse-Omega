@@ -633,6 +633,72 @@ def server_error(e):
     return render_template('error.html', message="Chyba serveru"), 500
 
 if __name__ == '__main__':
+    # Initialize database connection if needed
+    try:
+        # Check if database connection can be established
+        from data.database_connector import DatabaseConnector
+        
+        # Get database connection parameters - from config if available
+        project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+        config_path = os.path.join(project_root, 'config', 'database.json')
+        
+        if os.path.exists(config_path):
+            with open(config_path, 'r') as f:
+                config = json.load(f)
+                server = config.get('server', "193.85.203.188")
+                database = config.get('database', "boska")
+                username = config.get('username', "boska")
+                password = config.get('password', "123456")
+        else:
+            # Default connection parameters
+            server = "193.85.203.188"
+            database = "boska"
+            username = "boska"
+            password = "123456"
+        
+        # Test connection
+        db_connector = DatabaseConnector(server, database, username, password)
+        if db_connector.connect():
+            logger.info("Database connection successful - ready for scraper")
+            db_connector.disconnect()
+        else:
+            logger.warning("Could not connect to database - scraper will save data locally")
+    except Exception as e:
+        logger.error(f"Error initializing database: {str(e)}")
+    
+    # Run scraper to get latest news (10 per source) before starting the app
+    try:
+        logger.info("Running initial scraper to collect latest news (10 per source)...")
+        # Using subprocess.run with check=True to ensure it completes or raises exception
+        result = subprocess.run(
+            [sys.executable, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 
+            'scripts', 'scraper.py'), '--latest', '--max-per-source=10', '--database'],
+            check=True,
+            capture_output=True,
+            text=True
+        )
+        logger.info(f"Initial scraping completed successfully: {result.stdout}")
+        
+        # Process the scraped data
+        logger.info("Processing scraped data...")
+        process_result = subprocess.run(
+            [sys.executable, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+            'scripts', 'process_scraped_data.py')],
+            check=True,
+            capture_output=True,
+            text=True
+        )
+        logger.info(f"Data processing completed: {process_result.stdout}")
+        
+        # Load data after scraping
+        load_data()
+    except subprocess.CalledProcessError as e:
+        logger.error(f"Scraper or processing failed with error: {e.stderr}")
+    except Exception as e:
+        logger.error(f"Failed to run initial scraper: {str(e)}")
+    
+    # start the app
+    app.run(debug=True, host='0.0.0.0', port=5000)
     # load data and models on startup
     load_data()
     
