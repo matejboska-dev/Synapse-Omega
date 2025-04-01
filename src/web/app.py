@@ -58,37 +58,51 @@ def run_daily_scraper():
             
         # get path to scraper script
         scraper_script = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'scripts', 'scraper.py')
+        process_script = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'scripts', 'process_scraped_data.py')
         
         # execute scraper using the same python executable
         python_exe = sys.executable
         
-        # Run with limited article count (just latest headlines - 3 per source)
+        # Run with specified article count per source (10 per source)
         # Add timeout to prevent hanging
         process = subprocess.Popen(
-            [python_exe, scraper_script, '--latest', '--max-per-source=3'], 
+            [python_exe, scraper_script, '--latest', '--max-per-source=10', '--database'], 
             stdout=subprocess.PIPE, 
             stderr=subprocess.PIPE
         )
         
-        logger.info("Latest news scraper started - sbírám nejnovější zprávy")
+        logger.info("Spouštím scraper pro Novinky.cz, SeznamZpravy.cz a Zpravy.cz (10 článků z každého zdroje)...")
         
         # Wait for completion with timeout
         try:
-            stdout, stderr = process.communicate(timeout=60)  # 60 seconds timeout
+            stdout, stderr = process.communicate(timeout=120)  # 2 minutes timeout
             
             if process.returncode == 0:
-                logger.info("Latest news scraper completed successfully")
+                logger.info("Scraping dokončen úspěšně")
+                
+                # Run the processing script
+                logger.info("Zpracovávám získaná data...")
+                process_data = subprocess.Popen(
+                    [python_exe, process_script],
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.PIPE
+                )
+                
+                # Wait for processing to complete
+                process_data.communicate(timeout=60)
+                logger.info("Zpracování dat dokončeno")
+                
             else:
-                logger.error(f"Latest news scraper failed with error: {stderr.decode('utf-8')}")
+                logger.error(f"Scraper selhal s chybou: {stderr.decode('utf-8')}")
         except subprocess.TimeoutExpired:
             process.kill()
-            logger.warning("Latest news scraper timed out after 60 seconds, process killed")
+            logger.warning("Scraper přerušen kvůli timeout, proces ukončen")
             
         # reload data after scraper completes
         load_data()
     except Exception as e:
-        logger.error(f"Error running latest news scraper: {str(e)}")
-
+        logger.error(f"Chyba při spuštění scraperu: {str(e)}")
+        
 def run_scraper():
     """run scraper script in a separate process"""
     try:
@@ -320,7 +334,7 @@ def index():
             'from': articles_df['PublishDate'].min() if articles_df is not None and len(articles_df) > 0 else None,
             'to': articles_df['PublishDate'].max() if articles_df is not None and len(articles_df) > 0 else None
         },
-        'newest_articles': articles_df.sort_values('PublishDate', ascending=False).head(5).to_dict('records') if articles_df is not None and len(articles_df) > 0 else [],
+        'newest_articles': articles_df.sort_values('PublishDate', ascending=False).head(20).to_dict('records') if articles_df is not None and len(articles_df) > 0 else [],
         'top_sources': articles_df['Source'].value_counts().head(5).to_dict() if articles_df is not None and len(articles_df) > 0 else {},
         'top_categories': articles_df['Category'].value_counts().head(5).to_dict() if articles_df is not None and len(articles_df) > 0 else {},
         'loaded_date': loaded_date,
@@ -659,16 +673,16 @@ if __name__ == '__main__':
         # Test connection
         db_connector = DatabaseConnector(server, database, username, password)
         if db_connector.connect():
-            logger.info("Database connection successful - ready for scraper")
+            logger.info("Databázové připojení úspěšné - připraveno pro scraper")
             db_connector.disconnect()
         else:
-            logger.warning("Could not connect to database - scraper will save data locally")
+            logger.warning("Nepodařilo se připojit k databázi - scraper bude ukládat data lokálně")
     except Exception as e:
-        logger.error(f"Error initializing database: {str(e)}")
+        logger.error(f"Chyba při inicializaci databáze: {str(e)}")
     
     # Run scraper to get latest news (10 per source) before starting the app
     try:
-        logger.info("Running initial scraper to collect latest news (10 per source)...")
+        logger.info("Spouštím scraper pro Novinky.cz, SeznamZpravy.cz a Zpravy.cz (10 článků z každého zdroje)...")
         # Using subprocess.run with check=True to ensure it completes or raises exception
         result = subprocess.run(
             [sys.executable, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 
@@ -677,10 +691,10 @@ if __name__ == '__main__':
             capture_output=True,
             text=True
         )
-        logger.info(f"Initial scraping completed successfully: {result.stdout}")
+        logger.info(f"Scraping dokončen: {result.stdout}")
         
         # Process the scraped data
-        logger.info("Processing scraped data...")
+        logger.info("Zpracovávám získaná data...")
         process_result = subprocess.run(
             [sys.executable, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
             'scripts', 'process_scraped_data.py')],
@@ -688,29 +702,14 @@ if __name__ == '__main__':
             capture_output=True,
             text=True
         )
-        logger.info(f"Data processing completed: {process_result.stdout}")
+        logger.info(f"Zpracování dat dokončeno: {process_result.stdout}")
         
         # Load data after scraping
         load_data()
     except subprocess.CalledProcessError as e:
-        logger.error(f"Scraper or processing failed with error: {e.stderr}")
+        logger.error(f"Scraper nebo zpracování selhalo s chybou: {e.stderr}")
     except Exception as e:
-        logger.error(f"Failed to run initial scraper: {str(e)}")
+        logger.error(f"Selhalo spuštění scraperu: {str(e)}")
     
     # start the app
-    app.run(debug=True, host='0.0.0.0', port=5000)
-    # load data and models on startup
-    load_data()
-    
-    # run daily scraper in background thread at startup
-    # Wrap in try-except to prevent app from failing if scraper fails
-    try:
-        daily_thread = threading.Thread(target=run_daily_scraper)
-        daily_thread.daemon = True
-        daily_thread.start()
-        logger.info("Daily scraper thread started")
-    except Exception as e:
-        logger.error(f"Failed to start scraper thread: {str(e)}")
-    
-    # run app in debug mode
     app.run(debug=True, host='0.0.0.0', port=5000)

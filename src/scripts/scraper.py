@@ -34,30 +34,12 @@ DB_USER = "boska"
 DB_PASSWORD = "123456"
 
 # Seznam zdrojů zpráv a jejich RSS
+# Seznam zdrojů zpráv a jejich RSS
 news_sources = {
-    "idnes": "https://servis.idnes.cz/rss.aspx?c=zpravodaj",
     "novinky": "https://www.novinky.cz/rss",
     "seznamzpravy": "https://www.seznamzpravy.cz/rss",
-    "aktualne": "https://zpravy.aktualne.cz/rss/",
-    "ihned": "https://ihned.cz/rss/",
-    "denik-n": "https://denikn.cz/feed/",
-    "ct24": "https://ct24.ceskatelevize.cz/rss/hlavni-zpravy",
-    "irozhlas": "https://www.irozhlas.cz/rss/irozhlas/",
-    "denik": "https://www.denik.cz/rss/all.html",
-    "lidovky": "https://servis.lidovky.cz/rss.aspx?c=ln_domov",
-    "reflex": "https://www.reflex.cz/rss",
-    "echo24": "https://echo24.cz/rss",
-    # Přidáno více zdrojů pro získání většího množství dat
-    "info-cz": "https://www.info.cz/feed/rss",
-    "forum24": "https://www.forum24.cz/feed/",
-    "blesk": "https://www.blesk.cz/rss",
-    "cnn-iprima": "https://cnn.iprima.cz/rss",
-    "parlamentnilisty": "https://www.parlamentnilisty.cz/export/rss.aspx",
-    "eurozpravy": "https://eurozpravy.cz/rss/",
-    "tyden": "https://www.tyden.cz/rss/",
-    "e15": "https://www.e15.cz/rss"
+    "zpravy": "https://www.zpravy.cz/rss"
 }
-
 # Funkce pro připojení k databázi
 def connect_to_db():
     """
@@ -90,18 +72,17 @@ def connect_to_db():
         logger.error(f"Chyba při připojení k databázi: {e}")
         return None
 
-# Funkce pro získání textu článku s retry logikou
 def get_article_text(url, source, max_retries=3):
     """
-    Extrahuje text článku z dané URL adresy.
+    Extrahuje text článku z dané URL adresy s lepším zachováním formátování.
     
     Args:
         url (str): URL adresa článku
-        source (str): Zdroj článku (např. "idnes", "novinky")
+        source (str): Zdroj článku (např. "novinky", "seznamzpravy")
         max_retries (int): Maximální počet pokusů o stažení článku
     
     Returns:
-        tuple: (text_článku, počet_znaků, počet_slov)
+        tuple: (text_článku, počet_znaků, počet_slov, obrázky)
     """
     for retry in range(max_retries):
         try:
@@ -112,14 +93,14 @@ def get_article_text(url, source, max_retries=3):
                 "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
                 "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
                 "Accept-Language": "cs,en-US;q=0.7,en;q=0.3",
-                "Referer": "https://www.google.com/"  # Přidáno pro větší autenticitu
+                "Referer": "https://www.google.com/"
             }
             
             response = requests.get(url, headers=headers, timeout=15)
             if response.status_code != 200:
                 logger.warning(f"Pokus {retry+1}/{max_retries}: Nepodařilo se stáhnout článek: {url}, status code: {response.status_code}")
                 if retry == max_retries - 1:
-                    return "Nepodařilo se stáhnout článek", 0, 0
+                    return "Nepodařilo se stáhnout článek", 0, 0, []
                 continue
             
             soup = BeautifulSoup(response.content, "html.parser")
@@ -128,7 +109,7 @@ def get_article_text(url, source, max_retries=3):
             for element in soup(["script", "style", "nav", "footer", "header", "aside", "iframe", "noscript", "form", "button"]):
                 element.decompose()
             
-            # Detekce zdroje podle domény, pokud není explicitně uvedeno
+            # Detekce zdroje podle domény
             if not source or source == "":
                 parsed_url = urlparse(url)
                 domain = parsed_url.netloc
@@ -138,68 +119,104 @@ def get_article_text(url, source, max_retries=3):
                         source = src_name
                         break
             
+            # Extrakce obrázků - zachytáváme URL hlavních obrázků článku
+            image_urls = []
+            article_images = []
+            
+            # Hledáme obrázky podle zdroje
+            if source == "novinky":
+                article_images = soup.select('div.article-detail__media-content img, div.gallery-slider__slide img, div.article-body img')
+            elif source == "seznamzpravy":
+                article_images = soup.select('div.e_wi img, figure img, div.article-body img')
+            elif source == "zpravy":
+                article_images = soup.select('div.article-detail img, div.article__image img, .article-content img')
+            else:
+                # Obecný výběr obrázků
+                article_images = soup.select('article img, .article img, .content img, figure img')
+                
+            # Extrahujeme URL obrázků
+            for img in article_images:
+                if img.get('src') and (img.get('src').startswith('http') or img.get('src').startswith('/')):
+                    # Zajistit absolutní URL
+                    img_url = img.get('src')
+                    if img_url.startswith('/'):
+                        parsed_url = urlparse(url)
+                        img_url = f"{parsed_url.scheme}://{parsed_url.netloc}{img_url}"
+                    
+                    # Zkontrolovat, jestli není příliš malý obrázek (ikona)
+                    if img.get('width') and img.get('height'):
+                        try:
+                            width = int(img['width'])
+                            height = int(img['height'])
+                            if width < 100 or height < 100:
+                                continue  # Přeskočit malé obrázky/ikony
+                        except (ValueError, TypeError):
+                            pass
+                    
+                    # Přidat URL do seznamu
+                    if img_url not in image_urls:
+                        image_urls.append(img_url)
+            
+            # Pokud máme příliš mnoho obrázků, ponecháme jen první 3
+            if len(image_urls) > 3:
+                image_urls = image_urls[:3]
+            
             # Univerzální extrakce textu - pomocí slovníku selektorů pro jednotlivé zdroje
             selectors = {
-                "idnes": {"div": ["article-body"]},
-                "novinky": {"div": ["articleBody", "article_text"]},
-                "seznamzpravy": {"div": ["article-body", "sznp-article-body"]},
-                "aktualne": {"div": ["article-text", "clanek"]},
-                "ihned": {"div": ["article-body", "clanek"]},
-                "denik-n": {"div": ["post-content", "a_content"]},
-                "ct24": {"div": ["article-body", "article_text"]},
-                "irozhlas": {"div": ["b-detail", "article"]},
-                "denik": {"div": ["article-body", "clanek"]},
-                "lidovky": {"div": ["article-body"]},
-                "reflex": {"div": ["article-content"]},
-                "echo24": {"div": ["article-detail__content", "article_body"]},
-                "info-cz": {"div": ["article-body"]},
-                "forum24": {"div": ["entry-content"]},
-                "blesk": {"div": ["o-article__content"]},
-                "cnn-iprima": {"div": ["article-content"]},
-                "parlamentnilisty": {"div": ["article-body"]},
-                "eurozpravy": {"div": ["article-content"]},
-                "tyden": {"div": ["text-block"]},
-                "e15": {"div": ["article-body"]}
+                "novinky": {"div": ["article-body", "article-detail__body", "article-content"]},
+                "seznamzpravy": {"div": ["article-body", "e_c", "article__body", "c_i", "article_content"]},
+                "zpravy": {"div": ["article-detail__content", "article-body", "b-article-main", "article-content"]}
             }
             
+            paragraphs = []
+            
             # Extrakce textu podle zdroje
-            article_text = ""
             if source in selectors:
                 for element_type, class_names in selectors[source].items():
+                    article_div = None
                     for class_name in class_names:
-                        if article_div := soup.find(element_type, class_=class_name):
-                            paragraphs = article_div.find_all("p")
-                            article_text = " ".join([p.get_text().strip() for p in paragraphs])
+                        article_div = soup.find(element_type, class_=class_name)
+                        if article_div:
                             break
-                    if article_text:
+                    
+                    if article_div:
+                        # Získat všechny odstavce
+                        p_tags = article_div.find_all("p")
+                        for p in p_tags:
+                            # Zachovat původní formátování textu
+                            text = p.get_text().strip()
+                            if text:
+                                paragraphs.append(text)
                         break
             
-            # Obecná metoda jako fallback
-            if not article_text:
+            # Pokud nenajdeme nic specifického, použijeme obecnější metodu
+            if not paragraphs:
                 # Pokus 1: Hledání podle typických tříd
-                for class_name in ["article-body", "article-content", "post-content", "news-content", 
-                                  "story-content", "main-content", "entry-content", "article", "clanek", 
-                                  "text", "content", "body-content"]:
-                    if article_div := soup.find(["div", "article", "section"], class_=lambda x: x and class_name in x.lower()):
-                        paragraphs = article_div.find_all("p")
-                        article_text = " ".join([p.get_text().strip() for p in paragraphs])
+                for class_name in ["article-body", "article-content", "news-content", "story-content", "content"]:
+                    article_div = soup.find(["article", "div", "section"], class_=lambda x: x and class_name in (x.lower() if x else ""))
+                    if article_div:
+                        p_tags = article_div.find_all("p")
+                        for p in p_tags:
+                            text = p.get_text().strip()
+                            if text:
+                                paragraphs.append(text)
                         break
                 
-                # Pokus 2: Hledání podle typických HTML elementů
-                if not article_text:
-                    main_content = soup.find("main") or soup.find("article") or soup.find("div", class_=lambda x: x and any(c in (x.lower() if x else "") for c in ["content", "article", "text", "body"]))
-                    if main_content:
-                        paragraphs = main_content.find_all("p")
-                        article_text = " ".join([p.get_text().strip() for p in paragraphs])
-                    else:
-                        # Poslední pokus - vše z body kromě vyloučených elementů
-                        body = soup.find("body")
-                        if body:
-                            article_text = body.get_text(separator=" ", strip=True)
+                # Pokus 2: Zkusit najít hlavní článek element
+                if not paragraphs:
+                    article_elem = soup.find("article") or soup.find("main")
+                    if article_elem:
+                        p_tags = article_elem.find_all("p")
+                        for p in p_tags:
+                            text = p.get_text().strip()
+                            if text:
+                                paragraphs.append(text)
             
-            # Čištění textu
+            # Spojit odstavce s prázdným řádkem mezi nimi
+            article_text = "\n\n".join(paragraphs)
+            
+            # Vyčistit text od duplicitních mezer
             article_text = re.sub(r'\s+', ' ', article_text).strip()
-            article_text = re.sub(r'[^\w\s.,?!;:()\[\]{}"\'–—-]', '', article_text)
             
             # Počet znaků a slov
             char_count = len(article_text)
@@ -210,19 +227,18 @@ def get_article_text(url, source, max_retries=3):
                 if retry < max_retries - 1:
                     continue
             
-            return article_text, char_count, word_count
+            return article_text, char_count, word_count, image_urls
             
         except Exception as e:
             logger.error(f"Pokus {retry+1}/{max_retries}: Chyba při extrakci textu z {url}: {e}")
             if retry == max_retries - 1:
-                return f"Chyba: {e}", 0, 0
-            # Zvýšíme čekací dobu mezi pokusy pro snížení pravděpodobnosti blokování
+                return f"Chyba: {e}", 0, 0, []
+            # Zvýšíme čekací dobu mezi pokusy
             time.sleep(random.uniform(3, 5))
     
-    return "Nepodařilo se extrahovat text po opakovaných pokusech", 0, 0
+    return "Nepodařilo se extrahovat text po opakovaných pokusech", 0, 0, []
 
-# Funkce pro uložení článku do databáze
-def save_article_to_db(conn, source_name, title, url, pub_date, category, char_count, word_count, article_text):
+def save_article_to_db(conn, source_name, title, url, pub_date, category, char_count, word_count, article_text, image_urls=None):
     """
     Uloží článek do databáze.
     
@@ -236,6 +252,7 @@ def save_article_to_db(conn, source_name, title, url, pub_date, category, char_c
         char_count: Počet znaků
         word_count: Počet slov
         article_text: Text článku
+        image_urls: Seznam URL obrázků článku
     
     Returns:
         bool: True při úspěchu, False při neúspěchu
@@ -276,6 +293,7 @@ def save_article_to_db(conn, source_name, title, url, pub_date, category, char_c
                     ArticleLength INT,
                     WordCount INT,
                     ArticleText NVARCHAR(MAX),
+                    ImageUrls NVARCHAR(MAX),
                     ScrapedDate DATETIME
                 )
                 """)
@@ -293,17 +311,40 @@ def save_article_to_db(conn, source_name, title, url, pub_date, category, char_c
                     "length": char_count,
                     "words": word_count,
                     "text": article_text,
+                    "images": image_urls if image_urls else [],
                     "scraped": str(scraped_date)
                 }])
                 return False
         
+        # Připravit obrázky pro uložení (jako JSON string)
+        image_urls_json = json.dumps(image_urls if image_urls else [], ensure_ascii=False)
+        
+        # Zkontrolovat, zda sloupec ImageUrls existuje, pokud ne, přidat ho
+        try:
+            cursor.execute("SELECT ImageUrls FROM Articles WHERE Id = 1")
+        except:
+            try:
+                cursor.execute("ALTER TABLE Articles ADD ImageUrls NVARCHAR(MAX)")
+                conn.commit()
+                logger.info("Added ImageUrls column to Articles table")
+            except Exception as e:
+                logger.warning(f"Failed to add ImageUrls column: {e}")
+        
+        # Zkontrolovat, zda článek již existuje
+        cursor.execute("SELECT COUNT(*) FROM Articles WHERE ArticleUrl = ? OR Title = ?", (url, title))
+        count = cursor.fetchone()[0]
+        if count > 0:
+            logger.debug(f"Článek již existuje v databázi: {title}")
+            return False
+        
+        # Vložení článku
         sql = """
         INSERT INTO Articles (SourceName, Title, ArticleUrl, PublicationDate, Category, 
-                              ArticleLength, WordCount, ArticleText, ScrapedDate)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+                            ArticleLength, WordCount, ArticleText, ImageUrls, ScrapedDate)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """
         cursor.execute(sql, (source_name, title, url, pub_date, category, 
-                             char_count, word_count, article_text, scraped_date))
+                            char_count, word_count, article_text, image_urls_json, scraped_date))
         conn.commit()
         return True
     except Exception as e:
@@ -321,7 +362,6 @@ def save_article_to_db(conn, source_name, title, url, pub_date, category, char_c
             
             local_file = os.path.join(data_dir, f"article_{int(time.time())}.json")
             
-            import json
             with open(local_file, 'w', encoding='utf-8') as f:
                 json.dump({
                     "source": source_name,
@@ -332,6 +372,7 @@ def save_article_to_db(conn, source_name, title, url, pub_date, category, char_c
                     "length": char_count,
                     "words": word_count,
                     "text": article_text,
+                    "images": image_urls if image_urls else [],
                     "scraped": str(scraped_date)
                 }, f, ensure_ascii=False)
             logger.info(f"Uloženo do lokálního souboru: {local_file}")
@@ -457,7 +498,6 @@ def save_to_local_json(articles, filename=None):
         logger.error(f"Chyba při ukládání článků do souboru: {e}")
         return False
 
-# Funkce pro zpracování článků z jednoho zdroje
 def process_source(source_name, rss_url, conn, current_count, target_count, max_articles_per_source, new_articles_added, daily_mode=False, newest_first=False):
     """
     Zpracuje články z jednoho zdroje.
@@ -474,9 +514,11 @@ def process_source(source_name, rss_url, conn, current_count, target_count, max_
         newest_first: Pokud True, seřadí články od nejnovějších
     
     Returns:
-        int: Počet nově přidaných článků z tohoto zdroje
+        int or list: Počet nově přidaných článků z tohoto zdroje, nebo seznam článků pokud není database
     """
     source_articles = 0
+    articles_list = []
+    db_connected = conn is not None
     
     # Get today's date for filtering in daily mode
     today = datetime.datetime.now().strftime('%Y-%m-%d')
@@ -487,7 +529,7 @@ def process_source(source_name, rss_url, conn, current_count, target_count, max_
         
         if not feed.entries:
             logger.warning(f"Žádné články nenalezeny v RSS feedu: {source_name}")
-            return 0
+            return 0 if db_connected else articles_list
         
         # Pokud požadujeme nejnovější články, seřadíme je podle data
         entries = feed.entries
@@ -567,10 +609,18 @@ def process_source(source_name, rss_url, conn, current_count, target_count, max_
             logger.info(f"Stahuji článek: {title}")
             article_text, char_count, word_count = get_article_text(url, source_name)
             
-            # Accept articles with very little text (30 chars) if that's all we can get
-            # MODIFIED: Accept all articles even with minimal text
-            if char_count < 30:
-                logger.warning(f"Článek má velmi krátký text: {title} ({char_count} znaků), ale přesto jej přijímám")
+            # Create article dictionary for either database or local storage
+            article_data = {
+                "source": source_name,
+                "title": title,
+                "url": url,
+                "date": str(pub_date) if pub_date else None,
+                "category": category,
+                "length": char_count,
+                "words": word_count,
+                "text": article_text,
+                "scraped": str(datetime.datetime.now())
+            }
             
             # Uložení článku do databáze nebo lokálně
             if conn:
@@ -579,18 +629,9 @@ def process_source(source_name, rss_url, conn, current_count, target_count, max_
                     char_count, word_count, article_text
                 )
             else:
-                # If no database connection, save locally
-                success = save_to_local_json([{
-                    "source": source_name,
-                    "title": title,
-                    "url": url,
-                    "date": str(pub_date) if pub_date else None,
-                    "category": category,
-                    "length": char_count,
-                    "words": word_count,
-                    "text": article_text,
-                    "scraped": str(datetime.datetime.now())
-                }])
+                # If no database connection, collect for local saving
+                articles_list.append(article_data)
+                success = True
             
             if success:
                 with new_articles_added.get_lock():
@@ -605,13 +646,12 @@ def process_source(source_name, rss_url, conn, current_count, target_count, max_
             # Krátká pauza mezi články pro snížení zátěže
             time.sleep(random.uniform(0.5, 1.5))
         
-        return source_articles
+        return source_articles if db_connected else articles_list
         
     except Exception as e:
         logger.error(f"Chyba při zpracování zdroje {source_name}: {e}")
-        return source_articles
+        return source_articles if db_connected else articles_list
 
-# Přidání nové funkce pro sběr pouze nejnovějších zpráv
 def collect_latest_news(max_per_source=5):
     """
     Sbírá pouze nejnovější zprávy z každého zdroje - optimalizováno pro rychlost a rychlý přehled
@@ -624,42 +664,67 @@ def collect_latest_news(max_per_source=5):
     """
     # Připojení k databázi
     conn = connect_to_db()
-    if not conn:
-        logger.error("Nelze pokračovat bez připojení k databázi.")
+    db_connected = conn is not None
+    
+    if not db_connected:
+        logger.warning("Nepodařilo se připojit k databázi. Články budou uloženy lokálně.")
         # Pokus vytvořit alespoň lokální soubor s daty
         local_data_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), 'data', 'scraped')
         os.makedirs(local_data_dir, exist_ok=True)
-        return 0
     
     # Inicializace sdílené proměnné pro počítání nových článků
     import multiprocessing
     new_articles_added = multiprocessing.Value('i', 0)
+    all_articles = []
     
     try:
-        # Zkrácený seznam zdrojů pro rychlý sběr
-        priority_sources = {
-            "idnes": news_sources["idnes"],
-            "novinky": news_sources["novinky"],
-            "seznamzpravy": news_sources["seznamzpravy"],
-            "ihned": news_sources["ihned"],
-            "ct24": news_sources["ct24"],
-            "aktualne": news_sources["aktualne"],
-            "irozhlas": news_sources["irozhlas"]
-        }
-        
-        logger.info(f"Sbírám nejnovější zprávy z {len(priority_sources)} zdrojů")
+        # Use our three selected news sources
+        logger.info(f"Sbírám nejnovější zprávy z vybraných zdrojů (Novinky.cz, SeznamZpravy.cz, Zpravy.cz), max {max_per_source} článků z každého zdroje")
         
         # Zpracování zdrojů
-        for source_name, rss_url in priority_sources.items():
-            process_source(source_name, rss_url, conn, 0, max_per_source * len(priority_sources), 
+        for source_name, rss_url in news_sources.items():
+            logger.info(f"Zpracovávám zdroj: {source_name}")
+            articles_from_source = process_source(source_name, rss_url, conn, 0, max_per_source * len(news_sources), 
                           max_per_source, new_articles_added, daily_mode=True, newest_first=True)
+            
+            # If database connection failed, collect articles for local storage
+            if not db_connected and isinstance(articles_from_source, list):
+                all_articles.extend(articles_from_source)
     
     finally:
         if conn:
             conn.close()
             logger.info("Databáze uzavřena.")
     
+    # Save all articles to a local file if database failed
+    if not db_connected and all_articles:
+        timestamp = datetime.datetime.now().strftime('%Y%m%d_%H%M%S')
+        save_to_local_json(all_articles, f"articles_{timestamp}.json")
+    
     logger.info(f"Sběr dokončen! Přidáno {new_articles_added.value} nových článků.")
+    
+    # If we couldn't connect to the database initially, try again and insert the articles
+    if not db_connected and all_articles:
+        conn = connect_to_db()
+        if conn:
+            logger.info("Podařilo se připojit k databázi na druhý pokus. Ukládám články do databáze.")
+            articles_saved = 0
+            for article in all_articles:
+                if save_article_to_db(
+                    conn,
+                    article['source'],
+                    article['title'],
+                    article['url'],
+                    article.get('date'),
+                    article.get('category', ''),
+                    article.get('length', 0),
+                    article.get('words', 0),
+                    article.get('text', '')
+                ):
+                    articles_saved += 1
+            logger.info(f"Uloženo {articles_saved} článků do databáze na druhý pokus.")
+            conn.close()
+    
     return new_articles_added.value
 
 # Hlavní funkce pro sběr článků
@@ -723,14 +788,25 @@ if __name__ == "__main__":
     parser.add_argument('--latest', action='store_true', help='Scrape only latest headlines')
     parser.add_argument('--max-articles', type=int, default=3000, help='Maximum number of articles to scrape')
     parser.add_argument('--max-per-source', type=int, help='Maximum number of articles per source')
+    parser.add_argument('--database', action='store_true', help='Force database storage (will retry if fails)')
     args = parser.parse_args()
     
     logger.info("Začínám sběr zpravodajských článků pro projekt Synapse...")
+    logger.info(f"Používané zdroje: {', '.join(news_sources.keys())}")
+    
+    # Check database connection if database flag is set
+    if args.database:
+        db_conn = connect_to_db()
+        if db_conn:
+            logger.info("Úspěšné připojení k databázi, články budou ukládány do DB")
+            db_conn.close()
+        else:
+            logger.warning("Nepodařilo se připojit k databázi, zkusím to znovu později")
     
     # For latest mode, we just want a few articles from each source
     if args.latest:
         logger.info("Spuštěn režim nejnovějších zpráv")
-        max_per_source = args.max_per_source if args.max_per_source else 5
+        max_per_source = args.max_per_source if args.max_per_source else 10
         # Use optimized latest news collection
         collected = collect_latest_news(max_per_source=max_per_source)
         logger.info(f"Sběr dokončen, přidáno {collected} nových článků")

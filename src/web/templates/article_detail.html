@@ -42,9 +42,41 @@
             </div>
             {% endif %}
             
+            <!-- Image gallery if available -->
+            {% if article.ImageUrls %}
+            <div class="mb-4">
+                <div id="articleImageCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        {% for img_url in article.ImageUrls %}
+                        <div class="carousel-item{% if loop.first %} active{% endif %}">
+                            <img src="{{ img_url }}" class="d-block w-100" alt="Obrázek k článku" style="max-height: 400px; object-fit: contain;">
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% if article.ImageUrls|length > 1 %}
+                    <button class="carousel-control-prev" type="button" data-bs-target="#articleImageCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Předchozí</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#articleImageCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Další</span>
+                    </button>
+                    {% endif %}
+                </div>
+            </div>
+            {% endif %}
+            
             <div class="card mb-4">
                 <div class="card-body">
-                    <p style="white-space: pre-line;">{{ article.Content }}</p>
+                    <div class="article-content">
+                        <!-- Replace newlines with paragraph breaks -->
+                        {% for paragraph in article.Content.split('\n\n') %}
+                            {% if paragraph|trim %}
+                            <p>{{ paragraph }}</p>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
                 </div>
                 <div class="card-footer text-muted">
                     <div class="d-flex justify-content-between">

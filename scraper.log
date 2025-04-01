@@ -8477,3 +8477,243 @@
 2025-04-01 08:14:12,299 - synapse-scraper - ERROR - Nelze pokraèovat bez pøipojení k databázi.
 2025-04-01 08:14:12,316 - synapse-scraper - INFO - Sbìr dokonèen, pøidáno 0 novıch èlánkù
 2025-04-01 08:14:13,115 - synapse-scraper - INFO - Zpracování nasbíranıch èlánkù...
+2025-04-01 08:48:49,266 - synapse-scraper - INFO - Zaèínám sbìr zpravodajskıch èlánkù pro projekt Synapse...
+2025-04-01 08:48:49,266 - synapse-scraper - INFO - Pouívám konfiguraci databáze z config/database.json
+2025-04-01 08:48:50,649 - synapse-scraper - ERROR - Chyba pøi pøipojení k databázi: ('28000', "[28000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Login failed for user 'boska'.  Reason: The password of the account has expired. (18487) (SQLDriverConnect); [28000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Login failed for user 'boska'.  Reason: The password of the account has expired. (18487)")
+2025-04-01 08:48:50,671 - synapse-scraper - WARNING - Nepodaøilo se pøipojit k databázi, zkusím to znovu pozdìji
+2025-04-01 08:48:50,671 - synapse-scraper - INFO - Spuštìn reim nejnovìjších zpráv
+2025-04-01 08:48:50,671 - synapse-scraper - INFO - Pouívám konfiguraci databáze z config/database.json
+2025-04-01 08:48:50,904 - synapse-scraper - ERROR - Chyba pøi pøipojení k databázi: ('28000', "[28000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Login failed for user 'boska'.  Reason: The password of the account has expired. (18487) (SQLDriverConnect); [28000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Login failed for user 'boska'.  Reason: The password of the account has expired. (18487)")
+2025-04-01 08:48:50,904 - synapse-scraper - WARNING - Nepodaøilo se pøipojit k databázi. Èlánky budou uloeny lokálnì.
+2025-04-01 08:48:50,972 - synapse-scraper - INFO - Sbírám nejnovìjší zprávy z 20 zdrojù, max 10 èlánkù z kadého zdroje
+2025-04-01 08:48:50,972 - synapse-scraper - INFO - Zpracovávám zdroj: idnes
+2025-04-01 08:48:50,972 - synapse-scraper - INFO - Zpracovávám RSS feed: idnes
+2025-04-01 08:48:51,489 - synapse-scraper - INFO - Stahuji èlánek: Slintavka a kulhavka straší Èesko. Jaké jsou pøíznaky a komu co hrozí
+2025-04-01 08:48:54,168 - synapse-scraper - INFO - Èlánek uloen: Slintavka a kulhavka straší Èesko. Jaké jsou pøíznaky a komu co hrozí (4247 znakù, 624 slov)
+2025-04-01 08:48:55,462 - synapse-scraper - INFO - Stahuji èlánek: Do Èeska vpadne arktickı vzduch. Ještì v pátek 20 stupòù, v nedìli u pod nulou
+2025-04-01 08:48:59,162 - synapse-scraper - INFO - Èlánek uloen: Do Èeska vpadne arktickı vzduch. Ještì v pátek 20 stupòù, v nedìli u pod nulou (1434 znakù, 223 slov)
+2025-04-01 08:49:00,345 - synapse-scraper - INFO - Stahuji èlánek: Bradáèová se stává šéfkou alobcù. Po Støíovi nastupuje na sedm let
+2025-04-01 08:49:02,935 - synapse-scraper - INFO - Èlánek uloen: Bradáèová se stává šéfkou alobcù. Po Støíovi nastupuje na sedm let (2389 znakù, 355 slov)
+2025-04-01 08:49:04,383 - synapse-scraper - INFO - Stahuji èlánek: Europoslanci rozhodnou o imunitì pro Nagyovou kvùli Èapímu hnízdu
+2025-04-01 08:50:06,225 - synapse-scraper - INFO - Zaèínám sbìr zpravodajskıch èlánkù pro projekt Synapse...
+2025-04-01 08:50:06,225 - synapse-scraper - INFO - Pouívám konfiguraci databáze z config/database.json
+2025-04-01 08:50:06,891 - synapse-scraper - INFO - Úspìšnì pøipojeno k databázi.
+2025-04-01 08:50:06,891 - synapse-scraper - INFO - Úspìšné pøipojení k databázi, èlánky budou ukládány do DB
+2025-04-01 08:50:07,013 - synapse-scraper - INFO - Spuštìn reim nejnovìjších zpráv
+2025-04-01 08:50:07,013 - synapse-scraper - INFO - Pouívám konfiguraci databáze z config/database.json
+2025-04-01 08:50:07,060 - synapse-scraper - INFO - Úspìšnì pøipojeno k databázi.
+2025-04-01 08:50:07,099 - synapse-scraper - INFO - Sbírám nejnovìjší zprávy z 20 zdrojù, max 10 èlánkù z kadého zdroje
+2025-04-01 08:50:07,099 - synapse-scraper - INFO - Zpracovávám zdroj: idnes
+2025-04-01 08:50:07,099 - synapse-scraper - INFO - Zpracovávám RSS feed: idnes
+2025-04-01 08:50:08,265 - synapse-scraper - INFO - Stahuji èlánek: Slintavka a kulhavka straší Èesko. Jaké jsou pøíznaky a komu co hrozí
+2025-04-01 08:50:11,181 - synapse-scraper - INFO - Èlánek uloen: Slintavka a kulhavka straší Èesko. Jaké jsou pøíznaky a komu co hrozí (4247 znakù, 624 slov)
+2025-04-01 08:50:12,800 - synapse-scraper - INFO - Stahuji èlánek: Do Èeska vpadne arktickı vzduch. Ještì v pátek 20 stupòù, v nedìli u pod nulou
+2025-04-01 08:50:17,359 - synapse-scraper - INFO - Èlánek uloen: Do Èeska vpadne arktickı vzduch. Ještì v pátek 20 stupòù, v nedìli u pod nulou (1434 znakù, 223 slov)
+2025-04-01 08:50:18,531 - synapse-scraper - INFO - Stahuji èlánek: Bradáèová se stává šéfkou alobcù. Po Støíovi nastupuje na sedm let
+2025-04-01 08:50:21,446 - synapse-scraper - INFO - Èlánek uloen: Bradáèová se stává šéfkou alobcù. Po Støíovi nastupuje na sedm let (2389 znakù, 355 slov)
+2025-04-01 08:50:22,995 - synapse-scraper - INFO - Stahuji èlánek: Europoslanci rozhodnou o imunitì pro Nagyovou kvùli Èapímu hnízdu
+2025-04-01 08:50:28,278 - synapse-scraper - INFO - Èlánek uloen: Europoslanci rozhodnou o imunitì pro Nagyovou kvùli Èapímu hnízdu (1495 znakù, 217 slov)
+2025-04-01 08:50:29,788 - synapse-scraper - INFO - Stahuji èlánek: Zelenskyj pøiznal loòské pøíjmy, inkasoval za dluhopisy i pronájem domu
+2025-04-01 08:50:32,877 - synapse-scraper - INFO - Èlánek uloen: Zelenskyj pøiznal loòské pøíjmy, inkasoval za dluhopisy i pronájem domu (1533 znakù, 221 slov)
+2025-04-01 08:50:32,877 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 5
+2025-04-01 08:50:34,311 - synapse-scraper - INFO - Stahuji èlánek: Smyèka okolo Tchaj-wanu se stahuje. Èína zahájila vojenské cvièení poblí ostrova
+2025-04-01 08:50:38,954 - synapse-scraper - INFO - Èlánek uloen: Smyèka okolo Tchaj-wanu se stahuje. Èína zahájila vojenské cvièení poblí ostrova (685 znakù, 104 slov)
+2025-04-01 08:50:40,552 - synapse-scraper - INFO - Stahuji èlánek: Od dubna se mìní termín vıplat penzí, milion dùchodcù dostane peníze jindy
+2025-04-01 08:50:44,044 - synapse-scraper - INFO - Èlánek uloen: Od dubna se mìní termín vıplat penzí, milion dùchodcù dostane peníze jindy (1886 znakù, 321 slov)
+2025-04-01 08:50:45,186 - synapse-scraper - INFO - Stahuji èlánek: Trest pro Le Penovou je to samé, co chtìli udìlat mnì, míní Trump
+2025-04-01 08:50:49,205 - synapse-scraper - INFO - Èlánek uloen: Trest pro Le Penovou je to samé, co chtìli udìlat mnì, míní Trump (1589 znakù, 257 slov)
+2025-04-01 08:50:50,577 - synapse-scraper - INFO - Stahuji èlánek: Izraelci v noci udeøili na velitele Hamásu v Bejrútu, tøi mrtví
+2025-04-01 08:50:53,942 - synapse-scraper - INFO - Èlánek uloen: Izraelci v noci udeøili na velitele Hamásu v Bejrútu, tøi mrtví (1196 znakù, 171 slov)
+2025-04-01 08:50:58,703 - synapse-scraper - INFO - Zpracovávám zdroj: novinky
+2025-04-01 08:50:58,703 - synapse-scraper - INFO - Zpracovávám RSS feed: novinky
+2025-04-01 08:50:59,267 - synapse-scraper - INFO - Stahuji èlánek: Èesko má kvùli ruskému vıpadku rezervy ropy jen na 60 dní
+2025-04-01 08:51:04,227 - synapse-scraper - INFO - Èlánek uloen: Èesko má kvùli ruskému vıpadku rezervy ropy jen na 60 dní (3019 znakù, 463 slov)
+2025-04-01 08:51:04,899 - synapse-scraper - INFO - Stahuji èlánek: Britští senioøi pøíliš topili. Do domu jim vtrhla policie, která tam hledala pìstírnu konopí
+2025-04-01 08:51:11,924 - synapse-scraper - INFO - Èlánek uloen: Britští senioøi pøíliš topili. Do domu jim vtrhla policie, která tam hledala pìstírnu konopí (1992 znakù, 310 slov)
+2025-04-01 08:51:13,113 - synapse-scraper - INFO - Stahuji èlánek: Vysocí pøedstavitelé ruského ministerstva obrany se pøiznali k pøijetí velikıch úplatkù
+2025-04-01 08:51:18,753 - synapse-scraper - INFO - Èlánek uloen: Vysocí pøedstavitelé ruského ministerstva obrany se pøiznali k pøijetí velikıch úplatkù (1238 znakù, 185 slov)
+2025-04-01 08:51:20,258 - synapse-scraper - INFO - Stahuji èlánek: Ostravskı rapper Hard Rico je ve vazbì
+2025-04-01 08:51:27,702 - synapse-scraper - INFO - Èlánek uloen: Ostravskı rapper Hard Rico je ve vazbì (1162 znakù, 172 slov)
+2025-04-01 08:51:29,485 - synapse-scraper - INFO - Stahuji èlánek: KEMEL: Nepodìkoval, nepoprosil…
+2025-04-01 08:51:34,430 - synapse-scraper - WARNING - Málo textu extrahováno z https://www.novinky.cz/clanek/vtipy-kemel-nepodekoval-nepoprosil-40515455: pouze 53 znakù
+2025-04-01 08:51:40,279 - synapse-scraper - WARNING - Málo textu extrahováno z https://www.novinky.cz/clanek/vtipy-kemel-nepodekoval-nepoprosil-40515455: pouze 53 znakù
+2025-04-01 08:51:44,122 - synapse-scraper - WARNING - Málo textu extrahováno z https://www.novinky.cz/clanek/vtipy-kemel-nepodekoval-nepoprosil-40515455: pouze 53 znakù
+2025-04-01 08:51:44,734 - synapse-scraper - INFO - Èlánek uloen: KEMEL: Nepodìkoval, nepoprosil… (53 znakù, 7 slov)
+2025-04-01 08:51:44,734 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 14
+2025-04-01 08:51:45,912 - synapse-scraper - INFO - Stahuji èlánek: Dálnice D8 je na Ústecku kvùli opravì tunelù na tıden obousmìrnì zavøená
+2025-04-01 08:51:53,537 - synapse-scraper - INFO - Èlánek uloen: Dálnice D8 je na Ústecku kvùli opravì tunelù na tıden obousmìrnì zavøená (2469 znakù, 374 slov)
+2025-04-01 08:51:54,662 - synapse-scraper - INFO - Stahuji èlánek: Nìkdy zpìt domù vánì nechcete. Nahı turista øádil v thajském hotelu
+2025-04-01 08:52:02,362 - synapse-scraper - INFO - Èlánek uloen: Nìkdy zpìt domù vánì nechcete. Nahı turista øádil v thajském hotelu (1848 znakù, 292 slov)
+2025-04-01 08:52:03,814 - synapse-scraper - INFO - Stahuji èlánek: Dlouhodobá sexuální abstinence mùe vést ke špatné náladì i depresi
+2025-04-01 08:52:09,711 - synapse-scraper - INFO - Èlánek uloen: Dlouhodobá sexuální abstinence mùe vést ke špatné náladì i depresi (2727 znakù, 412 slov)
+2025-04-01 08:52:12,718 - synapse-scraper - INFO - Databáze uzavøena.
+2025-04-01 09:02:26,952 - synapse-scraper - INFO - Zaèínám sbìr zpravodajskıch èlánkù pro projekt Synapse...
+2025-04-01 09:02:26,952 - synapse-scraper - INFO - Pouívané zdroje: novinky, seznamzpravy, zpravy
+2025-04-01 09:02:26,952 - synapse-scraper - INFO - Pouívám konfiguraci databáze z config/database.json
+2025-04-01 09:02:27,647 - synapse-scraper - INFO - Úspìšnì pøipojeno k databázi.
+2025-04-01 09:02:27,647 - synapse-scraper - INFO - Úspìšné pøipojení k databázi, èlánky budou ukládány do DB
+2025-04-01 09:02:27,730 - synapse-scraper - INFO - Spuštìn reim nejnovìjších zpráv
+2025-04-01 09:02:27,730 - synapse-scraper - INFO - Pouívám konfiguraci databáze z config/database.json
+2025-04-01 09:02:27,767 - synapse-scraper - INFO - Úspìšnì pøipojeno k databázi.
+2025-04-01 09:02:27,798 - synapse-scraper - INFO - Sbírám nejnovìjší zprávy z vybranıch zdrojù (Novinky.cz, SeznamZpravy.cz, Zpravy.cz), max 10 èlánkù z kadého zdroje
+2025-04-01 09:02:27,798 - synapse-scraper - INFO - Zpracovávám zdroj: novinky
+2025-04-01 09:02:27,798 - synapse-scraper - INFO - Zpracovávám RSS feed: novinky
+2025-04-01 09:02:29,034 - synapse-scraper - INFO - Stahuji èlánek: Architekti k viktoriánské vile hladce pøipojili moderní pøístavbu. Dùm má více svìtla a prostoru
+2025-04-01 09:02:33,852 - synapse-scraper - INFO - Èlánek uloen: Architekti k viktoriánské vile hladce pøipojili moderní pøístavbu. Dùm má více svìtla a prostoru (3286 znakù, 479 slov)
+2025-04-01 09:02:34,965 - synapse-scraper - INFO - Stahuji èlánek: Policie ádá ministerstvo o informace k FN Motol
+2025-04-01 09:02:48,042 - synapse-scraper - INFO - Èlánek uloen: Policie ádá ministerstvo o informace k FN Motol (3051 znakù, 440 slov)
+2025-04-01 09:02:48,897 - synapse-scraper - INFO - Stahuji èlánek: Rusové útoèí od severu na Kupjansk, nasadili chemickou munici
+2025-04-01 09:02:54,691 - synapse-scraper - INFO - Èlánek uloen: Rusové útoèí od severu na Kupjansk, nasadili chemickou munici (1599 znakù, 239 slov)
+2025-04-01 09:02:57,226 - synapse-scraper - INFO - Stahuji èlánek: RECENZE: Román Jste tady není obyèejná lovestory
+2025-04-01 09:03:03,546 - synapse-scraper - INFO - Èlánek uloen: RECENZE: Román Jste tady není obyèejná lovestory (2225 znakù, 313 slov)
+2025-04-01 09:03:04,867 - synapse-scraper - INFO - Stahuji èlánek: Ateliér Zahy Hadid navrhl pro Neapol nové stavby. Pøipomínají listy papíru nebo sepjaté ruce
+2025-04-01 09:03:11,159 - synapse-scraper - INFO - Èlánek uloen: Ateliér Zahy Hadid navrhl pro Neapol nové stavby. Pøipomínají listy papíru nebo sepjaté ruce (3081 znakù, 438 slov)
+2025-04-01 09:03:11,159 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 5
+2025-04-01 09:03:12,514 - synapse-scraper - INFO - Stahuji èlánek: Spolu nemá plán B. Koalièní smlouva neøeší, co bude v pøípadì prohry
+2025-04-01 09:03:18,548 - synapse-scraper - INFO - Èlánek uloen: Spolu nemá plán B. Koalièní smlouva neøeší, co bude v pøípadì prohry (4469 znakù, 701 slov)
+2025-04-01 09:03:19,530 - synapse-scraper - INFO - Stahuji èlánek: Egypan provedl rekordní poèet shybù pod vodou. Není to tak jednoduché, jak se zdá, tvrdí
+2025-04-01 09:03:25,555 - synapse-scraper - INFO - Èlánek uloen: Egypan provedl rekordní poèet shybù pod vodou. Není to tak jednoduché, jak se zdá, tvrdí (1475 znakù, 235 slov)
+2025-04-01 09:03:27,039 - synapse-scraper - INFO - Stahuji èlánek: Raketa SpaceX vynesla na polární obìnou dráhu ètyøi astronauty
+2025-04-01 09:03:33,101 - synapse-scraper - INFO - Èlánek uloen: Raketa SpaceX vynesla na polární obìnou dráhu ètyøi astronauty (1203 znakù, 179 slov)
+2025-04-01 09:03:33,920 - synapse-scraper - INFO - Stahuji èlánek: Trump vyjádøil oèekávání, e Putin splní svou èást dohody o pøímìøí na Ukrajinì
+2025-04-01 09:03:42,221 - synapse-scraper - INFO - Èlánek uloen: Trump vyjádøil oèekávání, e Putin splní svou èást dohody o pøímìøí na Ukrajinì (1199 znakù, 187 slov)
+2025-04-01 09:03:43,579 - synapse-scraper - INFO - Stahuji èlánek: Trump pøirovnal odsouzení Le Penové ke svım právním bitvám v USA
+2025-04-01 09:03:49,407 - synapse-scraper - INFO - Èlánek uloen: Trump pøirovnal odsouzení Le Penové ke svım právním bitvám v USA (1889 znakù, 297 slov)
+2025-04-01 09:03:49,407 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 10
+2025-04-01 09:03:50,690 - synapse-scraper - INFO - Dosaeno maximálního poètu èlánkù ze zdroje novinky: 10
+2025-04-01 09:03:50,690 - synapse-scraper - INFO - Zpracovávám zdroj: seznamzpravy
+2025-04-01 09:03:50,690 - synapse-scraper - INFO - Zpracovávám RSS feed: seznamzpravy
+2025-04-01 09:03:51,615 - synapse-scraper - INFO - Stahuji èlánek: Stát brzdí s regulací Airbnb. Chce data a peníze, omezení dnù zøejmì nebude
+2025-04-01 09:03:56,510 - synapse-scraper - INFO - Èlánek uloen: Stát brzdí s regulací Airbnb. Chce data a peníze, omezení dnù zøejmì nebude (5163 znakù, 780 slov)
+2025-04-01 09:03:57,800 - synapse-scraper - INFO - Stahuji èlánek: Uváznutí astronauti poprvé promluvili: „Nenechali nás tam, jak tvrdí Musk“
+2025-04-01 09:04:02,932 - synapse-scraper - INFO - Èlánek uloen: Uváznutí astronauti poprvé promluvili: „Nenechali nás tam, jak tvrdí Musk“ (3221 znakù, 494 slov)
+2025-04-01 09:04:04,386 - synapse-scraper - INFO - Stahuji èlánek: Tunely na D8 pøed Nìmeckem se uzavøely. Objízdné trasy jsou úzké a nepøehledné
+2025-04-01 09:04:10,419 - synapse-scraper - INFO - Èlánek uloen: Tunely na D8 pøed Nìmeckem se uzavøely. Objízdné trasy jsou úzké a nepøehledné (1942 znakù, 284 slov)
+2025-04-01 09:04:11,052 - synapse-scraper - INFO - Stahuji èlánek: Bez cel a navíc dotace. Letos do USA pøemístíme první linku, øíká šéf Brana
+2025-04-01 09:04:16,078 - synapse-scraper - INFO - Èlánek uloen: Bez cel a navíc dotace. Letos do USA pøemístíme první linku, øíká šéf Brana (8273 znakù, 1336 slov)
+2025-04-01 09:04:17,479 - synapse-scraper - INFO - Stahuji èlánek: Konopí ode dneška pøedepisují i praktici
+2025-04-01 09:04:24,900 - synapse-scraper - INFO - Èlánek uloen: Konopí ode dneška pøedepisují i praktici (4569 znakù, 683 slov)
+2025-04-01 09:04:24,900 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 15
+2025-04-01 09:04:25,549 - synapse-scraper - INFO - Stahuji èlánek: Jsme pøátelé na vìèné èasy, øekl èínskı ministr zahranièí o vztahu s Ruskem
+2025-04-01 09:04:33,118 - synapse-scraper - INFO - Èlánek uloen: Jsme pøátelé na vìèné èasy, øekl èínskı ministr zahranièí o vztahu s Ruskem (1592 znakù, 246 slov)
+2025-04-01 09:04:33,920 - synapse-scraper - INFO - Stahuji èlánek: Hledá se náhrada Le Penové. Korunní princ je oblíbenı, ale má slabiny
+2025-04-01 09:04:41,976 - synapse-scraper - INFO - Èlánek uloen: Hledá se náhrada Le Penové. Korunní princ je oblíbenı, ale má slabiny (7323 znakù, 1105 slov)
+2025-04-01 09:04:43,883 - synapse-scraper - INFO - Stahuji èlánek: Dukla mùe sídlit i mimo Prahu, øíká novı majitel Turek. Chce velkı stadion
+2025-04-01 09:04:51,825 - synapse-scraper - INFO - Èlánek uloen: Dukla mùe sídlit i mimo Prahu, øíká novı majitel Turek. Chce velkı stadion (11466 znakù, 1897 slov)
+2025-04-01 09:04:53,422 - synapse-scraper - INFO - Stahuji èlánek: Zelenskyj pøiznal loòské pøíjmy. S rodinou si vydìlal 8,5 milionu korun
+2025-04-01 09:04:58,576 - synapse-scraper - INFO - Èlánek uloen: Zelenskyj pøiznal loòské pøíjmy. S rodinou si vydìlal 8,5 milionu korun (2030 znakù, 290 slov)
+2025-04-01 09:04:59,880 - synapse-scraper - INFO - Stahuji èlánek: Dìtí ubıvá. Pøidá se víc penìz na umìlé oplodnìní? Nejvíc by vydìlal Babiš
+2025-04-01 09:05:07,487 - synapse-scraper - INFO - Èlánek uloen: Dìtí ubıvá. Pøidá se víc penìz na umìlé oplodnìní? Nejvíc by vydìlal Babiš (9446 znakù, 1485 slov)
+2025-04-01 09:05:07,487 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 20
+2025-04-01 09:05:08,948 - synapse-scraper - INFO - Dosaeno maximálního poètu èlánkù ze zdroje seznamzpravy: 10
+2025-04-01 09:05:08,948 - synapse-scraper - INFO - Zpracovávám zdroj: zpravy
+2025-04-01 09:05:08,948 - synapse-scraper - INFO - Zpracovávám RSS feed: zpravy
+2025-04-01 09:05:09,287 - synapse-scraper - WARNING - ádné èlánky nenalezeny v RSS feedu: zpravy
+2025-04-01 09:05:09,627 - synapse-scraper - INFO - Databáze uzavøena.
+2025-04-01 09:05:09,627 - synapse-scraper - INFO - Sbìr dokonèen! Pøidáno 20 novıch èlánkù.
+2025-04-01 09:05:09,627 - synapse-scraper - INFO - Sbìr dokonèen, pøidáno 20 novıch èlánkù
+2025-04-01 09:05:09,642 - synapse-scraper - INFO - Zpracování nasbíranıch èlánkù...
+2025-04-01 09:05:10,828 - synapse-scraper - INFO - Zpracování èlánkù úspìšnì dokonèeno
+2025-04-01 09:06:13,707 - synapse-scraper - INFO - Zaèínám sbìr zpravodajskıch èlánkù pro projekt Synapse...
+2025-04-01 09:06:13,707 - synapse-scraper - INFO - Pouívané zdroje: novinky, seznamzpravy, zpravy
+2025-04-01 09:06:13,707 - synapse-scraper - INFO - Pouívám konfiguraci databáze z config/database.json
+2025-04-01 09:06:14,155 - synapse-scraper - INFO - Úspìšnì pøipojeno k databázi.
+2025-04-01 09:06:14,155 - synapse-scraper - INFO - Úspìšné pøipojení k databázi, èlánky budou ukládány do DB
+2025-04-01 09:06:14,324 - synapse-scraper - INFO - Spuštìn reim nejnovìjších zpráv
+2025-04-01 09:06:14,324 - synapse-scraper - INFO - Pouívám konfiguraci databáze z config/database.json
+2025-04-01 09:06:14,356 - synapse-scraper - INFO - Úspìšnì pøipojeno k databázi.
+2025-04-01 09:06:14,387 - synapse-scraper - INFO - Sbírám nejnovìjší zprávy z vybranıch zdrojù (Novinky.cz, SeznamZpravy.cz, Zpravy.cz), max 10 èlánkù z kadého zdroje
+2025-04-01 09:06:14,387 - synapse-scraper - INFO - Zpracovávám zdroj: novinky
+2025-04-01 09:06:14,387 - synapse-scraper - INFO - Zpracovávám RSS feed: novinky
+2025-04-01 09:06:19,121 - synapse-scraper - INFO - Stahuji èlánek: Izraelská armáda uvedla, e provedla úder na pøíslušníka Hizballáhu v Bejrútu
+2025-04-01 09:06:25,421 - synapse-scraper - INFO - Èlánek uloen: Izraelská armáda uvedla, e provedla úder na pøíslušníka Hizballáhu v Bejrútu (1514 znakù, 216 slov)
+2025-04-01 09:06:26,704 - synapse-scraper - INFO - Stahuji èlánek: Migréna: Tøetí nejèastìjší onemocnìní na svìtì
+2025-04-01 09:06:32,394 - synapse-scraper - INFO - Èlánek uloen: Migréna: Tøetí nejèastìjší onemocnìní na svìtì (6014 znakù, 908 slov)
+2025-04-01 09:06:33,967 - synapse-scraper - INFO - Stahuji èlánek: Útoky na infrastrukturu v tılu zpùsobily Rusku miliardové škody, ukázala analıza
+2025-04-01 09:06:39,801 - synapse-scraper - INFO - Èlánek uloen: Útoky na infrastrukturu v tılu zpùsobily Rusku miliardové škody, ukázala analıza (5284 znakù, 810 slov)
+2025-04-01 09:06:40,772 - synapse-scraper - INFO - Stahuji èlánek: Duben bude nezvykle chladnı. Snìit mùe i v níinách
+2025-04-01 09:06:46,257 - synapse-scraper - INFO - Èlánek uloen: Duben bude nezvykle chladnı. Snìit mùe i v níinách (1516 znakù, 243 slov)
+2025-04-01 09:06:47,894 - synapse-scraper - INFO - Stahuji èlánek: Architekti, hlaste se. Peklo èeká
+2025-04-01 09:06:54,811 - synapse-scraper - INFO - Èlánek uloen: Architekti, hlaste se. Peklo èeká (3075 znakù, 456 slov)
+2025-04-01 09:06:54,811 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 5
+2025-04-01 09:06:56,061 - synapse-scraper - INFO - Stahuji èlánek: Zmìna. Léèebné konopí mohou novì pøedepisovat i praktiètí lékaøi
+2025-04-01 09:07:01,232 - synapse-scraper - INFO - Èlánek uloen: Zmìna. Léèebné konopí mohou novì pøedepisovat i praktiètí lékaøi (3245 znakù, 486 slov)
+2025-04-01 09:07:03,410 - synapse-scraper - INFO - Stahuji èlánek: Renault a Nissan upravují svou alianci, sníí vzájemné podíly
+2025-04-01 09:07:10,402 - synapse-scraper - INFO - Èlánek uloen: Renault a Nissan upravují svou alianci, sníí vzájemné podíly (1712 znakù, 250 slov)
+2025-04-01 09:07:11,789 - synapse-scraper - INFO - Stahuji èlánek: FOTO: 105 let od schválení naší vlajky. Podívejte se, jak také mohla vypadat jinak
+2025-04-01 09:07:18,273 - synapse-scraper - INFO - Èlánek uloen: FOTO: 105 let od schválení naší vlajky. Podívejte se, jak také mohla vypadat jinak (560 znakù, 82 slov)
+2025-04-01 09:07:19,845 - synapse-scraper - INFO - Stahuji èlánek: Èeští kamarádi loví na internetu levné letenky. Za smìšné èástky se dostali i na druhou stranu planety
+2025-04-01 09:07:26,654 - synapse-scraper - INFO - Èlánek uloen: Èeští kamarádi loví na internetu levné letenky. Za smìšné èástky se dostali i na druhou stranu planety (6545 znakù, 1051 slov)
+2025-04-01 09:07:28,828 - synapse-scraper - INFO - Zpracovávám zdroj: seznamzpravy
+2025-04-01 09:07:28,828 - synapse-scraper - INFO - Zpracovávám RSS feed: seznamzpravy
+2025-04-01 09:07:30,494 - synapse-scraper - INFO - Stahuji èlánek: Izrael udeøil na pøedmìstí Bejrútu. Po útoku zemøeli tøi lidé
+2025-04-01 09:07:38,115 - synapse-scraper - INFO - Èlánek uloen: Izrael udeøil na pøedmìstí Bejrútu. Po útoku zemøeli tøi lidé (1476 znakù, 207 slov)
+2025-04-01 09:07:39,387 - synapse-scraper - INFO - Stahuji èlánek: Èína zahájila vojenské cvièení v okolí Tchaj-wanu
+2025-04-01 09:07:45,566 - synapse-scraper - INFO - Èlánek uloen: Èína zahájila vojenské cvièení v okolí Tchaj-wanu (1094 znakù, 161 slov)
+2025-04-01 09:07:46,384 - synapse-scraper - INFO - Stahuji èlánek: Smetanova Litomyšl chystá novı skládací sál od Josefa Pleskota. Jak bude vypadat?
+2025-04-01 09:07:53,539 - synapse-scraper - INFO - Èlánek uloen: Smetanova Litomyšl chystá novı skládací sál od Josefa Pleskota. Jak bude vypadat? (10000 znakù, 1543 slov)
+2025-04-01 09:07:55,250 - synapse-scraper - INFO - Stahuji èlánek: Boj s kulhavkou vyvolává spory. Novináøka popisuje, co zaívá Slovensko
+2025-04-01 09:08:02,321 - synapse-scraper - INFO - Èlánek uloen: Boj s kulhavkou vyvolává spory. Novináøka popisuje, co zaívá Slovensko (5914 znakù, 890 slov)
+2025-04-01 09:08:03,278 - synapse-scraper - INFO - Stahuji èlánek: EU chystá odvetná cla. Trumpa chce zasáhnout pøes jeho bohaté známé
+2025-04-01 09:08:10,806 - synapse-scraper - INFO - Èlánek uloen: EU chystá odvetná cla. Trumpa chce zasáhnout pøes jeho bohaté známé (5021 znakù, 755 slov)
+2025-04-01 09:08:10,806 - synapse-scraper - INFO - Celkem staeno novıch èlánkù: 14
+2025-04-01 09:08:12,309 - synapse-scraper - INFO - Stahuji èlánek: Soudce neèekanì vrátil Redlovi byt, kde policie  sledovala akce Dozimetru
+2025-04-01 09:08:17,626 - synapse-scraper - INFO - Èlánek uloen: Soudce neèekanì vrátil Redlovi byt, kde policie  sledovala akce Dozimetru (4483 znakù, 676 slov)
+2025-04-01 09:08:21,781 - synapse-scraper - INFO - Zpracovávám zdroj: zpravy
+2025-04-01 09:08:21,781 - synapse-scraper - INFO - Zpracovávám RSS feed: zpravy
+2025-04-01 09:08:22,051 - synapse-scraper - WARNING - ádné èlánky nenalezeny v RSS feedu: zpravy
+2025-04-01 09:08:22,152 - synapse-scraper - INFO - Databáze uzavøena.
+2025-04-01 09:08:22,152 - synapse-scraper - INFO - Sbìr dokonèen! Pøidáno 15 novıch èlánkù.
+2025-04-01 09:08:22,152 - synapse-scraper - INFO - Sbìr dokonèen, pøidáno 15 novıch èlánkù
+2025-04-01 09:08:22,168 - synapse-scraper - INFO - Zpracování nasbíranıch èlánkù...
+2025-04-01 09:08:23,339 - synapse-scraper - INFO - Zpracování èlánkù úspìšnì dokonèeno
+2025-04-01 09:28:04,944 - synapse-scraper - INFO - Zaèínám sbìr zpravodajskıch èlánkù pro projekt Synapse...
+2025-04-01 09:28:04,949 - synapse-scraper - INFO - Pouívané zdroje: novinky, seznamzpravy, zpravy
+2025-04-01 09:28:04,950 - synapse-scraper - INFO - Pouívám konfiguraci databáze z config/database.json
+2025-04-01 09:28:05,842 - synapse-scraper - INFO - Úspìšnì pøipojeno k databázi.
+2025-04-01 09:28:05,938 - synapse-scraper - INFO - Úspìšné pøipojení k databázi, èlánky budou ukládány do DB
+2025-04-01 09:28:06,048 - synapse-scraper - INFO - Spuštìn reim nejnovìjších zpráv
+2025-04-01 09:28:06,051 - synapse-scraper - INFO - Pouívám konfiguraci databáze z config/database.json
+2025-04-01 09:28:06,073 - synapse-scraper - INFO - Úspìšnì pøipojeno k databázi.
+2025-04-01 09:28:06,163 - synapse-scraper - INFO - Sbírám nejnovìjší zprávy z vybranıch zdrojù (Novinky.cz, SeznamZpravy.cz, Zpravy.cz), max 10 èlánkù z kadého zdroje
+2025-04-01 09:28:06,163 - synapse-scraper - INFO - Zpracovávám zdroj: novinky
+2025-04-01 09:28:06,165 - synapse-scraper - INFO - Zpracovávám RSS feed: novinky
+2025-04-01 09:28:07,748 - synapse-scraper - INFO - Stahuji èlánek: Ukrajinci Trumpem pohrdají, Zelenskému vìøí. Doufají, e letos válka skonèí
+2025-04-01 09:28:12,616 - synapse-scraper - ERROR - Chyba pøi zpracování zdroje novinky: too many values to unpack (expected 3)
+2025-04-01 09:28:12,620 - synapse-scraper - INFO - Zpracovávám zdroj: seznamzpravy
+2025-04-01 09:28:12,620 - synapse-scraper - INFO - Zpracovávám RSS feed: seznamzpravy
+2025-04-01 09:28:13,506 - synapse-scraper - INFO - Stahuji èlánek: Schváleno a odloeno. Proè nikdo nemluví o superdávce
+2025-04-01 09:28:19,664 - synapse-scraper - ERROR - Chyba pøi zpracování zdroje seznamzpravy: too many values to unpack (expected 3)
+2025-04-01 09:28:19,680 - synapse-scraper - INFO - Zpracovávám zdroj: zpravy
+2025-04-01 09:28:19,680 - synapse-scraper - INFO - Zpracovávám RSS feed: zpravy
+2025-04-01 09:28:19,988 - synapse-scraper - WARNING - ádné èlánky nenalezeny v RSS feedu: zpravy
+2025-04-01 09:28:20,085 - synapse-scraper - INFO - Databáze uzavøena.
+2025-04-01 09:28:20,085 - synapse-scraper - INFO - Sbìr dokonèen! Pøidáno 0 novıch èlánkù.
+2025-04-01 09:28:20,086 - synapse-scraper - INFO - Sbìr dokonèen, pøidáno 0 novıch èlánkù
+2025-04-01 09:28:20,112 - synapse-scraper - INFO - Zpracování nasbíranıch èlánkù...
+2025-04-01 09:28:21,397 - synapse-scraper - INFO - Zpracování èlánkù úspìšnì dokonèeno
+2025-04-01 09:30:50,177 - synapse-scraper - INFO - Zaèínám sbìr zpravodajskıch èlánkù pro projekt Synapse...
+2025-04-01 09:30:50,177 - synapse-scraper - INFO - Pouívané zdroje: novinky, seznamzpravy, zpravy
+2025-04-01 09:30:50,177 - synapse-scraper - INFO - Pouívám konfiguraci databáze z config/database.json
+2025-04-01 09:30:50,741 - synapse-scraper - INFO - Úspìšnì pøipojeno k databázi.
+2025-04-01 09:30:50,741 - synapse-scraper - INFO - Úspìšné pøipojení k databázi, èlánky budou ukládány do DB
+2025-04-01 09:30:50,841 - synapse-scraper - INFO - Spuštìn reim nejnovìjších zpráv
+2025-04-01 09:30:50,844 - synapse-scraper - INFO - Pouívám konfiguraci databáze z config/database.json
+2025-04-01 09:30:50,912 - synapse-scraper - INFO - Úspìšnì pøipojeno k databázi.
+2025-04-01 09:30:50,979 - synapse-scraper - INFO - Sbírám nejnovìjší zprávy z vybranıch zdrojù (Novinky.cz, SeznamZpravy.cz, Zpravy.cz), max 10 èlánkù z kadého zdroje
+2025-04-01 09:30:50,979 - synapse-scraper - INFO - Zpracovávám zdroj: novinky
+2025-04-01 09:30:50,979 - synapse-scraper - INFO - Zpracovávám RSS feed: novinky
+2025-04-01 09:30:53,732 - synapse-scraper - INFO - Stahuji èlánek: Musk se chystá na odchod z Trumpovy administrativy. Dokázal jen zlomek toho, sliboval
+2025-04-01 09:31:01,064 - synapse-scraper - ERROR - Chyba pøi zpracování zdroje novinky: too many values to unpack (expected 3)
+2025-04-01 09:31:01,064 - synapse-scraper - INFO - Zpracovávám zdroj: seznamzpravy
+2025-04-01 09:31:01,064 - synapse-scraper - INFO - Zpracovávám RSS feed: seznamzpravy
+2025-04-01 09:31:01,837 - synapse-scraper - INFO - Stahuji èlánek: Schváleno a odloeno. Proè nikdo nemluví o superdávce
+2025-04-01 09:31:09,473 - synapse-scraper - ERROR - Chyba pøi zpracování zdroje seznamzpravy: too many values to unpack (expected 3)
+2025-04-01 09:31:09,481 - synapse-scraper - INFO - Zpracovávám zdroj: zpravy
+2025-04-01 09:31:09,481 - synapse-scraper - INFO - Zpracovávám RSS feed: zpravy
+2025-04-01 09:31:09,770 - synapse-scraper - WARNING - ádné èlánky nenalezeny v RSS feedu: zpravy
+2025-04-01 09:31:09,838 - synapse-scraper - INFO - Databáze uzavøena.
+2025-04-01 09:31:09,838 - synapse-scraper - INFO - Sbìr dokonèen! Pøidáno 0 novıch èlánkù.
+2025-04-01 09:31:09,838 - synapse-scraper - INFO - Sbìr dokonèen, pøidáno 0 novıch èlánkù
+2025-04-01 09:31:09,878 - synapse-scraper - INFO - Zpracování nasbíranıch èlánkù...
+2025-04-01 09:31:11,165 - synapse-scraper - INFO - Zpracování èlánkù úspìšnì dokonèeno
