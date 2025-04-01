@@ -8808,3 +8808,12 @@
 2025-04-01 12:51:59,088 - synapse-scraper - INFO - Zpracovávám zdroj: seznamzpravy
 2025-04-01 12:51:59,088 - synapse-scraper - INFO - Zpracovávám RSS feed: seznamzpravy
 2025-04-01 12:51:59,679 - synapse-scraper - INFO - Stahuji èlánek: „Korupce a nenávist ohrožují bezpeènost zemì.“ Bradáèová nastoupila do funkce
+2025-04-01 12:52:08,036 - synapse-scraper - ERROR - Chyba pøi zpracování zdroje seznamzpravy: too many values to unpack (expected 3)
+2025-04-01 12:52:08,037 - synapse-scraper - INFO - Zpracovávám zdroj: zpravy
+2025-04-01 12:52:08,037 - synapse-scraper - INFO - Zpracovávám RSS feed: zpravy
+2025-04-01 12:52:08,363 - synapse-scraper - WARNING - Žádné èlánky nenalezeny v RSS feedu: zpravy
+2025-04-01 12:52:08,447 - synapse-scraper - INFO - Databáze uzavøena.
+2025-04-01 12:52:08,447 - synapse-scraper - INFO - Sbìr dokonèen! Pøidáno 0 nových èlánkù.
+2025-04-01 12:52:08,448 - synapse-scraper - INFO - Sbìr dokonèen, pøidáno 0 nových èlánkù
+2025-04-01 12:52:08,476 - synapse-scraper - INFO - Zpracování nasbíraných èlánkù...
+2025-04-01 12:52:11,502 - synapse-scraper - INFO - Zpracování èlánkù úspìšnì dokonèeno
